@@ -1,0 +1,4 @@
+	 amixer set 'Master' toggle;
+	 amixer set 'Bass Speaker' toggle;
+	 amixer set 'Speaker' toggle;
+	 amixer set 'Headphone' toggle;
