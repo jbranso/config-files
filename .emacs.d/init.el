@@ -47,18 +47,21 @@
 ;; For example, my org-mode-hook binds "ct" to (org-todo).
 (setq viper-mode t)
 (require 'viper)
+;;(require 'evil)
+;;(evil-mode 1)
+
 
 ;; this is useful for creating custum lisp filse
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/my-custom-files")
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
-(add-to-list 'load-path "~/.emacs.d/org-mode/contrib
-/lisp" t)
+(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp" t)
 (load "~/.emacs.d/org-mode/lisp/org.el")
 
 (load "macros")
 (load "definitions")
 (load "hooks")
 (load "skeletons")
+;;(load "evil-changes")
 
 ;; this makes C-n add a new line if point is at the end of the buffer. that you you don't
 ;; have to use return if you don't want to.

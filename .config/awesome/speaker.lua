@@ -2,6 +2,8 @@ local awful = require ('awful')
 --let's get the percent that the speakers are on
 -- this code only works because amixer outputs whole numbers for percents
 
+--define a global variable.
+volume = "off"
 --let's find out if the speakers are on
 if os.execute("amixer get Master | grep '\\[on\\]'") then
    volume = "on"

@@ -196,8 +196,6 @@
   (kbd "<return>") 'newline-and-indent)
 (define-key viper-insert-global-user-map
   (kbd "C-d") 'delete-char)
-(define-key viper-insert-global-user-map
-  (kbd "C-h") 'help)
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map
