@@ -1,0 +1,38 @@
+a
+{
+    color:#E18A07;
+}
+a:hover
+{
+    font-size:200%;
+    color:#E18A07;
+    text-decoration:none;
+}
+body
+{
+background-color:#C0C0C0;
+}
+.brown
+{
+    color:#E18A07;
+}
+.container
+{
+    border:solid;
+    border-radius:10px;
+    border-color:#E18A07;
+    background-color:#FFFFFF;
+}
+.grow
+{
+
+}
+h1
+{
+    color:#E18A07;
+}
+.regular
+{
+    border-width:0px;
+    background-color:#C0C0C0;
+}

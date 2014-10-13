@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>math captcha</title>
+  </head>
+  <body>
+    <script>
+     var var1 = Math.floor (( Math.random() * 10 + 1 ));
+     var var2 = Math.floor (( Math.random() * 10 + 1 ));
+
+     function write (id)
+     {
+       id.innerHTML = "hello";
+     }
+     //  ( str.concat ("What does ", var1, " + ", var2, " = ?") );
+
+     function check ()
+     {
+       var user_answer = document.getElementById ("answer");
+       if (user_answer == (var1 + var2))
+       {
+	 alert ("nicely done")
+       }
+       else
+       {
+	 alert ("wrong answer")
+       }
+       alert ("it works")
+     }
+
+    </script>
+    <h1>math captcha</h1>
+
+    <form>
+      <p id="question" onload="write (this)"></p> <input type="text"
+							 id="answer"
+							 onsubmit="check()"><br>
+    </form>
+
+  </body>
+</html>
