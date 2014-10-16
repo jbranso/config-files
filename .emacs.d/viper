@@ -15,6 +15,15 @@
 (define-key viper-vi-global-user-map
   (kbd "V") 'viper-scroll-down)
 (define-key viper-vi-global-user-map
+  (kbd "<backspace>") 'delete-backward-char)
+(define-key viper-vi-global-user-map
+  (kbd "l") 'recenter-top-bottom)
+(define-key viper-vi-global-user-map
+  (kbd "<return>") 'newline-and-indent)
+(define-key viper-vi-global-user-map
+  (kbd "SPC") 'viper-space)
+
+(define-key viper-vi-global-user-map
   (kbd "a")'viper-beginning-of-line)
 (define-key viper-vi-global-user-map
   (kbd "u") 'move-end-of-line)
@@ -23,35 +32,32 @@
 (define-key viper-vi-global-user-map
   (kbd "o")'backward-word)
 (define-key viper-vi-global-user-map
-  (kbd "ce") 'kill-word)
-(define-key viper-vi-global-user-map
-  (kbd "co")'backward-kill-word)
-(define-key viper-vi-global-user-map
-  (kbd "C-a") 'viper-delete-backward-word)
-(define-key viper-vi-global-user-map
-  (kbd "C-o") 'kill-word)
-(define-key viper-vi-global-user-map
   (kbd ".") 'viper-undo)
 (define-key viper-vi-global-user-map
   (kbd ",") 'viper-repeat)
+
 (define-key viper-vi-global-user-map
   (kbd "C-h") 'help)
 (define-key viper-vi-global-user-map
   (kbd "C-d") 'delete-char)
-(define-key viper-vi-global-user-map
-  (kbd "C-u") 'universal-argument)
 
 ;; the c commands
 (define-key viper-vi-global-user-map
+  (kbd "c SPC") 'ace-jump-char-mode)
+(define-key viper-vi-global-user-map
+  (kbd "ce") 'kill-word)
+(define-key viper-vi-global-user-map
+  (kbd "co")'backward-kill-word)
+(define-key viper-vi-global-user-map
   (kbd "cc") 'kill-ring-save)
+(define-key viper-vi-global-user-map
+  (kbd "ck") 'kill-line)
 (define-key viper-vi-global-user-map
   (kbd "cu") 'kill-region)
 (define-key viper-vi-global-user-map
   (kbd "cp") 'viper-put-back)
 (define-key viper-vi-global-user-map
   (kbd "cP") 'viper-Put-back)
-(define-key viper-vi-global-user-map
-  (kbd "cy") 'yank)
 (define-key viper-vi-global-user-map
   (kbd "cs") 'save-buffer)
 (define-key viper-vi-global-user-map
@@ -73,10 +79,6 @@
 (define-key viper-vi-global-user-map
   (kbd "c1") 'delete-other-windows)
 (define-key viper-vi-global-user-map
-  (kbd "ck") 'ido-kill-buffer)
-(define-key viper-vi-global-user-map
-  (kbd "ck") 'ido-kill-buffer)
-(define-key viper-vi-global-user-map
   (kbd "crp") 'insert-register)
 (define-key viper-vi-global-user-map
   (kbd "cr+") 'increment-register)
@@ -94,22 +96,14 @@
   (kbd "cj") 'join-bottom-line)
 (define-key viper-vi-global-user-map
   (kbd "c.") 'set-mark-command)
+;; this will prompt you for a register name. It will store the current buffer position in a register
+(define-key viper-vi-global-user-map
+  (kbd "cr.") 'point-to-register)
+;;This will prompt you for a register name. It will move point to that register's value.
+(define-key viper-vi-global-user-map
+  (kbd "crj") 'jump-to-register)
 
-(define-key viper-vi-global-user-map
-  (kbd "C-d") 'delete-char)
-(define-key viper-vi-global-user-map
-  (kbd "Oo") 'viper-open-line)
-(define-key viper-vi-global-user-map
-  (kbd "OO") 'viper-Open-line)
-(define-key viper-vi-global-user-map
-  (kbd "<backspace>") 'delete-backward-char)
-(define-key viper-vi-global-user-map
-  (kbd "l") 'recenter-top-bottom)
-(define-key viper-vi-global-user-map
-  (kbd "<return>") 'newline-and-indent)
-(define-key viper-vi-global-user-map
-  (kbd "SPC") 'viper-space)
-
+					;the m commands
 (define-key viper-vi-global-user-map
   (kbd "mlu") 'move-line-up)
 (define-key viper-vi-global-user-map
@@ -126,23 +120,14 @@
   (kbd "m;") 'er/mark-comment)
 (define-key viper-vi-global-user-map
   (kbd "mnt") 'mc/mark-next-like-this)
-(define-key viper-vi-global-user-map
-  (kbd "mpt") 'er/mark-previous-like-this)
-(define-key viper-vi-global-user-map
-  (kbd "mu") 'er/mark-url)
-(define-key viper-vi-global-user-map
-  (kbd "mw") 'er/mark-word)
 
 
-;; p Commands
+;;p commands
 (define-key viper-vi-global-user-map
-  (kbd "ps") 'isearch-forward-regexp)
+  (kbd "ps") 'helm-swoop)
+;; This will let you browse through all the stuff you've killed.
 (define-key viper-vi-global-user-map
-  (kbd "pb") 'isearch-backward-regexp)
-(define-key viper-vi-global-user-map
-  (kbd "pr") 'recentf-open-files)
-(define-key viper-vi-global-user-map
-  (kbd "ph") 'help)
+  (kbd "pb") 'browse-kill-ring)
 (define-key viper-vi-global-user-map
   (kbd "p<") 'shrink-window-horizontally)
 (define-key viper-vi-global-user-map
@@ -156,17 +141,8 @@
 
 (define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
-(define-key viper-vi-global-user-map
-  (kbd "gc") 'ace-jump-char-mode)
-(define-key viper-vi-global-user-map
-  (kbd "gs") 'ace-jump-mode)
-(define-key viper-vi-global-user-map
-  (kbd "gn") 'web-mode-navigate)
 
-
-(define-key viper-vi-global-user-map
-  (kbd "po") 'other-window)
-;; the y commands
+;; the p commands
 (define-key viper-vi-global-user-map
   (kbd "pn") 'viper-newline)
 (define-key viper-vi-global-user-map
@@ -177,12 +153,12 @@
   (kbd "p.") 'er/expand-region)
 (define-key viper-vi-global-user-map
   (kbd "p,") 'er/contract-region)
-;;org/agenda commands
 
+;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
 (define-key viper-vi-global-user-map (kbd "c.")  'org-time-stamp)
-;;(define-key viper-vi-global-user-map
-;;  (kbd "dl") 'kill-line)
+(define-key viper-vi-global-user-map
+  (kbd "ch") 'help)
 
 (define-key viper-vi-global-user-map
   (kbd "w;") 'web-mode-comment-or-uncomment)
@@ -191,11 +167,23 @@
 (define-key viper-vi-global-user-map
   (kbd "pf") 'web-mode-fold-or-unfold)
 
+(define-key viper-vi-global-user-map
+  (kbd "kb") 'ido-kill-buffer)
+(define-key viper-vi-global-user-map
+  (kbd "kl") 'kill-line)
 
 (define-key viper-vi-global-user-map
   (kbd "<return>") 'newline-and-indent)
-(define-key viper-insert-global-user-map
-  (kbd "C-d") 'delete-char)
+
+(define-key viper-vi-global-user-map
+  (kbd "yn") 'windmove-left)
+(define-key viper-vi-global-user-map
+  (kbd "ys") 'windmove-right)
+(define-key viper-vi-global-user-map
+  (kbd "yt") 'windmove-up)
+(define-key viper-vi-global-user-map
+  (kbd "yh") 'windmove-down)
+
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map

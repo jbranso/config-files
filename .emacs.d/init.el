@@ -1,12 +1,13 @@
-(keyboard-translate ?\C-x ?\M-x) ;;make C-x mean M-x
-(keyboard-translate ?\C-t ?\C-x) ;;make C-t mean C-x
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
+;;(keyboard-translate ?\C-x ?\M-x) ;;make C-x mean M-x
+;;(keyboard-translate ?\C-t ?\C-x) ;;make C-t mean C-x
 ;; this sets up the packages I have installed.
 (package-initialize)
-(blink-cursor-mode nil)
+
+(setq user-full-name "Joshua Branson"
+      user-mail-address "jbranso@purdue.edu")
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; put numbers on the side of the editor
 (global-linum-mode 1)
@@ -15,6 +16,12 @@
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default fill-column 108)
+
+(prefer-coding-system 'utf-8)
+(when (display-graphic-p)
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+
+
 
 ;;yes I do want to kill this shell, even though it has a process attached to it.
 (setq kill-buffer-query-functions
@@ -28,10 +35,8 @@
 ;; these are some basic emacs configurations that I like
 ;; don't show the startup screen
 (setq inhibit-startup-message t)
-;; "C-h d transient" will give you more information
-(setq transient-mark-mode t)
 ;;stop making backup files
-(setq make-backup-files nil)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 ;; show matching parenthesis
 (show-paren-mode t)
 
@@ -39,7 +44,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-create-new-buffer 'always)
 (setq ido-use-filename-at-point 'guess)
-(setq ido-ignore-buffers (quote ("*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
 (ido-mode 1)
 
 ;; the following lines must be before init loads my hooks, because my hooks
@@ -47,15 +51,13 @@
 ;; For example, my org-mode-hook binds "ct" to (org-todo).
 (setq viper-mode t)
 (require 'viper)
+(require 'ace-jump-mode)
 ;;(require 'evil)
 ;;(evil-mode 1)
 
-
 ;; this is useful for creating custum lisp filse
+;; do not add "~/emacs.d" to the load path. This can apparently cause problems.
 (add-to-list 'load-path "~/.emacs.d/my-custom-files")
-(add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
-(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp" t)
-(load "~/.emacs.d/org-mode/lisp/org.el")
 
 (load "macros")
 (load "definitions")
@@ -95,7 +97,6 @@
 (setq org-agenda-start-with-follow-mode t)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
-
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -117,11 +118,12 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+;; the default file emacs opens.
 (find-file "/home/joshua/documents/things_to_do.org")
 
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "dim gray"))))
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+'(hl-line ((t (:background "dim gray"))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -136,12 +138,10 @@
  '(ido-cannot-complete-command (quote ido-next-match))
  '(ido-enable-regexp t)
  '(ido-enable-tramp-completion t)
- '(ido-ignore-buffers (quote ("*" "*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
+ '(ido-ignore-buffers (quote ("\*scratch\*" "\*Messages\*" "\*help\*" "*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
  '(ido-ignore-files (quote ("*.vr" "*.toc" "*.tp" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
  '(ido-max-dir-file-cache 200)
  '(ido-max-work-directory-list 100)
  '(ido-max-work-file-list 20)
- '(menu-bar-mode nil)
  '(org-agenda-files nil)
- '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
