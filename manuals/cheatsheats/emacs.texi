@@ -1,0 +1,537 @@
+Content-Type: text/enriched
+Text-Width: 70
+
+\input texinfo   @c <x-color><param>#99968b</param>-*-texinfo-*-
+
+</x-color>@c <x-color><param>#99968b</param>%**start of header
+
+</x-color>@<x-color><param>#8ac6f2</param>setfilename</x-color> emacs-cheat-sheat.info
+
+@<x-color><param>#8ac6f2</param>settitle</x-color> Emacs Cheat Sheat
+
+@c <x-color><param>#99968b</param>%**end of header
+
+</x-color>
+
+@<x-color><param>#8ac6f2</param>titlepage</x-color>
+
+@<x-color><param>#8ac6f2</param>title</x-color> Josh's Emacs Cheat Sheat
+
+
+@c <x-color><param>#99968b</param>The following two commands start the copyright page.
+
+</x-color>@<x-color><param>#8ac6f2</param>page</x-color>
+
+@<x-color><param>#8ac6f2</param>vskip</x-color> 0pt plus 1filll
+
+@c <x-color><param>#99968b</param>insertcopying
+
+</x-color>@<x-color><param>#8ac6f2</param>end</x-color> <x-color><param>#8ac6f2</param>titlepage</x-color>
+
+
+@c <x-color><param>#99968b</param>Output the table of contents at the beginning.
+
+</x-color>@<x-color><param>#8ac6f2</param>contents</x-color>
+
+
+@<x-color><param>#8ac6f2</param>ifnottex</x-color>
+
+@<x-color><param>#8ac6f2</param>node</x-color> Top
+
+@top Emacs Cheat Sheat
+
+
+Here's some emacs commands.
+
+@<x-color><param>#8ac6f2</param>end</x-color> <x-color><param>#8ac6f2</param>ifnottex</x-color>
+
+
+@<x-color><param>#8ac6f2</param>menu</x-color>
+
+*<x-color><param>#cae682</param> Basic Commands</x-color>::  These are the commands you must know.
+*<x-color><param>#cae682</param> CC mode</x-color>::         Cool commands for editing C code.
+* HTML mode::       Cool commands for editing HTML
+* org mode::        the basic org commands you should know
+* fill mode::
+* Version control:: Emacs's default version control system
+* Macros::          save a combination of commands and make emacs perform the combination of commands many times
+* Registers::       Cool ways to store your position in a text file.
+* TRAMP::           access remote files
+* Emacs Lisp::      the offocial emacs extension language
+* Index::            Complete index.
+
+@end menu
+
+
+@node Basic Commands
+
+@chapter Basic Commands
+
+
+@enumerate
+
+@item
+
+@code{C-o} moves the cursor to the other window in emacs, if another window is open.
+
+
+@item
+
+This is the second item.
+
+
+
+@item
+
+@code{C-x C-h} highlights to buffer
+
+@end enumerate
+
+
+@node CC mode
+
+@chapter CC mode
+
+
+Woo hoo!
+
+
+@node HTML mode
+
+@chapter HTML mode
+
+@enumerate
+
+@item
+
+@code{C-c C-j} inserts '<<br>' at point
+
+@item
+
+@code{C-c RET} inserts a '<<p>' at point
+
+@item
+
+@code{C-c 1-6} inserts the appropriate hn tag. ie '<<h1>','<<h2>',<<h3>', etc.
+
+@item
+
+@code{C-c C-f} moves point to the next starting tag
+
+@item
+
+@code{C-c C-b} moves point to the next ending tag
+
+@item
+
+@code{C-c C-e} inserts the appropriate ending tag. If the last starting tag is a '<<p>', then @code{C-c C-e} will insert
+a @code{<</p>}
+
+@end enumerate
+
+
+@node org mode
+
+@chapter org mode
+
+
+timestamps, schedule, and deadline
+
+
+A user can add a date to a TODO item in org mode. Org mode provides three types of dates: timestamps, schedules, and deadlines. Schedules
+and deadlines are timestamps with either Schedule or deadline added to them.
+If you wish to remind yourself of when a task must be completed, you should use a deadline, which will insert a timestamp and a deadline.
+If you wish to meet with someone on a day, you should use a timestamp. If you wish to tell yourself to start working on a certain task
+on a certain day, you should use a schedule.
+
+
+@enumerate
+
+@item
+
+@code{C-c .} insert a timestamp
+
+@item
+
+@code{C-c C-d} insert the deadline keyword and a timestamp
+
+@item
+
+@code{C-c C-s} insert the schedule keyword and a timestamp
+
+@end enumerate
+
+
+Agenda mode commands
+
+@enumerate
+
+@item
+
+@code{C-c a a} open  the calendar like agena buffer
+
+@item
+
+@code{C-c a L} Emacs will open the agenda timeline buffer
+
+@item
+
+@code{n} move to the next line
+
+@item
+
+@code{p} mode to the previous line
+
+@item
+
+@code{SPC} show the current line in another window
+
+@item
+
+@code{L} same as @code{SPC}
+
+@item
+
+@code{TAB} go to the original location of the item in another window
+
+@item
+
+@code{RET} go to the original location of the item and delete other windows
+
+@item
+
+@code{F} toggle follow mode. This makes the other window show the original location of the item
+
+@end enumerate
+
+
+basic movement in an org file
+
+@enumerate
+
+@item
+
+@code{C-c C-n} move point to next heading
+
+@item
+
+@code{C-c C-p} move point to previous heading
+
+@item
+
+@code{C-c C-f} move point to next heading at the same level
+
+@item
+
+@code{C-c C-b} move point to the previous heading at the same level
+
+@item
+
+@code{C-c C-u} backward to a higher level heading
+
+@end enumerate
+
+
+@enumerate
+
+@item
+
+@code{M-RET} moves point to the next line and creates another entry at the same level as the current entry
+
+@item
+
+@code{C-c C-t} adds a TODO to the current entry, changes the TODO at the current entry to DONE, or remove the DONE from the current entry
+
+@item
+
+@code{C-c C-d} adds a deadline that the current entry. This makes the entry appear in agenda mode.
+
+@item
+
+@code{C-c [} adds the current file to the top of the list of agenda files.
+
+@item
+
+@code{(setq org-log-done 'time)} inserts a timestamp when a TODO item is changed to DONE.
+
+@item
+
+@code{(setq org-log-done -note)} prompts the user for a note, when a TODO item in changed from TODO to DONE.
+
+@end enumerate
+
+
+@node fill mode
+
+@chapter fill mode
+
+
+Basic commands
+
+@enumerate
+
+@item
+
+@emph{M-q} fill this paragraph
+
+
+@node Version control
+
+@chapter Version control
+
+@enumerate
+
+@item
+
+@code{C-x v v} performs the most logical next action for the version control system you are using. If you are typing
+in a file that needs to be commited when you run this command, then VC will open up a new buffer. In this buffer write
+out the changes you have made, and then type @code{C-c C-c} to let emacs know you are done.
+
+@item
+
+@end enumerate
+
+
+@node Macros
+
+@Chapter Macros
+
+@enumerate
+
+@item
+
+@code{C-x (} begins recording commands
+
+@item
+
+@code{C-b )} stops recording commands
+
+@item
+
+@code{C-x e} runs the recorded command
+
+@end enumerate
+
+
+@node Registers
+
+@chapter Registers
+
+
+You need to know at least 2 commands to get the basic functionality of registers down:
+
+
+@enurmerate
+
+@item @code{C-x r <<SPC> R} makes a new register named R and saves the position of point in it
+
+@item @code{C-x r j R} jumps to the register R
+
+@end enumerate
+
+
+@cindex CC mode
+
+
+@cindex index entry, another
+
+
+Here is a numbered list.
+
+
+@enumerate
+
+@item
+
+@code{C-c C-c} comments a highlighted region
+
+
+@item
+
+@code{M-;} creats a /* */ style comment where your cursor is
+
+@end enumerate
+
+
+@node TRAMP
+
+@chapter TRAMP
+
+
+To open a file with root permissions use
+@code{C-x C-f /su::/etc/hosts}
+
+
+@node Emacs Lisp
+
+@chapter Emacs Lisp
+
+A lisp program stands for a list program.
+
+
+'(this is an emacs lisp list)
+
+
+'(this
+       is also
+       a proper
+         emacs
+               lisp list)
+
+
+It list has 6 atoms in it: "this", "is", "an", "emacs", "lisp", "list". They are called atoms, because Lisp thinks they cannot be divided
+into small things.
+
+
+There is also the empty list "()" it is both a list and an atom.
+
+
+An atom in Lisp can either be a number, a string ("This is a string."), or a symbol like + - or forward-char.
+
+
+'(this list tells emacs to do absolutely nothing)    because there is a '
+
+
+(+ 2 5)  that list told emacs that it had something to do since there was no '
+
+
+To make lisp evaluate an expression, but point after the closing parenthesis and type @code{C-x C-e}
+
+
+a lisp and atoms are typically called symbolic expression interchangably.
+
+
+byte-compile-file is the function that will attempt to byte compile
+code
+
+
+(this list has a function) When emacs tries to evaluate this list, it
+assumes "this" is a proper function.
+
+
+(+ 2 variable)  tries to add 2 to the variable called "variable"
+
+
+(concat "The " (number-to-string (- 2 fill-column)) " red foxes.")
+
+
+(quote hello) is the same as 'hello
+
+
+(message "This is pretty darn cool right?") passes messages to the
+user
+
+
+(message "The name of this buffer is: %s." (buffer-name))
+
+
+(message "He saw %d %s"
+              (- fill-column 32)
+              (concat "red "
+                      (substring
+                       "The quick brown foxes jumped." 16 21)
+                       " leaping."))
+
+
+
+Let's make joshua hold a string
+(set 'joshua (message "how are you doing?"))
+
+
+joshua
+
+
+This makes joshua hold a list
+(setq joshua '(this is a boring list))
+
+
+(setq joshua '(is a good person)
+      she '(is also a good person.))
+
+
+      (switch-to-buffer (other-buffer))
+
+
+      (point) will evaluate the position in the buffer that point is
+
+
+      (point-min) is smallest possible point for point to be in the
+buffer
+
+
+      (buffer-size) returns the number of characters in the current buffer
+
+
+      sample emacs program. It will move point to the middle of this
+      buffer and then print the buffer name, the file name, length,
+      and my position in the file.
+
+
+      (beginning-of-buffer)
+
+
+        (forward-char ((buffersize) / 2))
+        (message "The buffer name is " (buffer-name))
+
+
+     (defun FUNCTION-NAME (ARGUMENTS...)
+       "OPTIONAL-DOCUMENTATION..."
+       (interactive ARGUMENT-PASSING-INFO)     ; optional
+       BODY...)
+
+
+(defun add-two-numbers (number1 number2)
+       "This function definition adds two numbers"
+       (+ number1 number2))
+
+
+number1 and number2 are both arguments to the function. This function
+uses two arguments and adds them together. A way to use it would look
+like this: (add-two-numbers 5 3)
+
+
+
+(defun add-two-numbers (number1 number2)
+       "This function definition adds two numbers"
+       (+ number1 number2))
+
+
+
+check out @code{C-h f} will display documentation for that emacs
+function
+
+
+Interactive can quite a few options
+
+
+learning about let
+
+
+(let <<variable list> body...)
+
+
+(let ((variable value)
+     (variable value)
+     ...)
+     body...)
+
+
+(let ((x 'tigers)
+     (y 55)
+     (z 'killed)
+     (a 22)
+     (b 'zebras))
+  (message "%d %s %s %d %s."
+           a x z y b))
+
+
+@node Index
+
+@unnumbered Index
+
+@printindex cp
+
+
+
+@bye
+

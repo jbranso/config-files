@@ -1,0 +1,216 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename texinfo.info
+@settitle Texinfo Manual
+@c %**end of header
+@copying
+Cheatsheat to Texinfo.
+
+Copyright @copyright{} 2014
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.
+
+A copy of the license is also available from the Free Software
+Foundation Web site at @url{http://www.gnu.org/licenses/fdl.html}.
+
+@end quotation
+
+The document was typeset with
+@uref{http://www.texinfo.org/, GNU Texinfo}.
+
+@end copying
+
+@titlepage
+@title Texinfo Manual
+@subtitle Cheatsheat to Texinfo
+@author  Joshua Branson
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the table of the contents at the beginning.
+@contents
+
+@ifnottex
+@node Top
+@top Texinfo Manual
+
+@insertcopying
+@end ifnottex
+
+@c Generate the nodes for this menu with `C-c C-u C-m'.
+@menu
+* Document Structure::
+* 6 Parts of Texinfo file::
+* Commands::
+* Copying This Manual::
+* Index::
+@end menu
+
+@c Update all node entries with `C-c C-u C-n'.
+@c Insert new nodes with `C-c C-c n'.
+@node Document Structure
+@chapter Document Structure
+
+Texinfo has lots of @@ commands. The @code{@@node} deals with section
+for HTML and info, and the @code{@@chapter} is for pdfs and
+postscripts. To use the @@, @{, or @} one must put an @@ infront of
+them. Like this: @code{@@}
+
+Comments are created by using @code{@@comment} or @code{@@c}.
+
+The first nodes and chapters are the chapters of the text. The nodes
+and chapters within a chapter are subchapters.
+
+A texinfo file must include:
+@code{\input texinfo}
+@code{@@setfilename info-file name}
+@code{@@settitle name-of-manual}
+...
+@code{@@bye}
+
+@node 6 Parts of Texinfo file
+@chapter 6 Parts of Texinfo file
+
+@enumerate
+@item
+Header, which include the settitle and setfilename.
+
+@item
+Summary and Copyright contains that copyright notice. This is done
+with the @code{@@copying} command.
+
+@item
+Title and Copyright only appear in the printed manual. It is between
+the @code{titlepage} and @code{end titlepage}
+
+@item
+Top Node and Master Menu only appears in the online manual. It
+contains the master menu for the html output.
+
+@item
+Body the text in your body
+
+@item
+End contains the @code{@@bye} command.
+@end enumerate
+
+@node Commands
+@chapter Commands
+
+'C-c C-c c'
+@noindent
+'M-x texinfo-insert-@@code'
+@noindent
+     Insert '@@code@{@}' and put the cursor between the braces.
+
+'C-c C-c d'
+@noindent
+'M-x texinfo-insert-@@dfn'
+@noindent
+     Insert '@@dfn@{@}' and put the cursor between the braces.
+     @noindent
+'C-c C-c e'
+@noindent
+'M-x texinfo-insert-@@end'
+@noindent
+     Insert '@@end' and attempt to insert the correct following word,
+     such as 'example' or 'table'.  (This command does not handle nested
+     lists correctly, but inserts the word appropriate to the
+     immediately preceding list.)
+
+'C-c C-c i'
+@noindent
+'M-x texinfo-insert-@@item'
+@noindent
+     Insert '@@item' and put the cursor at the beginning of the next
+     line.
+
+'C-c C-c k'
+@noindent
+'M-x texinfo-insert-@@kbd'
+@noindent
+     Insert '@@kbd@{@}' and put the cursor between the braces.
+
+'C-c C-c n'
+@noindent
+'M-x texinfo-insert-@@node'
+@noindent
+     Insert '@@node' and a comment line listing the sequence for the
+     'Next', 'Previous', and 'Up' nodes.  Leave point after the '@@node'.
+
+'C-c C-c o'
+@noindent
+'M-x texinfo-insert-@@noindent'
+@noindent
+     Insert '@@noindent' and put the cursor at the beginning of the next
+     line.
+
+'C-c C-c s'
+@noindent
+'M-x texinfo-insert-@@samp'
+@noindent
+     Insert '@@samp{}' and put the cursor between the braces.
+
+'C-c C-c t'
+@noindent
+'M-x texinfo-insert-@@table'
+@noindent
+     Insert '@@table' followed by a <SPC> and leave the cursor after the
+     <SPC>.
+
+'C-c C-c v'
+@noindent
+'M-x texinfo-insert-@@var'
+@noindent
+     Insert '@@var@{@}' and put the cursor between the braces.
+
+'C-c C-c x'
+@noindent
+'M-x texinfo-insert-@@example'
+@noindent
+     Insert '@@example' and put the cursor at the beginning of the next
+     line.
+
+'C-c C-c @{'
+@noindent
+'M-x texinfo-insert-braces'
+@noindent
+     Insert '@{@}' and put the cursor between the braces.
+
+'C-c @}'
+@noindent
+'C-c ]'
+@noindent
+'M-x up-list'
+@noindent
+     Move from between a pair of braces forward past the closing brace.
+     Typing 'C-c ]' is easier than typing 'C-c @}', which is, however,
+     more mnemonic; hence the two keybindings.  (Also, you can move out
+     from between braces by typing 'C-f'.)
+
+@node Copying This Manual
+@appendix Copying This Manual
+
+@menu
+* GNU Free Documentation License::  License for copying this manual.
+@end menu
+
+@c Get fdl.texi from http://www.gnu.org/licenses/fdl.html
+@include fdl.texi
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye
+
+@c texinfo.texi ends here

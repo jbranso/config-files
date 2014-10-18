@@ -79,16 +79,6 @@
 (define-key viper-vi-global-user-map
   (kbd "c1") 'delete-other-windows)
 (define-key viper-vi-global-user-map
-  (kbd "crp") 'insert-register)
-(define-key viper-vi-global-user-map
-  (kbd "cr+") 'increment-register)
-(define-key viper-vi-global-user-map
-  (kbd "crc") 'copy-to-register)
-(define-key viper-vi-global-user-map
-  (kbd "crn") 'number-to-register)
-(define-key viper-vi-global-user-map
-  (kbd "crn") 'number-to-register)
-(define-key viper-vi-global-user-map
   (kbd "cle") 'copy-last-html-element)
 (define-key viper-vi-global-user-map
   (kbd "cne") 'copy-next-html-element)
@@ -129,6 +119,8 @@
 (define-key viper-vi-global-user-map
   (kbd "pb") 'browse-kill-ring)
 (define-key viper-vi-global-user-map
+  (kbd "pd") 'dired-jump)
+(define-key viper-vi-global-user-map
   (kbd "p<") 'shrink-window-horizontally)
 (define-key viper-vi-global-user-map
   (kbd "p>") 'enlarge-window-horizontally)
@@ -153,6 +145,16 @@
   (kbd "p.") 'er/expand-region)
 (define-key viper-vi-global-user-map
   (kbd "p,") 'er/contract-region)
+(define-key viper-vi-global-user-map
+  (kbd "prp") 'insert-register)
+(define-key viper-vi-global-user-map
+  (kbd "pr+") 'increment-register)
+(define-key viper-vi-global-user-map
+  (kbd "prc") 'copy-to-register)
+(define-key viper-vi-global-user-map
+  (kbd "prn") 'number-to-register)
+(define-key viper-vi-global-user-map
+  (kbd "prn") 'number-to-register)
 
 ;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
@@ -190,6 +192,8 @@
 ;;   (kbd "ESC") '(lambda()
 ;; 		 (viper-intercept-ESC-key)
 ;; 		 (forward-char)))
+(define-key viper-insert-global-user-map
+  (kbd "C-d") 'delete-char)
 
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)

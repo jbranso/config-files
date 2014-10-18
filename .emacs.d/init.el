@@ -63,47 +63,9 @@
 (load "definitions")
 (load "hooks")
 (load "skeletons")
+(load "set-global-keys")
+(load "setq")
 ;;(load "evil-changes")
-
-;; this makes C-n add a new line if point is at the end of the buffer. that you you don't
-;; have to use return if you don't want to.
-(setq next-line-add-newlines t)
-
-;; this lets emacs package system download the latest and greatest org and org-contrib packages
-;; this version of emacs does not have a package manager
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-
-;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-;; tell emacs where my agenda file is
-(setq org-agenda-files (quote ("~/documents/things_to_do.org")))
-
-;;this will record what time TODO items were finished and the line containing 'note will make org prompt you for a note when you finish
-;; a task
-(setq org-log-done 'time)
-
-;;speed up flyspell
-(setq flyspell-issue-message-flag nil)
-;; make flyspell use aspell
-(setq ispell-list-command "--list")
-
-;; toggle follow mode in emacs agenda mode
-(setq org-agenda-start-with-follow-mode t)
-
-;; scroll one line at a time (less "jumpy" than defaults)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-
-(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;;make emacs shell output color
 (ansi-color-for-comint-mode-on)
