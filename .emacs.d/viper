@@ -59,6 +59,8 @@
 (define-key viper-vi-global-user-map
   (kbd "cP") 'viper-Put-back)
 (define-key viper-vi-global-user-map
+  (kbd "cr") 'repeat)
+(define-key viper-vi-global-user-map
   (kbd "cs") 'save-buffer)
 (define-key viper-vi-global-user-map
   (kbd "cxc") 'save-buffers-kill-terminal)
@@ -86,13 +88,6 @@
   (kbd "cj") 'join-bottom-line)
 (define-key viper-vi-global-user-map
   (kbd "c.") 'set-mark-command)
-;; this will prompt you for a register name. It will store the current buffer position in a register
-(define-key viper-vi-global-user-map
-  (kbd "cr.") 'point-to-register)
-;;This will prompt you for a register name. It will move point to that register's value.
-(define-key viper-vi-global-user-map
-  (kbd "crj") 'jump-to-register)
-
 					;the m commands
 (define-key viper-vi-global-user-map
   (kbd "mlu") 'move-line-up)
@@ -113,6 +108,8 @@
 
 
 ;;p commands
+(define-key viper-vi-global-user-map
+  (kbd "p SPC") 'ace-jump-char-mode)
 (define-key viper-vi-global-user-map
   (kbd "ps") 'helm-swoop)
 ;; This will let you browse through all the stuff you've killed.
@@ -155,10 +152,18 @@
   (kbd "prn") 'number-to-register)
 (define-key viper-vi-global-user-map
   (kbd "prn") 'number-to-register)
+;; this will prompt you for a register name. It will store the current buffer position in a register
+(define-key viper-vi-global-user-map
+  (kbd "pr.") 'point-to-register)
+;;This will prompt you for a register name. It will move point to that register's value.
+(define-key viper-vi-global-user-map
+  (kbd "prj") 'jump-to-register)
+
 
 ;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
-(define-key viper-vi-global-user-map (kbd "c.")  'org-time-stamp)
+(define-key viper-vi-global-user-map (kbd "c.")
+  'org-time-stamp)
 (define-key viper-vi-global-user-map
   (kbd "ch") 'help)
 
@@ -198,8 +203,13 @@
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)
 (define-key viper-dired-modifier-map "t" 'dired-previous-line)
-(define-key viper-dired-modifier-map "j"
-  '(lambda () (interactive) (dired-next-line 10)))
-(define-key viper-dired-modifier-map "k"
-  '(lambda () (interactive) (dired-previous-line 10)))
-(setq viper-inhibit-startup-message 't)
+(define-key viper-dired-modifier-map "ca" 'execute-extended-command)
+(define-key viper-dired-modifier-map "cb" 'ido-switch-buffer)
+(define-key viper-dired-modifier-map ".." 'dired-up-directory)
+(define-key viper-dired-modifier-map ".," 'dired-undo)
+(define-key viper-dired-modifier-map "cr" 'repeat)
+;;(define-key viper-dired-modifier-map "j"
+;;  '(lambda () (interactive) (dired-next-line 10)))
+;;(define-key viper-dired-modifier-map "k"
+;;  '(lambda () (interactive) (dired-previous-line 10)))
+;;(setq viper-inhibit-startup-message 't)

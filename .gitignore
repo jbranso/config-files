@@ -1,6 +1,7 @@
 # ignore hidden files
 *.aux
 *.cp
+*.elc
 *.fn
 *.info
 *.ky
@@ -16,6 +17,7 @@
 *.gtk*
 \#*
 .bash_history
+.bash_logout
 .esd_auth
 .emacs.d
 .gimp-2.8/
@@ -39,6 +41,7 @@
 .thumbnails/
 .thunderbird/
 .wine-pipelight/
+.Xauthority
 Downloads
 References.docx
 bransoj@hotmail.com certificate.asc
@@ -47,6 +50,7 @@ Pdnsd - ArchWiki.htm
 Pdnsd - ArchWiki_files/
 aur/
 bookmarks_4_30_14.html
+colorprofile/
 documents/
 Desktop/
 file.txt
