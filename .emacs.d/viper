@@ -86,8 +86,6 @@
   (kbd "cne") 'copy-next-html-element)
 (define-key viper-vi-global-user-map
   (kbd "cj") 'join-bottom-line)
-(define-key viper-vi-global-user-map
-  (kbd "c.") 'set-mark-command)
 					;the m commands
 (define-key viper-vi-global-user-map
   (kbd "mlu") 'move-line-up)
@@ -127,6 +125,8 @@
   (kbd "pv") 'scroll-other-window)
 (define-key viper-vi-global-user-map
   (kbd "pel") 'eval-last-sexp)
+(define-key viper-vi-global-user-map
+  (kbd "pq") 'delete-window)
 
 (define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
@@ -163,7 +163,12 @@
 ;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
 (define-key viper-vi-global-user-map (kbd "c.")
-  'org-time-stamp)
+  '(lambda ()
+     (interactive)
+     (move-end-of-line 1)
+     (newline-and-indent)
+     (org-time-stamp nil)))
+
 (define-key viper-vi-global-user-map
   (kbd "ch") 'help)
 
@@ -213,3 +218,4 @@
 ;;(define-key viper-dired-modifier-map "k"
 ;;  '(lambda () (interactive) (dired-previous-line 10)))
 ;;(setq viper-inhibit-startup-message 't)
+(setq viper-inhibit-startup-message 't)

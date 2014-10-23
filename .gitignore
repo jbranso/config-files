@@ -18,6 +18,8 @@
 \#*
 .bash_history
 .bash_logout
+.config/ImageMagick/
+.dvdcss/
 .esd_auth
 .emacs.d
 .gimp-2.8/
@@ -38,6 +40,7 @@
 .python_history
 .recentf
 .rnd
+.ssr/
 .thumbnails/
 .thunderbird/
 .wine-pipelight/
