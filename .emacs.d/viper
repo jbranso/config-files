@@ -61,7 +61,9 @@
 (define-key viper-vi-global-user-map
   (kbd "cr") 'repeat)
 (define-key viper-vi-global-user-map
-  (kbd "cs") 'save-buffer)
+  (kbd "cs") '(lambda ()
+		(interactive)
+		(save-some-buffers t)))
 (define-key viper-vi-global-user-map
   (kbd "cxc") 'save-buffers-kill-terminal)
 (define-key viper-vi-global-user-map

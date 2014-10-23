@@ -69,4 +69,6 @@ then
     alias chgrp='sudo chgrp'
     alias chmod='sudo chmod'
 fi
+alias wifi='nmtui'
+
 PS1='[\u@\h \W]\$ '

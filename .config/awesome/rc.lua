@@ -76,18 +76,18 @@ wp_files = { "arch_linux1.jpeg", "arch_linux.jpg", "archlinux.png", "dark_tree.j
 wp_timer = timer { timeout = wp_timeout }
 wp_timer:connect_signal("timeout", function()
 
-  -- set wallpaper to current index
-  gears.wallpaper.maximized( wp_path .. wp_files[wp_index] , s, true)
+			   -- set wallpaper to current index
+			   gears.wallpaper.maximized( wp_path .. wp_files[wp_index] , s, true)
 
-  -- stop the timer (we don't need multiple instances running at the same time)
-  wp_timer:stop()
+			   -- stop the timer (we don't need multiple instances running at the same time)
+			   wp_timer:stop()
 
-  -- get next random index
-  wp_index = math.random( 1, #wp_files)
+			   -- get next random index
+			   wp_index = math.random( 1, #wp_files)
 
-  --restart the timer
-  wp_timer.timeout = wp_timeout
-  wp_timer:start()
+			   --restart the timer
+			   wp_timer.timeout = wp_timeout
+			   wp_timer:start()
 end)
 
 -- initial start when rc.lua is first run
@@ -635,12 +635,12 @@ awful.rules.rules = {
    { rule = { class = "Emacs" },
      properties = {
 	opacity = 0.95
-	  },
-   { rule = { class = "gimp" },
-     properties = { floating = true } },
-   -- Set Firefox to always map on tags number 2 of screen 1.
-   -- { rule = { class = "Firefox" },
-   --   properties = { tag = tags[1][2] } },
+     },
+     { rule = { class = "gimp" },
+       properties = { floating = true } },
+     -- Set Firefox to always map on tags number 2 of screen 1.
+     -- { rule = { class = "Firefox" },
+     --   properties = { tag = tags[1][2] } },
 }}
 -- }}}
 
@@ -717,8 +717,8 @@ client.connect_signal("focus", function(c)
 			 -- if the focused client is not maximized, do not color the border.
 			 if (c.maximized == false) then
 			    c.border_color = beautiful.border_focus
--- why does this not work?			 -- else
-			 --    c.border_color = beautful.border_normal
+			    -- why does this not work?			 -- else
+			    --    c.border_color = beautful.border_normal
 			 end
 
 end)
@@ -730,4 +730,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 run_once("firefox")
 --run_once("thunar")
 awful.util.spawn("xcalib /home/joshua/colorprofile/color.icc")
+-- this next line was for getting network-manager working. I probably don't need it.
+-- awful.util.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 -- run_once("xfce4-panel --disable-wm-check")
