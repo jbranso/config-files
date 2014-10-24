@@ -93,8 +93,11 @@
 ;; add a ton of minor modes to text mode this is causing problems when editing HTML mode
 (add-hook 'text-mode-hook 'flyspell-mode)
 
-;;auto typing for emacs This should be really cool!
-(add-hook 'find-file-hook 'auto-insert)
+;;auto-insert, specifes default stuff to load into the emacs file when you create a file.
+;; setq buffer-save... will let you save every buffer you open without asking if you want to save it.
+(add-hook 'find-file-hook (lambda ()
+			    (setq buffer-save-without-query t)
+			    (auto-insert)))
 
 ;; not working
 (add-hook 'eshell-first-time-mode-hook 'viper-change-state-to-emacs)

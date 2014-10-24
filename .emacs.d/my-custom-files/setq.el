@@ -43,4 +43,5 @@
 
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-(setq x-select-enable-clipboard)
+;; let emacs use the os clipboard
+(setq x-select-enable-primary t)

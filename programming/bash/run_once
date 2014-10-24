@@ -1,0 +1,3 @@
+#!/bin/bash
+#alternative run_once
+pgrep $@ > /dev/null || ($@ &)

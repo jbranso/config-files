@@ -48,12 +48,18 @@
   (kbd "ce") 'kill-word)
 (define-key viper-vi-global-user-map
   (kbd "co")'backward-kill-word)
+;;cut from point to the end of the line
 (define-key viper-vi-global-user-map
-  (kbd "cc") 'kill-ring-save)
+  (kbd "cu") '(lambda ()
+		(interactive)
+		(kill-visual-line nil)))
+;;cut/kill from point to the beginning of the line
 (define-key viper-vi-global-user-map
-  (kbd "ck") 'kill-line)
+  (kbd "ca") '(lambda ()
+		(interactive)
+		(kill-visual-line 0)))
 (define-key viper-vi-global-user-map
-  (kbd "cu") 'kill-region)
+  (kbd "ck") 'kill-region)
 (define-key viper-vi-global-user-map
   (kbd "cp") 'viper-put-back)
 (define-key viper-vi-global-user-map
@@ -71,7 +77,7 @@
 (define-key viper-vi-global-user-map
   (kbd "cb") 'ido-switch-buffer)
 (define-key viper-vi-global-user-map
-  (kbd "ca") 'execute-extended-command)
+  (kbd "c'") 'execute-extended-command)
 (define-key viper-vi-global-user-map
   (kbd "c<") 'beginning-of-buffer)
 (define-key viper-vi-global-user-map
@@ -88,7 +94,11 @@
   (kbd "cne") 'copy-next-html-element)
 (define-key viper-vi-global-user-map
   (kbd "cj") 'join-bottom-line)
-					;the m commands
+(define-key viper-vi-global-user-map
+  (kbd "cq") 'delete-window)
+
+
+;;the m commands
 (define-key viper-vi-global-user-map
   (kbd "mlu") 'move-line-up)
 (define-key viper-vi-global-user-map
@@ -127,11 +137,25 @@
   (kbd "pv") 'scroll-other-window)
 (define-key viper-vi-global-user-map
   (kbd "pel") 'eval-last-sexp)
-(define-key viper-vi-global-user-map
-  (kbd "pq") 'delete-window)
+
 
 (define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
+;;copy words and lines get this working
+(define-key viper-vi-global-user-map
+  (kbd "ga") '(lamdba ()
+		      (interactive)
+		      (kill-visual-line 0)
+		      (undo)))
+(define-key viper-vi-global-user-map
+  (kbd "gu") '(lamdba ()
+		      (interactive)
+		      (kill-visual-line nil)
+		      (viper-undo)))
+(define-key viper-vi-global-user-map
+  (kbd "ge") 'goto-line)
+(define-key viper-vi-global-user-map
+  (kbd "go") 'goto-line)
 
 ;; the p commands
 (define-key viper-vi-global-user-map
@@ -144,6 +168,8 @@
   (kbd "p.") 'er/expand-region)
 (define-key viper-vi-global-user-map
   (kbd "p,") 'er/contract-region)
+(define-key viper-vi-global-user-map
+  (kbd "ph") 'help)
 (define-key viper-vi-global-user-map
   (kbd "prp") 'insert-register)
 (define-key viper-vi-global-user-map
@@ -172,14 +198,19 @@
      (org-time-stamp nil)))
 
 (define-key viper-vi-global-user-map
-  (kbd "ch") 'help)
-
-(define-key viper-vi-global-user-map
   (kbd "w;") 'web-mode-comment-or-uncomment)
 (define-key viper-vi-global-user-map
   (kbd "wf") 'web-mode-fold-or-unfold)
 (define-key viper-vi-global-user-map
   (kbd "pf") 'web-mode-fold-or-unfold)
+;;copy marked region
+(define-key viper-vi-global-user-map
+  (kbd "pc") 'kill-ring-save)
+;; pa copies from point to beginning of line
+
+;; pu copies from point to the beginning of the line
+
+
 
 (define-key viper-vi-global-user-map
   (kbd "kb") 'ido-kill-buffer)
@@ -188,6 +219,9 @@
 
 (define-key viper-vi-global-user-map
   (kbd "<return>") 'newline-and-indent)
+
+(define-key viper-vi-global-user-map
+  (kbd "q") 'ido-kill-buffer)
 
 (define-key viper-vi-global-user-map
   (kbd "yn") 'windmove-left)
@@ -206,15 +240,18 @@
 ;; 		 (forward-char)))
 (define-key viper-insert-global-user-map
   (kbd "C-d") 'delete-char)
+(define-key viper-insert-global-user-map
+  (kbd "<backspace>") 'delete-backward-char)
 
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)
 (define-key viper-dired-modifier-map "t" 'dired-previous-line)
-(define-key viper-dired-modifier-map "ca" 'execute-extended-command)
+(define-key viper-dired-modifier-map "c'" 'execute-extended-command)
 (define-key viper-dired-modifier-map "cb" 'ido-switch-buffer)
 (define-key viper-dired-modifier-map ".." 'dired-up-directory)
 (define-key viper-dired-modifier-map ".," 'dired-undo)
 (define-key viper-dired-modifier-map "cr" 'repeat)
+
 ;;(define-key viper-dired-modifier-map "j"
 ;;  '(lambda () (interactive) (dired-next-line 10)))
 ;;(define-key viper-dired-modifier-map "k"
