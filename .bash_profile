@@ -4,8 +4,22 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+# I've just turned emacs ediff into something I can use!
+function ediff() {
+    if [ "X${2}" = "X" ]; then
+	echo "USAGE: ediff <FILE 1> <FILE 2>"
+    else
+	# The --eval flag takes lisp code and evaluates it with EMACS
+	emacs --eval "(ediff-files \"$1\" \"$2\")"
+    fi
+}
+
 #extend my path
 PATH="/home/joshua/programming/bash:$PATH"
+PACMAN="pacmatic"
+DIFFEDITCMD="ediff"
+pacdiff_program="ediff"
+pacman_program="yaourt"
 
 #This automagically starts awesome after I log in
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

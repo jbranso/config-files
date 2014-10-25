@@ -71,4 +71,18 @@ then
 fi
 alias wifi='nmtui'
 
+# I've just turned emacs ediff into something I can use!
+function ediff() {
+    if [ "X${2}" = "X" ]; then
+	echo "USAGE: ediff <FILE 1> <FILE 2>"
+    else
+	# The --eval flag takes lisp code and evaluates it with EMACS
+	emacs --eval "(ediff-files \"$1\" \"$2\")"
+    fi
+}
+
+PACMAN="pacmatic"
+DIFFEDITCMD="ediff"
+pacdiff_program="ediff"
+pacman_program="yaourt"
 PS1='[\u@\h \W]\$ '

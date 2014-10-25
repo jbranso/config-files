@@ -38,7 +38,7 @@
 			    ;; (define-key viper-vi-global-user-map (kbd "TAB") 'viper-org-cycle)
 			    ))
 
-;;(add-hook 'web-mode-hook 'auto-fill-mode)
+
 (global-visual-line-mode 1)
 
 ;;enabling minor modes for my major modes
@@ -48,46 +48,47 @@
 (add-hook 'python-mode-hook 'auto-insert-mode)
 (add-hook 'lua-mode-hook 'auto-insert-mode)
 (add-hook 'html-mode-hook 'auto-insert-mode)
-(add-hook 'web-mode-hook 'auto-insert-mode)
 
 ;;(add-hook 'cc-mode-hook 'yas-minor-mode-on)
 ;;(add-hook 'c++-mode-hook 'yas-minor-mode)
 ;;(add-hook 'python-mode-hook 'yas-minor-mode-on)
 ;;(add-hook 'lua-mode-hook 'yas-minor-mode)
 ;;(add-hook 'html-mode-hook 'yas-minor-mode-on)
-;;(add-hook 'web-mode-hook 'yas-minor-mode)
-
 
 (add-hook 'cc-mode-hook 'abbrev-mode)
 (add-hook 'c++-mode-hook 'abbrev-mode)
 (add-hook 'python-mode-hook 'abbrev-mode)
 (add-hook 'lua-mode-hook 'abbrev-mode)
 (add-hook 'html-mode-hook 'abbrev-mode)
-(add-hook 'web-mode-hook 'abbrev-mode)
+;;(add-hook 'web-mode-hook 'yas-minor-mode)
+(add-hook 'web-mode-hook '(lambda ()
+			    (abbrev-mode)
+			    (auto-insert-mode)))
+
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 
 (add-hook 'c++-mode-hook
-          (lambda ()
-            (flyspell-prog-mode)
+	  (lambda ()
+	    (flyspell-prog-mode)
 	    ))
 
 (add-hook 'c-mode-hook 'flyspell-prog-mode)
 
 (add-hook 'lua-mode-hook
-          (lambda ()
-            (flyspell-prog-mode)
+	  (lambda ()
+	    (flyspell-prog-mode)
 	    ))
 
 (add-hook 'python-mode-hook
-          (lambda ()
-            (flyspell-prog-mode)
+	  (lambda ()
+	    (flyspell-prog-mode)
 	    ))
 
 (add-hook 'bash-mode-hook
-          (lambda ()
-            (flyspell-prog-mode)
+	  (lambda ()
+	    (flyspell-prog-mode)
 	    ))
 
 ;; add a ton of minor modes to text mode this is causing problems when editing HTML mode

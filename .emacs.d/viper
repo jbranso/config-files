@@ -61,9 +61,9 @@
 (define-key viper-vi-global-user-map
   (kbd "ck") 'kill-region)
 (define-key viper-vi-global-user-map
-  (kbd "cp") 'viper-put-back)
+  (kbd "cP") 'viper-put-back)
 (define-key viper-vi-global-user-map
-  (kbd "cP") 'viper-Put-back)
+  (kbd "cp") 'viper-Put-back)
 (define-key viper-vi-global-user-map
   (kbd "cr") 'repeat)
 (define-key viper-vi-global-user-map
@@ -251,6 +251,8 @@
 (define-key viper-dired-modifier-map ".." 'dired-up-directory)
 (define-key viper-dired-modifier-map ".," 'dired-undo)
 (define-key viper-dired-modifier-map "cr" 'repeat)
+
+;;(define-key viper-info-modifier-map "c'" 'execute-extended-command)
 
 ;;(define-key viper-dired-modifier-map "j"
 ;;  '(lambda () (interactive) (dired-next-line 10)))
