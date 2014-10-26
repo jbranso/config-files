@@ -24,9 +24,8 @@
 
 (add-hook 'after-save-hook
 	  (lambda ()
-	    (if (string= (buffer-file-name) "/home/joshua/.emacs.d/init.el")
-		(byte-compile-file "/home/joshua/.emacs.d/init.el")
-	      (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files"))))
+	    (byte-compile-file "/home/joshua/.emacs.d/init.el")
+	    (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files")))
 
 ;; make org mode start up with auto fill mode
 (add-hook 'org-mode-hook '(lambda ()
@@ -55,16 +54,12 @@
 ;;(add-hook 'lua-mode-hook 'yas-minor-mode)
 ;;(add-hook 'html-mode-hook 'yas-minor-mode-on)
 
-(add-hook 'cc-mode-hook 'abbrev-mode)
-(add-hook 'c++-mode-hook 'abbrev-mode)
-(add-hook 'python-mode-hook 'abbrev-mode)
-(add-hook 'lua-mode-hook 'abbrev-mode)
-(add-hook 'html-mode-hook 'abbrev-mode)
-;;(add-hook 'web-mode-hook 'yas-minor-mode)
-(add-hook 'web-mode-hook '(lambda ()
-			    (abbrev-mode)
-			    (auto-insert-mode)))
-
+;;(add-hook 'cc-mode-hook 'abbrev-mode)
+;;(add-hook 'c++-mode-hook 'abbrev-mode)
+;;(add-hook 'python-mode-hook 'abbrev-mode)
+;;(add-hook 'lua-mode-hook 'abbrev-mode)
+;;(add-hook 'html-mode-hook 'abbrev-mode)
+(add-hook 'web-mode-hook 'yas-minor-mode)
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))

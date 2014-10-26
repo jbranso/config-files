@@ -188,10 +188,10 @@
   (interactive)
   (find-file "~/.emacs.d/my-custom-files/skeletons.el"))
 
-;;(defun setq ()
-;;  "This command opens ~/.emacs.d/setq.el"
-;;  (interactive)
-;;  (find-file "~/.emacs.d/my-custom-files/setq.el"))
+(defun variables ()
+  "This command opens ~/.emacs.d/setq.el"
+  (interactive)
+  (find-file "~/.emacs.d/my-custom-files/variables.el"))
 
 (defun systemd.texi ()
   "This command opens ~/manuals/systemd.texi"

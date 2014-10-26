@@ -44,6 +44,9 @@
 ;; the c commands
 (define-key viper-vi-global-user-map
   (kbd "c SPC") 'ace-jump-char-mode)
+;; This will let you browse through all the stuff you've killed.
+(define-key viper-vi-global-user-map
+  (kbd "cb") 'browse-kill-ring)
 (define-key viper-vi-global-user-map
   (kbd "ce") 'kill-word)
 (define-key viper-vi-global-user-map
@@ -67,15 +70,7 @@
 (define-key viper-vi-global-user-map
   (kbd "cr") 'repeat)
 (define-key viper-vi-global-user-map
-  (kbd "cs") '(lambda ()
-		(interactive)
-		(save-some-buffers t)))
-(define-key viper-vi-global-user-map
   (kbd "cxc") 'save-buffers-kill-terminal)
-(define-key viper-vi-global-user-map
-  (kbd "cf") 'ido-find-file)
-(define-key viper-vi-global-user-map
-  (kbd "cb") 'ido-switch-buffer)
 (define-key viper-vi-global-user-map
   (kbd "c'") 'execute-extended-command)
 (define-key viper-vi-global-user-map
@@ -110,8 +105,6 @@
 (define-key viper-vi-global-user-map
   (kbd "M") 'viper-alternate-Meta-key)
 (define-key viper-vi-global-user-map
-  (kbd "'") 'viper-alternate-Meta-key)
-(define-key viper-vi-global-user-map
   (kbd "m;") 'er/mark-comment)
 (define-key viper-vi-global-user-map
   (kbd "mnt") 'mc/mark-next-like-this)
@@ -121,10 +114,11 @@
 (define-key viper-vi-global-user-map
   (kbd "p SPC") 'ace-jump-char-mode)
 (define-key viper-vi-global-user-map
-  (kbd "ps") 'helm-swoop)
-;; This will let you browse through all the stuff you've killed.
+  (kbd "'s") '(lambda ()
+		(interactive)
+		(save-some-buffers t)))
 (define-key viper-vi-global-user-map
-  (kbd "pb") 'browse-kill-ring)
+  (kbd "ps") 'helm-swoop)
 (define-key viper-vi-global-user-map
   (kbd "pd") 'dired-jump)
 (define-key viper-vi-global-user-map
@@ -190,12 +184,9 @@
 
 ;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
-(define-key viper-vi-global-user-map (kbd "c.")
-  '(lambda ()
-     (interactive)
-     (move-end-of-line 1)
-     (newline-and-indent)
-     (org-time-stamp nil)))
+(define-key viper-vi-global-user-map (kbd "cis")  'org-schedule)
+(define-key viper-vi-global-user-map (kbd "cid")  'org-deadline)
+
 
 (define-key viper-vi-global-user-map
   (kbd "w;") 'web-mode-comment-or-uncomment)
@@ -203,11 +194,12 @@
   (kbd "wf") 'web-mode-fold-or-unfold)
 (define-key viper-vi-global-user-map
   (kbd "pf") 'web-mode-fold-or-unfold)
+(define-key viper-vi-global-user-map
+  (kbd "pb") 'ido-switch-buffer)
 ;;copy marked region
 (define-key viper-vi-global-user-map
   (kbd "pc") 'kill-ring-save)
 ;; pa copies from point to beginning of line
-
 ;; pu copies from point to the beginning of the line
 
 
@@ -231,7 +223,8 @@
   (kbd "yt") 'windmove-up)
 (define-key viper-vi-global-user-map
   (kbd "yh") 'windmove-down)
-
+(define-key viper-vi-global-user-map
+  (kbd "yf") 'ido-find-file)
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map
