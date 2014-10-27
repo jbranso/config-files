@@ -74,9 +74,9 @@
 (define-key viper-vi-global-user-map
   (kbd "c'") 'execute-extended-command)
 (define-key viper-vi-global-user-map
-  (kbd "c<") 'beginning-of-buffer)
+  (kbd "<") 'beginning-of-buffer)
 (define-key viper-vi-global-user-map
-  (kbd "c>") 'end-of-buffer)
+  (kbd ">") 'end-of-buffer)
 (define-key viper-vi-global-user-map
   (kbd "c3") 'split-window-right)
 (define-key viper-vi-global-user-map
@@ -101,7 +101,7 @@
 (define-key viper-vi-global-user-map
   (kbd "mm") 'viper-register-macro)
 (define-key viper-vi-global-user-map
-  (kbd "mh") 'set-mark-command)
+  (kbd "m.") 'set-mark-command)
 (define-key viper-vi-global-user-map
   (kbd "M") 'viper-alternate-Meta-key)
 (define-key viper-vi-global-user-map
@@ -132,24 +132,41 @@
 (define-key viper-vi-global-user-map
   (kbd "pel") 'eval-last-sexp)
 
-
 (define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
 ;;copy words and lines get this working
 (define-key viper-vi-global-user-map
-  (kbd "ga") '(lamdba ()
-		      (interactive)
-		      (kill-visual-line 0)
-		      (undo)))
+  (kbd "ga") '(lambda ()
+		(interactive)
+		(kill-visual-line 0)
+		(undo)))
 (define-key viper-vi-global-user-map
-  (kbd "gu") '(lamdba ()
-		      (interactive)
-		      (kill-visual-line nil)
-		      (viper-undo)))
+  (kbd "gu") '(lambda ()
+		(interactive)
+		(kill-visual-line nil)
+		(yank)
+		(beginning-of-line)))
+
 (define-key viper-vi-global-user-map
-  (kbd "ge") 'goto-line)
+  (kbd "go") '(lambda ()
+		(interactive)
+		(let (firstLetter lastLetter)
+		  (backward-word)
+		  (setq firstLetter (point))
+		  (forward-word)
+		  (setq lastLetter (point))
+		  (kill-ring-save firstLetter lastLetter))))
+
 (define-key viper-vi-global-user-map
-  (kbd "go") 'goto-line)
+  (kbd "ge") '(lambda ()
+		(interactive)
+		(let (firstLetter lastLetter)
+		  (forward-word)
+		  (backward-word)
+		  (setq firstLetter (point))
+		  (forward-word)
+		  (setq lastLetter (point))
+		  (kill-ring-save firstLetter lastLetter))))
 
 ;; the p commands
 (define-key viper-vi-global-user-map

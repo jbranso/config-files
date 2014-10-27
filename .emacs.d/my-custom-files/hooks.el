@@ -59,7 +59,11 @@
 ;;(add-hook 'python-mode-hook 'abbrev-mode)
 ;;(add-hook 'lua-mode-hook 'abbrev-mode)
 ;;(add-hook 'html-mode-hook 'abbrev-mode)
-(add-hook 'web-mode-hook 'yas-minor-mode)
+(add-hook 'web-mode-hook
+	  (lambda ()
+	    (flyspell-prog-mode)
+	    (yas-minor-mode)
+	    ))
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))

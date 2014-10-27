@@ -627,11 +627,6 @@ awful.rules.rules = {
 	opacity = 0.9,
      },
    },
-   { rule = { class = "Thunar" },
-     properties = {
-	opacity = 0.5,
-     },
-   },
    { rule = { class = "Emacs" },
      properties = {
 	opacity = 0.95
