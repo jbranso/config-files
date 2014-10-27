@@ -11,6 +11,7 @@
 -- WM_NAME(STRING) gives you the name of the selected window (usually something like the web page title
 -- for browsers, or the file name for emacs).
 table5={
+   ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox","Firefox"},
    ["Control-e"]={"emacs", "Emacs"},
    ["Control-g"]={"gimp-2.8", "Gimp-2.8"},
