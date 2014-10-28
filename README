@@ -1,0 +1,7 @@
+
+
+These are my config files for emacs and rc.lua among other projects.
+
+Fair warning. I use a dvorak keyboard, so my modified keybindings reflect this. Also, I love modal editing, so
+I use viper-mode. So, if you try to use my init.el, don't blame me if you don't understand how it works.
+
