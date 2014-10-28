@@ -183,6 +183,11 @@
   (interactive)
   (find-file "~/.emacs.d/my-custom-files/abbrev_defs"))
 
+(defun modal-emacs
+    "command opens ~/.emacs.d/modal/modal-changes.el"
+  (interactive)
+  (find-file "~/.emacs.d/modal/modal-changes.el"))
+
 (defun skeletons ()
   "This command opens ~/.emacs.d/skeletons.el"
   (interactive)

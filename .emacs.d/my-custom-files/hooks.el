@@ -46,7 +46,6 @@
 (add-hook 'c++-mode-hook 'auto-insert-mode)
 (add-hook 'python-mode-hook 'auto-insert-mode)
 (add-hook 'lua-mode-hook 'auto-insert-mode)
-(add-hook 'html-mode-hook 'auto-insert-mode)
 
 ;;(add-hook 'cc-mode-hook 'yas-minor-mode-on)
 ;;(add-hook 'c++-mode-hook 'yas-minor-mode)
@@ -63,6 +62,7 @@
 	  (lambda ()
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
+	    (helm-mode)
 	    ))
 
 (dolist (hook '(text-mode-hook))

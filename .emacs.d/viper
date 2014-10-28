@@ -24,13 +24,30 @@
   (kbd "SPC") 'viper-space)
 
 (define-key viper-vi-global-user-map
-  (kbd "a")'viper-beginning-of-line)
+  (kbd "a") 'beginning-of-line )
 (define-key viper-vi-global-user-map
-  (kbd "u") 'move-end-of-line)
+  (kbd "M-a") 'backward-paragraph)
+(define-key viper-vi-global-user-map
+  (kbd "A") '(lambda ()
+	       (interactive)
+	       (viper-Insert t)))
+(define-key viper-vi-global-user-map
+  (kbd "u") 'end-of-line)
+(define-key viper-vi-global-user-map
+  (kbd "M-u") 'forward-paragraph)
+(define-key viper-vi-global-user-map
+  (kbd "U") '(lambda ()
+	       (interactive)
+	       (viper-Insert t)
+	       (end-of-line)))
 (define-key viper-vi-global-user-map
   (kbd "e")'forward-word)
 (define-key viper-vi-global-user-map
+  (kbd "M-e")'forward-sentence)
+(define-key viper-vi-global-user-map
   (kbd "o")'backward-word)
+(define-key viper-vi-global-user-map
+  (kbd "M-o")' 'backword-sentence)
 (define-key viper-vi-global-user-map
   (kbd ".") 'viper-undo)
 (define-key viper-vi-global-user-map
@@ -72,7 +89,7 @@
 (define-key viper-vi-global-user-map
   (kbd "cxc") 'save-buffers-kill-terminal)
 (define-key viper-vi-global-user-map
-  (kbd "c'") 'execute-extended-command)
+  (kbd "c'") 'helm-M-x)
 (define-key viper-vi-global-user-map
   (kbd "<") 'beginning-of-buffer)
 (define-key viper-vi-global-user-map
@@ -212,7 +229,7 @@
 (define-key viper-vi-global-user-map
   (kbd "pf") 'web-mode-fold-or-unfold)
 (define-key viper-vi-global-user-map
-  (kbd "pb") 'ido-switch-buffer)
+  (kbd "pb") 'helm-mini)
 ;;copy marked region
 (define-key viper-vi-global-user-map
   (kbd "pc") 'kill-ring-save)
@@ -227,9 +244,6 @@
   (kbd "kl") 'kill-line)
 
 (define-key viper-vi-global-user-map
-  (kbd "<return>") 'newline-and-indent)
-
-(define-key viper-vi-global-user-map
   (kbd "q") 'ido-kill-buffer)
 
 (define-key viper-vi-global-user-map
@@ -241,7 +255,7 @@
 (define-key viper-vi-global-user-map
   (kbd "yh") 'windmove-down)
 (define-key viper-vi-global-user-map
-  (kbd "yf") 'ido-find-file)
+  (kbd "yf") 'helm-find-files)
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map
@@ -253,20 +267,16 @@
 (define-key viper-insert-global-user-map
   (kbd "<backspace>") 'delete-backward-char)
 
+(define-key viper-insert-global-user-map
+  (kbd "<return>") 'newline-and-indent)
+
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)
 (define-key viper-dired-modifier-map "t" 'dired-previous-line)
-(define-key viper-dired-modifier-map "c'" 'execute-extended-command)
+(define-key viper-dired-modifier-map "c'" 'helm-M-x)
 (define-key viper-dired-modifier-map "cb" 'ido-switch-buffer)
 (define-key viper-dired-modifier-map ".." 'dired-up-directory)
 (define-key viper-dired-modifier-map ".," 'dired-undo)
 (define-key viper-dired-modifier-map "cr" 'repeat)
 
-;;(define-key viper-info-modifier-map "c'" 'execute-extended-command)
-
-;;(define-key viper-dired-modifier-map "j"
-;;  '(lambda () (interactive) (dired-next-line 10)))
-;;(define-key viper-dired-modifier-map "k"
-;;  '(lambda () (interactive) (dired-previous-line 10)))
-;;(setq viper-inhibit-startup-message 't)
 (setq viper-inhibit-startup-message 't)
