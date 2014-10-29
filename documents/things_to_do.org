@@ -528,7 +528,7 @@ etc.
 <x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
 <x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
 
-    SCHEDULED: <<2014-11-05 Wed>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
     captcha
 
     navbar/navPanel
@@ -557,7 +557,33 @@ etc.
 <x-color><param>#7CB8BB</param>*** coding for emacs</x-color>
 <x-color><param>#D0BF8F</param>**** make emacs bindings</x-color>
 <x-color><param>#93E0E3</param>***** bind org-metaup and org-metadown</x-color>
+<x-color><param>#93E0E3</param>***** (org-agenda-next-line) (org-agenda-previous-line)</x-color>
+
 <x-color><param>#93E0E3</param>***** bind a command that evaluates current lisp list</x-color>
+<x-color><param>#93E0E3</param>***** C-a make whole buffer</x-color>
+
+<x-color><param>#93E0E3</param>***** C-c letter are reserved for users according to the emacs manual</x-color>
+
+      Function keys <<F5> through <<F9> without modifier keys are also reserved for users to define. Sequences
+      consisting of C-c followed by a control character or a digit are reserved for major modes. Sequences
+      consisting of C-c followed by {, }, <<, >, : or ; are also reserved for major modes. Sequences
+      consisting of C-c followed by any other punctuation character are allocated for minor modes. Using
+      them in a major mode is not absolutely prohibited, but if you do that, the major mode binding may be
+      shadowed from time to time by minor modes. Don't bind C-h following any prefix character (including
+      C-c). If you don't bind C-h, it is automatically available as a help character for listing the
+      subcommands of the prefix character. Don't bind a key sequence ending in <<ESC> except following
+      another <<ESC>. (That is, it is OK to bind a sequence ending in <<ESC> <<ESC>.)
+      
+      The reason for this rule is that a non-prefix binding for <<ESC> in any context prevents recognition of
+      escape sequences as function keys in that context. Similarly, don't bind a key sequence ending in
+      <<C-g>, since that is commonly used to cancel a key sequence. Anything that acts like a temporary mode
+      or state that the user can enter and leave should define <<ESC> <<ESC> or <<ESC> <<ESC> <<ESC> as a way to
+      escape.
+      
+      For a state that accepts ordinary Emacs commands, or more generally any kind of state in which <<ESC>
+      followed by a function key or arrow key is potentially meaningful, then you must not define <<ESC>
+      <<ESC>, since that would preclude recognizing an escape sequence after <<ESC>. In these states, you
+      should define <<ESC> <<ESC> <<ESC> as the way to escape. Otherwise, define <<ESC> <<ESC> instead.
 
 <x-color><param>#7CB8BB</param>*** HTML5 games</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Hack Duke in CIEMAS I'm in the facebook group. They will provide a bus.</x-color>
