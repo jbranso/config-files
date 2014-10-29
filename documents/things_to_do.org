@@ -1,0 +1,1438 @@
+Content-Type: text/enriched
+Text-Width: 108
+
+#+TAGS:waiting(w) art(a) career(r) job(j) community(m) gnu(g) school(s) finance(f) fitness(t) someday(o) project(p) reference(r) calendar(c) reward(d)
+
+<x-color><param>#DFAF8F</param>* collection notes</x-color>
+
+write down a quick note of the stuff you need done. Don't think about next action items or scheduling. Just write down
+the things you need to do.
+
+<x-color><param>#DFAF8F</param>* process notes</x-color>
+
+process the top item first and work your way down one at a time. Don't skip items unless skipping will appease your adhd.
+If you are going down the list, and see something that needs attention further on, don't skip the item that you are on. If you do,
+you are likely to forget the stuff that you are doing now.
+Look at the item and first figure out if you do it.
+If you can't act on it, delete it, incubate it for later review, store it as reference material.
+If you can act on it, determine the next action and if it will take less than 2 minutes to do it, do it.
+If it will take longer than 2 minutes, determine if it is a project and mark it as such, so you can do the next next action
+after the next action is done.
+If it is a task, which means one action will complete the task, write down the next action. Then decide if someone else
+should do the next action. If someone else should do the next action, have them do it. Then mark the task with waiting.
+If you need to do it, mark it as deferred. It is ok to add a deadline and a timestamp.
+Once have have a tagged list of deferred items, it is time to tag those deferred items into the calender or nextaction. Next actions
+might need to be further tagged into school, entertaiment, gnu, finance, fitness, job, career, service, community, art. I may decide
+later that all of these extra tags are really not needed.
+1 collect things that command our attention
+2 process what they mean and what to do about them
+3 organize the results
+4 review what options we have to do
+5 act
+After you have processed you should have at least 7 basic categories
+A Projects list
+A project Support material
+calendared actions and information. These are things you do on the specified day. I don't need a tag for this though. The stuff that I
+need to put on the calender, I will schedule and it will appear in the agenda view. However, if I need to do one task, that is not
+associated with a project and will most likely be deleted after I complete it, this would be a good spot to put those tasks.
+next actions list these are things you do today.
+a waiting for list. These are things you've told other people to do, and you are waiting to hear back from them.
+reference material
+a someday/maybe list  These are things you might do someday.
+It is very important that you keep your items in the appropriate category. If you put stuff in the next items that really should go
+to the calendar, then you won't trust your calendar list. You'll have to keep checking your next items list when you want to know when
+you need to do something. If you put something under projects that belongs to someday/maybe, then you will waste your time trying to
+turn a someday/maybe thing into a project.
+
+<x-color><param>#DFAF8F</param>* someday</x-color>
+<x-color><param>#BFEBBF</param>** gnu someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn HTML5:gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** make arch wifi work at the PCM</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Purdue LUG:gnu:someday:</x-color>
+
+They have an optional webmaster position for Purdue LUG
+create a database of stuff that is in the Purdue LUG library
+feel free to contribute to the Plug wiki
+
+<x-color><param>#D0BF8F</param>**** add tutorials</x-color>
+
+<x-color><param>#D0BF8F</param>**** add content</x-color>
+
+<x-color><param>#D0BF8F</param>**** to create an account add the capcha question to the wiki. The answer to the capcha is on the wiki</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> fix grub error, locale not found...may be why I can't use dvp </x-color><x-color><param>#7CB8BB</param>:gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> When you stick a usb drive on my computer, it will appear as /dev/sdb :gnu:reference:</x-color>
+
+to find out what device in /dev is a usb stick or a dvd, make a text file of $(ls /dev), then a text file of
+$(ls /dev), when you put the usb stick in. Then diff the 2 files.
+The device is probably sdb if it is a usb
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> make cool programs</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU source release Collection. Install the latest GNU releases to aid in development :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GTK+ speed reading document. A window would pop up. There would be a quick explanation followed by eye training pages. :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** expand vision exercises</x-color>
+
+<x-color><param>#D0BF8F</param>**** expand horizontal vision</x-color>
+
+<x-color><param>#D0BF8F</param>**** repeat drills A-E, but read 2 lines at a time. Focus on the space between the center letters</x-color>
+
+<x-color><param>#D0BF8F</param>**** Pacing</x-color>
+
+<x-color><param>#D0BF8F</param>**** repeat the previous drills, but define a pace to read at and read at that pace. Take your time. Relax. Pick an easy so place that</x-color>
+
+you know you can keep. As you get better gradually increase your pace. It can help to actually count each step that you take.
+
+<x-color><param>#D0BF8F</param>**** 2 stop method</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> see what non-free programs are on my computer.:gnu:someday:</x-color>
+
+There is a list of all the files I have downloaded with pacman at /var/log/packman.log
+The program that I have made in ~/programming/bash/, is almost finished.
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> program to search for files for phone numbers, social sequrity numbers, etc. You would you regular expressions. For example :gnu:someday:</x-color>
+
+     to search for phone numbers the regulary expression would be [1-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> all things emacs</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> make my emacs things_to_do.org file be hosted on the internet so I can clone the respository from my work computer and my</x-color>
+
+    actual computer. It may be hard to figure out how to do, but that doesn't mean I shouldn't do it.
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> find out how to make persistant keyboard macros:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn more about emacs registers:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> try exporting an emacs document to odt "C-c C-e o o"  :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> check out org-ecrypt:gnu:someday:</x-color>
+
+**** TODO learn how to replace text in emacs:gnu:someday:
+
+**** TODO learn how to use dired in emacs:gnu:someday:
+
+**** TODO write down some of its capabilites
+
+**** TODO learn about emacs all of these sections can be found in the emacs manual under advanced :gnu:someday:
+
+***** modes
+
+***** indentitation
+
+***** calendar
+
+***** programs
+
+***** building
+
+***** abbrevs
+
+***** autotyping You can insert predefined text into empty files, you can insert skeletons, etc. very cool.
+
+***** turn emacs into your default writer for school papers.
+
+***** check out ruler mode. It displays a ruler at the top of the screen.
+
+***** auto fill mode automatically inserts new lines when your lines become too long
+
+***** auto save mode automatically saves files for you to prevent files from crashing
+
+***** enriched mode allows you to save and edit formatted text.
+
+***** flyspell mode automatically highlights poor code syntax. I should learn how to toggle this mode.
+
+***** tags this allows you to go to any function in a program. Emacs will remember what file it is in and will open that file for you.
+
+**** TODO make emacs insert automatically a blank HTML file when you open up an HTML file. :gnu:someday:
+
+**** TODO see if you can learn about more of emacs keyboard macros :gnu:someday:
+
+**** TODO learn emacs grep:gnu:someday:
+
+**** TODO emacs muse allows one to write something in emacs and then put it in a different format :gnu:someday:
+
+**** DONE change how emacs looks. I would like it to have a vi type feels :gnu:someday:
+
+    CLOSED: [2013-10-12 Sat 16:36]
+    I am using wombat theme. M-x customize-themes will show the themes you can use
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> programs I want to play with</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> use gnucash for budgeting:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn about systemd:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> mcron provides cron jobs https://www.gnu.org/software/mcron/ :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU parallel https://www.gnu.org/software/parallel/:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> get an RSS feed for kickstarter:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn GNU guile https://www.gnu.org/software/guile/:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> try out off the record plugin and gpg plugin for pidgin :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> make Thunderbird use GPG:gnu:someday:</x-color>
+
+**** find an online tutorial to learn how to do it, at most spend a half hour trying to get it to work
+
+**** TODO try out gpg cryptor:gnu:someday:
+
+**** TODO learn KompoZer an open source alternative to dreamweaver :gnu:someday:
+
+**** TODO try libreJS  aka free javascript. This is a mozilla plug-in for your browser :gnu:someday:
+
+**** TODO check out GNUpod if you ever get an iPod. It lets you use your iPod with GNU/Linux :gnu:someday:
+
+**** TODO check out Gcide GNU's English dictionary:gnu:someday:
+
+**** TODO check out Gtypist, a GNU typing tutor:gnu:someday:
+
+**** TODO use Guix to update packages that are free, that Arch does not provide ie: :gnu:someday:
+
+Iceweasel instead of firefox
+Icecat instead of Thunderbird
+sudo guix-daemon -c 2 --build-users-group=guix-builder
+starts the daemon so you can start installing packages
+-c 2 tells guix that you have 2 cores and that it should try to use both.
+I added "joshua guix-builder" to /etc/nix-setuid.conf  This should allow someone to run guix package as a normal user
+At the moment packages can only be installed as root. joshua does not yet have the right to install packages.
+I am installing hello, which is a basic gnu package and help2man, which will turn output from "<<program-name> --help" into a man page
+
+***** TODO why are programs not running?
+
+***** stuff I could use it to install
+
+****** gnupdf
+
+****** linux-libre
+
+**** TODO try solfege musical ear training:gnu:someday:
+
+**** TODO try encrypting data storage on your server on your machine with GPG :gnu:someday:
+
+**** TODO try lsh GNU's implementation of ssh:gnu:someday:
+
+**** TODO learn bash:gnu:someday:
+
+**** TODO learn python:gnu:someday:
+
+**** TODO GNU coreutils:gnu:someday:
+
+**** TODO check out DDD a graphical front-end to gdb:gnu:someday:
+
+**** TODO learn about find utilities:gnu:someday:
+
+**** TODO GDB:gnu:someday:
+
+**** TODO try out Greg. It will automatically test programs that have Guile in them :gnu:someday:
+
+**** TODO guile-gnome:gnu:someday:
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> check out indent. It can easily change the format of code into another format :school:gnu:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> lisp-intro. Learn emacs e-list :gnu:someday:</x-color>
+
+<x-color><param>#93E0E3</param>***** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#93E0E3</param> read chapter 3 in the emacs intor</x-color>
+
+<x-color><param>#9FC59F</param>****** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#9FC59F</param> read 3.1-3 of emacs lisp intro</x-color>
+
+       CLOSED: <x-color><param>#8CD0D3</param>[2013-10-14 Mon 22:05]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-14 Mon></x-color>
+
+<x-color><param>#9FC59F</param>****** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#9FC59F</param> read 3.3-6 emacs lisp intro</x-color>
+
+       CLOSED: <x-color><param>#8CD0D3</param>[2013-10-15 Tue 17:29]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-15 Tue></x-color>
+
+<x-color><param>#9FC59F</param>****** read 3.7-8 emacs lisp intro</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU dmd aka daemon managing daemon. It is a replacement for SysV-init, but it is primarily meant for the HURD. however, it can :gnu:someday:</x-color>
+
+     work on linux, but systemd is probably gonna kick its butt!
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> download GNewsense and see how many GNU packages are in it. Do they use lsh? my default? Do they use systemd? Do they use rottlog :gnu:someday:</x-color>
+
+of the default logging service that systemd provides?
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> read sysutils a gnu manual:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> check out diction https://www.gnu.org/software/diction/ it will analyze a document and let you know if it sounds wordy :gnu:someday:</x-color>
+
+**** TODO sed and awk:gnu:someday:
+
+**** TODO gnu spell https://savannah.gnu.org/projects/spell/:gnu:someday:
+
+**** TODO texinfo:gnu:someday:
+
+**** TODO blender:gnu:someday:
+
+**** TODO gimp use it to make icons for gnu packages:gnu:someday:
+
+**** TODO compile all my cheat sheat texinfo documents:gnu:someday:
+
+
+**** TODO On a server that runs on my tower:gnu:someday:
+
+***** TODO host your own email server and use gpg on top of it:gnu:someday:
+
+***** TODO try gnu net...share files secretly:gnu:someday:
+
+***** TODO check out sqltutor. It teaches you SQL:gnu:someday:
+
+***** TODO try GNU MyServer a free apache replacement:gnu:someday:
+
+***** TODO try media goblin a multimedia web-base software. One can stream multimedia with it :gnu:someday:
+
+***** TODO try out GNU social a facebook replacement. It is not dead, just resting. :gnu:someday:
+
+<x-color><param>#93E0E3</param>***** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#93E0E3</param> try GNU fm. I way to stream music over the web. :gnu:someday:p</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> help the GNU project</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> write manuals for GNU:gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> fix GNU fcrypt website. https://www.gnu.org/software/fcrypt/ It is an on the fly encryption of filesystems. as well as making :gnu:someday:</x-color>
+
+secret partitions
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> check out GNU help wanted https://savannah.gnu.org/people/?type_id=1 :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> get in contact with the GNU volunteers cordinates gvc@gnu.org they will help you get in contact with something to help :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> volunteer with the FSF https://fsf.org/volunteer:gnu:someday:</x-color>
+
+**** TODO volunteer as a GNU webmaster https://www.gnu.org/server/standards/webmaster-quiz.html :gnu:someday:
+
+**** TODO volunteer for on the jobs that GNU needs https://www.gnu.org/server/tasks.html :gnu:someday:
+
+**** TODO sell free software and donate some or all of the money to GNU :gnu:someday:
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> work on nouveau code:gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> check out free software jobs </x-color><x-color><param>#D0BF8F</param>https://www.fsf.org/resources/jobs/</x-color><x-color><param>#7CB8BB</param> :gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn about dev camp:gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> watch </x-color><x-color><param>#D0BF8F</param>https://www.youtube.com/watch?v=TyMLi8QF6sw</x-color><x-color><param>#7CB8BB</param> a systemd video :gnu:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> consider writing for phoronix:gnu:someday:</x-color>
+
+<x-color><param>#BFEBBF</param>** school someday</x-color>
+
+<x-color><param>#BFEBBF</param>** entertaiment someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> read Pat Rothfuss's The Slow regard of Silent Things :entertainment:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Read Jim Butcher Peace talks 		      :entertainment:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** watch southland tales   response to donnie darko</x-color>
+
+<x-color><param>#BFEBBF</param>** art someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn more cool math stuff    :someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Make Harry Dresden Shirt      :entertainment:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** Buy exacto knife, borrow ironing board, buy small spray bottle to make Harry Dresden Shirt :art:someday:</x-color>
+
+<x-color><param>#BFEBBF</param>** career someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** learn how to market myself for a free software job :gnu:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** what sort of education do I need</x-color>
+
+<x-color><param>#D0BF8F</param>**** what sort of stuff must I be able to do</x-color>
+
+<x-color><param>#D0BF8F</param>**** what kind of experience should I have</x-color>
+
+<x-color><param>#BFEBBF</param>** finances someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> try to sell some scarves this winter    :finance:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** next actionable item: ask if anyone is interested in buying one, then buy fabric</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> give an amount of what I make to GNU. 10%?:gnu:finance:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> tithe 10% to God for Beach reach  :finance:community:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> see if GNUnutrition can help me with my fitness goals :fitness:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> see if GNUcash can help me with finances    :finance:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** Apartment</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> The apartment gives me 5 grace days after the 1st of each month. And I am supposed :finance:reference:</x-color>
+
+CLOSED: <x-color><param>#8CD0D3</param>[2013-10-07 Mon 20:43]</x-color>
+to pay at least 2 months at a time.
+SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-07 Mon></x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> find out how much money I'm going to spend this year so I'll know if I need to ask my parents for money :finance:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Estimate how much I am going to spend on the apartment this year. I may need to talk to Kyle</x-color>
+
+<x-color><param>#D0BF8F</param>**** gas</x-color>
+
+<x-color><param>#D0BF8F</param>**** books</x-color>
+
+<x-color><param>#D0BF8F</param>**** internet</x-color>
+
+<x-color><param>#D0BF8F</param>**** water</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> find out what it will mean to move out from my parents house and if I can do it :finance:project:</x-color>
+
+<x-color><param>#D0BF8F</param>**** need to know so I can move out of my parents house</x-color>
+
+<x-color><param>#D0BF8F</param>**** what stuff will I need to pay for when I am completely move out? How much will that stuff cost?</x-color>
+
+<x-color><param>#93E0E3</param>***** gas</x-color>
+
+<x-color><param>#93E0E3</param>***** insurance</x-color>
+
+<x-color><param>#93E0E3</param>***** car payment</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> will I stay on my parents insurance? talk to Dad about this or mom. I will. I can pay my share. :finance:</x-color>
+
+    CLOSED: <x-color><param>#8CD0D3</param>[2013-10-14 Mon 22:06]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-14 Mon></x-color>
+
+*** where will I live next year
+
+*** how will I get to church in the summer
+
+*** with whom will I spend my time in the summer
+
+*** do I need a car?
+
+<x-color><param>#7CB8BB</param>*** make a monthly budget based on what events the PCM offers each month :finance:</x-color>
+
+<x-color><param>#BFEBBF</param>** fitness someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn some form of self-defense    :fitness:someday:</x-color>
+
+<x-color><param>#BFEBBF</param>** community someday</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn more about what books are in the bible why those books are there and not other books :community:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> read about the council of nicea  :community:someday:</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> create a facebook group to go walk on the south side of campus one night :entertainment:community:someday:</x-color>
+
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> find a date that will work. Preferably a Friday or Saturday Night, and make a facebook group.</x-color>
+
+     CLOSED: [2013-10-15 Tue 17:47] SCHEDULED: <<2013-10-15 Tue>
+
+*** TODO encourage churches of different denominations to go to a different church and to work together :community:someday:
+
+*** TODO create a list of things that I belive in about my faith and try to think and find passages in the bible that :community:someday:
+
+backs up what I believe
+
+*** TODO think about what science says why religion must be wrong, convince myself otherwise is evidence agrees with God :community:someday:
+
+*** TODO read Christian books  :community:someday:
+
+don't waste your life
+etc.
+
+*** TODO learn siblings and parents ages and birthdays  :community:someday:
+
+*** TODO buy white erasers for mechanical pencils     :errand:someday:
+
+*** TODO learn how to pick up chicks  :community:someday:
+
+*** TODO climb tree outside PCM  :community:someday:
+
+*** TODO determine if I agree with Calvanism, Lutherism, Jesusism, etc. :community:someday:
+
+*** TODO play the piano for thursday night worship  :community:someday:
+
+*** TODO give a sermon at culver  :community:someday:
+
+*** TODO try to discern God's plan for me  :community:someday:
+
+*** TODO find someone to mentor and teach them about Jesus :community:someday:
+
+*** TODO find someone to mentor and teach them about Jesus :community:someday:
+
+*** TODO learn more bible verses  :community:someday:
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> figure out what stuff I want to donate to good will that is my parents basement </x-color><x-color><param>#7CB8BB</param>:community:someday:</x-color>
+
+<x-color><param>#DFAF8F</param>* waiting</x-color>
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> reply to David on Facebook when he does    </x-color><x-color><param>#BFEBBF</param>:waiting:</x-color>
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> reply to dobbins when he does on facebook    </x-color><x-color><param>#BFEBBF</param>:waiting:</x-color>
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> wait 'til kyle tells me what the electric bill is for october, then pay </x-color><x-color><param>#BFEBBF</param>:finance:waiting:</x-color>
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#BFEBBF</param> ask Rick when I should start looking for another job for next semester </x-color><x-color><param>#BFEBBF</param>:waiting:job:finance:</x-color>
+
+   CLOSED: <x-color><param>#8CD0D3</param>[2013-10-14 Mon 13:06]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-14 Mon></x-color>
+
+
+<x-color><param>#DFAF8F</param>* projects</x-color>
+
+<x-color><param>#BFEBBF</param>** School stuff. Homework, study, exams, etc.		     </x-color><x-color><param>#BFEBBF</param>:school:project:</x-color>
+<x-color><param>#7CB8BB</param>*** Religion Class</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Paper Due on October 31</x-color>
+
+     DEADLINE: <x-color><param>#8CD0D3</param><<2014-10-31 Fri 13:00></x-color>
+<x-color><param>#D0BF8F</param>**** write draft for religion paper</x-color>
+
+     The exam topics are on blackboard. One is under announcements and the other 8 in paper topics.
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
+<x-color><param>#7CB8BB</param>*** ethics class</x-color>
+<x-color><param>#D0BF8F</param>**** ethics final 7-9pm in normal classroom</x-color>
+
+   <x-color><param>#8CD0D3</param><<2014-12-15 Mon></x-color>
+
+<x-color><param>#D0BF8F</param>**** write up cheat sheet for the ethics final</x-color>
+
+     <x-color><param>#8CD0D3</param><<2014-12-13 Sat></x-color>
+<x-color><param>#7CB8BB</param>*** german</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Kapitol 8</x-color>
+
+    <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
+<x-color><param>#D0BF8F</param>**** HW p. 338 Ubungen 3, 5, 6.</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed 14:00></x-color>
+<x-color><param>#D0BF8F</param>**** German in class essay wear a costume for extra credit!</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-31 Fri></x-color>
+<x-color><param>#7CB8BB</param>*** stat</x-color>
+<x-color><param>#D0BF8F</param>**** mixable # 2</x-color>
+
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color> DEADLINE: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 23:59></x-color>
+<x-color><param>#D0BF8F</param>**** go to stat exam 2 in EE129:</x-color>
+
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu 18:30-19:30></x-color>
+<x-color><param>#D0BF8F</param>**** ask TA where exam 2 is....in EE129?</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+<x-color><param>#D0BF8F</param>**** make a study sheet for the exam</x-color>
+
+     unit 12 2 way tables won't be on the exam!
+
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
+<x-color><param>#7CB8BB</param>*** metalogic</x-color>
+
+<x-color><param>#7CB8BB</param>*** PCM study session (org-cycle)</x-color>
+<x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
+<x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
+
+<x-color><param>#BFEBBF</param>** Job Search</x-color>
+<x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
+<x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
+
+    SCHEDULED: <<2014-11-05 Wed>
+    captcha
+
+    navbar/navPanel
+
+    courses.php
+<x-color><param>#7CB8BB</param>*** get business cards of yourself.</x-color>
+
+    If you have a problem with your website I can fix it. If I can't I know someone who can.
+<x-color><param>#7CB8BB</param>*** BRNG 1284 Networking and Master's breakfast</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 08:00></x-color>
+<x-color><param>#7CB8BB</param>*** Do CCO mock interviews</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> create an Interview stream account</x-color>
+
+     CLOSED: <x-color><param>#8CD0D3</param>[2014-09-25 Thu 18:12]</x-color>
+<x-color><param>#93E0E3</param>***** record myself doing an interview</x-color>
+
+      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
+      <x-color><param>#8CD0D3</param><<2014-09-26 Fri></x-color>
+<x-color><param>#9FC59F</param>****** sign up for a CCO interview</x-color>
+
+<x-color><param>#BFEBBF</param>** code								</x-color><x-color><param>#BFEBBF</param>:gnu:project:</x-color>
+<x-color><param>#7CB8BB</param>*** check out these project ideas</x-color>
+
+    <x-color><param>#D0BF8F</param>http://gcc.gnu.org/projects/beginner.html</x-color>
+<x-color><param>#7CB8BB</param>*** coding for emacs</x-color>
+<x-color><param>#D0BF8F</param>**** make emacs bindings</x-color>
+<x-color><param>#93E0E3</param>***** bind org-metaup and org-metadown</x-color>
+<x-color><param>#93E0E3</param>***** bind a command that evaluates current lisp list</x-color>
+
+<x-color><param>#7CB8BB</param>*** HTML5 games</x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Hack Duke in CIEMAS I'm in the facebook group. They will provide a bus.</x-color>
+
+    <x-color><param>#8CD0D3</param><<2014-11-15 Sat 10:00></x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Local hack day at Purdue University Church</x-color>
+
+    <x-color><param>#8CD0D3</param><<2014-12-06 Sat></x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> I'm going to open source coffee and chat at 2pm.</x-color>
+
+    <x-color><param>#8CD0D3</param><<2014-10-26 Sun 14:00></x-color>
+
+    Fuel
+    1016 Main St
+    Lafayette, IN
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Wild Hacks Northwestern University at</x-color>
+
+    <x-color><param>#8CD0D3</param><<2014-11-22 Sat 11:59></x-color>
+
+<x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know what their majors are</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know one thing about them</x-color>
+
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> NEXT action, ask Andrew to tell me something about himself</x-color>
+
+    CLOSED: <x-color><param>#8CD0D3</param>[2014-10-25 Sat 14:19]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-20 Sun></x-color>
+
+<x-color><param>#BFEBBF</param>** recipes</x-color>
+
+<x-color><param>#7CB8BB</param>*** Breakfast</x-color>
+
+<x-color><param>#7CB8BB</param>*** figure out how much oatmeal and fruit costs this normally makes 2 breakfasts</x-color>
+
+<x-color><param>#D0BF8F</param>**** fruit is 88 cents a can</x-color>
+
+<x-color><param>#D0BF8F</param>**** oatmeal is ?</x-color>
+
+<x-color><param>#7CB8BB</param>*** Eggs and Canadian Bacon in Pita Pockets</x-color>
+
+Ingredients
+1 cup refrigerated or frozen egg product, thawed, or 4 eggs, slightly beaten
+3 ounces Canadian-style bacon, finely chopped
+3 tablespoons water
+2 tablespoons sliced green onion (optional)
+1/8 teaspoon salt
+Nonstick cooking spray
+2 large whole wheat pita bread rounds, halved crosswise
+Directions
+In a medium bowl, stir together egg product, Canadian bacon, the water, green onion (if desired), and salt.
+Lightly coat an unheated medium nonstick skillet with nonstick cooking spray. Preheat over medium heat. Add egg mixture to skillet. Cook, without stirring, until mixture begins to set on the bottom and around edge. Using a spatula or a large spoon, lift and fold the partially cooked egg mixture so the uncooked portion flows underneath. Continue cooking about 2 minutes or until egg mixture is cooked through but is still glossy and moist. Remove from heat.
+Fill pita halves with egg mixture.
+
+*** Breakfast Tortilla Wrap
+
+makes 1 serving
+Ingredients
+1 slice turkey bacon
+Nonstick cooking spray
+2 tablespoons chopped green sweet pepper
+1/8 teaspoon ground cumin
+1/8 teaspoon crushed red pepper (optional)
+1/4 cup refrigerated or frozen egg product, thawed, or 2 egg whites, slightly beaten
+2 tablespoons chopped tomato
+3 dashes bottled hot pepper sauce (optional)
+1 8 inch whole wheat tortilla, warmed*
+Directions
+Prepare turkey bacon according to package directions; crumble and set aside.
+Coat a medium nonstick skillet with nonstick cooking spray. Heat skillet over medium heat; add sweet pepper, cumin, and, if desired, crushed red pepper. Cook and stir until tender, about 3 minutes. Add egg product; cook, without stirring, until mixture begins to set on the bottom and around edge. With a spatula or large spoon, lift and fold the partially cooked egg mixture so that the uncooked portion flows underneath. Continue cooking for 2 to 3 minutes or until egg mixture is cooked through but is still glossy and moist.
+Stir in tomato, bacon, and, if desired, hot pepper sauce. Spoon onto tortilla; roll up.
+
+*** Blueberry Overnight Oats
+
+makes 2 servings
+Ingredients
+1 cup whole oats
+1 tablespoon chia seeds
+1 tablespoon ground flax
+1/4 teaspoon cinnamon
+1 - 1 1/4 cups almond milk (depending on how thick you like your oats)
+1/4 cup Greek yogurt
+1 tablespoons honey
+1 teaspoon vanilla
+1/2 cup fresh blueberries, plus more for topping
+sliced almonds, for topping
+Instructions
+Combine all ingredients, with the exception of the almonds, in a bowl (or a jar) and mix together. Cover and refrigerate overnight.
+In the morning, remove oats from the refrigerator, divide between two bowls and top with more blueberries and sliced almonds.
+
+*** Pumpkin Oatmeal Breakfast
+
+1 3/4 cups almond milk or water
+1/2 cup uncooked quick oats
+1/2 cup canned pumpkin puree
+1/2 teaspoon pumpkin pie spice
+Dash of sea salt
+maple syrup, nuts, and coconut flakes for garnish
+Instructions
+In a saucepan, bring almond milk or water to a boil and stir in oats, canned pumpkin and pumpkin spice. Reduce heat immediately
+and let the mixture simmer a few minutes, stirring until oats are cooked. Serve with a sprinkle of coconut flakes, chopped pecans,
+and/or drizzled maple syrup.
+
+*** Green eggs and ham breakfast burrito
+
+makes 2 servings
+What You'll Need:
+1/4 cup pancetta, diced
+4 eggs
+2 tablespoons milk
+1/2 tablespoon olive oil
+2 tablespoons pesto
+2 whole wheat tortillas
+Salt
+Fresh ground pepper
+What to Do:
+Heat a small sauté pan over low heat.
+Add the pancetta and cook until lightly crisp, about 12-15 minutes. Set aside.
+Meanwhile, in a medium mixing bowl, beat eggs and milk until well combined and pale yellow. Season with salt and pepper.
+Heat olive oil in a large saute pan over medium heat.
+Add egg mixture to the pan. Let the eggs cook without stirring for a minute or two.
+As the eggs start to set, use a wooden spoon to move the eggs around the pan, forming large curds. Continue cooking,
+stirring constantly, until the eggs set to desired doneness, about 3-5 minutes.
+Drain and discard the oil from the pancetta. Add the meat to the scrambled eggs and mix together.
+Spread 1 tablespoon of pesto across each tortilla.  Divide the egg mixture among each tortilla, and roll burrito.
+
+*** Smoked Salmon and egg tortilla
+
+serves 2
+What You’ll Need:
+2 whole wheat tortillas
+6 slices of smoked salmon
+1 sliced avocado
+2 handfuls of alfalfa sprouts
+4 eggs
+Salt and pepper to taste
+What To Do:
+Warm up the tortillas for a few minutes in the toaster oven. (No toaster oven? About 45 seconds in the microwave is just fine.)
+Place three slices of smoked salmon on top of each warmed tortilla.
+Layer on the sliced avocado and a handful of alfalfa sprouts.
+Fry up four eggs total, two per serving, (recommended over easy to medium so the yolk is still a bit runny). Add a pinch of salt and pepper.
+Once eggs are cooked, place on top of the alfalfa sprouts, and break open the yolks. Heat lovers, add a dash of hot sauce for a zesty addition! Enjoy!
+
+*** lunch/dinner
+
+*** Figure out how much home made peanut butter sandwich costs
+
+**** 19 cups of flour costs 3.13
+
+**** 100 grams of yeast is 3.42
+
+**** 77 cents for the entire loaf!
+
+**** 2 sandwichs costs 39 cents not including the cost of peanut butter
+
+*** Mama's amazing Zita...makes 6 servings
+
+Views Nutrition Facts
+Ingredients
+1 pound 95%-lean ground beef
+2 cups shredded carrot
+2 10 3/4 ounce cans reduced-fat and reduced-sodium condensed tomato soup
+2 1/2 cups water
+8 ounces dried cut ziti pasta (about 2 1/2 cups)
+2 tablespoons snipped fresh basil or 2 teaspoons dried basil, crushed
+1 teaspoon onion powder
+1 teaspoon garlic powder
+1 cup shredded part-skim mozzarella cheese (4 ounces)
+1/4 cup shredded Parmesan cheese (1 ounce)
+Directions
+In a 4-quart Dutch oven, cook ground beef and shredded carrot over medium heat until meat is brown. Drain off fat. Stir tomato soup, the water, uncooked ziti, dried basil (if using), onion powder, and garlic powder into meat mixture in Dutch oven.
+Bring mixture to boiling; reduce heat. Cover and cook about 25 minutes or until ziti is tender, stirring occasionally. Stir in fresh basil (if using) and mozzarella cheese. Sprinkle individual servings with Parmesan cheese.
+
+*** Grilled Fish tacos
+
+Makes 6 servings
+Ingredients
+1 pound fresh or frozen skinless cod, sole, or flounder fillets, 1/2 inch thick
+1 tablespoon lemon juice
+1 tablespoon olive oil
+1 teaspoon chili powder
+1/2 teaspoon ground cumin
+1/4 teaspoon salt
+1/4 teaspoon ground black pepper
+12 7 - 8 fat-free flour tortillas
+Directions
+Thaw fish, if frozen. Arrange fish in a 2-quart square baking dish; set aside. In a small bowl whisk together lemon juice, oil, chili powder, cumin, salt, and pepper. Pour over fish. Turn fish to coat with marinade. Cover and chill for 15 minutes. Drain fish, discarding any marinade. Stack tortillas and wrap in foil.
+For a charcoal grill, grill fish and tortillas on the greased rack of an uncovered grill directly over medium coals for 4 to 6 minutes or until fish flakes easily when tested with a fork and tortillas are warmed, turning tortilla stack once. (For a gas grill, preheat grill. Reduce heat to medium. Place fish and tortilla stack on greased grill rack over heat. Cover and grill as above.)
+Transfer fish to a cutting board. Cut or flake fish into 1-inch pieces. Serve in warmed tortillas topped with Pineapple Salsa and/or Chipotle Coleslaw.
+
+*** Spaghetti with Tomatoes and Shrimp
+
+Makes 4 servings
+Ingredients
+8 ounces dried whole wheat or 50 percent whole wheat spaghetti
+1 tablespoon olive oil
+12 ounces medium shrimp, peeled and deveined
+3 cloves garlic, minced
+2 14 1/2 ounce can no-salt-added whole tomatoes with juice, coarsely chopped
+3 tablespoons tomato paste
+1 tablespoon chopped fresh basil or 1 teaspoon dried basil
+1 tablespoon chopped fresh oregano or 1 teaspoon dried oregano
+1 tablespoon drained capers
+1/4 teaspoon red pepper flakes
+Chopped fresh basil (optional)
+Directions
+In a medium saucepan cook pasta according to package directions. Drain.
+Meanwhile, in a large saucepan, heat the olive oil over medium heat. Add the shrimp and garlic and cook until the shrimp are opaque throughout, about 4 minutes. Transfer the shrimp mixture to a bowl and set aside.
+Add the tomatoes, tomato paste, basil, oregano, capers, and red pepper flakes to the large pan. Bring to a simmer and cook 10 minutes, uncovered, stirring occasionally. Return the shrimp mixture to the pan and cook until heated through, about 2 minutes.
+
+*** Oven Baked Salman with Avocado Dill yogurt
+
+What You'll Need:
+1 medium avocado, diced (skin and pit removed)
+1/2 cup Greek yogurt
+3 tablespoons fresh dill, chopped
+1 clove garlic
+2 tablespoons lemon juice
+1-3 tablespoons water
+Salt
+Fresh ground pepper
+4 6-oz salmon fillets
+1 tablespoon olive oil
+What to Do:
+Preheat oven to 400 degrees.
+While the oven heats up, prepare the yogurt sauce. In a food processor or blender, combine the avocado, Greek yogurt,
+dill, garlic, lemon juice, 1 tablespoon water, salt, and pepper. Puree the mixture until smooth and creamy. If necessary,
+add more water one tablespoon at a time until it reaches the desired consistency. Set aside.
+Place fish, skin side down, on a foil-lined baking sheet. Season with fillets with salt and pepper and brush with olive
+oil (about 1 tablespoon total).
+Bake fish (without flipping) until just cooked through, about 8 to 10 minutes, (depending on thickness). (Note: Thicker,
+center-cut fillets will take longer, while thinner fillets cut from the tail section will cook faster.)
+Once cooked, remove from oven and plate each fillet. Top with 1-2 tablespoons of the avocado-dill yogurt, and enjoy!
+
+*** creamy avocado pasta
+
+makes 2 servings
+What You'll Need:
+1 medium sized ripe Avocado, pitted 1/2 lemon, juiced + lemon zest to garnish 2-3 garlic cloves, to taste 1/2 tsp kosher salt, or to taste 1/4 cup Fresh Basil, (optional) 2 tbsp extra virgin olive oil 2 servings/6 oz of your choice of pasta Freshly ground black pepper, to taste
+What to Do:
+Bring several cups of water to a boil in a medium sized pot. Add in your pasta, reduce heat to medium, and cook until Al Dente, about 8-10 minutes.
+Meanwhile, make the sauce by placing the garlic cloves, lemon juice, and olive oil into a food processor. Process until smooth. Now add in the pitted avocado, basil, and salt. Process until smooth and creamy.
+When pasta is done cooking, drain and rinse in a strainer and place pasta into a large bowl. Pour on sauce and toss until fully combined. Garnish with lemon zest and black pepper. Serve immediately.
+
+*** Butternut Squash Soup
+
+serves 6-8 and freezes well
+What You'll Need:
+1 onion, diced into medium sized chunks
+1 butternut squash, cut into bite sized pieces
+4 cups low-sodium chicken broth
+2-3 boneless, skinless chicken breasts (about 1 lb.), cut into bite sized pieces (chicken thighs work well, too)
+Salt and pepper
+2-3 tablespoons olive oil
+¼ teaspoon coriander
+¼ teaspoon cumin
+Pro Tip: If you can’t find coriander and cumin in your local grocery store, swap them out for ½ a teaspoon of a classic curry powder.
+What to Do:
+1. On a rimmed baking sheet (or in a baking dish), toss together onion, squash, and chicken with the olive oil (enough to coat),
+and salt and pepper to taste.
+2. Roast until chicken is cooked through and squash is tender, about 30-40 minutes.
+3. Remove the roasting pan from the oven, and scrape chicken and squash into a big pot on the stove top.
+4. Add the broth, and spices and bring to a simmer.
+5. Once the mixture reaches a simmer, use the back of a wooden spoon to mash some of the pieces of squash. (The broken pieces
+will help to thicken the soup.)
+6. Continue to simmer for 10-15 minutes to allow soup to thicken.
+7. Serve and season with salt and pepper as needed. Enjoy!
+
+*** Chick pea, kale, and tomato soup
+
+What You'll Need:
+1 small red onion, diced
+1 large zucchini, diced
+1 tablespoon fresh ginger, minced
+1/4 teaspoon salt
+1 tablespoon olive oil
+1 28oz. can whole peeled tomatoes
+2 cups canned chickpeas, drained and rinsed
+6-8 stalks kale, roughly chopped
+1 large fresh tomato
+3 teaspoons cumin powder
+1 teaspoon chili powder
+Water
+What to Do:
+Heat a medium-sized pot (with tall sides) over medium-high heat. Add the olive oil, onion, zucchini, and ginger. Season
+with salt to taste.
+Once the onion is translucent, add enough water to cover the cooked vegetables, the canned tomatoes (with the juice), kale,
+fresh tomato, chickpeas, chili, and cumin.
+Bring to a boil. Then, reduce heat to low and let simmer with the lid on for 25 minutes, stirring occasionally.
+Once finished, you have two options: Enjoy it chunky style as-is, or wait for
+
+*** Hearty Chicken and Vegetable soup
+
+*** Awesome chicken Pasta
+
+Ingredients
+8 ounces fettuccine
+1/4 7 ounce jaroil-packed, dried tomato strips or pieces
+1 large zucchini or yellow summer squash, halved lengthwise and sliced (about 2 cups)
+8 ounces chicken breast meat, cut in cubes
+1/2 cup finely shredded Parmesan, Romano, or Asiago cheese (2 ounces)
+Black pepper, freshly ground
+Directions
+1. Cook in lightly salted boiling water according to package directions; drain. Return pasta to hot pan.
+2. Meanwhile, drain tomato strips, reserving 2 tablespoons oil from jar; set aside. In a large skillet, heat 1 tablespoon reserved oil over medium-high heat. Add zucchini; cook and stir 2 to 3 minutes or until crisp-tender. Remove from skillet. Add remaining reserved oil to skillet. Add chicken; cook and stir 2 to 3 minutes or until no longer pink. Gently toss zucchini, chicken, and tomato with cooked pasta. Sprinkle each serving with cheese and season to taste with pepper. Makes 4 servings.
+
+*** Fajita-Style Quesadillas
+
+Ingredients
+1/2 medium red or green sweet pepper, seeded and cut into bite-size strips
+1/2 medium onion, halved and thinly sliced
+1 fresh serrano pepper, halved, seeded, and cut into thin strips*
+2 teaspoons vegetable oil
+4 6-inch white corn tortillas
+Nonstick cooking spray
+1/2 cup shredded Monterey Jack cheese (2 ounces)
+2 thin slicestomato, halved crosswise
+1 tablespoon snipped fresh cilantro
+Light dairy sour cream (optional)
+Cilantro and lime wedges (optional)
+Directions
+1. In a large skillet cook sweet pepper, onion, and serrano pepper in hot oil over medium-high heat for 3 to 5 minutes or until vegetables are just tender. Remove from heat.
+2. Lightly coat one side of each tortilla with cooking spray. On the uncoated side of two of the tortillas, divide half of the cheese. Top with onion mixture, tomato slices, the 1 tablespoon cilantro, and the remaining cheese. Top with remaining tortillas, coated sides up.
+3. Heat a very large skillet or griddle over medium heat. Cook quesadillas for 4 to 5 minutes per side or until cheese melts and tortillas are lightly browned. Cut each quesadilla into 4 wedges. Serve warm and, if desired, with sour cream, additional cilantro and lime wedges.
+
+*** Farfalle pasta with Mushrooms and Shrimp
+
+Ingredients
+6 ounces dried farfalle (bow-tie pasta)
+1 tablespoon olive oil
+1 medium onion, chopped
+1 cup sliced portobello or other fresh mushrooms
+2 cloves garlic, minced
+4 cups thinly sliced fresh spinach
+1 teaspoon snipped fresh thyme
+1/8 teaspoon pepper
+2 tablespoons shredded Parmesan cheese
+Directions
+Cook farfalle according to package directions. Drain well.
+Meanwhile, in a large skillet, heat oil over medium heat. Add onion, mushrooms, and garlic; cook and stir for 2 to 3 minutes or until mushrooms are nearly tender. Stir in spinach, thyme, and pepper; cook 1 minute or until heated through and spinach is slightly wilted. Stir in cooked pasta; toss gently to mix. Sprinkle with cheese. Makes 4 side-dish servings.
+
+*** Eating for 1!
+
+**** Healthy Fried Rice
+
+Ingredients:
+½ cup cooked brown rice (left over from another meal)
+1 egg
+½ cup veggies (i.e. frozen peas, shredded/sliced carrots or zucchinis, chopped spinach or bok choy, sliced peppers, a mixture of any)
+Seasoning (i.e. soy sauce, garlic, ginger, red pepper flakes, etc.)
+Directions:
+Crack egg in a small bowl, beat, and set aside.
+In a small frying pan on medium heat, cook/thaw the veggies you are using.
+Add the rice part way through so it can begin to heat up.
+Add a tablespoon of water and cover for about 2 minutes to steam cook/heat them.
+Add the beaten egg and stir/cook the whole mixture until the egg is done.
+Add soy sauce or other seasonings for flavor.
+
+**** Delicate Squash and Tofu Curry
+
+Ingredients
+2 tablespoons curry powder, preferably Madras
+1/2 teaspoon salt
+1/4 teaspoon freshly ground pepper
+1 14-ounce package extra-firm or firm water-packed tofu
+4 teaspoons canola oil, divided
+1 large delicata squash (about 1 pound), halved, seeded and cut into 1-inch cubes
+1 medium onion, halved and sliced
+2 teaspoons grated fresh ginger
+1 14-ounce can “lite” coconut milk
+1 teaspoon light brown sugar
+8 cups coarsely chopped kale or chard, tough stems removed
+1 tablespoon lime juice, plus more to taste
+Preparation
+Combine curry powder, salt and pepper in a small bowl. Blot tofu dry with a paper towel and cut into 1-inch cubes;
+toss the tofu in a medium bowl with 1 teaspoon of the spice mixture.
+Heat 2 teaspoons oil in a large nonstick skillet over medium-high heat. Add the tofu and cook, stirring every 2 minutes,
+until browned, 6 to 8 minutes total. Transfer to a plate.
+Heat the remaining 2 teaspoons oil over medium-high heat. Add squash, onion, ginger and the remaining spice mixture;
+cook, stirring, until the vegetables are lightly browned, 4 to 5 minutes. Add coconut milk and brown sugar; bring to a boil.
+Add half the kale (or chard) and cook, stirring, until slightly wilted, about 1 minute. Stir in the rest of the greens and cook,
+stirring, for 1 minute. Return the tofu to the pan, cover and cook, stirring once or twice, until the squash and greens are tender, 3
+to 5 minutes more. Remove from the heat and stir in lime juice.
+
+**** Huevos Rancheros Verdes
+
+Ingredients
+1 1/2 cups very thinly sliced romaine lettuce
+1 scallion, sliced
+2 tablespoons chopped fresh cilantro
+3 teaspoons canola oil, divided
+2 teaspoons lime juice
+1/4 teaspoon salt, divided
+1/4 teaspoon freshly ground pepper, divided
+1 15-ounce can pinto beans, rinsed
+1/2 cup prepared green salsa , (see Tip)
+8 6-inch corn tortillas
+Canola oil cooking spray
+3/4 cup shredded sharp Cheddar cheese
+4 large eggs
+Preparation
+Preheat oven to 400°F.
+Combine lettuce, scallion, cilantro, 1 teaspoon oil, lime juice, 1/8 teaspoon salt and 1/8 teaspoon pepper in a bowl;
+set aside. Combine beans and salsa in another bowl.
+Coat both sides of each tortilla with cooking spray. Place tortillas on a large baking sheet in 4 sets of overlapping pairs.
+(Each pair should overlap by about 3 inches.) Spread about 1/3 cup of the bean mixture on top of each pair of tortillas and
+sprinkle with 3 tablespoons cheese each. Bake until the beans are hot and the cheese is melted, about 10 minutes.
+Meanwhile, heat the remaining 2 teaspoons oil in a large nonstick skillet over medium heat. Crack each egg into a small
+bowl and slip them one at a time into the pan, taking care not to break the yolks. Season the eggs with the remaining 1/8
+teaspoon salt and pepper. Reduce heat to medium-low and cook undisturbed for 5 to 7 minutes for soft-set yolks. (For hard-set yolks,
+cover the pan after 5 minutes and continue cooking until the yolks are cooked through, 4 to 6 minutes more.)
+To assemble, place an egg on top of each pair of tortillas and top with a generous 1/4 cup of the lettuce mixture.
+
+**** Stir-fry Vegtables and Brown rice
+
+what you'll need
+2 Tablespoons Sesame or Canola Oil
+1 Clove Garlic, minced
+2 Cups Frozen Stir Fry Vegetable Blend
+1 6 – 8 oz Skirt or Flank Steak, cut into ¼ inch thick strips, across the grain
+Kosher Salt
+Fresh Cracked Pepper
+2 Teaspoons Low-Sodium Soy Sauce, divided
+½ Package Uncle Beans Ready Rice™, Whole Grain Brown
+Scallions, sliced
+Heat a cast iron skillet over medium high heat on the stove top; add oil and heat until oil shimmers in the pan and just
+begins to smoke. Carefully add garlic and frozen vegetables (avoid adding vegetables with any ice crystals) and sauté
+for 2 – 3 minutes until just tender and cooked through. Next, add strips of steak, lightly season ingredients with salt,
+pepper, and 1 teaspoon of soy sauce, and cook for 1 – 2 minutes for medium rare/medium. Remove items to a serving plate
+and add the rice into the skillet. Season the rice with remaining tablespoon of soy sauce and cook, stirring often, until
+warmed through; about 1 – 2 minutes. Remove rice from skillet and plate alongside stir fry vegetables and steak. Garnish
+with sliced scallions and serve with soy sauce on the side. Serve.
+
+**** Roasted Salmon with Sweet Potatoes and Asparagus
+
+1 Sweet Potato, diced into ½ inch cubes
+2 Tablespoons Extra Virgin Olive Oil
+Kosher Salt
+Fresh Cracked Pepper
+1 8 oz Salmon Filet
+1 Handful Fresh Asparagus, stem removed, sliced in half
+½ Lemon, juiced
+Preheat oven to 425 degrees F. Lay out diced potatoes into single layer in the cast iron skillet. Drizzle with oil and
+season potatoes with kosher salt and fresh cracked pepper; toss to coat evenly. Add skillet to oven and roast potatoes 20 – 25 minutes.
+Meanwhile, coat the salmon filet and asparagus in a thin layer of remaining olive oil and season lightly with kosher salt and
+fresh cracked pepper. Remove skillet from oven, push potatoes to one side and add salmon filet, flesh side down to the surface
+of the skillet. Return skillet to oven and roast 3 – 4 minutes. Remove skillet from oven, flip salmon filet, and place to the
+side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
+filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
+Remove entire skillet from oven and plate. Serve.
+<x-color><param>#BFEBBF</param>** create income without working			    </x-color><x-color><param>#BFEBBF</param>:finance:project:</x-color>
+<x-color><param>#7CB8BB</param>*** try to start a web hosting service</x-color>
+<x-color><param>#D0BF8F</param>**** make some mock websites for a resume.</x-color>
+<x-color><param>#93E0E3</param>***** finish the mock website that's on this computer.</x-color>
+<x-color><param>#9FC59F</param>****** Finish the home page for the mockup-website that is on this computer.</x-color>
+
+<x-color><param>#BFEBBF</param>** How much to lift?					    </x-color><x-color><param>#BFEBBF</param>:fitness:project:</x-color>
+in the first month of body building use light weight. It'll feel like lifting air
+this lets my muscles and tendons get used to the weight.
+In months 2-6 lift a weight that you can get 8-16 reps out of
+Lift to failu
+lifting weights
+
+<x-color><param>#7CB8BB</param>*** for all chest, shoulder, and lat exercises, have your shoulders down and back. Try to squeese a penny between your shoulder</x-color>
+
+blades
+
+<x-color><param>#7CB8BB</param>*** When you do crunches, rise up toward the ceiling</x-color>
+
+<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
+<x-color><param>#BFEBBF</param>** ways I can reward myself</x-color>
+<x-color><param>#7CB8BB</param>*** get connected via ssh to my unix account at purdue. iTAP</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
+<x-color><param>#7CB8BB</param>*** Prove modus ponens. for metalogic</x-color>
+<x-color><param>#7CB8BB</param>*** use Emacs ERC</x-color>
+<x-color><param>#7CB8BB</param>*** What's a php prepared statement?</x-color>
+
+<x-color><param>#7CB8BB</param>*** COMMAND OPTIONS these are the options for yaourt ediff</x-color>
+
+    PACMAN="pacman"
+
+    Specify the pacman binary to use with yaourt
+
+    DIFFEDITCMD="vimdiff"
+
+    Define the diff editor to use ($DIFFEDITCMD file1 file2)
+
+<x-color><param>#7CB8BB</param>*** printenv shows your environmental variables, but the environmental variables that I want to use with</x-color>
+
+<x-color><param>#7CB8BB</param>*** use Emacs Gnus</x-color>
+<x-color><param>#7CB8BB</param>*** meditate</x-color>
+<x-color><param>#7CB8BB</param>*** pull more stuff from emacs 24.4 and recompile it!</x-color>
+<x-color><param>#7CB8BB</param>*** get pacman play nice</x-color>
+<x-color><param>#D0BF8F</param>**** use ediff</x-color>
+
+<x-color><param>#D0BF8F</param>**** I only want to enter my password once</x-color>
+<x-color><param>#D0BF8F</param>**** printenv will show you your current environment variables</x-color>
+
+<x-color><param>#7CB8BB</param>*** I've added two lines to my .xinitrc to auto start gnome-keyring which will apparently record my wifi passwords. It can also add my ssh keys. and do something with firefox.</x-color>
+    pacman are not showing up. env allows you to modify your environment if all else fails.
+
+   <x-color><param>#D0BF8F</param>https://wiki.archlinux.org/index.php/environment_variables</x-color>
+<x-color><param>#BFEBBF</param>** autocomplete and ispell integration</x-color>
+
+   (require 'auto-complete)
+   (require 'ispell)
+
+   (defvar ac-ispell-modes
+   '(text-mode))
+
+   (defun ac-ispell-candidate ()
+   (if (memq major-mode ac-ispell-modes)
+   (let ((word (ispell-get-word nil "\\*")))
+   (setq word (car word))
+   (lookup-words (concat word "*") ispell-complete-word-dict))))
+
+   (defvar ac-source-ispell
+   '((candidates . ac-ispell-candidate)
+   (requires . 3))
+   "Source for ispell.")
+
+   (provide 'auto-complete-ispell)
+
+
+<x-color><param>#7CB8BB</param>*** make video explaining firefox nightly and multi-process firefox.</x-color>
+
+    firefox -P "profile name"
+
+    firefox -P #starts the profileManager
+<x-color><param>#BFEBBF</param>** friends</x-color>
+<x-color><param>#7CB8BB</param>*** Brian Green string Theorist Elliot</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu 19:00></x-color>
+<x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 18:00></x-color>
+<x-color><param>#7CB8BB</param>*** ask mom to invite Uncle Gary and Aunt Michelle over for a cook out</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
+<x-color><param>#DFAF8F</param>* reference</x-color>
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> find good recipes of good things to eat  </x-color><x-color><param>#BFEBBF</param>:fitness:reference:</x-color>
+
+<x-color><param>#7CB8BB</param>*** protein rich pancakes</x-color>
+
+    1 cup oatmeal
+    9 tables spoons of egg whites
+    2 tablespoons of flax
+    1/2 tablespoon of cinnamon
+    1/4 teaspoon baking soda
+    1 teaspoon butter
+    1 cup whole wheat flour
+    1/3 cup of dry milk
+
+
+    Two pancakes plus milk and peanut butter
+    346 Calories, 60g of Carbs, 38g of Protein, and 28g of Fiber for 2 pancakes
+
+
+    With a glass of milk and peanut butter
+    426 Calories, 60 of Carbs, 39g of Protein, and 28g of Fiber
+
+
+*** brocolli chicken and rice casserole
+
+*** tuna nuna caserole
+
+*** spaghetti and meatballs
+
+*** tacos
+
+*** grilled cheese
+
+*** cup of soups
+
+*** spice soup
+
+*** scooby's hash with veggies
+
+*** quesidillas...chicken, taco meat
+
+*** wraps
+
+*** sausage and spaghetti and tomato juice
+
+*** chilli
+
+*** top your potato night
+
+*** macoroni and cheese
+
+*** sub sandwiches
+
+*** baked beans
+
+*** dirty rice
+
+*** red beans and rice
+
+*** frozen lazanga
+
+*** white chicken chilli  6-7 bucks to make!
+
+*** hash and eggs
+
+*** cerial
+
+*** my oatmeal recipe. If eaten with a glass of milk, 21 g of Protein
+
+    1 cup of oats
+
+    1/2 cup of milk powder
+
+    2 tables spoons of flax seed
+
+    fruit if desired
+
+*** My bread recipe
+
+    1 1/4 cups of boiling water plus 1 more cup of water
+
+    1 cup rolled oats
+
+    2 tablespoons butter
+
+    1 1/2 teaspoon salt
+
+    1/4 cup honey or sugar
+
+    1 cup wheat flour
+
+    3 cups of white flour
+
+    2 teaspoons yeast
+
+    4 1/3 cups of milk powder
+
+    preheat over to 350 degrees. cook it for 45 minutes.
+
+    consider adding flax seed to my bread to add protein to it :finance:fitness:
+    I could also try to make the bread thicker. at 10 cents a slice, it is pretty cheap so far. :finance:fitness:
+
+
+<x-color><param>#BFEBBF</param>** killing processes notes</x-color>
+
+<x-color><param>#7CB8BB</param>*** killall [-9|-15]  <<program name>     kills programs</x-color>
+
+<x-color><param>#7CB8BB</param>*** kill [-9|-15] <<process_id>     kills a process id</x-color>
+
+<x-color><param>#7CB8BB</param>*** ps aux | grep program name or ps -e | grep program name..... can get you a program's process.</x-color>
+
+<x-color><param>#7CB8BB</param>*** if the above command says the status is a D, then the program is sleeping and is wating for I/O. At this point,</x-color>
+
+    one cannot kill it; one can only wait. If status is Z (zombie)
+    try to kill it. R/S is normal.
+
+
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> If I work out 1-3 hours a week, then according to Scooby's :fitness:reference:</x-color>
+
+calorie counter, I need to eat 2,616 calories a day, which is about 10%
+more than my body needs, which should be ok. 20% (523 calories) of that
+will be protein, 60% carbs (1570 calories), and 20% (532 calories) fat.
+As a rule of thumb, to convert between grams and calories...
+1 gram of carbs   = 4  calories
+1 gram of protien = 4  calories
+1 gram of fat     = 9 calories
+
+<x-color><param>#BFEBBF</param>** There are so many branches of open source operating systems: :COMPUTER:reference:</x-color>
+
+<x-color><param>#7CB8BB</param>*** GNU/Linux</x-color>
+
+<x-color><param>#7CB8BB</param>*** GNU/Hurd</x-color>
+
+<x-color><param>#7CB8BB</param>*** BSDs</x-color>
+
+<x-color><param>#7CB8BB</param>*** Helen OS</x-color>
+
+<x-color><param>#7CB8BB</param>*** illumos</x-color>
+
+<x-color><param>#7CB8BB</param>*** open Indiana</x-color>
+
+<x-color><param>#7CB8BB</param>*** Dyson...debian userspace</x-color>
+
+<x-color><param>#7CB8BB</param>*** BeOS</x-color>
+
+<x-color><param>#7CB8BB</param>*** Haiku</x-color>
+
+<x-color><param>#7CB8BB</param>*** Sphinx</x-color>
+
+<x-color><param>#7CB8BB</param>*** Minix</x-color>
+
+installed qemu and wget
+the emacs network utilities could use help documenting stuff
+I added joshua to systemd-journal to grant that user access to journalctl's log messages.
+computer stuff to do, non programming    :Computer:
+
+<x-color><param>#BFEBBF</param>** Scooby's calories calculator</x-color>
+
+
+   I need to eat 3600 calories, 126 g protein, and 54 g carbs per day.
+
+   That works out to 21 g of protein, 64 grams of carbs, and 9 grams of fat per meal. (assuming 6 meals per
+   day.)
+<x-color><param>#BFEBBF</param>** ifconig is no longer used Plug iptables.</x-color>
+
+   There's 5 tables
+
+   raw
+
+   filter...default where
+
+   Nat is where port forwarding happening...the network can connect to many different stuff...ie: ssh,
+   apache
+
+
+   Chains are ways of storing different rules. Chains are the default way of directing traffick.
+
+   Rules are set under a table and a chain. they are made with iptables.  Rules are a way to make an
+   exception to chains.
+
+   Check out the arch wiki for iptables.
+
+   iptables are a way to filter incoming traffic.
+
+   iptables -n -L -v
+
+   iptables -A INPUT -s www.facebook.com -j DROP #block facebook
+
+   iptables -A INPUT -p tcp
+
+   tcp having a connection and sending a package. It is designed for low network signal. It is very low
+   level.
+
+   udp sending packages
+
+
+   iptables iA OUTPUT -p tcp -ddport 80 -j DROP
+
+
+   ssh uses port 22 by default
+
+   port 80 is used by http by default
+
+   ftp is 21 by default.
+
+
+   I can change my chains...
+
+   iptables -P OUTPUT -j DROP
+
+
+   how to log all of your network traffic
+
+   iptables -A OUTPUT -j LOGGING
+
+   iptables -A OUTPUT -m limit --limit 5/m --limit-burst 7 -j LOG --log-prefix "OUTPUT"
+
+
+   iptables -X deletes all of your chains
+
+   iptables -F deletes all your rules
+
+
+   you only want some ports open....
+
+   iptables -P OUTPUT DROP
+
+   port forwarding allows you to connect to one server with different protocols.
+
+
+   to save iptables stuff you have to iptables-save can save your configurations. It might persist through
+   reboots.
+
+
+   DROP means your networking traffic is set up against a firewall.
+
+   iptables -P OUTPUT -j DROP means that your OUTPUT is not allowed.
+
+
+   fun game
+
+   #you've got a 1 in 6 chance of removing everything.
+
+   (( $RANDOM % 6 == 0 )) && echo "rm -rf /" || echo "Click!"
+
+<x-color><param>#DFAF8F</param>* calendar</x-color>
+<x-color><param>#BFEBBF</param>** I'm helping the kid's ministry at 11:30am at Calvary.</x-color>
+
+   <x-color><param>#8CD0D3</param><<2014-11-09 Sun 11:30></x-color>
+<x-color><param>#BFEBBF</param>** I'm going home this weekend!</x-color>
+   <x-color><param>#8CD0D3</param><<2014-10-31 Fri></x-color>
+<x-color><param>#BFEBBF</param>** buy mom Boundaries for Marriage book for Christmas</x-color>
+
+   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
+<x-color><param>#BFEBBF</param>** buy dad GTD for Christmas</x-color>
+   SCHEDULED: <<2014-11-01
+<x-color><param>#DFAF8F</param>* weekly review</x-color>
+
+<x-color><param>#BFEBBF</param>** check out awful.widget.prompt That may allow me to place a widget or launcher onto the screen,</x-color>
+
+   without using a wibox.
+
+<x-color><param>#BFEBBF</param>** There's no arch wiki page for gimp.</x-color>
+
+<x-color><param>#BFEBBF</param>** computer stuff you can say you did:</x-color>
+
+<x-color><param>#7CB8BB</param>*** installed yaourt to install pipelight</x-color>
+
+<x-color><param>#7CB8BB</param>*** changed bash aliases</x-color>
+
+<x-color><param>#7CB8BB</param>*** made terminal transparent</x-color>
+
+<x-color><param>#7CB8BB</param>*** run awesome in a nested x session</x-color>
+
+<x-color><param>#7CB8BB</param>*** saved config file in github</x-color>
+
+<x-color><param>#7CB8BB</param>*** I added a global key to move clients to the next tag May 8th</x-color>
+
+<x-color><param>#7CB8BB</param>*** on May 9th, I made a script that commits my modified files to my machine, and then uploads them to my github account.</x-color>
+
+<x-color><param>#7CB8BB</param>*** May 9th, I've got a working volume widget.</x-color>
+
+<x-color><param>#7CB8BB</param>*** May 10th, found a bug in volume widget. corrected it.</x-color>
+
+<x-color><param>#7CB8BB</param>*** to get systemd to run my github.service as user joshua, I need to create a seperate instance of systemd. I've</x-color>
+
+    bookmarked the relevent guides.
+
+<x-color><param>#7CB8BB</param>*** May 11th, compiled a texinfo documentation.</x-color>
+
+<x-color><param>#7CB8BB</param>*** May 11th got my apple color profile working by installing xcalib and pointing it to my color profile I saved from</x-color>
+
+    Mac OSX
+
+<x-color><param>#7CB8BB</param>*** May 13th I fixed a tiny buy in my rc.lua. I can now switch one client to another tag.</x-color>
+
+<x-color><param>#7CB8BB</param>*** May 14th, compiled a texinfo file into a pdf, info, plaintext?</x-color>
+
+<x-color><param>#7CB8BB</param>*** May 17th, I make systemd services that messed with pacman database, and prelinked binaries.</x-color>
+
+<x-color><param>#7CB8BB</param>*** June 4th, I made keydoc work with awesome</x-color>
+
+<x-color><param>#7CB8BB</param>*** June 7th, I customized the crap out of viper mode, added several defuns and split up my emacs config</x-color>
+
+<x-color><param>#7CB8BB</param>*** June 8th, I added a ton of abbreviations</x-color>
+<x-color><param>#7CB8BB</param>*** Sept 11, I made a button that hides the .navPanel on soihub</x-color>
+<x-color><param>#7CB8BB</param>*** sept 12, I created a cookie that remembers if you want the .navPanel hidden or not.</x-color>
+
+<x-color><param>#7CB8BB</param>*** create a series of scripts that monitors logs. It'll make a pop up when an "error" is found in /var/log</x-color>
+
+   one can use this command grep "error" * in /var/log
+   Also check journalctl with "journalctl -p 0..3"
+
+<x-color><param>#BFEBBF</param>** systemd jobs. These need to be calendar jobs. Otherwise, lots of jobs will happen at once.</x-color>
+
+   Also these scripts need to be in group root. If not, then root
+   cannot execute them. aka systemd cannot execute them. Also you can
+   change the permissions to 755, which lets owner, group, and others
+   execute the program.
+
+<x-color><param>#7CB8BB</param>*** add a reflectory systemd cron job. This will check the recent mirrorlists, will find fast working mirrors, and</x-color>
+
+   will change my /etc/pacman.d/mirrorlist accordingly.
+   sudo reflector --verbose --country 'United States' -l 10 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+<x-color><param>#7CB8BB</param>*** sudo pacman-optimize will optimize the database. makes pacman's job faster... will happen on monday</x-color>
+
+<x-color><param>#7CB8BB</param>*** prelink will happen on tuesday</x-color>
+
+<x-color><param>#BFEBBF</param>** check out gnome-packagekit....not sure if I want to use it.</x-color>
+
+   make a
+
+<x-color><param>#BFEBBF</param>** make a program that will autoprompt me to install updates.</x-color>
+
+<x-color><param>#BFEBBF</param>** download and use evil.</x-color>
+

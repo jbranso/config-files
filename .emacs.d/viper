@@ -43,9 +43,19 @@
 (define-key viper-vi-global-user-map
   (kbd "e")'forward-word)
 (define-key viper-vi-global-user-map
+  (kbd "E") '(lambda ()
+	       (interactive)
+	       (forward-word)
+	       (viper-insert nil)))
+(define-key viper-vi-global-user-map
   (kbd "M-e")'forward-sentence)
 (define-key viper-vi-global-user-map
   (kbd "o")'backward-word)
+(define-key viper-vi-global-user-map
+  (kbd "O") '(lambda ()
+	       (interactive)
+	       (backward-word)
+	       (viper-insert nil)))
 (define-key viper-vi-global-user-map
   (kbd "M-o")' 'backword-sentence)
 (define-key viper-vi-global-user-map
