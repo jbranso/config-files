@@ -1,7 +1,7 @@
 Content-Type: text/enriched
 Text-Width: 108
 
-#+TAGS:waiting(w) art(a) career(r) job(j) community(m) gnu(g) school(s) finance(f) fitness(t) someday(o) project(p) reference(r) calendar(c) reward(d)
+#+TAGS:waiting(w) art(a) career(r) job(j) community(m) gnu(g) school(s) finance(f) fitness(t) someday(o) project(p) reference(e) calendar(c) reward(d)
 
 <x-color><param>#DFAF8F</param>* collection notes</x-color>
 
@@ -44,7 +44,7 @@ to the calendar, then you won't trust your calendar list. You'll have to keep ch
 you need to do something. If you put something under projects that belongs to someday/maybe, then you will waste your time trying to
 turn a someday/maybe thing into a project.
 
-<x-color><param>#DFAF8F</param>* someday</x-color>
+<x-color><param>#DFAF8F</param>* someday							    </x-color><x-color><param>#DFAF8F</param>:someday:</x-color>
 <x-color><param>#BFEBBF</param>** gnu someday</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn HTML5:gnu:someday:</x-color>
@@ -65,7 +65,7 @@ feel free to contribute to the Plug wiki
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> fix grub error, locale not found...may be why I can't use dvp </x-color><x-color><param>#7CB8BB</param>:gnu:someday:</x-color>
 
-<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> When you stick a usb drive on my computer, it will appear as /dev/sdb :gnu:reference:</x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> When you stick a usb drive on my computer, it will appear as /dev/sdb </x-color><x-color><param>#7CB8BB</param>:gnu:reference:</x-color>
 
 to find out what device in /dev is a usb stick or a dvd, make a text file of $(ls /dev), then a text file of
 $(ls /dev), when you put the usb stick in. Then diff the 2 files.
@@ -73,9 +73,9 @@ The device is probably sdb if it is a usb
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> make cool programs</x-color>
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU source release Collection. Install the latest GNU releases to aid in development :gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU source release Collection. Install the latest GNU releases to aid in development </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GTK+ speed reading document. A window would pop up. There would be a quick explanation followed by eye training pages. :gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GTK+ speed reading document. A window would pop up. There would be a quick explanation followed by eye training pages. </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
 
 <x-color><param>#D0BF8F</param>**** expand vision exercises</x-color>
 
@@ -96,7 +96,7 @@ you know you can keep. As you get better gradually increase your pace. It can he
 There is a list of all the files I have downloaded with pacman at /var/log/packman.log
 The program that I have made in ~/programming/bash/, is almost finished.
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> program to search for files for phone numbers, social sequrity numbers, etc. You would you regular expressions. For example :gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> program to search for files for phone numbers, social sequrity numbers, etc. You would you regular expressions. For example </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
 
      to search for phone numbers the regulary expression would be [1-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]
 
@@ -464,7 +464,7 @@ etc.
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> figure out what stuff I want to donate to good will that is my parents basement </x-color><x-color><param>#7CB8BB</param>:community:someday:</x-color>
 
-<x-color><param>#DFAF8F</param>* waiting</x-color>
+<x-color><param>#DFAF8F</param>* waiting							    </x-color><x-color><param>#DFAF8F</param>:waiting:</x-color>
 
 <x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> reply to David on Facebook when he does    </x-color><x-color><param>#BFEBBF</param>:waiting:</x-color>
 
@@ -477,16 +477,16 @@ etc.
    CLOSED: <x-color><param>#8CD0D3</param>[2013-10-14 Mon 13:06]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-14 Mon></x-color>
 
 
-<x-color><param>#DFAF8F</param>* projects</x-color>
-
+<x-color><param>#DFAF8F</param>* projects							    </x-color><x-color><param>#DFAF8F</param>:project:</x-color>
 <x-color><param>#BFEBBF</param>** School stuff. Homework, study, exams, etc.		     </x-color><x-color><param>#BFEBBF</param>:school:project:</x-color>
 <x-color><param>#7CB8BB</param>*** Religion Class</x-color>
 <x-color><param>#D0BF8F</param>**** 1st draft due on October 31</x-color>
-     how long should our draft be?
+     It should be 4-5 pages long and include my thesis and 2 secondary sources.
+
+     1 must be a book from the library.
 
      DEADLINE: <x-color><param>#8CD0D3</param><<2014-10-31 Fri 13:00></x-color>
 <x-color><param>#D0BF8F</param>**** write draft for religion paper</x-color>
-
      The exam topics are on blackboard. One is under announcements and the other 8 in paper topics.
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** ethics class</x-color>
@@ -500,12 +500,12 @@ etc.
 <x-color><param>#7CB8BB</param>*** german</x-color>
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Kapitol 8</x-color>
 
-    <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
-<x-color><param>#D0BF8F</param>**** HW p. 338 Ubungen 3, 5, 6.</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed 14:00></x-color>
+     <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
 <x-color><param>#D0BF8F</param>**** German in class essay wear a costume for extra credit!</x-color>
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-31 Fri></x-color>
 <x-color><param>#7CB8BB</param>*** stat</x-color>
+<x-color><param>#D0BF8F</param>**** online perdisco excel homework</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
 <x-color><param>#D0BF8F</param>**** mixable # 2</x-color>
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color> DEADLINE: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 23:59></x-color>
@@ -520,12 +520,33 @@ etc.
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** metalogic</x-color>
+<x-color><param>#7CB8BB</param>*** grad</x-color>
+<x-color><param>#D0BF8F</param>**** I graduate on December 21 at 2:30pm.</x-color>
 
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-12-21 Sun 14:30></x-color>
+<x-color><param>#D0BF8F</param>**** Order cap and gown through Graduation Tab.</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+<x-color><param>#D0BF8F</param>**** buy tickets for grad</x-color>
+
+     DEADLINE: <x-color><param>#8CD0D3</param><<2014-12-01 Mon></x-color>
+<x-color><param>#93E0E3</param>***** how many tickets do I need?</x-color>
+      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
+     Abbi (2)
+
+     Mom and Dad
+
+     Lindsey (2?)
+
+     Karlie
+<x-color><param>#93E0E3</param>***** how much do tickets cost?</x-color>
+      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
 <x-color><param>#7CB8BB</param>*** PCM study session (org-cycle)</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 
 <x-color><param>#BFEBBF</param>** Job Search</x-color>
+<x-color><param>#7CB8BB</param>*** schedule a day to go visit Ivy Tech</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
 <x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
 
@@ -536,8 +557,10 @@ etc.
 
     courses.php
 <x-color><param>#7CB8BB</param>*** get business cards of yourself.</x-color>
+<x-color><param>#D0BF8F</param>**** look up where I can buy business cards and order 'em. buy 'em.</x-color>
 
-    If you have a problem with your website I can fix it. If I can't I know someone who can.
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue></x-color>
+     If you have a problem with your website I can fix it. If I can't I know someone who can.
 <x-color><param>#7CB8BB</param>*** BRNG 1284 Networking and Master's breakfast</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 08:00></x-color>
@@ -604,6 +627,7 @@ etc.
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Wild Hacks Northwestern University at</x-color>
 
     <x-color><param>#8CD0D3</param><<2014-11-22 Sat 11:59></x-color>
+<x-color><param>#D0BF8F</param>**** Print Wild hacks' tickets. It's in your</x-color>
 
 <x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
@@ -628,223 +652,223 @@ etc.
 
 <x-color><param>#7CB8BB</param>*** Eggs and Canadian Bacon in Pita Pockets</x-color>
 
-Ingredients
-1 cup refrigerated or frozen egg product, thawed, or 4 eggs, slightly beaten
-3 ounces Canadian-style bacon, finely chopped
-3 tablespoons water
-2 tablespoons sliced green onion (optional)
-1/8 teaspoon salt
-Nonstick cooking spray
-2 large whole wheat pita bread rounds, halved crosswise
-Directions
-In a medium bowl, stir together egg product, Canadian bacon, the water, green onion (if desired), and salt.
-Lightly coat an unheated medium nonstick skillet with nonstick cooking spray. Preheat over medium heat. Add egg mixture to skillet. Cook, without stirring, until mixture begins to set on the bottom and around edge. Using a spatula or a large spoon, lift and fold the partially cooked egg mixture so the uncooked portion flows underneath. Continue cooking about 2 minutes or until egg mixture is cooked through but is still glossy and moist. Remove from heat.
-Fill pita halves with egg mixture.
+    Ingredients
+    1 cup refrigerated or frozen egg product, thawed, or 4 eggs, slightly beaten
+    3 ounces Canadian-style bacon, finely chopped
+    3 tablespoons water
+    2 tablespoons sliced green onion (optional)
+    1/8 teaspoon salt
+    Nonstick cooking spray
+    2 large whole wheat pita bread rounds, halved crosswise
+    Directions
+    In a medium bowl, stir together egg product, Canadian bacon, the water, green onion (if desired), and salt.
+    Lightly coat an unheated medium nonstick skillet with nonstick cooking spray. Preheat over medium heat. Add egg mixture to skillet. Cook, without stirring, until mixture begins to set on the bottom and around edge. Using a spatula or a large spoon, lift and fold the partially cooked egg mixture so the uncooked portion flows underneath. Continue cooking about 2 minutes or until egg mixture is cooked through but is still glossy and moist. Remove from heat.
+    Fill pita halves with egg mixture.
 
-*** Breakfast Tortilla Wrap
+<x-color><param>#7CB8BB</param>*** Breakfast Tortilla Wrap</x-color>
 
-makes 1 serving
-Ingredients
-1 slice turkey bacon
-Nonstick cooking spray
-2 tablespoons chopped green sweet pepper
-1/8 teaspoon ground cumin
-1/8 teaspoon crushed red pepper (optional)
-1/4 cup refrigerated or frozen egg product, thawed, or 2 egg whites, slightly beaten
-2 tablespoons chopped tomato
-3 dashes bottled hot pepper sauce (optional)
-1 8 inch whole wheat tortilla, warmed*
-Directions
-Prepare turkey bacon according to package directions; crumble and set aside.
-Coat a medium nonstick skillet with nonstick cooking spray. Heat skillet over medium heat; add sweet pepper, cumin, and, if desired, crushed red pepper. Cook and stir until tender, about 3 minutes. Add egg product; cook, without stirring, until mixture begins to set on the bottom and around edge. With a spatula or large spoon, lift and fold the partially cooked egg mixture so that the uncooked portion flows underneath. Continue cooking for 2 to 3 minutes or until egg mixture is cooked through but is still glossy and moist.
-Stir in tomato, bacon, and, if desired, hot pepper sauce. Spoon onto tortilla; roll up.
+    makes 1 serving
+    Ingredients
+    1 slice turkey bacon
+    Nonstick cooking spray
+    2 tablespoons chopped green sweet pepper
+    1/8 teaspoon ground cumin
+    1/8 teaspoon crushed red pepper (optional)
+    1/4 cup refrigerated or frozen egg product, thawed, or 2 egg whites, slightly beaten
+    2 tablespoons chopped tomato
+    3 dashes bottled hot pepper sauce (optional)
+    1 8 inch whole wheat tortilla, warmed*
+    Directions
+    Prepare turkey bacon according to package directions; crumble and set aside.
+    Coat a medium nonstick skillet with nonstick cooking spray. Heat skillet over medium heat; add sweet pepper, cumin, and, if desired, crushed red pepper. Cook and stir until tender, about 3 minutes. Add egg product; cook, without stirring, until mixture begins to set on the bottom and around edge. With a spatula or large spoon, lift and fold the partially cooked egg mixture so that the uncooked portion flows underneath. Continue cooking for 2 to 3 minutes or until egg mixture is cooked through but is still glossy and moist.
+    Stir in tomato, bacon, and, if desired, hot pepper sauce. Spoon onto tortilla; roll up.
 
-*** Blueberry Overnight Oats
+<x-color><param>#7CB8BB</param>*** Blueberry Overnight Oats</x-color>
 
-makes 2 servings
-Ingredients
-1 cup whole oats
-1 tablespoon chia seeds
-1 tablespoon ground flax
-1/4 teaspoon cinnamon
-1 - 1 1/4 cups almond milk (depending on how thick you like your oats)
-1/4 cup Greek yogurt
-1 tablespoons honey
-1 teaspoon vanilla
-1/2 cup fresh blueberries, plus more for topping
-sliced almonds, for topping
-Instructions
-Combine all ingredients, with the exception of the almonds, in a bowl (or a jar) and mix together. Cover and refrigerate overnight.
-In the morning, remove oats from the refrigerator, divide between two bowls and top with more blueberries and sliced almonds.
+    makes 2 servings
+    Ingredients
+    1 cup whole oats
+    1 tablespoon chia seeds
+    1 tablespoon ground flax
+    1/4 teaspoon cinnamon
+    1 - 1 1/4 cups almond milk (depending on how thick you like your oats)
+    1/4 cup Greek yogurt
+    1 tablespoons honey
+    1 teaspoon vanilla
+    1/2 cup fresh blueberries, plus more for topping
+    sliced almonds, for topping
+    Instructions
+    Combine all ingredients, with the exception of the almonds, in a bowl (or a jar) and mix together. Cover and refrigerate overnight.
+    In the morning, remove oats from the refrigerator, divide between two bowls and top with more blueberries and sliced almonds.
 
-*** Pumpkin Oatmeal Breakfast
+<x-color><param>#7CB8BB</param>*** Pumpkin Oatmeal Breakfast</x-color>
 
-1 3/4 cups almond milk or water
-1/2 cup uncooked quick oats
-1/2 cup canned pumpkin puree
-1/2 teaspoon pumpkin pie spice
-Dash of sea salt
-maple syrup, nuts, and coconut flakes for garnish
-Instructions
-In a saucepan, bring almond milk or water to a boil and stir in oats, canned pumpkin and pumpkin spice. Reduce heat immediately
-and let the mixture simmer a few minutes, stirring until oats are cooked. Serve with a sprinkle of coconut flakes, chopped pecans,
-and/or drizzled maple syrup.
+    1 3/4 cups almond milk or water
+    1/2 cup uncooked quick oats
+    1/2 cup canned pumpkin puree
+    1/2 teaspoon pumpkin pie spice
+    Dash of sea salt
+    maple syrup, nuts, and coconut flakes for garnish
+    Instructions
+    In a saucepan, bring almond milk or water to a boil and stir in oats, canned pumpkin and pumpkin spice. Reduce heat immediately
+    and let the mixture simmer a few minutes, stirring until oats are cooked. Serve with a sprinkle of coconut flakes, chopped pecans,
+    and/or drizzled maple syrup.
 
-*** Green eggs and ham breakfast burrito
+<x-color><param>#7CB8BB</param>*** Green eggs and ham breakfast burrito</x-color>
 
-makes 2 servings
-What You'll Need:
-1/4 cup pancetta, diced
-4 eggs
-2 tablespoons milk
-1/2 tablespoon olive oil
-2 tablespoons pesto
-2 whole wheat tortillas
-Salt
-Fresh ground pepper
-What to Do:
-Heat a small sauté pan over low heat.
-Add the pancetta and cook until lightly crisp, about 12-15 minutes. Set aside.
-Meanwhile, in a medium mixing bowl, beat eggs and milk until well combined and pale yellow. Season with salt and pepper.
-Heat olive oil in a large saute pan over medium heat.
-Add egg mixture to the pan. Let the eggs cook without stirring for a minute or two.
-As the eggs start to set, use a wooden spoon to move the eggs around the pan, forming large curds. Continue cooking,
-stirring constantly, until the eggs set to desired doneness, about 3-5 minutes.
-Drain and discard the oil from the pancetta. Add the meat to the scrambled eggs and mix together.
-Spread 1 tablespoon of pesto across each tortilla.  Divide the egg mixture among each tortilla, and roll burrito.
+    makes 2 servings
+    What You'll Need:
+    1/4 cup pancetta, diced
+    4 eggs
+    2 tablespoons milk
+    1/2 tablespoon olive oil
+    2 tablespoons pesto
+    2 whole wheat tortillas
+    Salt
+    Fresh ground pepper
+    What to Do:
+    Heat a small sauté pan over low heat.
+    Add the pancetta and cook until lightly crisp, about 12-15 minutes. Set aside.
+    Meanwhile, in a medium mixing bowl, beat eggs and milk until well combined and pale yellow. Season with salt and pepper.
+    Heat olive oil in a large saute pan over medium heat.
+    Add egg mixture to the pan. Let the eggs cook without stirring for a minute or two.
+    As the eggs start to set, use a wooden spoon to move the eggs around the pan, forming large curds. Continue cooking,
+    stirring constantly, until the eggs set to desired doneness, about 3-5 minutes.
+    Drain and discard the oil from the pancetta. Add the meat to the scrambled eggs and mix together.
+    Spread 1 tablespoon of pesto across each tortilla.  Divide the egg mixture among each tortilla, and roll burrito.
 
-*** Smoked Salmon and egg tortilla
+<x-color><param>#7CB8BB</param>*** Smoked Salmon and egg tortilla</x-color>
 
-serves 2
-What You’ll Need:
-2 whole wheat tortillas
-6 slices of smoked salmon
-1 sliced avocado
-2 handfuls of alfalfa sprouts
-4 eggs
-Salt and pepper to taste
-What To Do:
-Warm up the tortillas for a few minutes in the toaster oven. (No toaster oven? About 45 seconds in the microwave is just fine.)
-Place three slices of smoked salmon on top of each warmed tortilla.
-Layer on the sliced avocado and a handful of alfalfa sprouts.
-Fry up four eggs total, two per serving, (recommended over easy to medium so the yolk is still a bit runny). Add a pinch of salt and pepper.
-Once eggs are cooked, place on top of the alfalfa sprouts, and break open the yolks. Heat lovers, add a dash of hot sauce for a zesty addition! Enjoy!
+    serves 2
+    What You’ll Need:
+    2 whole wheat tortillas
+    6 slices of smoked salmon
+    1 sliced avocado
+    2 handfuls of alfalfa sprouts
+    4 eggs
+    Salt and pepper to taste
+    What To Do:
+    Warm up the tortillas for a few minutes in the toaster oven. (No toaster oven? About 45 seconds in the microwave is just fine.)
+    Place three slices of smoked salmon on top of each warmed tortilla.
+    Layer on the sliced avocado and a handful of alfalfa sprouts.
+    Fry up four eggs total, two per serving, (recommended over easy to medium so the yolk is still a bit runny). Add a pinch of salt and pepper.
+    Once eggs are cooked, place on top of the alfalfa sprouts, and break open the yolks. Heat lovers, add a dash of hot sauce for a zesty addition! Enjoy!
 
-*** lunch/dinner
+<x-color><param>#7CB8BB</param>*** lunch/dinner</x-color>
 
-*** Figure out how much home made peanut butter sandwich costs
+<x-color><param>#7CB8BB</param>*** Figure out how much home made peanut butter sandwich costs</x-color>
 
-**** 19 cups of flour costs 3.13
+<x-color><param>#D0BF8F</param>**** 19 cups of flour costs 3.13</x-color>
 
-**** 100 grams of yeast is 3.42
+<x-color><param>#D0BF8F</param>**** 100 grams of yeast is 3.42</x-color>
 
-**** 77 cents for the entire loaf!
+<x-color><param>#D0BF8F</param>**** 77 cents for the entire loaf!</x-color>
 
-**** 2 sandwichs costs 39 cents not including the cost of peanut butter
+<x-color><param>#D0BF8F</param>**** 2 sandwichs costs 39 cents not including the cost of peanut butter</x-color>
 
-*** Mama's amazing Zita...makes 6 servings
+<x-color><param>#7CB8BB</param>*** Mama's amazing Zita...makes 6 servings</x-color>
 
-Views Nutrition Facts
-Ingredients
-1 pound 95%-lean ground beef
-2 cups shredded carrot
-2 10 3/4 ounce cans reduced-fat and reduced-sodium condensed tomato soup
-2 1/2 cups water
-8 ounces dried cut ziti pasta (about 2 1/2 cups)
-2 tablespoons snipped fresh basil or 2 teaspoons dried basil, crushed
-1 teaspoon onion powder
-1 teaspoon garlic powder
-1 cup shredded part-skim mozzarella cheese (4 ounces)
-1/4 cup shredded Parmesan cheese (1 ounce)
-Directions
-In a 4-quart Dutch oven, cook ground beef and shredded carrot over medium heat until meat is brown. Drain off fat. Stir tomato soup, the water, uncooked ziti, dried basil (if using), onion powder, and garlic powder into meat mixture in Dutch oven.
-Bring mixture to boiling; reduce heat. Cover and cook about 25 minutes or until ziti is tender, stirring occasionally. Stir in fresh basil (if using) and mozzarella cheese. Sprinkle individual servings with Parmesan cheese.
+    Views Nutrition Facts
+    Ingredients
+    1 pound 95%-lean ground beef
+    2 cups shredded carrot
+    2 10 3/4 ounce cans reduced-fat and reduced-sodium condensed tomato soup
+    2 1/2 cups water
+    8 ounces dried cut ziti pasta (about 2 1/2 cups)
+    2 tablespoons snipped fresh basil or 2 teaspoons dried basil, crushed
+    1 teaspoon onion powder
+    1 teaspoon garlic powder
+    1 cup shredded part-skim mozzarella cheese (4 ounces)
+    1/4 cup shredded Parmesan cheese (1 ounce)
+    Directions
+    In a 4-quart Dutch oven, cook ground beef and shredded carrot over medium heat until meat is brown. Drain off fat. Stir tomato soup, the water, uncooked ziti, dried basil (if using), onion powder, and garlic powder into meat mixture in Dutch oven.
+    Bring mixture to boiling; reduce heat. Cover and cook about 25 minutes or until ziti is tender, stirring occasionally. Stir in fresh basil (if using) and mozzarella cheese. Sprinkle individual servings with Parmesan cheese.
 
-*** Grilled Fish tacos
+<x-color><param>#7CB8BB</param>*** Grilled Fish tacos</x-color>
 
-Makes 6 servings
-Ingredients
-1 pound fresh or frozen skinless cod, sole, or flounder fillets, 1/2 inch thick
-1 tablespoon lemon juice
-1 tablespoon olive oil
-1 teaspoon chili powder
-1/2 teaspoon ground cumin
-1/4 teaspoon salt
-1/4 teaspoon ground black pepper
-12 7 - 8 fat-free flour tortillas
-Directions
-Thaw fish, if frozen. Arrange fish in a 2-quart square baking dish; set aside. In a small bowl whisk together lemon juice, oil, chili powder, cumin, salt, and pepper. Pour over fish. Turn fish to coat with marinade. Cover and chill for 15 minutes. Drain fish, discarding any marinade. Stack tortillas and wrap in foil.
-For a charcoal grill, grill fish and tortillas on the greased rack of an uncovered grill directly over medium coals for 4 to 6 minutes or until fish flakes easily when tested with a fork and tortillas are warmed, turning tortilla stack once. (For a gas grill, preheat grill. Reduce heat to medium. Place fish and tortilla stack on greased grill rack over heat. Cover and grill as above.)
-Transfer fish to a cutting board. Cut or flake fish into 1-inch pieces. Serve in warmed tortillas topped with Pineapple Salsa and/or Chipotle Coleslaw.
+    Makes 6 servings
+    Ingredients
+    1 pound fresh or frozen skinless cod, sole, or flounder fillets, 1/2 inch thick
+    1 tablespoon lemon juice
+    1 tablespoon olive oil
+    1 teaspoon chili powder
+    1/2 teaspoon ground cumin
+    1/4 teaspoon salt
+    1/4 teaspoon ground black pepper
+    12 7 - 8 fat-free flour tortillas
+    Directions
+    Thaw fish, if frozen. Arrange fish in a 2-quart square baking dish; set aside. In a small bowl whisk together lemon juice, oil, chili powder, cumin, salt, and pepper. Pour over fish. Turn fish to coat with marinade. Cover and chill for 15 minutes. Drain fish, discarding any marinade. Stack tortillas and wrap in foil.
+    For a charcoal grill, grill fish and tortillas on the greased rack of an uncovered grill directly over medium coals for 4 to 6 minutes or until fish flakes easily when tested with a fork and tortillas are warmed, turning tortilla stack once. (For a gas grill, preheat grill. Reduce heat to medium. Place fish and tortilla stack on greased grill rack over heat. Cover and grill as above.)
+    Transfer fish to a cutting board. Cut or flake fish into 1-inch pieces. Serve in warmed tortillas topped with Pineapple Salsa and/or Chipotle Coleslaw.
 
-*** Spaghetti with Tomatoes and Shrimp
+<x-color><param>#7CB8BB</param>*** Spaghetti with Tomatoes and Shrimp</x-color>
 
-Makes 4 servings
-Ingredients
-8 ounces dried whole wheat or 50 percent whole wheat spaghetti
-1 tablespoon olive oil
-12 ounces medium shrimp, peeled and deveined
-3 cloves garlic, minced
-2 14 1/2 ounce can no-salt-added whole tomatoes with juice, coarsely chopped
-3 tablespoons tomato paste
-1 tablespoon chopped fresh basil or 1 teaspoon dried basil
-1 tablespoon chopped fresh oregano or 1 teaspoon dried oregano
-1 tablespoon drained capers
-1/4 teaspoon red pepper flakes
-Chopped fresh basil (optional)
-Directions
-In a medium saucepan cook pasta according to package directions. Drain.
-Meanwhile, in a large saucepan, heat the olive oil over medium heat. Add the shrimp and garlic and cook until the shrimp are opaque throughout, about 4 minutes. Transfer the shrimp mixture to a bowl and set aside.
-Add the tomatoes, tomato paste, basil, oregano, capers, and red pepper flakes to the large pan. Bring to a simmer and cook 10 minutes, uncovered, stirring occasionally. Return the shrimp mixture to the pan and cook until heated through, about 2 minutes.
+    Makes 4 servings
+    Ingredients
+    8 ounces dried whole wheat or 50 percent whole wheat spaghetti
+    1 tablespoon olive oil
+    12 ounces medium shrimp, peeled and deveined
+    3 cloves garlic, minced
+    2 14 1/2 ounce can no-salt-added whole tomatoes with juice, coarsely chopped
+    3 tablespoons tomato paste
+    1 tablespoon chopped fresh basil or 1 teaspoon dried basil
+    1 tablespoon chopped fresh oregano or 1 teaspoon dried oregano
+    1 tablespoon drained capers
+    1/4 teaspoon red pepper flakes
+    Chopped fresh basil (optional)
+    Directions
+    In a medium saucepan cook pasta according to package directions. Drain.
+    Meanwhile, in a large saucepan, heat the olive oil over medium heat. Add the shrimp and garlic and cook until the shrimp are opaque throughout, about 4 minutes. Transfer the shrimp mixture to a bowl and set aside.
+    Add the tomatoes, tomato paste, basil, oregano, capers, and red pepper flakes to the large pan. Bring to a simmer and cook 10 minutes, uncovered, stirring occasionally. Return the shrimp mixture to the pan and cook until heated through, about 2 minutes.
 
-*** Oven Baked Salman with Avocado Dill yogurt
+<x-color><param>#7CB8BB</param>*** Oven Baked Salman with Avocado Dill yogurt</x-color>
 
-What You'll Need:
-1 medium avocado, diced (skin and pit removed)
-1/2 cup Greek yogurt
-3 tablespoons fresh dill, chopped
-1 clove garlic
-2 tablespoons lemon juice
-1-3 tablespoons water
-Salt
-Fresh ground pepper
-4 6-oz salmon fillets
-1 tablespoon olive oil
-What to Do:
-Preheat oven to 400 degrees.
-While the oven heats up, prepare the yogurt sauce. In a food processor or blender, combine the avocado, Greek yogurt,
-dill, garlic, lemon juice, 1 tablespoon water, salt, and pepper. Puree the mixture until smooth and creamy. If necessary,
-add more water one tablespoon at a time until it reaches the desired consistency. Set aside.
-Place fish, skin side down, on a foil-lined baking sheet. Season with fillets with salt and pepper and brush with olive
-oil (about 1 tablespoon total).
-Bake fish (without flipping) until just cooked through, about 8 to 10 minutes, (depending on thickness). (Note: Thicker,
-center-cut fillets will take longer, while thinner fillets cut from the tail section will cook faster.)
-Once cooked, remove from oven and plate each fillet. Top with 1-2 tablespoons of the avocado-dill yogurt, and enjoy!
+    What You'll Need:
+    1 medium avocado, diced (skin and pit removed)
+    1/2 cup Greek yogurt
+    3 tablespoons fresh dill, chopped
+    1 clove garlic
+    2 tablespoons lemon juice
+    1-3 tablespoons water
+    Salt
+    Fresh ground pepper
+    4 6-oz salmon fillets
+    1 tablespoon olive oil
+    What to Do:
+    Preheat oven to 400 degrees.
+    While the oven heats up, prepare the yogurt sauce. In a food processor or blender, combine the avocado, Greek yogurt,
+    dill, garlic, lemon juice, 1 tablespoon water, salt, and pepper. Puree the mixture until smooth and creamy. If necessary,
+    add more water one tablespoon at a time until it reaches the desired consistency. Set aside.
+    Place fish, skin side down, on a foil-lined baking sheet. Season with fillets with salt and pepper and brush with olive
+    oil (about 1 tablespoon total).
+    Bake fish (without flipping) until just cooked through, about 8 to 10 minutes, (depending on thickness). (Note: Thicker,
+    center-cut fillets will take longer, while thinner fillets cut from the tail section will cook faster.)
+    Once cooked, remove from oven and plate each fillet. Top with 1-2 tablespoons of the avocado-dill yogurt, and enjoy!
 
-*** creamy avocado pasta
+<x-color><param>#7CB8BB</param>*** creamy avocado pasta</x-color>
 
-makes 2 servings
-What You'll Need:
-1 medium sized ripe Avocado, pitted 1/2 lemon, juiced + lemon zest to garnish 2-3 garlic cloves, to taste 1/2 tsp kosher salt, or to taste 1/4 cup Fresh Basil, (optional) 2 tbsp extra virgin olive oil 2 servings/6 oz of your choice of pasta Freshly ground black pepper, to taste
-What to Do:
-Bring several cups of water to a boil in a medium sized pot. Add in your pasta, reduce heat to medium, and cook until Al Dente, about 8-10 minutes.
-Meanwhile, make the sauce by placing the garlic cloves, lemon juice, and olive oil into a food processor. Process until smooth. Now add in the pitted avocado, basil, and salt. Process until smooth and creamy.
-When pasta is done cooking, drain and rinse in a strainer and place pasta into a large bowl. Pour on sauce and toss until fully combined. Garnish with lemon zest and black pepper. Serve immediately.
+    makes 2 servings
+    What You'll Need:
+    1 medium sized ripe Avocado, pitted 1/2 lemon, juiced + lemon zest to garnish 2-3 garlic cloves, to taste 1/2 tsp kosher salt, or to taste 1/4 cup Fresh Basil, (optional) 2 tbsp extra virgin olive oil 2 servings/6 oz of your choice of pasta Freshly ground black pepper, to taste
+    What to Do:
+    Bring several cups of water to a boil in a medium sized pot. Add in your pasta, reduce heat to medium, and cook until Al Dente, about 8-10 minutes.
+    Meanwhile, make the sauce by placing the garlic cloves, lemon juice, and olive oil into a food processor. Process until smooth. Now add in the pitted avocado, basil, and salt. Process until smooth and creamy.
+    When pasta is done cooking, drain and rinse in a strainer and place pasta into a large bowl. Pour on sauce and toss until fully combined. Garnish with lemon zest and black pepper. Serve immediately.
 
-*** Butternut Squash Soup
+<x-color><param>#7CB8BB</param>*** Butternut Squash Soup</x-color>
 
-serves 6-8 and freezes well
-What You'll Need:
-1 onion, diced into medium sized chunks
-1 butternut squash, cut into bite sized pieces
-4 cups low-sodium chicken broth
-2-3 boneless, skinless chicken breasts (about 1 lb.), cut into bite sized pieces (chicken thighs work well, too)
-Salt and pepper
-2-3 tablespoons olive oil
-¼ teaspoon coriander
-¼ teaspoon cumin
-Pro Tip: If you can’t find coriander and cumin in your local grocery store, swap them out for ½ a teaspoon of a classic curry powder.
-What to Do:
+    serves 6-8 and freezes well
+    What You'll Need:
+    1 onion, diced into medium sized chunks
+    1 butternut squash, cut into bite sized pieces
+    4 cups low-sodium chicken broth
+    2-3 boneless, skinless chicken breasts (about 1 lb.), cut into bite sized pieces (chicken thighs work well, too)
+    Salt and pepper
+    2-3 tablespoons olive oil
+    ¼ teaspoon coriander
+    ¼ teaspoon cumin
+    Pro Tip: If you can’t find coriander and cumin in your local grocery store, swap them out for ½ a teaspoon of a classic curry powder.
+    What to Do:
 1. On a rimmed baking sheet (or in a baking dish), toss together onion, squash, and chicken with the olive oil (enough to coat),
 and salt and pepper to taste.
 2. Roast until chicken is cooked through and squash is tender, about 30-40 minutes.
@@ -855,188 +879,188 @@ will help to thicken the soup.)
 6. Continue to simmer for 10-15 minutes to allow soup to thicken.
 7. Serve and season with salt and pepper as needed. Enjoy!
 
-*** Chick pea, kale, and tomato soup
+<x-color><param>#7CB8BB</param>*** Chick pea, kale, and tomato soup</x-color>
 
-What You'll Need:
-1 small red onion, diced
-1 large zucchini, diced
-1 tablespoon fresh ginger, minced
-1/4 teaspoon salt
-1 tablespoon olive oil
-1 28oz. can whole peeled tomatoes
-2 cups canned chickpeas, drained and rinsed
-6-8 stalks kale, roughly chopped
-1 large fresh tomato
-3 teaspoons cumin powder
-1 teaspoon chili powder
-Water
-What to Do:
-Heat a medium-sized pot (with tall sides) over medium-high heat. Add the olive oil, onion, zucchini, and ginger. Season
-with salt to taste.
-Once the onion is translucent, add enough water to cover the cooked vegetables, the canned tomatoes (with the juice), kale,
-fresh tomato, chickpeas, chili, and cumin.
-Bring to a boil. Then, reduce heat to low and let simmer with the lid on for 25 minutes, stirring occasionally.
-Once finished, you have two options: Enjoy it chunky style as-is, or wait for
+    What You'll Need:
+    1 small red onion, diced
+    1 large zucchini, diced
+    1 tablespoon fresh ginger, minced
+    1/4 teaspoon salt
+    1 tablespoon olive oil
+    1 28oz. can whole peeled tomatoes
+    2 cups canned chickpeas, drained and rinsed
+    6-8 stalks kale, roughly chopped
+    1 large fresh tomato
+    3 teaspoons cumin powder
+    1 teaspoon chili powder
+    Water
+    What to Do:
+    Heat a medium-sized pot (with tall sides) over medium-high heat. Add the olive oil, onion, zucchini, and ginger. Season
+    with salt to taste.
+    Once the onion is translucent, add enough water to cover the cooked vegetables, the canned tomatoes (with the juice), kale,
+    fresh tomato, chickpeas, chili, and cumin.
+    Bring to a boil. Then, reduce heat to low and let simmer with the lid on for 25 minutes, stirring occasionally.
+    Once finished, you have two options: Enjoy it chunky style as-is, or wait for
 
-*** Hearty Chicken and Vegetable soup
+<x-color><param>#7CB8BB</param>*** Hearty Chicken and Vegetable soup</x-color>
 
-*** Awesome chicken Pasta
+<x-color><param>#7CB8BB</param>*** Awesome chicken Pasta</x-color>
 
-Ingredients
-8 ounces fettuccine
-1/4 7 ounce jaroil-packed, dried tomato strips or pieces
-1 large zucchini or yellow summer squash, halved lengthwise and sliced (about 2 cups)
-8 ounces chicken breast meat, cut in cubes
-1/2 cup finely shredded Parmesan, Romano, or Asiago cheese (2 ounces)
-Black pepper, freshly ground
-Directions
+    Ingredients
+    8 ounces fettuccine
+    1/4 7 ounce jaroil-packed, dried tomato strips or pieces
+    1 large zucchini or yellow summer squash, halved lengthwise and sliced (about 2 cups)
+    8 ounces chicken breast meat, cut in cubes
+    1/2 cup finely shredded Parmesan, Romano, or Asiago cheese (2 ounces)
+    Black pepper, freshly ground
+    Directions
 1. Cook in lightly salted boiling water according to package directions; drain. Return pasta to hot pan.
 2. Meanwhile, drain tomato strips, reserving 2 tablespoons oil from jar; set aside. In a large skillet, heat 1 tablespoon reserved oil over medium-high heat. Add zucchini; cook and stir 2 to 3 minutes or until crisp-tender. Remove from skillet. Add remaining reserved oil to skillet. Add chicken; cook and stir 2 to 3 minutes or until no longer pink. Gently toss zucchini, chicken, and tomato with cooked pasta. Sprinkle each serving with cheese and season to taste with pepper. Makes 4 servings.
 
-*** Fajita-Style Quesadillas
+<x-color><param>#7CB8BB</param>*** Fajita-Style Quesadillas</x-color>
 
-Ingredients
-1/2 medium red or green sweet pepper, seeded and cut into bite-size strips
-1/2 medium onion, halved and thinly sliced
-1 fresh serrano pepper, halved, seeded, and cut into thin strips*
-2 teaspoons vegetable oil
-4 6-inch white corn tortillas
-Nonstick cooking spray
-1/2 cup shredded Monterey Jack cheese (2 ounces)
-2 thin slicestomato, halved crosswise
-1 tablespoon snipped fresh cilantro
-Light dairy sour cream (optional)
-Cilantro and lime wedges (optional)
-Directions
+    Ingredients
+    1/2 medium red or green sweet pepper, seeded and cut into bite-size strips
+    1/2 medium onion, halved and thinly sliced
+    1 fresh serrano pepper, halved, seeded, and cut into thin strips*
+    2 teaspoons vegetable oil
+    4 6-inch white corn tortillas
+    Nonstick cooking spray
+    1/2 cup shredded Monterey Jack cheese (2 ounces)
+    2 thin slicestomato, halved crosswise
+    1 tablespoon snipped fresh cilantro
+    Light dairy sour cream (optional)
+    Cilantro and lime wedges (optional)
+    Directions
 1. In a large skillet cook sweet pepper, onion, and serrano pepper in hot oil over medium-high heat for 3 to 5 minutes or until vegetables are just tender. Remove from heat.
 2. Lightly coat one side of each tortilla with cooking spray. On the uncoated side of two of the tortillas, divide half of the cheese. Top with onion mixture, tomato slices, the 1 tablespoon cilantro, and the remaining cheese. Top with remaining tortillas, coated sides up.
 3. Heat a very large skillet or griddle over medium heat. Cook quesadillas for 4 to 5 minutes per side or until cheese melts and tortillas are lightly browned. Cut each quesadilla into 4 wedges. Serve warm and, if desired, with sour cream, additional cilantro and lime wedges.
 
-*** Farfalle pasta with Mushrooms and Shrimp
+<x-color><param>#7CB8BB</param>*** Farfalle pasta with Mushrooms and Shrimp</x-color>
 
-Ingredients
-6 ounces dried farfalle (bow-tie pasta)
-1 tablespoon olive oil
-1 medium onion, chopped
-1 cup sliced portobello or other fresh mushrooms
-2 cloves garlic, minced
-4 cups thinly sliced fresh spinach
-1 teaspoon snipped fresh thyme
-1/8 teaspoon pepper
-2 tablespoons shredded Parmesan cheese
-Directions
-Cook farfalle according to package directions. Drain well.
-Meanwhile, in a large skillet, heat oil over medium heat. Add onion, mushrooms, and garlic; cook and stir for 2 to 3 minutes or until mushrooms are nearly tender. Stir in spinach, thyme, and pepper; cook 1 minute or until heated through and spinach is slightly wilted. Stir in cooked pasta; toss gently to mix. Sprinkle with cheese. Makes 4 side-dish servings.
+    Ingredients
+    6 ounces dried farfalle (bow-tie pasta)
+    1 tablespoon olive oil
+    1 medium onion, chopped
+    1 cup sliced portobello or other fresh mushrooms
+    2 cloves garlic, minced
+    4 cups thinly sliced fresh spinach
+    1 teaspoon snipped fresh thyme
+    1/8 teaspoon pepper
+    2 tablespoons shredded Parmesan cheese
+    Directions
+    Cook farfalle according to package directions. Drain well.
+    Meanwhile, in a large skillet, heat oil over medium heat. Add onion, mushrooms, and garlic; cook and stir for 2 to 3 minutes or until mushrooms are nearly tender. Stir in spinach, thyme, and pepper; cook 1 minute or until heated through and spinach is slightly wilted. Stir in cooked pasta; toss gently to mix. Sprinkle with cheese. Makes 4 side-dish servings.
 
-*** Eating for 1!
+<x-color><param>#7CB8BB</param>*** Eating for 1!</x-color>
 
-**** Healthy Fried Rice
+<x-color><param>#D0BF8F</param>**** Healthy Fried Rice</x-color>
 
-Ingredients:
-½ cup cooked brown rice (left over from another meal)
-1 egg
-½ cup veggies (i.e. frozen peas, shredded/sliced carrots or zucchinis, chopped spinach or bok choy, sliced peppers, a mixture of any)
-Seasoning (i.e. soy sauce, garlic, ginger, red pepper flakes, etc.)
-Directions:
-Crack egg in a small bowl, beat, and set aside.
-In a small frying pan on medium heat, cook/thaw the veggies you are using.
-Add the rice part way through so it can begin to heat up.
-Add a tablespoon of water and cover for about 2 minutes to steam cook/heat them.
-Add the beaten egg and stir/cook the whole mixture until the egg is done.
-Add soy sauce or other seasonings for flavor.
+     Ingredients:
+     ½ cup cooked brown rice (left over from another meal)
+     1 egg
+     ½ cup veggies (i.e. frozen peas, shredded/sliced carrots or zucchinis, chopped spinach or bok choy, sliced peppers, a mixture of any)
+     Seasoning (i.e. soy sauce, garlic, ginger, red pepper flakes, etc.)
+     Directions:
+     Crack egg in a small bowl, beat, and set aside.
+     In a small frying pan on medium heat, cook/thaw the veggies you are using.
+     Add the rice part way through so it can begin to heat up.
+     Add a tablespoon of water and cover for about 2 minutes to steam cook/heat them.
+     Add the beaten egg and stir/cook the whole mixture until the egg is done.
+     Add soy sauce or other seasonings for flavor.
 
-**** Delicate Squash and Tofu Curry
+<x-color><param>#D0BF8F</param>**** Delicate Squash and Tofu Curry</x-color>
 
-Ingredients
-2 tablespoons curry powder, preferably Madras
-1/2 teaspoon salt
-1/4 teaspoon freshly ground pepper
-1 14-ounce package extra-firm or firm water-packed tofu
-4 teaspoons canola oil, divided
-1 large delicata squash (about 1 pound), halved, seeded and cut into 1-inch cubes
-1 medium onion, halved and sliced
-2 teaspoons grated fresh ginger
-1 14-ounce can “lite” coconut milk
-1 teaspoon light brown sugar
-8 cups coarsely chopped kale or chard, tough stems removed
-1 tablespoon lime juice, plus more to taste
-Preparation
-Combine curry powder, salt and pepper in a small bowl. Blot tofu dry with a paper towel and cut into 1-inch cubes;
-toss the tofu in a medium bowl with 1 teaspoon of the spice mixture.
-Heat 2 teaspoons oil in a large nonstick skillet over medium-high heat. Add the tofu and cook, stirring every 2 minutes,
-until browned, 6 to 8 minutes total. Transfer to a plate.
-Heat the remaining 2 teaspoons oil over medium-high heat. Add squash, onion, ginger and the remaining spice mixture;
-cook, stirring, until the vegetables are lightly browned, 4 to 5 minutes. Add coconut milk and brown sugar; bring to a boil.
-Add half the kale (or chard) and cook, stirring, until slightly wilted, about 1 minute. Stir in the rest of the greens and cook,
-stirring, for 1 minute. Return the tofu to the pan, cover and cook, stirring once or twice, until the squash and greens are tender, 3
-to 5 minutes more. Remove from the heat and stir in lime juice.
+     Ingredients
+     2 tablespoons curry powder, preferably Madras
+     1/2 teaspoon salt
+     1/4 teaspoon freshly ground pepper
+     1 14-ounce package extra-firm or firm water-packed tofu
+     4 teaspoons canola oil, divided
+     1 large delicata squash (about 1 pound), halved, seeded and cut into 1-inch cubes
+     1 medium onion, halved and sliced
+     2 teaspoons grated fresh ginger
+     1 14-ounce can “lite” coconut milk
+     1 teaspoon light brown sugar
+     8 cups coarsely chopped kale or chard, tough stems removed
+     1 tablespoon lime juice, plus more to taste
+     Preparation
+     Combine curry powder, salt and pepper in a small bowl. Blot tofu dry with a paper towel and cut into 1-inch cubes;
+     toss the tofu in a medium bowl with 1 teaspoon of the spice mixture.
+     Heat 2 teaspoons oil in a large nonstick skillet over medium-high heat. Add the tofu and cook, stirring every 2 minutes,
+     until browned, 6 to 8 minutes total. Transfer to a plate.
+     Heat the remaining 2 teaspoons oil over medium-high heat. Add squash, onion, ginger and the remaining spice mixture;
+     cook, stirring, until the vegetables are lightly browned, 4 to 5 minutes. Add coconut milk and brown sugar; bring to a boil.
+     Add half the kale (or chard) and cook, stirring, until slightly wilted, about 1 minute. Stir in the rest of the greens and cook,
+     stirring, for 1 minute. Return the tofu to the pan, cover and cook, stirring once or twice, until the squash and greens are tender, 3
+     to 5 minutes more. Remove from the heat and stir in lime juice.
 
-**** Huevos Rancheros Verdes
+<x-color><param>#D0BF8F</param>**** Huevos Rancheros Verdes</x-color>
 
-Ingredients
-1 1/2 cups very thinly sliced romaine lettuce
-1 scallion, sliced
-2 tablespoons chopped fresh cilantro
-3 teaspoons canola oil, divided
-2 teaspoons lime juice
-1/4 teaspoon salt, divided
-1/4 teaspoon freshly ground pepper, divided
-1 15-ounce can pinto beans, rinsed
-1/2 cup prepared green salsa , (see Tip)
-8 6-inch corn tortillas
-Canola oil cooking spray
-3/4 cup shredded sharp Cheddar cheese
-4 large eggs
-Preparation
-Preheat oven to 400°F.
-Combine lettuce, scallion, cilantro, 1 teaspoon oil, lime juice, 1/8 teaspoon salt and 1/8 teaspoon pepper in a bowl;
-set aside. Combine beans and salsa in another bowl.
-Coat both sides of each tortilla with cooking spray. Place tortillas on a large baking sheet in 4 sets of overlapping pairs.
-(Each pair should overlap by about 3 inches.) Spread about 1/3 cup of the bean mixture on top of each pair of tortillas and
-sprinkle with 3 tablespoons cheese each. Bake until the beans are hot and the cheese is melted, about 10 minutes.
-Meanwhile, heat the remaining 2 teaspoons oil in a large nonstick skillet over medium heat. Crack each egg into a small
-bowl and slip them one at a time into the pan, taking care not to break the yolks. Season the eggs with the remaining 1/8
-teaspoon salt and pepper. Reduce heat to medium-low and cook undisturbed for 5 to 7 minutes for soft-set yolks. (For hard-set yolks,
-cover the pan after 5 minutes and continue cooking until the yolks are cooked through, 4 to 6 minutes more.)
-To assemble, place an egg on top of each pair of tortillas and top with a generous 1/4 cup of the lettuce mixture.
+     Ingredients
+     1 1/2 cups very thinly sliced romaine lettuce
+     1 scallion, sliced
+     2 tablespoons chopped fresh cilantro
+     3 teaspoons canola oil, divided
+     2 teaspoons lime juice
+     1/4 teaspoon salt, divided
+     1/4 teaspoon freshly ground pepper, divided
+     1 15-ounce can pinto beans, rinsed
+     1/2 cup prepared green salsa , (see Tip)
+     8 6-inch corn tortillas
+     Canola oil cooking spray
+     3/4 cup shredded sharp Cheddar cheese
+     4 large eggs
+     Preparation
+     Preheat oven to 400°F.
+     Combine lettuce, scallion, cilantro, 1 teaspoon oil, lime juice, 1/8 teaspoon salt and 1/8 teaspoon pepper in a bowl;
+     set aside. Combine beans and salsa in another bowl.
+     Coat both sides of each tortilla with cooking spray. Place tortillas on a large baking sheet in 4 sets of overlapping pairs.
+     (Each pair should overlap by about 3 inches.) Spread about 1/3 cup of the bean mixture on top of each pair of tortillas and
+     sprinkle with 3 tablespoons cheese each. Bake until the beans are hot and the cheese is melted, about 10 minutes.
+     Meanwhile, heat the remaining 2 teaspoons oil in a large nonstick skillet over medium heat. Crack each egg into a small
+     bowl and slip them one at a time into the pan, taking care not to break the yolks. Season the eggs with the remaining 1/8
+     teaspoon salt and pepper. Reduce heat to medium-low and cook undisturbed for 5 to 7 minutes for soft-set yolks. (For hard-set yolks,
+     cover the pan after 5 minutes and continue cooking until the yolks are cooked through, 4 to 6 minutes more.)
+     To assemble, place an egg on top of each pair of tortillas and top with a generous 1/4 cup of the lettuce mixture.
 
-**** Stir-fry Vegtables and Brown rice
+<x-color><param>#D0BF8F</param>**** Stir-fry Vegtables and Brown rice</x-color>
 
-what you'll need
-2 Tablespoons Sesame or Canola Oil
-1 Clove Garlic, minced
-2 Cups Frozen Stir Fry Vegetable Blend
-1 6 – 8 oz Skirt or Flank Steak, cut into ¼ inch thick strips, across the grain
-Kosher Salt
-Fresh Cracked Pepper
-2 Teaspoons Low-Sodium Soy Sauce, divided
-½ Package Uncle Beans Ready Rice™, Whole Grain Brown
-Scallions, sliced
-Heat a cast iron skillet over medium high heat on the stove top; add oil and heat until oil shimmers in the pan and just
-begins to smoke. Carefully add garlic and frozen vegetables (avoid adding vegetables with any ice crystals) and sauté
-for 2 – 3 minutes until just tender and cooked through. Next, add strips of steak, lightly season ingredients with salt,
-pepper, and 1 teaspoon of soy sauce, and cook for 1 – 2 minutes for medium rare/medium. Remove items to a serving plate
-and add the rice into the skillet. Season the rice with remaining tablespoon of soy sauce and cook, stirring often, until
-warmed through; about 1 – 2 minutes. Remove rice from skillet and plate alongside stir fry vegetables and steak. Garnish
-with sliced scallions and serve with soy sauce on the side. Serve.
+     what you'll need
+     2 Tablespoons Sesame or Canola Oil
+     1 Clove Garlic, minced
+     2 Cups Frozen Stir Fry Vegetable Blend
+     1 6 – 8 oz Skirt or Flank Steak, cut into ¼ inch thick strips, across the grain
+     Kosher Salt
+     Fresh Cracked Pepper
+     2 Teaspoons Low-Sodium Soy Sauce, divided
+     ½ Package Uncle Beans Ready Rice™, Whole Grain Brown
+     Scallions, sliced
+     Heat a cast iron skillet over medium high heat on the stove top; add oil and heat until oil shimmers in the pan and just
+     begins to smoke. Carefully add garlic and frozen vegetables (avoid adding vegetables with any ice crystals) and sauté
+     for 2 – 3 minutes until just tender and cooked through. Next, add strips of steak, lightly season ingredients with salt,
+     pepper, and 1 teaspoon of soy sauce, and cook for 1 – 2 minutes for medium rare/medium. Remove items to a serving plate
+     and add the rice into the skillet. Season the rice with remaining tablespoon of soy sauce and cook, stirring often, until
+     warmed through; about 1 – 2 minutes. Remove rice from skillet and plate alongside stir fry vegetables and steak. Garnish
+     with sliced scallions and serve with soy sauce on the side. Serve.
 
-**** Roasted Salmon with Sweet Potatoes and Asparagus
+<x-color><param>#D0BF8F</param>**** Roasted Salmon with Sweet Potatoes and Asparagus</x-color>
 
-1 Sweet Potato, diced into ½ inch cubes
-2 Tablespoons Extra Virgin Olive Oil
-Kosher Salt
-Fresh Cracked Pepper
-1 8 oz Salmon Filet
-1 Handful Fresh Asparagus, stem removed, sliced in half
-½ Lemon, juiced
-Preheat oven to 425 degrees F. Lay out diced potatoes into single layer in the cast iron skillet. Drizzle with oil and
-season potatoes with kosher salt and fresh cracked pepper; toss to coat evenly. Add skillet to oven and roast potatoes 20 – 25 minutes.
-Meanwhile, coat the salmon filet and asparagus in a thin layer of remaining olive oil and season lightly with kosher salt and
-fresh cracked pepper. Remove skillet from oven, push potatoes to one side and add salmon filet, flesh side down to the surface
-of the skillet. Return skillet to oven and roast 3 – 4 minutes. Remove skillet from oven, flip salmon filet, and place to the
-side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
-filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
-Remove entire skillet from oven and plate. Serve.
+     1 Sweet Potato, diced into ½ inch cubes
+     2 Tablespoons Extra Virgin Olive Oil
+     Kosher Salt
+     Fresh Cracked Pepper
+     1 8 oz Salmon Filet
+     1 Handful Fresh Asparagus, stem removed, sliced in half
+     ½ Lemon, juiced
+     Preheat oven to 425 degrees F. Lay out diced potatoes into single layer in the cast iron skillet. Drizzle with oil and
+     season potatoes with kosher salt and fresh cracked pepper; toss to coat evenly. Add skillet to oven and roast potatoes 20 – 25 minutes.
+     Meanwhile, coat the salmon filet and asparagus in a thin layer of remaining olive oil and season lightly with kosher salt and
+     fresh cracked pepper. Remove skillet from oven, push potatoes to one side and add salmon filet, flesh side down to the surface
+     of the skillet. Return skillet to oven and roast 3 – 4 minutes. Remove skillet from oven, flip salmon filet, and place to the
+     side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
+     filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
+     Remove entire skillet from oven and plate. Serve.
 <x-color><param>#BFEBBF</param>** create income without working			    </x-color><x-color><param>#BFEBBF</param>:finance:project:</x-color>
 <x-color><param>#7CB8BB</param>*** try to start a web hosting service</x-color>
 <x-color><param>#D0BF8F</param>**** make some mock websites for a resume.</x-color>
@@ -1044,24 +1068,58 @@ Remove entire skillet from oven and plate. Serve.
 <x-color><param>#9FC59F</param>****** Finish the home page for the mockup-website that is on this computer.</x-color>
 
 <x-color><param>#BFEBBF</param>** How much to lift?					    </x-color><x-color><param>#BFEBBF</param>:fitness:project:</x-color>
-in the first month of body building use light weight. It'll feel like lifting air
-this lets my muscles and tendons get used to the weight.
-In months 2-6 lift a weight that you can get 8-16 reps out of
-Lift to failu
-lifting weights
+   in the first month of body building use light weight. It'll feel like lifting air
+   this lets my muscles and tendons get used to the weight.
+   In months 2-6 lift a weight that you can get 8-16 reps out of
+   Lift to failu
+   lifting weights
 
 <x-color><param>#7CB8BB</param>*** for all chest, shoulder, and lat exercises, have your shoulders down and back. Try to squeese a penny between your shoulder</x-color>
 
-blades
+    blades
 
 <x-color><param>#7CB8BB</param>*** When you do crunches, rise up toward the ceiling</x-color>
 
 <x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
-<x-color><param>#BFEBBF</param>** ways I can reward myself</x-color>
+<x-color><param>#BFEBBF</param>** ways I can reward myself					     </x-color><x-color><param>#BFEBBF</param>:reward:</x-color>
+<x-color><param>#7CB8BB</param>*** make a rebecca black linux live CD</x-color>
+<x-color><param>#7CB8BB</param>*** Go to Kafe Stunde 2pm-3pm in SC 131</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+<x-color><param>#7CB8BB</param>*** ask a psych professor about applied psychology and about how best to make modal commands for editing.</x-color>
 <x-color><param>#7CB8BB</param>*** get connected via ssh to my unix account at purdue. iTAP</x-color>
 
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
+    <x-color><param>#D0BF8F</param>http://www.itap.purdue.edu/learning/careeraccount/unixaccount.html</x-color>
+<x-color><param>#7CB8BB</param>*** improve the eshell output for grep "REGEXP" *</x-color>
+
+    Currently it looks like
+
+    5 matches of "REGEXP" found in This File
+
+    here are the 5 matches
+
+    3 matches of "REGEXP" found in this file
+
+    here are the 3 matches
+
+    
+
+    It should look like
+
+    5 matches found in This File
+
+    here are the 5 matches
+
+    
+
+    3 matches found in this file
+
+    here are the 3 matches
+
+    
+
 <x-color><param>#7CB8BB</param>*** Prove modus ponens. for metalogic</x-color>
+<x-color><param>#7CB8BB</param>*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.</x-color>
+<x-color><param>#7CB8BB</param>*** clone whylinuxisbetter.net I can contribute to make it better!</x-color>
 <x-color><param>#7CB8BB</param>*** use Emacs ERC</x-color>
 <x-color><param>#7CB8BB</param>*** What's a php prepared statement?</x-color>
 
@@ -1089,7 +1147,7 @@ blades
 <x-color><param>#7CB8BB</param>*** I've added two lines to my .xinitrc to auto start gnome-keyring which will apparently record my wifi passwords. It can also add my ssh keys. and do something with firefox.</x-color>
     pacman are not showing up. env allows you to modify your environment if all else fails.
 
-   <x-color><param>#D0BF8F</param>https://wiki.archlinux.org/index.php/environment_variables</x-color>
+    <x-color><param>#D0BF8F</param>https://wiki.archlinux.org/index.php/environment_variables</x-color>
 <x-color><param>#BFEBBF</param>** autocomplete and ispell integration</x-color>
 
    (require 'auto-complete)
@@ -1111,6 +1169,7 @@ blades
 
    (provide 'auto-complete-ispell)
 
+   
 
 <x-color><param>#7CB8BB</param>*** make video explaining firefox nightly and multi-process firefox.</x-color>
 
@@ -1123,9 +1182,15 @@ blades
 <x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 18:00></x-color>
-<x-color><param>#7CB8BB</param>*** ask mom to invite Uncle Gary and Aunt Michelle over for a cook out</x-color>
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
-<x-color><param>#DFAF8F</param>* reference</x-color>
+<x-color><param>#7CB8BB</param>*** tell Abbi and Aunt Michelle (765-592-0545) that our grilling party will be on Saturday at 6pm.</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
+<x-color><param>#7CB8BB</param>*** grill out at parent's house Saturday at 6pm.</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat 18:00></x-color>
+    I need to buy brats and buns for the event.
+
+
+<x-color><param>#DFAF8F</param>* reference							  </x-color><x-color><param>#DFAF8F</param>:reference:</x-color>
 
 <x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> find good recipes of good things to eat  </x-color><x-color><param>#BFEBBF</param>:fitness:reference:</x-color>
 
@@ -1149,49 +1214,49 @@ blades
     426 Calories, 60 of Carbs, 39g of Protein, and 28g of Fiber
 
 
-*** brocolli chicken and rice casserole
+<x-color><param>#7CB8BB</param>*** brocolli chicken and rice casserole</x-color>
 
-*** tuna nuna caserole
+<x-color><param>#7CB8BB</param>*** tuna nuna caserole</x-color>
 
-*** spaghetti and meatballs
+<x-color><param>#7CB8BB</param>*** spaghetti and meatballs</x-color>
 
-*** tacos
+<x-color><param>#7CB8BB</param>*** tacos</x-color>
 
-*** grilled cheese
+<x-color><param>#7CB8BB</param>*** grilled cheese</x-color>
 
-*** cup of soups
+<x-color><param>#7CB8BB</param>*** cup of soups</x-color>
 
-*** spice soup
+<x-color><param>#7CB8BB</param>*** spice soup</x-color>
 
-*** scooby's hash with veggies
+<x-color><param>#7CB8BB</param>*** scooby's hash with veggies</x-color>
 
-*** quesidillas...chicken, taco meat
+<x-color><param>#7CB8BB</param>*** quesidillas...chicken, taco meat</x-color>
 
-*** wraps
+<x-color><param>#7CB8BB</param>*** wraps</x-color>
 
-*** sausage and spaghetti and tomato juice
+<x-color><param>#7CB8BB</param>*** sausage and spaghetti and tomato juice</x-color>
 
-*** chilli
+<x-color><param>#7CB8BB</param>*** chilli</x-color>
 
-*** top your potato night
+<x-color><param>#7CB8BB</param>*** top your potato night</x-color>
 
-*** macoroni and cheese
+<x-color><param>#7CB8BB</param>*** macoroni and cheese</x-color>
 
-*** sub sandwiches
+<x-color><param>#7CB8BB</param>*** sub sandwiches</x-color>
 
-*** baked beans
+<x-color><param>#7CB8BB</param>*** baked beans</x-color>
 
-*** dirty rice
+<x-color><param>#7CB8BB</param>*** dirty rice</x-color>
 
-*** red beans and rice
+<x-color><param>#7CB8BB</param>*** red beans and rice</x-color>
 
-*** frozen lazanga
+<x-color><param>#7CB8BB</param>*** frozen lazanga</x-color>
 
-*** white chicken chilli  6-7 bucks to make!
+<x-color><param>#7CB8BB</param>*** white chicken chilli  6-7 bucks to make!</x-color>
 
-*** hash and eggs
+<x-color><param>#7CB8BB</param>*** hash and eggs</x-color>
 
-*** cerial
+<x-color><param>#7CB8BB</param>*** cerial</x-color>
 
 *** my oatmeal recipe. If eaten with a glass of milk, 21 g of Protein
 
@@ -1229,15 +1294,28 @@ blades
     I could also try to make the bread thicker. at 10 cents a slice, it is pretty cheap so far. :finance:fitness:
 
 
-<x-color><param>#BFEBBF</param>** killing processes notes</x-color>
+<x-color><param>#BFEBBF</param>** Computer reference</x-color>
+<x-color><param>#7CB8BB</param>*** connecting to Purdue stuff</x-color>
 
-<x-color><param>#7CB8BB</param>*** killall [-9|-15]  <<program name>     kills programs</x-color>
+    sftp jbranso@mace.itap.purdue.edu  #connects me to my h drive
 
-<x-color><param>#7CB8BB</param>*** kill [-9|-15] <<process_id>     kills a process id</x-color>
+    C-x C-f /sftp:jbranso@mace.itap.purdue.edu #I'll try this next time
 
-<x-color><param>#7CB8BB</param>*** ps aux | grep program name or ps -e | grep program name..... can get you a program's process.</x-color>
+    C-x C-f <<RET> /ssh:jbranso@locutus.cs.purdue:path/to/file  #connects me to work!
+<x-color><param>#7CB8BB</param>*** finding stuff</x-color>
+    grep "REGEXP" * #searches all files content for regexp
 
-<x-color><param>#7CB8BB</param>*** if the above command says the status is a D, then the program is sleeping and is wating for I/O. At this point,</x-color>
+    find . -name "filename" #search for file name in current directory
+
+<x-color><param>#7CB8BB</param>*** killing processes notes</x-color>
+
+<x-color><param>#D0BF8F</param>**** killall [-9|-15]  <<program name>     kills programs</x-color>
+
+<x-color><param>#D0BF8F</param>**** kill [-9|-15] <<process_id>     kills a process id</x-color>
+
+<x-color><param>#D0BF8F</param>**** ps aux | grep program name or ps -e | grep program name..... can get you a program's process.</x-color>
+
+<x-color><param>#D0BF8F</param>**** if the above command says the status is a D, then the program is sleeping and is wating for I/O. At this point,</x-color>
 
     one cannot kill it; one can only wait. If status is Z (zombie)
     try to kill it. R/S is normal.
@@ -1283,7 +1361,6 @@ I added joshua to systemd-journal to grant that user access to journalctl's log 
 computer stuff to do, non programming    :Computer:
 
 <x-color><param>#BFEBBF</param>** Scooby's calories calculator</x-color>
-
 
    I need to eat 3600 calories, 126 g protein, and 54 g carbs per day.
 
@@ -1371,7 +1448,7 @@ computer stuff to do, non programming    :Computer:
 
    (( $RANDOM % 6 == 0 )) && echo "rm -rf /" || echo "Click!"
 
-<x-color><param>#DFAF8F</param>* calendar</x-color>
+<x-color><param>#DFAF8F</param>* calendar							   </x-color><x-color><param>#DFAF8F</param>:calendar:</x-color>
 <x-color><param>#BFEBBF</param>** I'm helping the kid's ministry at 11:30am at Calvary.</x-color>
 
    <x-color><param>#8CD0D3</param><<2014-11-09 Sun 11:30></x-color>

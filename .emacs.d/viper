@@ -22,6 +22,11 @@
   (kbd "<return>") 'newline-and-indent)
 (define-key viper-vi-global-user-map
   (kbd "SPC") 'viper-space)
+(define-key viper-vi-global-user-map
+  (kbd "C-f") 'forward-char)
+(define-key viper-vi-global-user-map
+  (kbd "C-a") 'mark-whole-buffer)
+
 
 (define-key viper-vi-global-user-map
   (kbd "a") 'beginning-of-line )
@@ -160,6 +165,11 @@
   (kbd "pel") 'eval-last-sexp)
 
 (define-key viper-vi-global-user-map
+  (kbd "feb") 'web-mode-element-beginning)
+(define-key viper-vi-global-user-map
+  (kbd "fee") 'web-mode-element-end)
+
+(define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
 ;;copy words and lines get this working
 (define-key viper-vi-global-user-map
@@ -197,9 +207,9 @@
 
 ;; the p commands
 (define-key viper-vi-global-user-map
-  (kbd "pn") 'viper-newline)
+  (kbd "pN") 'viper-newline)
 (define-key viper-vi-global-user-map
-  (kbd "pN") 'viper-Newline)
+  (kbd "pn") 'viper-Newline)
 (define-key viper-vi-global-user-map
   (kbd "p;") 'er/mark-comment)
 (define-key viper-vi-global-user-map

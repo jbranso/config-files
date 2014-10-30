@@ -62,8 +62,8 @@
 	  (lambda ()
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
-	    (helm-mode)
-	    ))
+	    (emmet-mode)
+	    (helm-mode)))
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
