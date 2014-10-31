@@ -21,6 +21,7 @@
 .config/ImageMagick/
 .dvdcss/
 .esd_auth
+.emacs.d/.mc-lists.el
 .emacs.d/ac-comphist.dat
 .emacs.d/eshell/
 .emacs.d/backups/
@@ -102,3 +103,7 @@ videos/
 .drirc
 .emacs.d/elpa
 .ssh
+.subversion/config
+.subversion/README.txt
+.subversion/servers
+.emacs.d/ede-projects.el
