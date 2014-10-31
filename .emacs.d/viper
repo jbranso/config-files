@@ -199,19 +199,19 @@
   (kbd "gg") 'goto-line)
 ;;copy words and lines get this working
 (define-key viper-vi-global-user-map
-  (kbd "ga") '(lambda ()
+  (kbd "ca") '(lambda ()
 		(interactive)
 		(kill-visual-line 0)
 		(undo)))
 (define-key viper-vi-global-user-map
-  (kbd "gu") '(lambda ()
+  (kbd "cu") '(lambda ()
 		(interactive)
 		(kill-visual-line nil)
 		(yank)
 		(beginning-of-line)))
 
 (define-key viper-vi-global-user-map
-  (kbd "go") '(lambda ()
+  (kbd "co") '(lambda ()
 		(interactive)
 		(let (firstLetter lastLetter)
 		  (backward-word)
@@ -221,7 +221,7 @@
 		  (kill-ring-save firstLetter lastLetter))))
 
 (define-key viper-vi-global-user-map
-  (kbd "ge") '(lambda ()
+  (kbd "ce") '(lambda ()
 		(interactive)
 		(let (firstLetter lastLetter)
 		  (forward-word)
