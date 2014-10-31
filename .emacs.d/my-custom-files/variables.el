@@ -15,17 +15,13 @@
 ;;(keyboard-translate ?\C-x ?\M-x) ;;make C-x mean M-x
 ;;(keyboard-translate ?\C-t ?\C-x) ;;make C-t mean C-x
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+;;(menu-bar-mode -1)
 ;; put numbers on the side of the editor
 (global-linum-mode 1)
 ;; this is an alternative to skeletons
 ;;(yas-global-mode 1)
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; This tells emacs that I do not put two spaces between sentences.
-;; Though I'd like to start doing that. Perhaps I could rebind SPC to recognize when I'm ending a sentence, and when I do end a sentence, it will insert 2 spaces instead of 1!
-(setq sentence-end-double-space nil)
 
 (require 'package)
 ;; emacs loads all the packages you've installed with M-x packages-list-packages in the next line
@@ -39,6 +35,7 @@
 	("melpa" . "http://melpa.org/packages/")))
 ;; this sets up the packages I have installed.
 
+(require 'helm-config)
 (helm-mode t)
 (helm :sources '(helm-source-recentf
 		 helm-source-buffers-list
@@ -61,7 +58,14 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-;; turn on Semantic
+(setq ispell-complete-word-dictionary "usr/bin/aspell")
+(setq ispell-alternate-dictionary "usr/bin/aspell")
+
+(eval-after-load "auto-complete"
+  '(progn
+     (ac-ispell-setup)))
+
+;; turn on Semantic this looks at every file and remembers functions and other good stuff for you to use.
 (semantic-mode 1)
 ;; let's define a function which adds semantic as a suggestion backend to auto complete
 ;; and hook this function to c-mode-common-hook

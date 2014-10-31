@@ -31,17 +31,25 @@
 (add-hook 'org-mode-hook '(lambda ()
 			    (auto-fill-mode)
 			    (visual-line-mode)
-			    (refill-mode)))
-
-
-(global-visual-line-mode 1)
+			    ;;refill mode is pretty amazing. If you are getting tired of pressing M-q all
+			    ;;the time to fill paragraphs then turn on refill-mode.
+			    ;; Be warned though, auto-fill-mode, refill-mode, and probably visual line mode,
+			    ;; assume that the user follows the U.S. convention of using two spaces between
+			    ;; sentences. If you do not follow this convention, or you add this to your init
+			    ;; file...
+			    ;; (sentence-end-double-space nil)
+			    ;; bad things will happen. You have been warned.
+			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
+			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
+			    (refill-mode)
+			    (ac-ispell-ac-setup)))
 
 ;;enabling minor modes for my major modes
 ;;(add-hook '<major mode>-mode-hook '<minor mode name>-mode) this works.
-(add-hook 'cc-mode-hook 'auto-insert-mode)
-(add-hook 'c++-mode-hook 'auto-insert-mode)
-(add-hook 'python-mode-hook 'auto-insert-mode)
-(add-hook 'lua-mode-hook 'auto-insert-mode)
+(add-hook 'cc-mode-hook 'yas-minor-mode)
+(add-hook 'c++-mode-hook 'yas-minor-mode)
+(add-hook 'python-mode-hook 'yas-minor-mode)
+(add-hook 'lua-mode-hook 'yas-minor-mode)
 
 ;;(add-hook 'cc-mode-hook 'yas-minor-mode-on)
 ;;(add-hook 'c++-mode-hook 'yas-minor-mode)
@@ -59,7 +67,9 @@
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
 	    (emmet-mode)
-	    (helm-mode)))
+	    (helm-mode)
+	    (auto-complete-mode)
+	    (ac-ispell-ac-setup)))
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))

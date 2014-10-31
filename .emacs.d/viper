@@ -103,7 +103,7 @@
 		(delete-backward-char 1)
 		(next-line)))
 (define-key viper-vi-global-user-map
-  (kbd "pd") 'kill-region)
+  (kbd "ck") 'kill-region)
 
 ;;This is an awesome idea for a command, but I'm not sure how to do it.
 ;;I could do the same thing with c SPC.
@@ -137,6 +137,11 @@
   (kbd "c2") 'split-window-below)
 (define-key viper-vi-global-user-map
   (kbd "c1") 'delete-other-windows)
+(define-key viper-vi-global-user-map
+  (kbd "c0") '(lambda ()
+		(interactive)
+		(other-window 1)
+		(delete-other-windows)))
 (define-key viper-vi-global-user-map
   (kbd "cle") 'copy-last-html-element)
 (define-key viper-vi-global-user-map
