@@ -65,7 +65,7 @@ feel free to contribute to the Plug wiki
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> fix grub error, locale not found...may be why I can't use dvp </x-color><x-color><param>#7CB8BB</param>:gnu:someday:</x-color>
 
-<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> When you stick a usb drive on my computer, it will appear as /dev/sdb </x-color><x-color><param>#7CB8BB</param>:gnu:reference:</x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> When you stick a usb drive on my computer, it will appear as /dev/sdb :gnu:reference:</x-color>
 
 to find out what device in /dev is a usb stick or a dvd, make a text file of $(ls /dev), then a text file of
 $(ls /dev), when you put the usb stick in. Then diff the 2 files.
@@ -73,9 +73,9 @@ The device is probably sdb if it is a usb
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> make cool programs</x-color>
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU source release Collection. Install the latest GNU releases to aid in development </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GNU source release Collection. Install the latest GNU releases to aid in development :gnu:someday:</x-color>
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GTK+ speed reading document. A window would pop up. There would be a quick explanation followed by eye training pages. </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> GTK+ speed reading document. A window would pop up. There would be a quick explanation followed by eye training pages. :gnu:someday:</x-color>
 
 <x-color><param>#D0BF8F</param>**** expand vision exercises</x-color>
 
@@ -96,7 +96,7 @@ you know you can keep. As you get better gradually increase your pace. It can he
 There is a list of all the files I have downloaded with pacman at /var/log/packman.log
 The program that I have made in ~/programming/bash/, is almost finished.
 
-<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> program to search for files for phone numbers, social sequrity numbers, etc. You would you regular expressions. For example </x-color><x-color><param>#D0BF8F</param>:gnu:someday:</x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> program to search for files for phone numbers, social sequrity numbers, etc. You would you regular expressions. For example :gnu:someday:</x-color>
 
      to search for phone numbers the regulary expression would be [1-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]
 
@@ -492,7 +492,7 @@ etc.
 <x-color><param>#7CB8BB</param>*** ethics class</x-color>
 <x-color><param>#D0BF8F</param>**** ethics final 7-9pm in normal classroom</x-color>
 
-   <x-color><param>#8CD0D3</param><<2014-12-15 Mon></x-color>
+     <x-color><param>#8CD0D3</param><<2014-12-15 Mon></x-color>
 
 <x-color><param>#D0BF8F</param>**** write up cheat sheet for the ethics final</x-color>
 
@@ -531,13 +531,13 @@ etc.
      DEADLINE: <x-color><param>#8CD0D3</param><<2014-12-01 Mon></x-color>
 <x-color><param>#93E0E3</param>***** how many tickets do I need?</x-color>
       SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
-     Abbi (2)
+      Abbi (2)
 
-     Mom and Dad
+      Mom and Dad
 
-     Lindsey (2?)
+      Lindsey (2?)
 
-     Karlie
+      Karlie
 <x-color><param>#93E0E3</param>***** how much do tickets cost?</x-color>
       SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
 <x-color><param>#7CB8BB</param>*** PCM study session (org-cycle)</x-color>
@@ -574,7 +574,7 @@ etc.
       <x-color><param>#8CD0D3</param><<2014-09-26 Fri></x-color>
 <x-color><param>#9FC59F</param>****** sign up for a CCO interview</x-color>
 
-<x-color><param>#BFEBBF</param>** code								</x-color><x-color><param>#BFEBBF</param>:gnu:project:</x-color>
+<x-color><param>#BFEBBF</param>** code								:gnu:project:</x-color>
 <x-color><param>#7CB8BB</param>*** check out these project ideas</x-color>
 
     <x-color><param>#D0BF8F</param>http://gcc.gnu.org/projects/beginner.html</x-color>
@@ -629,7 +629,7 @@ etc.
     <x-color><param>#8CD0D3</param><<2014-11-22 Sat 11:59></x-color>
 <x-color><param>#D0BF8F</param>**** Print Wild hacks' tickets. It's in your</x-color>
 
-<x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
+<x-color><param>#BFEBBF</param>** learn more about my friends				  :community:project:</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know what their majors are</x-color>
@@ -1061,13 +1061,13 @@ will help to thicken the soup.)
      side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
      filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
      Remove entire skillet from oven and plate. Serve.
-<x-color><param>#BFEBBF</param>** create income without working			    </x-color><x-color><param>#BFEBBF</param>:finance:project:</x-color>
+<x-color><param>#BFEBBF</param>** create income without working			    :finance:project:</x-color>
 <x-color><param>#7CB8BB</param>*** try to start a web hosting service</x-color>
 <x-color><param>#D0BF8F</param>**** make some mock websites for a resume.</x-color>
 <x-color><param>#93E0E3</param>***** finish the mock website that's on this computer.</x-color>
 <x-color><param>#9FC59F</param>****** Finish the home page for the mockup-website that is on this computer.</x-color>
 
-<x-color><param>#BFEBBF</param>** How much to lift?					    </x-color><x-color><param>#BFEBBF</param>:fitness:project:</x-color>
+<x-color><param>#BFEBBF</param>** How much to lift?					    :fitness:project:</x-color>
    in the first month of body building use light weight. It'll feel like lifting air
    this lets my muscles and tendons get used to the weight.
    In months 2-6 lift a weight that you can get 8-16 reps out of
@@ -1080,9 +1080,31 @@ will help to thicken the soup.)
 
 <x-color><param>#7CB8BB</param>*** When you do crunches, rise up toward the ceiling</x-color>
 
-<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
-<x-color><param>#BFEBBF</param>** ways I can reward myself					     </x-color><x-color><param>#BFEBBF</param>:reward:</x-color>
-<x-color><param>#7CB8BB</param>*** make a rebecca black linux live CD</x-color>
+<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  :community:project:</x-color>
+<x-color><param>#BFEBBF</param>** ways I can reward myself					     :reward:</x-color>
+<x-color><param>#7CB8BB</param>*** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
+
+    This us using toronto time
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed 21:00-23:00></x-color>
+
+<x-color><param>#7CB8BB</param>*** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-19 Wed 13:00></x-color>
+    This us using toronto time
+
+
+<x-color><param>#7CB8BB</param>*** make a Rebecca black linux live CD, which did not work. :(</x-color>
+<x-color><param>#7CB8BB</param>*** emulate these vim commands</x-color>
+<x-color><param>#D0BF8F</param>**** d{motion} d</x-color>
+
+     delete everything from point to where motion takes you.
+<x-color><param>#D0BF8F</param>**** make d ace-jump-char cut where ace jump takes you.</x-color>
+<x-color><param>#D0BF8F</param>**** make c act-jump-char copy where ace jump takes you.</x-color>
+
+<x-color><param>#7CB8BB</param>*** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way</x-color>
+
+    to test new things
 <x-color><param>#7CB8BB</param>*** Go to Kafe Stunde 2pm-3pm in SC 131</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
 <x-color><param>#7CB8BB</param>*** ask a psych professor about applied psychology and about how best to make modal commands for editing.</x-color>
@@ -1101,7 +1123,6 @@ will help to thicken the soup.)
 
     here are the 3 matches
 
-    
 
     It should look like
 
@@ -1109,13 +1130,11 @@ will help to thicken the soup.)
 
     here are the 5 matches
 
-    
 
     3 matches found in this file
 
     here are the 3 matches
 
-    
 
 <x-color><param>#7CB8BB</param>*** Prove modus ponens. for metalogic</x-color>
 <x-color><param>#7CB8BB</param>*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.</x-color>
@@ -1148,7 +1167,7 @@ will help to thicken the soup.)
     pacman are not showing up. env allows you to modify your environment if all else fails.
 
     <x-color><param>#D0BF8F</param>https://wiki.archlinux.org/index.php/environment_variables</x-color>
-<x-color><param>#BFEBBF</param>** autocomplete and ispell integration</x-color>
+<x-color><param>#7CB8BB</param>*** autocomplete and ispell integration</x-color>
 
    (require 'auto-complete)
    (require 'ispell)
@@ -1169,7 +1188,6 @@ will help to thicken the soup.)
 
    (provide 'auto-complete-ispell)
 
-   
 
 <x-color><param>#7CB8BB</param>*** make video explaining firefox nightly and multi-process firefox.</x-color>
 

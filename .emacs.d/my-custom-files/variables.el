@@ -39,6 +39,15 @@
 	("melpa" . "http://melpa.org/packages/")))
 ;; this sets up the packages I have installed.
 
+(helm-mode t)
+(helm :sources '(helm-source-recentf
+		 helm-source-buffers-list
+		 helm-source-findutils
+		 helm-source-bookmarks
+		 ;;helm-source-ls-git
+		 ))
+
+(setq word-wrap t)
 ;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)

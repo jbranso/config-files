@@ -77,24 +77,46 @@
 (define-key viper-vi-global-user-map
   (kbd "c SPC") 'ace-jump-char-mode)
 ;; This will let you browse through all the stuff you've killed.
+;; this conflicts with ph
+;;(define-key viper-vi-global-user-map
+;;  (kbd "phk") 'browse-kill-ring)
+
 (define-key viper-vi-global-user-map
-  (kbd "cb") 'browse-kill-ring)
+  (kbd "de") 'kill-word)
 (define-key viper-vi-global-user-map
-  (kbd "ce") 'kill-word)
-(define-key viper-vi-global-user-map
-  (kbd "co")'backward-kill-word)
+  (kbd "do") 'backward-kill-word)
 ;;cut from point to the end of the line
 (define-key viper-vi-global-user-map
-  (kbd "cu") '(lambda ()
+  (kbd "du") '(lambda ()
 		(interactive)
 		(kill-visual-line nil)))
 ;;cut/kill from point to the beginning of the line
 (define-key viper-vi-global-user-map
-  (kbd "ca") '(lambda ()
+  (kbd "da") '(lambda ()
 		(interactive)
 		(kill-visual-line 0)))
 (define-key viper-vi-global-user-map
-  (kbd "ck") 'kill-region)
+  (kbd "dd") '(lambda ()
+		(interactive)
+		(beginning-of-line)
+		(kill-line)
+		(delete-backward-char 1)
+		(next-line)))
+(define-key viper-vi-global-user-map
+  (kbd "pd") 'kill-region)
+
+;;This is an awesome idea for a command, but I'm not sure how to do it.
+;;I could do the same thing with c SPC.
+(define-key viper-vi-global-user-map
+  (kbd "d SPC") '(lambda ()
+		   (interactive)
+		   (let (beg end)
+		     (setq beg (point))
+		     (ace-jump-char-mode (read-char "Query Char:"))
+		     (setq end (point))
+		     (kill-region beg end))))
+(define-key viper-vi-global-user-map
+  (kbd "cbk") 'web-mode-block-kill)
 (define-key viper-vi-global-user-map
   (kbd "cP") 'viper-put-back)
 (define-key viper-vi-global-user-map
@@ -137,7 +159,9 @@
 (define-key viper-vi-global-user-map
   (kbd "M") 'viper-alternate-Meta-key)
 (define-key viper-vi-global-user-map
-  (kbd "m;") 'er/mark-comment)
+  (kbd "ESC $") 'helm-flyspell-correct)
+(define-key viper-vi-global-user-map
+  (kbd "mh") 'web-mode-mark-and-expand)
 (define-key viper-vi-global-user-map
   (kbd "mnt") 'mc/mark-next-like-this)
 
@@ -163,6 +187,8 @@
   (kbd "pv") 'scroll-other-window)
 (define-key viper-vi-global-user-map
   (kbd "pel") 'eval-last-sexp)
+(define-key viper-vi-global-user-map
+  (kbd "'n") 'web-mode-navigate)
 
 (define-key viper-vi-global-user-map
   (kbd "feb") 'web-mode-element-beginning)
@@ -275,7 +301,7 @@
 (define-key viper-vi-global-user-map
   (kbd "yh") 'windmove-down)
 (define-key viper-vi-global-user-map
-  (kbd "yf") 'helm-find-files)
+  (kbd "yf") 'helm-for-files)
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map

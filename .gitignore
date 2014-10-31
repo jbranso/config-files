@@ -21,7 +21,16 @@
 .config/ImageMagick/
 .dvdcss/
 .esd_auth
-.emacs.d
+.emacs.d/ac-comphist.dat
+.emacs.d/eshell/
+.emacs.d/backups/
+.emacs.d/elpa/
+.emacs.d/games/
+.emacs.d/auto-save-list
+.emacs.d/tramp
+.emacs.d/semanticdb/
+.emacs.d/url
+.emacs.d/var
 .gimp-2.8/
 .git-credentials
 .gitconfig
@@ -88,6 +97,7 @@ videos/
 .config/pulse/
 .config/vlc/
 .config/xfce4/
+.config/xfburn
 .dbus/
 .drirc
 .emacs.d/elpa

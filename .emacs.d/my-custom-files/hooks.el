@@ -30,12 +30,8 @@
 ;; make org mode start up with auto fill mode
 (add-hook 'org-mode-hook '(lambda ()
 			    (auto-fill-mode)
-			    ;; this should be possible, to define certain keys for viper when
-			    ;; certain files are open. That is not happening here.
-			    ;; (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
-			    ;; (define-key viper-vi-global-user-map (kbd "cb")  'ido-switch-buffer)
-			    ;; (define-key viper-vi-global-user-map (kbd "TAB") 'viper-org-cycle)
-			    ))
+			    (visual-line-mode)
+			    (refill-mode)))
 
 
 (global-visual-line-mode 1)
