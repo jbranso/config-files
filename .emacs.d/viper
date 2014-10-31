@@ -29,38 +29,30 @@
 
 
 (define-key viper-vi-global-user-map
-  (kbd "a") 'beginning-of-line )
+  (kbd "a") '(lambda ()
+	       (interactive)
+	       (beginning-of-line)
+	       (indent-for-tab-command)))
 (define-key viper-vi-global-user-map
   (kbd "M-a") 'backward-paragraph)
 (define-key viper-vi-global-user-map
-  (kbd "A") '(lambda ()
-	       (interactive)
-	       (viper-Insert t)))
+  (kbd "A") 'backward-paragraph)
 (define-key viper-vi-global-user-map
   (kbd "u") 'end-of-line)
 (define-key viper-vi-global-user-map
   (kbd "M-u") 'forward-paragraph)
 (define-key viper-vi-global-user-map
-  (kbd "U") '(lambda ()
-	       (interactive)
-	       (viper-Insert t)
-	       (end-of-line)))
+  (kbd "U") 'forward-paragraph)
 (define-key viper-vi-global-user-map
   (kbd "e")'forward-word)
 (define-key viper-vi-global-user-map
-  (kbd "E") '(lambda ()
-	       (interactive)
-	       (forward-word)
-	       (viper-insert nil)))
+  (kbd "E") 'forward-sentence)
 (define-key viper-vi-global-user-map
   (kbd "M-e")'forward-sentence)
 (define-key viper-vi-global-user-map
   (kbd "o")'backward-word)
 (define-key viper-vi-global-user-map
-  (kbd "O") '(lambda ()
-	       (interactive)
-	       (backward-word)
-	       (viper-insert nil)))
+  (kbd "O") 'backward-sentence)
 (define-key viper-vi-global-user-map
   (kbd "M-o")' 'backword-sentence)
 (define-key viper-vi-global-user-map
