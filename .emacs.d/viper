@@ -194,6 +194,8 @@
 
 (define-key viper-vi-global-user-map
   (kbd "gg") 'goto-line)
+(define-key viper-vi-global-user-map
+  (kbd "gn") 'web-mode-navigate)
 ;;copy words and lines get this working
 (define-key viper-vi-global-user-map
   (kbd "ca") '(lambda ()
@@ -258,7 +260,6 @@
 (define-key viper-vi-global-user-map
   (kbd "prj") 'jump-to-register)
 
-
 ;;org/agenda commands
 (define-key viper-vi-global-user-map (kbd "ct")  'org-todo)
 (define-key viper-vi-global-user-map (kbd "cis")  'org-schedule)
@@ -287,7 +288,9 @@
   (kbd "kl") 'kill-line)
 
 (define-key viper-vi-global-user-map
-  (kbd "q") 'ido-kill-buffer)
+  (kbd "q") '(lambda ()
+	       (interactive)
+	       (let (kill-buffer-query-functions) (kill-buffer))))
 
 (define-key viper-vi-global-user-map
   (kbd "yn") 'windmove-left)

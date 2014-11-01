@@ -35,6 +35,9 @@
 	("melpa" . "http://melpa.org/packages/")))
 ;; this sets up the packages I have installed.
 
+(require 'recentf)
+(setq recentf-max-saved-items 100)
+
 (require 'helm-config)
 (helm-mode t)
 (helm :sources '(helm-source-recentf
@@ -44,7 +47,11 @@
 		 ;;helm-source-ls-git
 		 ))
 
-(setq word-wrap t)
+
+;;this is extra features over the default bookmarks+
+;; C-x jj jumps you to a bookmark
+;; C-x pm creates a bookmark with the current file.
+(require 'bookmark+)
 ;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)

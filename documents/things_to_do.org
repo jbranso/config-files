@@ -114,35 +114,35 @@ The program that I have made in ~/programming/bash/, is almost finished.
 
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> check out org-ecrypt:gnu:someday:</x-color>
 
-**** TODO learn how to replace text in emacs:gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn how to replace text in emacs:gnu:someday:</x-color>
 
-**** TODO learn how to use dired in emacs:gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn how to use dired in emacs:gnu:someday:</x-color>
 
-**** TODO write down some of its capabilites
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> write down some of its capabilites</x-color>
 
-**** TODO learn about emacs all of these sections can be found in the emacs manual under advanced :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn about emacs all of these sections can be found in the emacs manual under advanced :gnu:someday:</x-color>
 
-***** modes
+<x-color><param>#93E0E3</param>***** modes</x-color>
 
-***** indentitation
+<x-color><param>#93E0E3</param>***** indentitation</x-color>
 
-***** calendar
+<x-color><param>#93E0E3</param>***** calendar</x-color>
 
-***** programs
+<x-color><param>#93E0E3</param>***** programs</x-color>
 
-***** building
+<x-color><param>#93E0E3</param>***** building</x-color>
 
-***** abbrevs
+<x-color><param>#93E0E3</param>***** abbrevs</x-color>
 
-***** autotyping You can insert predefined text into empty files, you can insert skeletons, etc. very cool.
+<x-color><param>#93E0E3</param>***** autotyping You can insert predefined text into empty files, you can insert skeletons, etc. very cool.</x-color>
 
-***** turn emacs into your default writer for school papers.
+<x-color><param>#93E0E3</param>***** turn emacs into your default writer for school papers.</x-color>
 
-***** check out ruler mode. It displays a ruler at the top of the screen.
+<x-color><param>#93E0E3</param>***** check out ruler mode. It displays a ruler at the top of the screen.</x-color>
 
-***** auto fill mode automatically inserts new lines when your lines become too long
+<x-color><param>#93E0E3</param>***** auto fill mode automatically inserts new lines when your lines become too long</x-color>
 
-***** auto save mode automatically saves files for you to prevent files from crashing
+<x-color><param>#93E0E3</param>***** auto save mode automatically saves files for you to prevent files from crashing</x-color>
 
 ***** enriched mode allows you to save and edit formatted text.
 
@@ -307,11 +307,11 @@ secret partitions
 
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> volunteer with the FSF https://fsf.org/volunteer:gnu:someday:</x-color>
 
-**** TODO volunteer as a GNU webmaster https://www.gnu.org/server/standards/webmaster-quiz.html :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> volunteer as a GNU webmaster https://www.gnu.org/server/standards/webmaster-quiz.html :gnu:someday:</x-color>
 
-**** TODO volunteer for on the jobs that GNU needs https://www.gnu.org/server/tasks.html :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> volunteer for on the jobs that GNU needs https://www.gnu.org/server/tasks.html :gnu:someday:</x-color>
 
-**** TODO sell free software and donate some or all of the money to GNU :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> sell free software and donate some or all of the money to GNU :gnu:someday:</x-color>
 
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> work on nouveau code:gnu:someday:</x-color>
 
@@ -444,23 +444,23 @@ etc.
 
 *** TODO buy white erasers for mechanical pencils     :errand:someday:
 
-*** TODO learn how to pick up chicks  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn how to pick up chicks  :community:someday:</x-color>
 
-*** TODO climb tree outside PCM  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> climb tree outside PCM  :community:someday:</x-color>
 
-*** TODO determine if I agree with Calvanism, Lutherism, Jesusism, etc. :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> determine if I agree with Calvanism, Lutherism, Jesusism, etc. :community:someday:</x-color>
 
-*** TODO play the piano for thursday night worship  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> play the piano for thursday night worship  :community:someday:</x-color>
 
-*** TODO give a sermon at culver  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> give a sermon at culver  :community:someday:</x-color>
 
-*** TODO try to discern God's plan for me  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> try to discern God's plan for me  :community:someday:</x-color>
 
-*** TODO find someone to mentor and teach them about Jesus :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> find someone to mentor and teach them about Jesus :community:someday:</x-color>
 
-*** TODO find someone to mentor and teach them about Jesus :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> find someone to mentor and teach them about Jesus :community:someday:</x-color>
 
-*** TODO learn more bible verses  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn more bible verses  :community:someday:</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> figure out what stuff I want to donate to good will that is my parents basement </x-color><x-color><param>#7CB8BB</param>:community:someday:</x-color>
 
@@ -480,15 +480,6 @@ etc.
 <x-color><param>#DFAF8F</param>* projects							    </x-color><x-color><param>#DFAF8F</param>:project:</x-color>
 <x-color><param>#BFEBBF</param>** School stuff. Homework, study, exams, etc.		     </x-color><x-color><param>#BFEBBF</param>:school:project:</x-color>
 <x-color><param>#7CB8BB</param>*** Religion Class</x-color>
-<x-color><param>#D0BF8F</param>**** 1st draft due on October 31</x-color>
-     It should be 4-5 pages long and include my thesis and 2 secondary sources.
-
-     1 must be a book from the library.
-
-     DEADLINE: <x-color><param>#8CD0D3</param><<2014-10-31 Fri 13:00></x-color>
-<x-color><param>#D0BF8F</param>**** write draft for religion paper</x-color>
-     The exam topics are on blackboard. One is under announcements and the other 8 in paper topics.
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** ethics class</x-color>
 <x-color><param>#D0BF8F</param>**** ethics final 7-9pm in normal classroom</x-color>
 
@@ -501,11 +492,7 @@ etc.
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Kapitol 8</x-color>
 
      <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
-<x-color><param>#D0BF8F</param>**** German in class essay wear a costume for extra credit!</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-31 Fri></x-color>
 <x-color><param>#7CB8BB</param>*** stat</x-color>
-<x-color><param>#D0BF8F</param>**** online perdisco excel homework</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
 <x-color><param>#D0BF8F</param>**** mixable # 2</x-color>
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color> DEADLINE: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 23:59></x-color>
@@ -544,10 +531,12 @@ etc.
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 
-<x-color><param>#BFEBBF</param>** Job Search</x-color>
+<x-color><param>#BFEBBF</param>** Job Search								</x-color><x-color><param>#BFEBBF</param>:job:</x-color>
 <x-color><param>#7CB8BB</param>*** schedule a day to go visit Ivy Tech</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
+<x-color><param>#7CB8BB</param>*** Research Manifest Solutions in Columbus Ohio and that job in Indy on your voicemail.</x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
@@ -574,40 +563,11 @@ etc.
       <x-color><param>#8CD0D3</param><<2014-09-26 Fri></x-color>
 <x-color><param>#9FC59F</param>****** sign up for a CCO interview</x-color>
 
-<x-color><param>#BFEBBF</param>** code								:gnu:project:</x-color>
+<x-color><param>#BFEBBF</param>** code								</x-color><x-color><param>#BFEBBF</param>:gnu:project:</x-color>
 <x-color><param>#7CB8BB</param>*** check out these project ideas</x-color>
 
     <x-color><param>#D0BF8F</param>http://gcc.gnu.org/projects/beginner.html</x-color>
 <x-color><param>#7CB8BB</param>*** coding for emacs</x-color>
-<x-color><param>#D0BF8F</param>**** make emacs bindings</x-color>
-<x-color><param>#93E0E3</param>***** bind org-metaup and org-metadown</x-color>
-<x-color><param>#93E0E3</param>***** (org-agenda-next-line) (org-agenda-previous-line)</x-color>
-
-<x-color><param>#93E0E3</param>***** bind a command that evaluates current lisp list</x-color>
-<x-color><param>#93E0E3</param>***** C-a make whole buffer</x-color>
-
-<x-color><param>#93E0E3</param>***** C-c letter are reserved for users according to the emacs manual</x-color>
-
-      Function keys <<F5> through <<F9> without modifier keys are also reserved for users to define. Sequences
-      consisting of C-c followed by a control character or a digit are reserved for major modes. Sequences
-      consisting of C-c followed by {, }, <<, >, : or ; are also reserved for major modes. Sequences
-      consisting of C-c followed by any other punctuation character are allocated for minor modes. Using
-      them in a major mode is not absolutely prohibited, but if you do that, the major mode binding may be
-      shadowed from time to time by minor modes. Don't bind C-h following any prefix character (including
-      C-c). If you don't bind C-h, it is automatically available as a help character for listing the
-      subcommands of the prefix character. Don't bind a key sequence ending in <<ESC> except following
-      another <<ESC>. (That is, it is OK to bind a sequence ending in <<ESC> <<ESC>.)
-
-      The reason for this rule is that a non-prefix binding for <<ESC> in any context prevents recognition of
-      escape sequences as function keys in that context. Similarly, don't bind a key sequence ending in
-      <<C-g>, since that is commonly used to cancel a key sequence. Anything that acts like a temporary mode
-      or state that the user can enter and leave should define <<ESC> <<ESC> or <<ESC> <<ESC> <<ESC> as a way to
-      escape.
-
-      For a state that accepts ordinary Emacs commands, or more generally any kind of state in which <<ESC>
-      followed by a function key or arrow key is potentially meaningful, then you must not define <<ESC>
-      <<ESC>, since that would preclude recognizing an escape sequence after <<ESC>. In these states, you
-      should define <<ESC> <<ESC> <<ESC> as the way to escape. Otherwise, define <<ESC> <<ESC> instead.
 
 <x-color><param>#7CB8BB</param>*** HTML5 games</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Hack Duke in CIEMAS I'm in the facebook group. They will provide a bus.</x-color>
@@ -617,19 +577,14 @@ etc.
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Local hack day at Purdue University Church</x-color>
 
     <x-color><param>#8CD0D3</param><<2014-12-06 Sat></x-color>
-<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> I'm going to open source coffee and chat at 2pm.</x-color>
-
-    <x-color><param>#8CD0D3</param><<2014-10-26 Sun 14:00></x-color>
-
-    Fuel
-    1016 Main St
-    Lafayette, IN
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Wild Hacks Northwestern University at</x-color>
 
     <x-color><param>#8CD0D3</param><<2014-11-22 Sat 11:59></x-color>
+<x-color><param>#D0BF8F</param>**** look up shuttle info for getting to wild hacks</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#D0BF8F</param>**** Print Wild hacks' tickets. It's in your</x-color>
 
-<x-color><param>#BFEBBF</param>** learn more about my friends				  :community:project:</x-color>
+<x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know what their majors are</x-color>
@@ -1061,13 +1016,13 @@ will help to thicken the soup.)
      side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
      filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
      Remove entire skillet from oven and plate. Serve.
-<x-color><param>#BFEBBF</param>** create income without working			    :finance:project:</x-color>
+<x-color><param>#BFEBBF</param>** create income without working			    </x-color><x-color><param>#BFEBBF</param>:finance:project:</x-color>
 <x-color><param>#7CB8BB</param>*** try to start a web hosting service</x-color>
 <x-color><param>#D0BF8F</param>**** make some mock websites for a resume.</x-color>
 <x-color><param>#93E0E3</param>***** finish the mock website that's on this computer.</x-color>
 <x-color><param>#9FC59F</param>****** Finish the home page for the mockup-website that is on this computer.</x-color>
 
-<x-color><param>#BFEBBF</param>** How much to lift?					    :fitness:project:</x-color>
+<x-color><param>#BFEBBF</param>** How much to lift?					    </x-color><x-color><param>#BFEBBF</param>:fitness:project:</x-color>
    in the first month of body building use light weight. It'll feel like lifting air
    this lets my muscles and tendons get used to the weight.
    In months 2-6 lift a weight that you can get 8-16 reps out of
@@ -1080,8 +1035,37 @@ will help to thicken the soup.)
 
 <x-color><param>#7CB8BB</param>*** When you do crunches, rise up toward the ceiling</x-color>
 
-<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  :community:project:</x-color>
-<x-color><param>#BFEBBF</param>** ways I can reward myself					     :reward:</x-color>
+<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
+<x-color><param>#BFEBBF</param>** ways I can reward myself					     </x-color><x-color><param>#BFEBBF</param>:reward:</x-color>
+
+<x-color><param>#7CB8BB</param>*** make emacs bindings</x-color>
+<x-color><param>#D0BF8F</param>**** bind org-metaup and org-metadown</x-color>
+<x-color><param>#D0BF8F</param>**** (org-agenda-next-line) (org-agenda-previous-line)</x-color>
+
+<x-color><param>#D0BF8F</param>**** bind a command that evaluates current lisp list</x-color>
+
+<x-color><param>#D0BF8F</param>**** C-c letter are reserved for users according to the emacs manual</x-color>
+
+      Function keys <<F5> through <<F9> without modifier keys are also reserved for users to define. Sequences
+      consisting of C-c followed by a control character or a digit are reserved for major modes. Sequences
+      consisting of C-c followed by {, }, <<, >, : or ; are also reserved for major modes. Sequences
+      consisting of C-c followed by any other punctuation character are allocated for minor modes. Using
+      them in a major mode is not absolutely prohibited, but if you do that, the major mode binding may be
+      shadowed from time to time by minor modes. Don't bind C-h following any prefix character (including
+      C-c). If you don't bind C-h, it is automatically available as a help character for listing the
+      subcommands of the prefix character. Don't bind a key sequence ending in <<ESC> except following
+      another <<ESC>. (That is, it is OK to bind a sequence ending in <<ESC> <<ESC>.)
+
+      The reason for this rule is that a non-prefix binding for <<ESC> in any context prevents recognition of
+      escape sequences as function keys in that context. Similarly, don't bind a key sequence ending in
+      <<C-g>, since that is commonly used to cancel a key sequence. Anything that acts like a temporary mode
+      or state that the user can enter and leave should define <<ESC> <<ESC> or <<ESC> <<ESC> <<ESC> as a way to
+      escape.
+
+      For a state that accepts ordinary Emacs commands, or more generally any kind of state in which <<ESC>
+      followed by a function key or arrow key is potentially meaningful, then you must not define <<ESC>
+      <<ESC>, since that would preclude recognizing an escape sequence after <<ESC>. In these states, you
+      should define <<ESC> <<ESC> <<ESC> as the way to escape. Otherwise, define <<ESC> <<ESC> instead.
 <x-color><param>#7CB8BB</param>*** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
 
     This us using toronto time
@@ -1093,8 +1077,14 @@ will help to thicken the soup.)
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-19 Wed 13:00></x-color>
     This us using toronto time
 
+<x-color><param>#7CB8BB</param>*** (setq adaptive-fill-regexp REGEXP)</x-color>
 
-<x-color><param>#7CB8BB</param>*** make a Rebecca black linux live CD, which did not work. :(</x-color>
+    <x-color><param>#D0BF8F</param>https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Prefix.html</x-color>
+
+    <x-color><param>#D0BF8F</param>https://www.gnu.org/software/emacs/manual/html_node/emacs/Adaptive-Fill.html#Adaptive-Fill</x-color>
+
+    I can specify the emacs fill-prefix! This means that I can tell emacs what lines I want to be merged
+    into a paragraph, which means, I can stop refill-mode from merging headings into a paragraph!
 <x-color><param>#7CB8BB</param>*** emulate these vim commands</x-color>
 <x-color><param>#D0BF8F</param>**** d{motion} d</x-color>
 
@@ -1123,6 +1113,7 @@ will help to thicken the soup.)
 
     here are the 3 matches
 
+    
 
     It should look like
 
@@ -1130,11 +1121,13 @@ will help to thicken the soup.)
 
     here are the 5 matches
 
+    
 
     3 matches found in this file
 
     here are the 3 matches
 
+    
 
 <x-color><param>#7CB8BB</param>*** Prove modus ponens. for metalogic</x-color>
 <x-color><param>#7CB8BB</param>*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.</x-color>
@@ -1169,25 +1162,26 @@ will help to thicken the soup.)
     <x-color><param>#D0BF8F</param>https://wiki.archlinux.org/index.php/environment_variables</x-color>
 <x-color><param>#7CB8BB</param>*** autocomplete and ispell integration</x-color>
 
-   (require 'auto-complete)
-   (require 'ispell)
+    (require 'auto-complete)
+    (require 'ispell)
 
-   (defvar ac-ispell-modes
-   '(text-mode))
+    (defvar ac-ispell-modes
+    '(text-mode))
 
-   (defun ac-ispell-candidate ()
-   (if (memq major-mode ac-ispell-modes)
-   (let ((word (ispell-get-word nil "\\*")))
-   (setq word (car word))
-   (lookup-words (concat word "*") ispell-complete-word-dict))))
+    (defun ac-ispell-candidate ()
+    (if (memq major-mode ac-ispell-modes)
+    (let ((word (ispell-get-word nil "\\*")))
+    (setq word (car word))
+    (lookup-words (concat word "*") ispell-complete-word-dict))))
 
-   (defvar ac-source-ispell
-   '((candidates . ac-ispell-candidate)
-   (requires . 3))
-   "Source for ispell.")
+    (defvar ac-source-ispell
+    '((candidates . ac-ispell-candidate)
+    (requires . 3))
+    "Source for ispell.")
 
-   (provide 'auto-complete-ispell)
+    (provide 'auto-complete-ispell)
 
+    
 
 <x-color><param>#7CB8BB</param>*** make video explaining firefox nightly and multi-process firefox.</x-color>
 
@@ -1200,13 +1194,12 @@ will help to thicken the soup.)
 <x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 18:00></x-color>
-<x-color><param>#7CB8BB</param>*** tell Abbi and Aunt Michelle (765-592-0545) that our grilling party will be on Saturday at 6pm.</x-color>
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-10-30 Thu></x-color>
 <x-color><param>#7CB8BB</param>*** grill out at parent's house Saturday at 6pm.</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat 18:00></x-color>
     I need to buy brats and buns for the event.
 
+    
 
 <x-color><param>#DFAF8F</param>* reference							  </x-color><x-color><param>#DFAF8F</param>:reference:</x-color>
 
@@ -1470,13 +1463,12 @@ computer stuff to do, non programming    :Computer:
 <x-color><param>#BFEBBF</param>** I'm helping the kid's ministry at 11:30am at Calvary.</x-color>
 
    <x-color><param>#8CD0D3</param><<2014-11-09 Sun 11:30></x-color>
-<x-color><param>#BFEBBF</param>** I'm going home this weekend!</x-color>
-   <x-color><param>#8CD0D3</param><<2014-10-31 Fri></x-color>
 <x-color><param>#BFEBBF</param>** buy mom Boundaries for Marriage book for Christmas</x-color>
 
    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
 <x-color><param>#BFEBBF</param>** buy dad GTD for Christmas</x-color>
-   SCHEDULED: <<2014-11-01
+   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
+   SCHEDULED:
 <x-color><param>#DFAF8F</param>* weekly review</x-color>
 
 <x-color><param>#BFEBBF</param>** check out awful.widget.prompt That may allow me to place a widget or launcher onto the screen,</x-color>
@@ -1550,11 +1542,5 @@ computer stuff to do, non programming    :Computer:
 
 <x-color><param>#7CB8BB</param>*** prelink will happen on tuesday</x-color>
 
-<x-color><param>#BFEBBF</param>** check out gnome-packagekit....not sure if I want to use it.</x-color>
-
-   make a
-
 <x-color><param>#BFEBBF</param>** make a program that will autoprompt me to install updates.</x-color>
-
-<x-color><param>#BFEBBF</param>** download and use evil.</x-color>
 
