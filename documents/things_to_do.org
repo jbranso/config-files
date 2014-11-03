@@ -53,9 +53,9 @@ turn a someday/maybe thing into a project.
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Purdue LUG:gnu:someday:</x-color>
 
-They have an optional webmaster position for Purdue LUG
-create a database of stuff that is in the Purdue LUG library
-feel free to contribute to the Plug wiki
+    They have an optional webmaster position for Purdue LUG create a database of stuff that is in the Purdue
+
+    LUG library feel free to contribute to the Plug wiki.
 
 <x-color><param>#D0BF8F</param>**** add tutorials</x-color>
 
@@ -144,23 +144,23 @@ The program that I have made in ~/programming/bash/, is almost finished.
 
 <x-color><param>#93E0E3</param>***** auto save mode automatically saves files for you to prevent files from crashing</x-color>
 
-***** enriched mode allows you to save and edit formatted text.
+<x-color><param>#93E0E3</param>***** enriched mode allows you to save and edit formatted text.</x-color>
 
-***** flyspell mode automatically highlights poor code syntax. I should learn how to toggle this mode.
+<x-color><param>#93E0E3</param>***** flyspell mode automatically highlights poor code syntax. I should learn how to toggle this mode.</x-color>
 
-***** tags this allows you to go to any function in a program. Emacs will remember what file it is in and will open that file for you.
+<x-color><param>#93E0E3</param>***** tags this allows you to go to any function in a program. Emacs will remember what file it is in and will open that file for you.</x-color>
 
-**** TODO make emacs insert automatically a blank HTML file when you open up an HTML file. :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> make emacs insert automatically a blank HTML file when you open up an HTML file. :gnu:someday:</x-color>
 
-**** TODO see if you can learn about more of emacs keyboard macros :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> see if you can learn about more of emacs keyboard macros :gnu:someday:</x-color>
 
-**** TODO learn emacs grep:gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> learn emacs grep:gnu:someday:</x-color>
 
-**** TODO emacs muse allows one to write something in emacs and then put it in a different format :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> emacs muse allows one to write something in emacs and then put it in a different format :gnu:someday:</x-color>
 
-**** DONE change how emacs looks. I would like it to have a vi type feels :gnu:someday:
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> change how emacs looks. I would like it to have a vi type feels :gnu:someday:</x-color>
 
-    CLOSED: [2013-10-12 Sat 16:36]
+    CLOSED: <x-color><param>#8CD0D3</param>[2013-10-12 Sat 16:36]</x-color>
     I am using wombat theme. M-x customize-themes will show the themes you can use
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> programs I want to play with</x-color>
@@ -401,13 +401,13 @@ SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-07 Mon></x-color>
 
     CLOSED: <x-color><param>#8CD0D3</param>[2013-10-14 Mon 22:06]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-14 Mon></x-color>
 
-*** where will I live next year
+<x-color><param>#7CB8BB</param>*** where will I live next year</x-color>
 
-*** how will I get to church in the summer
+<x-color><param>#7CB8BB</param>*** how will I get to church in the summer</x-color>
 
-*** with whom will I spend my time in the summer
+<x-color><param>#7CB8BB</param>*** with whom will I spend my time in the summer</x-color>
 
-*** do I need a car?
+<x-color><param>#7CB8BB</param>*** do I need a car?</x-color>
 
 <x-color><param>#7CB8BB</param>*** make a monthly budget based on what events the PCM offers each month :finance:</x-color>
 
@@ -425,24 +425,24 @@ SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-07 Mon></x-color>
 
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> find a date that will work. Preferably a Friday or Saturday Night, and make a facebook group.</x-color>
 
-     CLOSED: [2013-10-15 Tue 17:47] SCHEDULED: <<2013-10-15 Tue>
+     CLOSED: <x-color><param>#8CD0D3</param>[2013-10-15 Tue 17:47]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-15 Tue></x-color>
 
-*** TODO encourage churches of different denominations to go to a different church and to work together :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> encourage churches of different denominations to go to a different church and to work together :community:someday:</x-color>
 
-*** TODO create a list of things that I belive in about my faith and try to think and find passages in the bible that :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> create a list of things that I belive in about my faith and try to think and find passages in the bible that :community:someday:</x-color>
 
 backs up what I believe
 
-*** TODO think about what science says why religion must be wrong, convince myself otherwise is evidence agrees with God :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> think about what science says why religion must be wrong, convince myself otherwise is evidence agrees with God :community:someday:</x-color>
 
-*** TODO read Christian books  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> read Christian books  :community:someday:</x-color>
 
 don't waste your life
 etc.
 
-*** TODO learn siblings and parents ages and birthdays  :community:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn siblings and parents ages and birthdays  :community:someday:</x-color>
 
-*** TODO buy white erasers for mechanical pencils     :errand:someday:
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> buy white erasers for mechanical pencils     :errand:someday:</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> learn how to pick up chicks  :community:someday:</x-color>
 
@@ -489,6 +489,9 @@ etc.
 
      <x-color><param>#8CD0D3</param><<2014-12-13 Sat></x-color>
 <x-color><param>#7CB8BB</param>*** german</x-color>
+<x-color><param>#D0BF8F</param>**** Quiz Montag Vocab and subjunctive and indicative.</x-color>
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+     vocab on p. 169.
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Kapitol 8</x-color>
 
      <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
@@ -507,34 +510,27 @@ etc.
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** metalogic</x-color>
-<x-color><param>#7CB8BB</param>*** grad</x-color>
+<x-color><param>#7CB8BB</param>*** Purdue Graduation.</x-color>
 <x-color><param>#D0BF8F</param>**** I graduate on December 21 at 2:30pm.</x-color>
+
+     I am guarenteed 4 tickets. That's Mom, Dad, Karlie, Lindsey.
+
+     I've requested 2 extra tickets, but these are not guarenteed.
+     I don't think tickets cost anything.
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-12-21 Sun 14:30></x-color>
 <x-color><param>#D0BF8F</param>**** Order cap and gown through Graduation Tab.</x-color>
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
-<x-color><param>#D0BF8F</param>**** buy tickets for grad</x-color>
 
-     DEADLINE: <x-color><param>#8CD0D3</param><<2014-12-01 Mon></x-color>
-<x-color><param>#93E0E3</param>***** how many tickets do I need?</x-color>
-      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
-      Abbi (2)
-
-      Mom and Dad
-
-      Lindsey (2?)
-
-      Karlie
-<x-color><param>#93E0E3</param>***** how much do tickets cost?</x-color>
-      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
 <x-color><param>#7CB8BB</param>*** PCM study session (org-cycle)</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 
-<x-color><param>#BFEBBF</param>** Job Search								</x-color><x-color><param>#BFEBBF</param>:job:</x-color>
+<x-color><param>#BFEBBF</param>** Job Search								:job:</x-color>
 <x-color><param>#7CB8BB</param>*** schedule a day to go visit Ivy Tech</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
+<x-color><param>#D0BF8F</param>**** write on my linked in account that I have GNU/Linux Experience.</x-color>
 <x-color><param>#7CB8BB</param>*** Research Manifest Solutions in Columbus Ohio and that job in Indy on your voicemail.</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
@@ -563,7 +559,7 @@ etc.
       <x-color><param>#8CD0D3</param><<2014-09-26 Fri></x-color>
 <x-color><param>#9FC59F</param>****** sign up for a CCO interview</x-color>
 
-<x-color><param>#BFEBBF</param>** code								</x-color><x-color><param>#BFEBBF</param>:gnu:project:</x-color>
+<x-color><param>#BFEBBF</param>** code								:gnu:project:</x-color>
 <x-color><param>#7CB8BB</param>*** check out these project ideas</x-color>
 
     <x-color><param>#D0BF8F</param>http://gcc.gnu.org/projects/beginner.html</x-color>
@@ -584,16 +580,12 @@ etc.
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#D0BF8F</param>**** Print Wild hacks' tickets. It's in your</x-color>
 
-<x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
+<x-color><param>#BFEBBF</param>** learn more about my friends				  :community:project:</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know what their majors are</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know one thing about them</x-color>
-
-<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> NEXT action, ask Andrew to tell me something about himself</x-color>
-
-    CLOSED: <x-color><param>#8CD0D3</param>[2014-10-25 Sat 14:19]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2013-10-20 Sun></x-color>
 
 <x-color><param>#BFEBBF</param>** recipes</x-color>
 
@@ -1016,27 +1008,29 @@ will help to thicken the soup.)
      side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
      filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
      Remove entire skillet from oven and plate. Serve.
-<x-color><param>#BFEBBF</param>** create income without working			    </x-color><x-color><param>#BFEBBF</param>:finance:project:</x-color>
+<x-color><param>#BFEBBF</param>** create income without working			    :finance:project:</x-color>
 <x-color><param>#7CB8BB</param>*** try to start a web hosting service</x-color>
 <x-color><param>#D0BF8F</param>**** make some mock websites for a resume.</x-color>
 <x-color><param>#93E0E3</param>***** finish the mock website that's on this computer.</x-color>
 <x-color><param>#9FC59F</param>****** Finish the home page for the mockup-website that is on this computer.</x-color>
 
-<x-color><param>#BFEBBF</param>** How much to lift?					    </x-color><x-color><param>#BFEBBF</param>:fitness:project:</x-color>
+<x-color><param>#BFEBBF</param>** How much to lift?					    :fitness:project:</x-color>
    in the first month of body building use light weight. It'll feel like lifting air
    this lets my muscles and tendons get used to the weight.
    In months 2-6 lift a weight that you can get 8-16 reps out of
-   Lift to failu
-   lifting weights
-
 <x-color><param>#7CB8BB</param>*** for all chest, shoulder, and lat exercises, have your shoulders down and back. Try to squeese a penny between your shoulder</x-color>
 
     blades
 
 <x-color><param>#7CB8BB</param>*** When you do crunches, rise up toward the ceiling</x-color>
 
-<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
-<x-color><param>#BFEBBF</param>** ways I can reward myself					     </x-color><x-color><param>#BFEBBF</param>:reward:</x-color>
+<x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  :community:project:</x-color>
+<x-color><param>#BFEBBF</param>** ways I can reward myself					     :reward:</x-color>
+
+<x-color><param>#7CB8BB</param>*** respond to my STAT teacher's email.</x-color>
+
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+<x-color><param>#7CB8BB</param>*** suggest to phoronix to make pay what you want articles or disable ad-block articles.</x-color>
 
 <x-color><param>#7CB8BB</param>*** make emacs bindings</x-color>
 <x-color><param>#D0BF8F</param>**** bind org-metaup and org-metadown</x-color>
@@ -1066,18 +1060,18 @@ will help to thicken the soup.)
       followed by a function key or arrow key is potentially meaningful, then you must not define <<ESC>
       <<ESC>, since that would preclude recognizing an escape sequence after <<ESC>. In these states, you
       should define <<ESC> <<ESC> <<ESC> as the way to escape. Otherwise, define <<ESC> <<ESC> instead.
-<x-color><param>#7CB8BB</param>*** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
+<x-color><param>#D0BF8F</param>**** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
 
     This us using toronto time
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed 21:00-23:00></x-color>
 
-<x-color><param>#7CB8BB</param>*** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
+<x-color><param>#D0BF8F</param>**** meet up with Sacha Chua and learn cool things to do with emacs!!!!</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-19 Wed 13:00></x-color>
     This us using toronto time
 
-<x-color><param>#7CB8BB</param>*** (setq adaptive-fill-regexp REGEXP)</x-color>
+<x-color><param>#D0BF8F</param>**** (setq adaptive-fill-regexp REGEXP)</x-color>
 
     <x-color><param>#D0BF8F</param>https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Prefix.html</x-color>
 
@@ -1085,16 +1079,23 @@ will help to thicken the soup.)
 
     I can specify the emacs fill-prefix! This means that I can tell emacs what lines I want to be merged
     into a paragraph, which means, I can stop refill-mode from merging headings into a paragraph!
-<x-color><param>#7CB8BB</param>*** emulate these vim commands</x-color>
-<x-color><param>#D0BF8F</param>**** d{motion} d</x-color>
+    So far, I've made refill that pull in lines that start with a ^\*, which is an org header. So woo hoo!
+
+<x-color><param>#D0BF8F</param>**** emulate these vim commands</x-color>
+<x-color><param>#93E0E3</param>***** d{motion} d</x-color>
 
      delete everything from point to where motion takes you.
-<x-color><param>#D0BF8F</param>**** make d ace-jump-char cut where ace jump takes you.</x-color>
-<x-color><param>#D0BF8F</param>**** make c act-jump-char copy where ace jump takes you.</x-color>
+<x-color><param>#93E0E3</param>***** make d ace-jump-char cut where ace jump takes you.</x-color>
+<x-color><param>#93E0E3</param>***** make c act-jump-char copy where ace jump takes you.</x-color>
+<x-color><param>#93E0E3</param>*****</x-color>
 
-<x-color><param>#7CB8BB</param>*** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way</x-color>
+<x-color><param>#D0BF8F</param>**** eval this to see current</x-color>
 
-    to test new things
+     major mode maps....?  (mapcar (lambda(x)(car(rassq x minor-mode-map-alist)))(current-minor-mode-maps))
+
+<x-color><param>#D0BF8F</param>**** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way</x-color>
+
+     to test new things
 <x-color><param>#7CB8BB</param>*** Go to Kafe Stunde 2pm-3pm in SC 131</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
 <x-color><param>#7CB8BB</param>*** ask a psych professor about applied psychology and about how best to make modal commands for editing.</x-color>
@@ -1113,7 +1114,6 @@ will help to thicken the soup.)
 
     here are the 3 matches
 
-    
 
     It should look like
 
@@ -1121,18 +1121,17 @@ will help to thicken the soup.)
 
     here are the 5 matches
 
-    
 
     3 matches found in this file
 
     here are the 3 matches
 
-    
 
 <x-color><param>#7CB8BB</param>*** Prove modus ponens. for metalogic</x-color>
 <x-color><param>#7CB8BB</param>*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.</x-color>
 <x-color><param>#7CB8BB</param>*** clone whylinuxisbetter.net I can contribute to make it better!</x-color>
 <x-color><param>#7CB8BB</param>*** use Emacs ERC</x-color>
+<x-color><param>#7CB8BB</param>*** helm-mode is not letting me use 2 words to locate a file.</x-color>
 <x-color><param>#7CB8BB</param>*** What's a php prepared statement?</x-color>
 
 <x-color><param>#7CB8BB</param>*** COMMAND OPTIONS these are the options for yaourt ediff</x-color>
@@ -1151,10 +1150,10 @@ will help to thicken the soup.)
 <x-color><param>#7CB8BB</param>*** meditate</x-color>
 <x-color><param>#7CB8BB</param>*** pull more stuff from emacs 24.4 and recompile it!</x-color>
 <x-color><param>#7CB8BB</param>*** get pacman play nice</x-color>
-<x-color><param>#D0BF8F</param>**** use ediff</x-color>
+<x-color><param>#93E0E3</param>***** use ediff</x-color>
 
-<x-color><param>#D0BF8F</param>**** I only want to enter my password once</x-color>
-<x-color><param>#D0BF8F</param>**** printenv will show you your current environment variables</x-color>
+<x-color><param>#93E0E3</param>***** I only want to enter my password once</x-color>
+<x-color><param>#93E0E3</param>***** printenv will show you your current environment variables</x-color>
 
 <x-color><param>#7CB8BB</param>*** I've added two lines to my .xinitrc to auto start gnome-keyring which will apparently record my wifi passwords. It can also add my ssh keys. and do something with firefox.</x-color>
     pacman are not showing up. env allows you to modify your environment if all else fails.
@@ -1181,7 +1180,6 @@ will help to thicken the soup.)
 
     (provide 'auto-complete-ispell)
 
-    
 
 <x-color><param>#7CB8BB</param>*** make video explaining firefox nightly and multi-process firefox.</x-color>
 
@@ -1189,18 +1187,13 @@ will help to thicken the soup.)
 
     firefox -P #starts the profileManager
 <x-color><param>#BFEBBF</param>** friends</x-color>
-<x-color><param>#7CB8BB</param>*** Brian Green string Theorist Elliot</x-color>
+<x-color><param>#7CB8BB</param>*** text Eli and invite him to more stuff.</x-color>
+
+<x-color><param>#7CB8BB</param>*** Brian Green string Theorist Elliot				     :reward:</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu 19:00></x-color>
-<x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel</x-color>
+<x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel			     :reward:</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 18:00></x-color>
-<x-color><param>#7CB8BB</param>*** grill out at parent's house Saturday at 6pm.</x-color>
-
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat 18:00></x-color>
-    I need to buy brats and buns for the event.
-
-    
-
 <x-color><param>#DFAF8F</param>* reference							  </x-color><x-color><param>#DFAF8F</param>:reference:</x-color>
 
 <x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> find good recipes of good things to eat  </x-color><x-color><param>#BFEBBF</param>:fitness:reference:</x-color>
@@ -1460,15 +1453,20 @@ computer stuff to do, non programming    :Computer:
    (( $RANDOM % 6 == 0 )) && echo "rm -rf /" || echo "Click!"
 
 <x-color><param>#DFAF8F</param>* calendar							   </x-color><x-color><param>#DFAF8F</param>:calendar:</x-color>
+<x-color><param>#BFEBBF</param>** pay January and Febuary baywater apartment rent</x-color>
+
+   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-12-15 Mon></x-color>
+<x-color><param>#BFEBBF</param>** sign up for an appointment to visit a chiropractor</x-color>
+
+   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu></x-color>
 <x-color><param>#BFEBBF</param>** I'm helping the kid's ministry at 11:30am at Calvary.</x-color>
 
    <x-color><param>#8CD0D3</param><<2014-11-09 Sun 11:30></x-color>
-<x-color><param>#BFEBBF</param>** buy mom Boundaries for Marriage book for Christmas</x-color>
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#BFEBBF</param> buy mom Boundaries for Marriage book for Christmas</x-color>
 
-   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
-<x-color><param>#BFEBBF</param>** buy dad GTD for Christmas</x-color>
-   SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
-   SCHEDULED:
+   CLOSED: <x-color><param>#8CD0D3</param>[2014-11-01 Sat 15:57]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
+<x-color><param>#BFEBBF</param>** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#BFEBBF</param> buy dad GTD for Christmas</x-color>
+   CLOSED: <x-color><param>#8CD0D3</param>[2014-11-01 Sat 15:57]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>
 <x-color><param>#DFAF8F</param>* weekly review</x-color>
 
 <x-color><param>#BFEBBF</param>** check out awful.widget.prompt That may allow me to place a widget or launcher onto the screen,</x-color>

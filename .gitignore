@@ -107,3 +107,4 @@ videos/
 .subversion/README.txt
 .subversion/servers
 .emacs.d/ede-projects.el
+.emacs.d/bookmarks

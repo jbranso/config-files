@@ -14,6 +14,8 @@
 
 ;;(keyboard-translate ?\C-x ?\M-x) ;;make C-x mean M-x
 ;;(keyboard-translate ?\C-t ?\C-x) ;;make C-t mean C-x
+
+;;tool-bar-mode is nice for listing the available commands.
 (tool-bar-mode -1)
 ;;(menu-bar-mode -1)
 ;; put numbers on the side of the editor
@@ -66,7 +68,20 @@
 (ac-config-default)
 
 (setq ispell-complete-word-dictionary "usr/bin/aspell")
-(setq ispell-alternate-dictionary "usr/bin/aspell")
+;;(setq ispell-alternate-dictionary "usr/bin/aspell")
+
+;;speed up flyspell
+(setq flyspell-issue-message-flag nil)
+;; make flyspell use aspell
+(setq ispell-list-command "--list")
+
+
+;; This next line lets org-mode and refill-mode play together.  Refill-mode automatically calls M-q
+;;(refill-paragraph), so you never have to press M-q again. However, you need this next line, tell Refill
+;;mode NOT to pull in headings into a paragraph. This not not quite working the it should be. When you press
+;;enter on a heading in org-mode, it will merge the current heading with the ones above it, into a
+;;paragraph.
+(setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
 
 (eval-after-load "auto-complete"
   '(progn
@@ -93,7 +108,7 @@
 ;;;   ;;;
 ;;;   ;;; end modal-mode setup
 
-
+;; this is helpful for gnus and rmail I believe.
 (setq user-full-name "Joshua Branson"
       user-mail-address "jbranso@purdue.edu")
 
@@ -101,11 +116,6 @@
 ;;this next line should be a if windows use a larger value. If not then use this value.
 (setq-default fill-column 108)
 (setq next-line-add-newlines t)
-
-
-(prefer-coding-system 'utf-8)
-(when (display-graphic-p)
-  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 
 ;;yes I do want to kill this shell, even though it has a process attached to it.
 (setq kill-buffer-query-functions
@@ -122,22 +132,22 @@
 ;; show matching parenthesis
 (show-paren-mode t)
 
-;;(ido-mode t)
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-create-new-buffer 'always)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-auto-merge-delay-time 1.0)
-(setq ido-cannot-complete-command (quote ido-next-match))
-(setq ido-enable-regexp t)
-;;this is so helpful!!!! you need to enable ido fuzzy matching
-(setq ido-enable-flex-matching t)
-(setq ido-enable-tramp-completion t)
-(setq ido-ignore-buffers (quote ("\*scratch\*" "\*Completions\*" "\*Messages\*" "\*Compile-Log\*" "\*help\*" "*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
-(setq ido-ignore-files (quote ("*.vr" "*.toc" "*.tp" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
-(setq ido-max-dir-file-cache 200)
-(setq ido-max-work-directory-list 100)
-(setq ido-max-work-file-list 20)
+;; I'm trying to get away from ido-mode
+;; (ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-create-new-buffer 'always)
+;; (setq ido-use-filename-at-point 'guess)
+;; (setq ido-auto-merge-delay-time 1.0)
+;; (setq ido-cannot-complete-command (quote ido-next-match))
+;; (setq ido-enable-regexp t)
+;; ;;this is so helpful!!!! you need to enable ido fuzzy matching
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-enable-tramp-completion t)
+;; (setq ido-ignore-buffers (quote ("\*scratch\*" "\*Completions\*" "\*Messages\*" "\*Compile-Log\*" "\*help\*" "*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
+;; (setq ido-ignore-files (quote ("*.vr" "*.toc" "*.tp" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
+;; (setq ido-max-dir-file-cache 200)
+;; (setq ido-max-work-directory-list 100)
+;; (setq ido-max-work-file-list 20)
 
 ;; tell emacs where my agenda file is
 (setq org-agenda-files
@@ -147,11 +157,6 @@
 ;;this will record what time TODO items were finished and the line containing 'note will make org prompt you for a note when you finish
 ;; a task
 (setq org-log-done 'time)
-
-;;speed up flyspell
-(setq flyspell-issue-message-flag nil)
-;; make flyspell use aspell
-(setq ispell-list-command "--list")
 
 ;; toggle follow mode in emacs agenda mode
 (setq org-agenda-start-with-follow-mode t)

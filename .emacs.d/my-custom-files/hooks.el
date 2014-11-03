@@ -15,7 +15,6 @@
 	    ;; (dired-omit-mode 1)
 	    ))
 
-
 ;;delete trailing whitespace
 (add-hook 'before-save-hook
 	  (lambda ()
@@ -51,17 +50,6 @@
 (add-hook 'python-mode-hook 'yas-minor-mode)
 (add-hook 'lua-mode-hook 'yas-minor-mode)
 
-;;(add-hook 'cc-mode-hook 'yas-minor-mode-on)
-;;(add-hook 'c++-mode-hook 'yas-minor-mode)
-;;(add-hook 'python-mode-hook 'yas-minor-mode-on)
-;;(add-hook 'lua-mode-hook 'yas-minor-mode)
-;;(add-hook 'html-mode-hook 'yas-minor-mode-on)
-
-;;(add-hook 'cc-mode-hook 'abbrev-mode)
-;;(add-hook 'c++-mode-hook 'abbrev-mode)
-;;(add-hook 'python-mode-hook 'abbrev-mode)
-;;(add-hook 'lua-mode-hook 'abbrev-mode)
-;;(add-hook 'html-mode-hook 'abbrev-mode)
 (add-hook 'web-mode-hook
 	  (lambda ()
 	    (flyspell-prog-mode)
@@ -71,16 +59,15 @@
 	    (auto-complete-mode)
 	    (ac-ispell-ac-setup)))
 
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
-
 (add-hook 'c++-mode-hook
-	  (lambda ()
-	    (flyspell-prog-mode)
-	    ))
+	  '(lambda ()
+	     (flyspell-prog-mode)
+	     (yas-minor-mode)
+	     ))
 
-(add-hook 'c-mode-hook 'flyspell-prog-mode)
-
+(add-hook 'c-mode-hook '(lambda ()
+			  (flyspell-prog-mode)
+			  (yas-minor-mode)))
 (add-hook 'lua-mode-hook
 	  (lambda ()
 	    (flyspell-prog-mode)
@@ -96,15 +83,11 @@
 	    (flyspell-prog-mode)
 	    ))
 
-;; add a ton of minor modes to text mode this is causing problems when editing HTML mode
-(add-hook 'text-mode-hook 'flyspell-mode)
-
 ;;auto-insert, specifes default stuff to load into the emacs file when you create a file.
 ;; setq buffer-save... will let you save every buffer you open without asking if you want to save it.
 (add-hook 'find-file-hook (lambda ()
 			    (setq buffer-save-without-query t)
 			    (auto-insert)))
-
 ;; not working
 (add-hook 'eshell-first-time-mode-hook 'viper-change-state-to-emacs)
 (add-hook 'eshell-mode-hook 'viper-change-state-to-emacs)
