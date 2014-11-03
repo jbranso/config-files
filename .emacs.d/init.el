@@ -9,6 +9,7 @@
 (load "hooks")
 (load "skeletons")
 (load "set-global-keys")
+(load "gnus-set-up.el")
 ;;(load "evil-changes")
 
 ;;make emacs shell output color

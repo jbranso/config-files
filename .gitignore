@@ -108,3 +108,9 @@ videos/
 .subversion/servers
 .emacs.d/ede-projects.el
 .emacs.d/bookmarks
+.emacs.d/my-custom-files/gnus-set-up.el
+.authinfo
+.newsrc
+.newsrc.eld
+.newsrc
+.newsrc.eld
