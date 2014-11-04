@@ -242,8 +242,6 @@
 (define-key viper-vi-global-user-map
   (kbd "p,") 'er/contract-region)
 (define-key viper-vi-global-user-map
-  (kbd "ph") 'help)
-(define-key viper-vi-global-user-map
   (kbd "prp") 'insert-register)
 (define-key viper-vi-global-user-map
   (kbd "pr+") 'increment-register)
@@ -277,6 +275,12 @@
 ;;copy marked region
 (define-key viper-vi-global-user-map
   (kbd "pc") 'kill-ring-save)
+(define-key viper-vi-global-user-map
+  (kbd "pre") 'web-mode-element-rename)
+(define-key viper-vi-global-user-map
+  (kbd "pt") 'web-mode-element-parent)
+(define-key viper-vi-global-user-map
+  (kbd "ph") 'web-mode-element-child)
 ;; pa copies from point to beginning of line
 ;; pu copies from point to the beginning of the line
 
@@ -291,6 +295,8 @@
 		(kill-word nil)))
 (define-key viper-vi-global-user-map
   (kbd "kl") 'kill-line)
+(define-key viper-vi-global-user-map
+  (kbd "ke") 'web-mode-element-vanish)
 
 (define-key viper-vi-global-user-map
   (kbd "q") '(lambda ()
