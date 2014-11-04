@@ -489,16 +489,13 @@ etc.
 
      <x-color><param>#8CD0D3</param><<2014-12-13 Sat></x-color>
 <x-color><param>#7CB8BB</param>*** german</x-color>
-<x-color><param>#D0BF8F</param>**** Quiz Montag Vocab and subjunctive and indicative.</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
-     vocab on p. 169.
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> German interview for extra credit in SC 244</x-color>
+
+     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-07 Fri 14:30></x-color>
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> Kapitol 8</x-color>
 
      <x-color><param>#8CD0D3</param><<2014-10-29 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** stat</x-color>
-<x-color><param>#D0BF8F</param>**** mixable # 2</x-color>
-
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color> DEADLINE: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 23:59></x-color>
 <x-color><param>#D0BF8F</param>**** go to stat exam 2 in EE129:</x-color>
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu 18:30-19:30></x-color>
@@ -519,20 +516,20 @@ etc.
      I don't think tickets cost anything.
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-12-21 Sun 14:30></x-color>
-<x-color><param>#D0BF8F</param>**** Order cap and gown through Graduation Tab.</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> Order cap and gown through Graduation Tab.</x-color>
+     CLOSED: <x-color><param>#8CD0D3</param>[2014-11-04 Tue 11:13]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
 
 <x-color><param>#7CB8BB</param>*** PCM study session (org-cycle)</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 <x-color><param>#D0BF8F</param>**** Tuesdays from 4:30-6:30pm</x-color>
 
-<x-color><param>#BFEBBF</param>** Job Search								:job:</x-color>
+<x-color><param>#BFEBBF</param>** Job Search								</x-color><x-color><param>#BFEBBF</param>:job:</x-color>
 <x-color><param>#7CB8BB</param>*** schedule a day to go visit Ivy Tech</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
 <x-color><param>#7CB8BB</param>*** update Linked In account</x-color>
 <x-color><param>#D0BF8F</param>**** write on my linked in account that I have GNU/Linux Experience.</x-color>
-<x-color><param>#7CB8BB</param>*** Research Manifest Solutions in Columbus Ohio and that job in Indy on your voicemail.</x-color>
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#7CB8BB</param> Research Manifest Solutions in Columbus Ohio and that job in Indy on your voicemail.</x-color>
+    CLOSED: <x-color><param>#8CD0D3</param>[2014-11-04 Tue 11:22]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#7CB8BB</param>*** screenshot pages of all the stuff I've done for Mike</x-color>
 
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-05 Wed></x-color>
@@ -546,9 +543,6 @@ etc.
 
      SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue></x-color>
      If you have a problem with your website I can fix it. If I can't I know someone who can.
-<x-color><param>#7CB8BB</param>*** BRNG 1284 Networking and Master's breakfast</x-color>
-
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 08:00></x-color>
 <x-color><param>#7CB8BB</param>*** Do CCO mock interviews</x-color>
 <x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> create an Interview stream account</x-color>
 
@@ -559,7 +553,7 @@ etc.
       <x-color><param>#8CD0D3</param><<2014-09-26 Fri></x-color>
 <x-color><param>#9FC59F</param>****** sign up for a CCO interview</x-color>
 
-<x-color><param>#BFEBBF</param>** code								:gnu:project:</x-color>
+<x-color><param>#BFEBBF</param>** code								</x-color><x-color><param>#BFEBBF</param>:gnu:project:</x-color>
 <x-color><param>#7CB8BB</param>*** check out these project ideas</x-color>
 
     <x-color><param>#D0BF8F</param>http://gcc.gnu.org/projects/beginner.html</x-color>
@@ -568,19 +562,22 @@ etc.
 <x-color><param>#7CB8BB</param>*** HTML5 games</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Hack Duke in CIEMAS I'm in the facebook group. They will provide a bus.</x-color>
 
+    It ends on Sunday at ?
+
     <x-color><param>#8CD0D3</param><<2014-11-15 Sat 10:00></x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#D0BF8F</param> See if anyone is the Hack Duke Facebook group responded about my post and want to car pool.</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Local hack day at Purdue University Church</x-color>
 
     <x-color><param>#8CD0D3</param><<2014-12-06 Sat></x-color>
-<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Wild Hacks Northwestern University at</x-color>
+<x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> Wild Hacks Northwestern University at noon? Sunday 1pm.</x-color>
 
-    <x-color><param>#8CD0D3</param><<2014-11-22 Sat 11:59></x-color>
-<x-color><param>#D0BF8F</param>**** look up shuttle info for getting to wild hacks</x-color>
-     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
+    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-22 Sat></x-color>
+<x-color><param>#D0BF8F</param>**** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#D0BF8F</param> look up shuttle info for getting to wild hacks</x-color>
+     CLOSED: <x-color><param>#8CD0D3</param>[2014-11-04 Tue 11:47]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-04 Tue 11:30></x-color>
 <x-color><param>#D0BF8F</param>**** Print Wild hacks' tickets. It's in your</x-color>
 
-<x-color><param>#BFEBBF</param>** learn more about my friends				  :community:project:</x-color>
+<x-color><param>#BFEBBF</param>** learn more about my friends				  </x-color><x-color><param>#BFEBBF</param>:community:project:</x-color>
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know where people are from</x-color>
 
 <x-color><param>#7CB8BB</param>*** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#7CB8BB</param> know what their majors are</x-color>
@@ -1027,9 +1024,6 @@ will help to thicken the soup.)
 <x-color><param>#BFEBBF</param>** stop sinning against God in that deliberate mannor	  :community:project:</x-color>
 <x-color><param>#BFEBBF</param>** ways I can reward myself					     :reward:</x-color>
 
-<x-color><param>#7CB8BB</param>*** respond to my STAT teacher's email.</x-color>
-
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
 <x-color><param>#7CB8BB</param>*** suggest to phoronix to make pay what you want articles or disable ad-block articles.</x-color>
 
 <x-color><param>#7CB8BB</param>*** make emacs bindings</x-color>
@@ -1096,8 +1090,6 @@ will help to thicken the soup.)
 <x-color><param>#D0BF8F</param>**** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way</x-color>
 
      to test new things
-<x-color><param>#7CB8BB</param>*** Go to Kafe Stunde 2pm-3pm in SC 131</x-color>
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon></x-color>
 <x-color><param>#7CB8BB</param>*** ask a psych professor about applied psychology and about how best to make modal commands for editing.</x-color>
 <x-color><param>#7CB8BB</param>*** get connected via ssh to my unix account at purdue. iTAP</x-color>
 
@@ -1191,9 +1183,6 @@ will help to thicken the soup.)
 
 <x-color><param>#7CB8BB</param>*** Brian Green string Theorist Elliot				     :reward:</x-color>
     SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu 19:00></x-color>
-<x-color><param>#7CB8BB</param>*** go to coffee and code jam bring Nathaniel			     :reward:</x-color>
-
-    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-03 Mon 18:00></x-color>
 <x-color><param>#DFAF8F</param>* reference							  </x-color><x-color><param>#DFAF8F</param>:reference:</x-color>
 
 <x-color><param>#BFEBBF</param>** </x-color><x-color><param>#CC9393</param>TODO</x-color><x-color><param>#BFEBBF</param> find good recipes of good things to eat  </x-color><x-color><param>#BFEBBF</param>:fitness:reference:</x-color>
@@ -1459,9 +1448,6 @@ computer stuff to do, non programming    :Computer:
 <x-color><param>#BFEBBF</param>** sign up for an appointment to visit a chiropractor</x-color>
 
    SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-06 Thu></x-color>
-<x-color><param>#BFEBBF</param>** I'm helping the kid's ministry at 11:30am at Calvary.</x-color>
-
-   <x-color><param>#8CD0D3</param><<2014-11-09 Sun 11:30></x-color>
 <x-color><param>#BFEBBF</param>** </x-color><x-color><param>#AFD8AF</param>DONE</x-color><x-color><param>#BFEBBF</param> buy mom Boundaries for Marriage book for Christmas</x-color>
 
    CLOSED: <x-color><param>#8CD0D3</param>[2014-11-01 Sat 15:57]</x-color> SCHEDULED: <x-color><param>#8CD0D3</param><<2014-11-01 Sat></x-color>

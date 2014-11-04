@@ -285,6 +285,11 @@
 (define-key viper-vi-global-user-map
   (kbd "kb") 'ido-kill-buffer)
 (define-key viper-vi-global-user-map
+  (kbd "kw") '(lambda ()
+		(interactive)
+		(backward-word nil)
+		(kill-word nil)))
+(define-key viper-vi-global-user-map
   (kbd "kl") 'kill-line)
 
 (define-key viper-vi-global-user-map

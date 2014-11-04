@@ -9,16 +9,16 @@
 (load "hooks")
 (load "skeletons")
 (load "set-global-keys")
-(load "gnus-set-up.el")
+;;(load "gnus-set-up.el")
 ;;(load "evil-changes")
 
 ;;make emacs shell output color
 (ansi-color-for-comint-mode-on)
 
 ;;web mode
-(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 ;; the default file emacs opens.
 ;;(find-file "/home/joshua/documents/things_to_do.org")
