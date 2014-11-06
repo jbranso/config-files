@@ -38,13 +38,14 @@
 ;; this sets up the packages I have installed.
 
 (require 'recentf)
-(setq recentf-max-saved-items 100)
+(setq recentf-max-saved-items 500)
 
 (require 'helm-config)
 (helm-mode t)
 (helm :sources '(helm-source-recentf
 		 helm-source-buffers-list
-		 helm-source-findutils
+		 ;; this next one is supposed to work really well, but it more of a pain really.
+		 ;;		 helm-source-findutils
 		 helm-source-bookmarks
 		 ;;helm-source-ls-git
 		 ))
@@ -77,6 +78,9 @@
 ;; make flyspell use aspell
 (setq ispell-list-command "--list")
 
+;;This package is quite nice. It makes whatever window that currently has focus, be the largest window!
+(require 'golden-ratio)
+(golden-ratio-mode 1)
 
 ;; This next line lets org-mode and refill-mode play together.  Refill-mode automatically calls M-q
 ;;(refill-paragraph), so you never have to press M-q again. However, you need this next line, tell Refill

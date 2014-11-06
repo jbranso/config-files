@@ -275,8 +275,8 @@ etc.
      SCHEDULED: <2014-11-07 Fri 14:30>
 **** TODO German emam #2 in german classroom
      SCHEDULED: <2014-11-07 Fri 15:00>
-**** TODO Kapitol 8
-     DEADLINE: <2014-11-07 Fri>
+**** DONE Kapitol 8
+     CLOSED: [2014-11-06 Thu 13:48] DEADLINE: <2014-11-07 Fri>
      p. 115 A-G and p. 161 B-D
      p. 109 A-F and p. 159 B,C
 
@@ -320,7 +320,7 @@ etc.
       SCHEDULED: <2014-11-01 Sat>
       <2014-09-26 Fri>
 ****** sign up for a CCO interview
-** code								:gnu:project:
+** code									:gnu:
 *** check out these project ideas
     http://gcc.gnu.org/projects/beginner.html
 *** coding for emacs
@@ -336,10 +336,131 @@ etc.
 **** DONE look up shuttle info for getting to wild hacks
      CLOSED: [2014-11-04 Tue 11:47] SCHEDULED: <2014-11-04 Tue 11:30>
 **** Print Wild hacks' tickets. It's in your
-** learn more about my friends				  :community:project:
+** learn more about my friends					  :community:
 *** TODO know where people are from
 *** TODO know what their majors are
 *** TODO know one thing about them
+** create income without working				    :finance:
+*** try to start a web hosting service
+**** make some mock websites for a resume.
+***** finish the mock website that's on this computer.
+****** Finish the home page for the mockup-website that is on this computer.
+** stop sinning against God 					  :community:
+** ways I can reward myself					     :reward:
+*** suggest to phoronix to make pay what you want articles or disable ad-block articles.
+*** make emacs bindings
+**** bind org-metaup and org-metadown
+**** (org-agenda-next-line) (org-agenda-previous-line)
+**** bind a command that evaluates current lisp list
+**** C-c letter are reserved for users according to the emacs manual
+     Function keys <F5> through <F9> without modifier keys are also reserved for users to define. Sequences
+     consisting of C-c followed by a control character or a digit are reserved for major modes. Sequences
+     consisting of C-c followed by {, }, <, >, : or ; are also reserved for major modes. Sequences
+     consisting of C-c followed by any other punctuation character are allocated for minor modes. Using
+     them in a major mode is not absolutely prohibited, but if you do that, the major mode binding may be
+     shadowed from time to time by minor modes. Don't bind C-h following any prefix character (including
+     C-c). If you don't bind C-h, it is automatically available as a help character for listing the
+     subcommands of the prefix character. Don't bind a key sequence ending in <ESC> except following
+     another <ESC>. (That is, it is OK to bind a sequence ending in <ESC> <ESC>.)
+     The reason for this rule is that a non-prefix binding for <ESC> in any context prevents recognition of
+     escape sequences as function keys in that context. Similarly, don't bind a key sequence ending in
+     <C-g>, since that is commonly used to cancel a key sequence. Anything that acts like a temporary mode
+     or state that the user can enter and leave should define <ESC> <ESC> or <ESC> <ESC> <ESC> as a way to
+     escape.
+     For a state that accepts ordinary Emacs commands, or more generally any kind of state in which <ESC>
+     followed by a function key or arrow key is potentially meaningful, then you must not define <ESC>
+     <ESC>, since that would preclude recognizing an escape sequence after <ESC>. In these states, you
+     should define <ESC> <ESC> <ESC> as the way to escape. Otherwise, define <ESC> <ESC> instead.
+**** meet up with Sacha Chua and learn cool things to do with emacs!!!!
+     SCHEDULED: <2014-11-19 Wed 13:00>
+     This us using toronto time
+**** (setq adaptive-fill-regexp REGEXP)
+     https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Prefix.html
+     https://www.gnu.org/software/emacs/manual/html_node/emacs/Adaptive-Fill.html#Adaptive-Fill
+     I can specify the emacs fill-prefix! This means that I can tell emacs what lines I want to be merged
+     into a paragraph, which means, I can stop refill-mode from merging headings into a paragraph!
+     So far, I've made refill that pull in lines that start with a ^\*, which is an org header. So woo hoo!
+**** emulate these vim commands
+***** d{motion} d
+      delete everything from point to where motion takes you.
+***** make d ace-jump-char cut where ace jump takes you.
+***** make c act-jump-char copy where ace jump takes you.
+      *****
+**** eval this to see current
+     major mode maps....?  (mapcar (lambda(x)(car(rassq x minor-mode-map-alist)))(current-minor-mode-maps))
+**** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way
+     to test new things
+*** send Dr. Evil and Mr. Barnes an email thanking them for teaching me.
+*** email my algabra teacher thanking her for getting me started with math.
+*** Tell Kacey I still think of him as a brother.
+*** Share "made to be broken" with Austin.
+*** ask a psych professor about applied psychology and about how best to make modal commands for editing.
+*** sign up for Scooby's Fit over 40
+*** Give a tip to Nick Notas
+*** Phoronix do not load pages if Ad-Block in enabled. Or make pay what you want articles.
+*** Buy Will Brink's Body Building Revealed
+*** Buy the Kino Bible
+*** Buy Anabolicious Cooking
+*** get connected via ssh to my unix account at purdue. iTAP
+    http://www.itap.purdue.edu/learning/careeraccount/unixaccount.html
+*** improve the eshell output for grep "REGEXP" *
+    Currently it looks like
+    5 matches of "REGEXP" found in This File
+    here are the 5 matches
+    3 matches of "REGEXP" found in this file
+    here are the 3 matches
+
+    It should look like
+    5 matches found in This File
+    here are the 5 matches
+
+    3 matches found in this file
+    here are the 3 matches
+
+*** Prove modus ponens. for metalogic
+*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.
+*** clone whylinuxisbetter.net I can contribute to make it better!
+*** use Emacs ERC
+*** helm-mode is not letting me use 2 words to locate a file.
+*** What's a php prepared statement?
+*** COMMAND OPTIONS these are the options for yaourt ediff
+    PACMAN="pacman"
+    Specify the pacman binary to use with yaourt
+    DIFFEDITCMD="vimdiff"
+    Define the diff editor to use ($DIFFEDITCMD file1 file2)
+*** printenv shows your environmental variables, but the environmental variables that I want to use with
+*** use Emacs Gnus
+*** meditate
+*** pull more stuff from emacs 24.4 and recompile it!
+*** get pacman play nice
+***** use ediff
+***** I only want to enter my password once
+***** printenv will show you your current environment variables
+*** I've added two lines to my .xinitrc to auto start gnome-keyring which will apparently record my wifi passwords. It can also add my ssh keys. and do something with firefox.
+    pacman are not showing up. env allows you to modify your environment if all else fails.
+    https://wiki.archlinux.org/index.php/environment_variables
+*** autocomplete and ispell integration
+    (require 'auto-complete)
+    (require 'ispell)
+    (defvar ac-ispell-modes
+    '(text-mode))
+    (defun ac-ispell-candidate ()
+    (if (memq major-mode ac-ispell-modes)
+    (let ((word (ispell-get-word nil "\\*")))
+    (setq word (car word))
+    (lookup-words (concat word "*") ispell-complete-word-dict))))
+    (defvar ac-source-ispell
+    '((candidates . ac-ispell-candidate)
+    (requires . 3))
+    "Source for ispell.")
+    (provide 'auto-complete-ispell)
+
+*** make video explaining firefox nightly and multi-process firefox.
+    firefox -P "profile name"
+    firefox -P #starts the profileManager
+** friends
+*** text Eli and invite him to more stuff.
+* reference							  :reference:
 ** recipes
 *** Breakfast
 *** figure out how much oatmeal and fruit costs this normally makes 2 breakfasts
@@ -706,139 +827,7 @@ will help to thicken the soup.)
      of the skillet. Return skillet to oven and roast 3 – 4 minutes. Remove skillet from oven, flip salmon filet, and place to the
      side to create room for asparagus. Add asparagus to the skillet and drizzle the juice of ½ lemon over the asparagus and salmon
      filet. Return to oven and roast for another 5 – 7 minutes, or until asparagus is tender and salmon is cooked through.
-     Remove entire skillet from oven and plate. Serve.
-** create income without working			    :finance:project:
-*** try to start a web hosting service
-**** make some mock websites for a resume.
-***** finish the mock website that's on this computer.
-****** Finish the home page for the mockup-website that is on this computer.
-** How much to lift?					    :fitness:project:
-   in the first month of body building use light weight. It'll feel like lifting air
-   this lets my muscles and tendons get used to the weight.
-   In months 2-6 lift a weight that you can get 8-16 reps out of
-*** for all chest, shoulder, and lat exercises, have your shoulders down and back. Try to squeese a penny between your shoulder
-    blades
-*** When you do crunches, rise up toward the ceiling
-** stop sinning against God in that deliberate mannor	  :community:project:
-** ways I can reward myself					     :reward:
-*** suggest to phoronix to make pay what you want articles or disable ad-block articles.
-*** make emacs bindings
-**** bind org-metaup and org-metadown
-**** (org-agenda-next-line) (org-agenda-previous-line)
-**** bind a command that evaluates current lisp list
-**** C-c letter are reserved for users according to the emacs manual
-     Function keys <F5> through <F9> without modifier keys are also reserved for users to define. Sequences
-     consisting of C-c followed by a control character or a digit are reserved for major modes. Sequences
-     consisting of C-c followed by {, }, <, >, : or ; are also reserved for major modes. Sequences
-     consisting of C-c followed by any other punctuation character are allocated for minor modes. Using
-     them in a major mode is not absolutely prohibited, but if you do that, the major mode binding may be
-     shadowed from time to time by minor modes. Don't bind C-h following any prefix character (including
-     C-c). If you don't bind C-h, it is automatically available as a help character for listing the
-     subcommands of the prefix character. Don't bind a key sequence ending in <ESC> except following
-     another <ESC>. (That is, it is OK to bind a sequence ending in <ESC> <ESC>.)
-     The reason for this rule is that a non-prefix binding for <ESC> in any context prevents recognition of
-     escape sequences as function keys in that context. Similarly, don't bind a key sequence ending in
-     <C-g>, since that is commonly used to cancel a key sequence. Anything that acts like a temporary mode
-     or state that the user can enter and leave should define <ESC> <ESC> or <ESC> <ESC> <ESC> as a way to
-     escape.
-     For a state that accepts ordinary Emacs commands, or more generally any kind of state in which <ESC>
-     followed by a function key or arrow key is potentially meaningful, then you must not define <ESC>
-     <ESC>, since that would preclude recognizing an escape sequence after <ESC>. In these states, you
-     should define <ESC> <ESC> <ESC> as the way to escape. Otherwise, define <ESC> <ESC> instead.
-**** meet up with Sacha Chua and learn cool things to do with emacs!!!!
-     This us using toronto time
-     SCHEDULED: <2014-11-05 Wed 21:00-23:00>
-**** meet up with Sacha Chua and learn cool things to do with emacs!!!!
-     SCHEDULED: <2014-11-19 Wed 13:00>
-     This us using toronto time
-**** (setq adaptive-fill-regexp REGEXP)
-     https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Prefix.html
-     https://www.gnu.org/software/emacs/manual/html_node/emacs/Adaptive-Fill.html#Adaptive-Fill
-     I can specify the emacs fill-prefix! This means that I can tell emacs what lines I want to be merged
-     into a paragraph, which means, I can stop refill-mode from merging headings into a paragraph!
-     So far, I've made refill that pull in lines that start with a ^\*, which is an org header. So woo hoo!
-**** emulate these vim commands
-***** d{motion} d
-      delete everything from point to where motion takes you.
-***** make d ace-jump-char cut where ace jump takes you.
-***** make c act-jump-char copy where ace jump takes you.
-      *****
-**** eval this to see current
-     major mode maps....?  (mapcar (lambda(x)(car(rassq x minor-mode-map-alist)))(current-minor-mode-maps))
-**** load any changes in emacs with after-init-hook, that way your init file doesn't break. It'll be a way
-     to test new things
-*** send Dr. Evil and Mr. Barnes an email thanking them for teaching me.
-*** email my algabra teacher thanking her for getting me started with math.
-*** Tell Kacey I still think of him as a brother.
-*** Share "made to be broken" with Austin.
-*** ask a psych professor about applied psychology and about how best to make modal commands for editing.
-*** sign up for Scooby's Fit over 40
-*** Give a tip to Nick Notas
-*** Phoronix do not load pages if Ad-Block in enabled. Or make pay what you want articles.
-*** Buy Will Brink's Body Building Revealed
-*** Buy the Kino Bible
-*** Buy Anabolicious Cooking
-*** get connected via ssh to my unix account at purdue. iTAP
-    http://www.itap.purdue.edu/learning/careeraccount/unixaccount.html
-*** improve the eshell output for grep "REGEXP" *
-    Currently it looks like
-    5 matches of "REGEXP" found in This File
-    here are the 5 matches
-    3 matches of "REGEXP" found in this file
-    here are the 3 matches
-
-    It should look like
-    5 matches found in This File
-    here are the 5 matches
-
-    3 matches found in this file
-    here are the 3 matches
-
-*** Prove modus ponens. for metalogic
-*** ask my metalogic teacher how to request my teachers do not insist on students using proprietary programs.
-*** clone whylinuxisbetter.net I can contribute to make it better!
-*** use Emacs ERC
-*** helm-mode is not letting me use 2 words to locate a file.
-*** What's a php prepared statement?
-*** COMMAND OPTIONS these are the options for yaourt ediff
-    PACMAN="pacman"
-    Specify the pacman binary to use with yaourt
-    DIFFEDITCMD="vimdiff"
-    Define the diff editor to use ($DIFFEDITCMD file1 file2)
-*** printenv shows your environmental variables, but the environmental variables that I want to use with
-*** use Emacs Gnus
-*** meditate
-*** pull more stuff from emacs 24.4 and recompile it!
-*** get pacman play nice
-***** use ediff
-***** I only want to enter my password once
-***** printenv will show you your current environment variables
-*** I've added two lines to my .xinitrc to auto start gnome-keyring which will apparently record my wifi passwords. It can also add my ssh keys. and do something with firefox.
-    pacman are not showing up. env allows you to modify your environment if all else fails.
-    https://wiki.archlinux.org/index.php/environment_variables
-*** autocomplete and ispell integration
-    (require 'auto-complete)
-    (require 'ispell)
-    (defvar ac-ispell-modes
-    '(text-mode))
-    (defun ac-ispell-candidate ()
-    (if (memq major-mode ac-ispell-modes)
-    (let ((word (ispell-get-word nil "\\*")))
-    (setq word (car word))
-    (lookup-words (concat word "*") ispell-complete-word-dict))))
-    (defvar ac-source-ispell
-    '((candidates . ac-ispell-candidate)
-    (requires . 3))
-    "Source for ispell.")
-    (provide 'auto-complete-ispell)
-
-*** make video explaining firefox nightly and multi-process firefox.
-    firefox -P "profile name"
-    firefox -P #starts the profileManager
-** friends
-*** text Eli and invite him to more stuff.
-* reference							  :reference:
-** TODO find good recipes of good things to eat  :fitness:reference:
+     Remove entire skillet from oven and plate. Serve.** TODO find good recipes of good things to eat  :fitness:reference:
 *** protein rich pancakes
     1 cup oatmeal
     9 tables spoons of egg whites
@@ -994,7 +983,14 @@ computer stuff to do, non programming    :Computer:
 ** donate some cash to GNU, Mozilla, wikipidia, heier international, arch, libre-office
    SCHEDULED: <2015-01-01 Thu>
 ** sign up for an appointment to visit a chiropractor
-   SCHEDULED: <2014-11-06 Thu>
+   I'm going to go to this guy on a Tuesday morning at 7am.
+*** Print this form for the back doctor:
+    SCHEDULED: <2014-11-07 Fri>
+   http://www.drpestle.com/userfiles/11668/pdf/patients_info_2014.pdf
+**** Sign up for a back doctor appointment
+     SCHEDULED: <2014-11-08 Sat>
+**** Look up insurance information for back doctor
+     SCHEDULED: <2014-11-07 Fri>
 ** DONE buy mom Boundaries for Marriage book for Christmas
    CLOSED: [2014-11-01 Sat 15:57] SCHEDULED: <2014-11-01 Sat>
 ** DONE buy dad GTD for Christmas
@@ -1040,7 +1036,6 @@ computer stuff to do, non programming    :Computer:
    database. makes pacman's job faster... will happen on monday *** prelink will happen on tuesday ** make a
    program that will autoprompt me to install updates.
 ** IN
-   tell Abbi she can't come to grad
    work on my website
    work on Shania's website
    work on Dad's website
@@ -1048,4 +1043,3 @@ computer stuff to do, non programming    :Computer:
    try a new recipe
    Call back those people who wanted to give me a job.
    how am I getting to Wild hacks?
-   keep studying for certifications

@@ -95,59 +95,53 @@
   (kbd "C-d") 'delete-char)
 
 ;; the c commands
-(define-key evil-normal-state-map
-  (kbd "c SPC") 'ace-jump-char-mode)
+;;(define-key evil-normal-state-map
+;;  (kbd "c SPC") 'ace-jump-char-mode)
 ;; This will let you browse through all the stuff you've killed.
 ;; this conflicts with ph
 ;;(define-key evil-normal-state-map
 ;;  (kbd "phk") 'browse-kill-ring)
 
-(define-key evil-normal-state-map
-  (kbd "de") 'kill-word)
-(define-key evil-normal-state-map
-  (kbd "do") 'backward-kill-word)
+;;(define-key evil-normal-state-map
+;;  (kbd "de") 'kill-word)
+;;(define-key evil-normal-state-map
+;;  (kbd "do") 'backward-kill-word)
 ;;cut from point to the end of the line
-(define-key evil-normal-state-map
-  (kbd "du") '(lambda ()
-		(interactive)
-		(kill-visual-line nil)))
+;;(define-key evil-normal-state-map
+;;  (kbd "du") '(lambda ()
+;;		(interactive)
+;;		(kill-visual-line nil)))
 ;;cut/kill from point to the beginning of the line
-(define-key evil-normal-state-map
-  (kbd "da") '(lambda ()
-		(interactive)
-		(kill-visual-line 0)))
-(define-key evil-normal-state-map
-  (kbd "dd") '(lambda ()
-		(interactive)
-		(beginning-of-line)
-		(kill-line)
-		(delete-backward-char 1)
-		(next-line)))
-(define-key evil-normal-state-map
-  (kbd "ck") 'kill-region)
+;;(define-key evil-normal-state-map
+;;  (kbd "da") '(lambda ()
+;;		(interactive)
+;;		(kill-visual-line 0)))
+
+;;(define-key evil-normal-state-map
+;;   (kbd "ck") 'kill-region)
 
 ;;This is an awesome idea for a command, but I'm not sure how to do it.
 ;;I could do the same thing with c SPC.
-(define-key evil-normal-state-map
-  (kbd "d SPC") '(lambda ()
-		   (interactive)
-		   (let (beg end)
-		     (setq beg (point))
-		     (ace-jump-char-mode (read-char "Query Char:"))
-		     (setq end (point))
-		     (kill-region beg end))))
-(define-key evil-normal-state-map
-  (kbd "cbk") 'web-mode-block-kill)
-(define-key evil-normal-state-map
-  (kbd "cP") 'viper-put-back)
-(define-key evil-normal-state-map
-  (kbd "cp") 'viper-Put-back)
-(define-key evil-normal-state-map
-  (kbd "cr") 'repeat)
-(define-key evil-normal-state-map
-  (kbd "cxc") 'save-buffers-kill-terminal)
-(define-key evil-normal-state-map
-  (kbd "c'") 'helm-M-x)
+;;(define-key evil-normal-state-map
+;;  (kbd "d SPC") '(lambda ()
+;;		   (interactive)
+;;		   (let (beg end)
+;;		     (setq beg (point))
+;;		     (ace-jump-char-mode (read-char "Query Char:"))
+;;		     (setq end (point))
+;;		     (kill-region beg end))))
+;;(define-key evil-normal-state-map
+;; (kbd "cbk") 'web-mode-block-kill)
+;;(define-key evil-normal-state-map
+;;  (kbd "cP") 'viper-put-back)
+;;(define-key evil-normal-state-map
+;;  (kbd "cp") 'viper-Put-back)
+;;(define-key evil-normal-state-map
+;;  (kbd "cr") 'repeat)
+;;(define-key evil-normal-state-map
+;;  (kbd "cxc") 'save-buffers-kill-terminal)
+;;(define-key evil-normal-state-map
+					;  (kbd "c'") 'helm-M-x)
 (define-key evil-normal-state-map
   (kbd "<") 'beginning-of-buffer)
 (define-key evil-normal-state-map
@@ -164,14 +158,9 @@
 		(other-window 1)
 		(delete-other-windows)))
 (define-key evil-normal-state-map
-  (kbd "cle") 'copy-last-html-element)
-(define-key evil-normal-state-map
-  (kbd "cne") 'copy-next-html-element)
-(define-key evil-normal-state-map
   (kbd "cj") 'join-bottom-line)
 (define-key evil-normal-state-map
   (kbd "cq") 'delete-window)
-
 
 ;;the m commands
 (define-key evil-normal-state-map

@@ -27,6 +27,8 @@
   (kbd "C-f") 'forward-char)
 (define-key viper-vi-global-user-map
   (kbd "C-a") 'mark-whole-buffer)
+(define-key viper-vi-global-user-map
+  (kbd "C-c h") 'help)
 
 
 (define-key viper-vi-global-user-map
@@ -324,9 +326,18 @@
   (kbd "C-d") 'delete-char)
 (define-key viper-insert-global-user-map
   (kbd "<backspace>") 'delete-backward-char)
-
 (define-key viper-insert-global-user-map
   (kbd "<return>") 'newline-and-indent)
+(define-key viper-insert-global-user-map
+  (kbd "C-n") 'backward-char)
+(define-key viper-insert-global-user-map
+  (kbd "C-h") 'next-line)
+(define-key viper-insert-global-user-map
+  (kbd "C-t") 'previous-line)
+(define-key viper-insert-global-user-map
+  (kbd "C-s") 'forward-char)
+
+
 
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)
