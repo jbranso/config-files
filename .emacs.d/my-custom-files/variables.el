@@ -66,6 +66,8 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
+;; This next line is sooo helpful!!!! It makes tab try to auto-complete for you.
+(ac-set-trigger-key "TAB")
 
 (setq ispell-complete-word-dictionary "usr/bin/aspell")
 ;;(setq ispell-alternate-dictionary "usr/bin/aspell")
@@ -82,6 +84,8 @@
 ;;enter on a heading in org-mode, it will merge the current heading with the ones above it, into a
 ;;paragraph.
 (setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
+(setq org-default-notes-file "~/.emacs.d/notes.org")
+(define-key global-map "\C-cc" 'org-capture)
 
 (eval-after-load "auto-complete"
   '(progn

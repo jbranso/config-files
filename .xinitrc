@@ -5,6 +5,11 @@
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export GPG_AGENT_INFO SSH_AUTH_SOCK
 
+# this sets up polkit permissions, but it shouldn't be necessary for networkManager
+# because I have added myself to the wheel group
+#DO NOT UNCOMMENT the next link it will break stuff!
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 #run awesome
 exec awesome
 

@@ -18,8 +18,9 @@
   (kbd "<backspace>") 'delete-backward-char)
 (define-key viper-vi-global-user-map
   (kbd "l") 'recenter-top-bottom)
+;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
 (define-key viper-vi-global-user-map
-  (kbd "<return>") 'newline-and-indent)
+  (kbd "<return>") 'newline)
 (define-key viper-vi-global-user-map
   (kbd "SPC") 'viper-space)
 (define-key viper-vi-global-user-map

@@ -41,7 +41,10 @@
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 			    (refill-mode)
-			    (ac-ispell-ac-setup)))
+			    (setq ac-sources '(ac-source-semantic
+					       ac-source-yasnippet
+					       ac-source-ispell
+					       ac-source-ispell-fuzzy))))
 
 ;;enabling minor modes for my major modes
 ;;(add-hook '<major mode>-mode-hook '<minor mode name>-mode) this works.
@@ -55,9 +58,14 @@
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
 	    (emmet-mode)
-	    (helm-mode)
-	    (auto-complete-mode)
-	    (ac-ispell-ac-setup)))
+	    (visual-line-mode)
+	    ;;  (ac-ispell-ac-setup)
+	    (setq ac-sources '(ac-source-semantic
+			       ac-source-yasnippet
+			       ac-source-jquery
+			       ac-source-css-property
+			       ac-source-ispell
+			       ac-source-ispell-fuzzy))))
 
 (add-hook 'c++-mode-hook
 	  '(lambda ()
@@ -67,7 +75,9 @@
 
 (add-hook 'c-mode-hook '(lambda ()
 			  (flyspell-prog-mode)
-			  (yas-minor-mode)))
+			  (yas-minor-mode)
+			  (setq ac-sources '(ac-source-ispell
+					     ac-source-ispell-fuzzy))))
 (add-hook 'lua-mode-hook
 	  (lambda ()
 	    (flyspell-prog-mode)

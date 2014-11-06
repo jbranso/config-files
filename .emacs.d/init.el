@@ -1,6 +1,7 @@
 ;; this is useful for creating custum lisp filse
 ;; do not add "~/emacs.d" to the load path. This can apparently cause problems.
 (add-to-list 'load-path "~/.emacs.d/my-custom-files")
+(add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/modal")
 
 (load "variables")
