@@ -26,3 +26,6 @@ pacman_program="yaourt"
 
 #If you're using arch linux check out https://wiki.archlinux.org/index.php/Automatic_login_to_virtual_console
 #It shows you how to automatically log in at the end of the boot process.
+
+# This starts ssh-agent, which will remember my ssh password.
+eval $(ssh-agent)

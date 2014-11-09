@@ -25,6 +25,22 @@
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;;We'll see if this is worth it
+;; A classic example would be lambda from various Lisp dialects that many people prefer to replace with the greek letter λ (small lambda). prettify-symbols-mode allows you to achieve this by relying on a simple mapping expressed in the form of an alist that each major mode must initialize (prettify-symbols-alist). Simply put - major modes have to provide the configuration for prettify-symbols-mode.
+
+;; Lisp modes do this via lisp--prettify-symbols-alist:
+
+;; (defconst lisp--prettify-symbols-alist
+;;   '(("lambda"  . ?λ)))
+
+;; This means that out of the box only lambda will get replaced. You can, of course, add more mappings for different major modes:
+
+
+;; (add-hook 'emacs-lisp-mode-hook
+;;             (lambda ()
+;;               (push '(">=" . ?≥) prettify-symbols-alist)))
+(global-prettify-symbols-mode +1)
+
 (require 'package)
 ;; emacs loads all the packages you've installed with M-x packages-list-packages in the next line
 (package-initialize)
@@ -41,15 +57,17 @@
 (setq recentf-max-saved-items 500)
 
 (require 'helm-config)
-(helm-mode t)
-(helm :sources '(helm-source-recentf
-		 helm-source-buffers-list
-		 ;; this next one is supposed to work really well, but it more of a pain really.
-		 ;;		 helm-source-findutils
-		 helm-source-bookmarks
-		 ;;helm-source-ls-git
-		 ))
+					;(helm :sources '(;;helm-source-recentf
+					;		 helm-source-buffers-list
+					;		 ;; this next one is supposed to work really well, but it more of a pain really.
+					;		 ;; helm-source-findutils
+					;		 helm-source-bookmarks
+					;		 helm-source-locate
+;;helm-source-ls-git
+					;		 )
+					;      :buffer "*helm-everything")
 
+(helm-mode t)
 
 ;;this is extra features over the default bookmarks+
 ;; C-x jj jumps you to a bookmark
@@ -69,14 +87,16 @@
 (ac-config-default)
 ;; This next line is sooo helpful!!!! It makes tab try to auto-complete for you.
 (ac-set-trigger-key "TAB")
+(setq ac-sources '(ac-source-semantic
+		   ac-source-yasnippet
+		   ac-source-ispell
+		   ac-source-ispell-fuzzy))
 
 (setq ispell-complete-word-dictionary "usr/bin/aspell")
 ;;(setq ispell-alternate-dictionary "usr/bin/aspell")
 
 ;;speed up flyspell
 (setq flyspell-issue-message-flag nil)
-;; make flyspell use aspell
-(setq ispell-list-command "--list")
 
 ;;This package is quite nice. It makes whatever window that currently has focus, be the largest window!
 (require 'golden-ratio)
@@ -90,10 +110,6 @@
 (setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
 (setq org-default-notes-file "~/.emacs.d/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
-
-(eval-after-load "auto-complete"
-  '(progn
-     (ac-ispell-setup)))
 
 ;; turn on Semantic this looks at every file and remembers functions and other good stuff for you to use.
 (semantic-mode 1)
@@ -134,8 +150,11 @@
 ;; these are some basic emacs configurations that I like
 ;; don't show the startup screen
 (setq inhibit-startup-message t)
-;;stop making backup files
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+;;Tell emacs where you want to save backups.
+;;(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+;; tell emacs to stop making backups
+(setq auto-save-default nil)
 
 ;; show matching parenthesis
 (show-paren-mode t)
@@ -158,9 +177,7 @@
 ;; (setq ido-max-work-file-list 20)
 
 ;; tell emacs where my agenda file is
-(setq org-agenda-files
-      (quote
-       ("~/documents/things_to_do.org")))
+(setq org-agenda-files (quote ("~/documents/things_to_do.org")))
 
 ;;this will record what time TODO items were finished and the line containing 'note will make org prompt you for a note when you finish
 ;; a task

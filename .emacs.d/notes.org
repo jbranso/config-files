@@ -4,3 +4,9 @@
 ** TODO This is my second task.
    [2014-11-05 Wed]
    [[file:~/.emacs.d/my-custom-files/variables.el::'(progn]]
+** TODO check out git-timemachine
+   p takes you to a previous version
+   n takes you to the next historical version
+   w copies the hash of the current version
+   q exits the buffer.
+   [2014-11-07 Fri] [[file:~/documents/things_to_do.org::*IN][IN]]

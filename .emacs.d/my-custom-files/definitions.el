@@ -173,17 +173,11 @@ I found this code snippet at https://gist.github.com/cofi/3013327"
       (transpose-lines -1))
     (move-to-column col)))
 
-(defun my-org-time-stamp ()
-  (interactive)
-  (end-of-line)
-  (newline-and-indent)
-  (org-time-stamp))
-
 ;;this function creates a hot-key M-x gtd that will open my gtd file
 (defun gtd ()
   "This command opens ~/things_to_do.org"
   (interactive)
-  (find-file "~/documents/things_to_do.org"))
+  (find-file "~/.emacs.d/gtd.org"))
 
 ;; this function will open my init file for me
 (defun init-file ()
@@ -237,8 +231,8 @@ I found this code snippet at https://gist.github.com/cofi/3013327"
   (interactive)
   (find-file "~/.emacs.d/my-custom-files/abbrev_defs"))
 
-(defun modal-emacs
-    "command opens ~/.emacs.d/modal/modal-changes.el"
+(defun modal-emacs ()
+  "command opens ~/.emacs.d/modal/modal-changes.el"
   (interactive)
   (find-file "~/.emacs.d/modal/modal-changes.el"))
 

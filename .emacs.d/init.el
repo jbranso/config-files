@@ -22,7 +22,7 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 ;; the default file emacs opens.
-;;(find-file "/home/joshua/documents/things_to_do.org")
+(find-file "/home/joshua/.emacs.d/gtd.org")
 
 ;; Your init file should contain only one such instance.
 ;; If there is more than one, they won't work right.

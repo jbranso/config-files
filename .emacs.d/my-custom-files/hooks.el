@@ -26,6 +26,11 @@
 	    (byte-compile-file "/home/joshua/.emacs.d/init.el")
 	    (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files")))
 
+;; lisp mode hook
+(add-hook 'lisp-mode-hook '(lambda ()
+			     ;;  auto-fill-mode is great for comments in lisp
+			     (auto-fill-mode)))
+
 ;; make org mode start up with auto fill mode
 (add-hook 'org-mode-hook '(lambda ()
 			    (auto-fill-mode)
