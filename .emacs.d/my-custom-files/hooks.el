@@ -1,4 +1,4 @@
-;;(cond (or (equal (current-buffer) "hooks.el")
+;; (or (equal (current-buffer) "hooks.gl")
 ;;	  (equal (current-buffer) "definitions.el"))
 ;;      (compile-file (current-buffer)))
 
@@ -45,7 +45,13 @@
 			    ;; bad things will happen. You have been warned.
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
-			    (refill-mode)
+			    ;; refill-mode is nice, but it's not working right now.
+			    ;;(refill-mode)
+			    (let ((original-command (lookup-key org-mode-map [tab])))
+			      `(lambda ()
+				 (setq yas-fallback-behavior
+				       '(apply ,original-command))
+				 (local-set-key [tab] 'yas-expand)))
 			    (setq ac-sources '(ac-source-semantic
 					       ac-source-yasnippet
 					       ac-source-ispell

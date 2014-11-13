@@ -21,7 +21,8 @@
 ;; put numbers on the side of the editor
 (global-linum-mode 1)
 ;; this is an alternative to skeletons
-;;(yas-global-mode 1)
+;;(require 'yasnippet)
+(setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets/")
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -57,16 +58,6 @@
 (setq recentf-max-saved-items 500)
 
 (require 'helm-config)
-					;(helm :sources '(;;helm-source-recentf
-					;		 helm-source-buffers-list
-					;		 ;; this next one is supposed to work really well, but it more of a pain really.
-					;		 ;; helm-source-findutils
-					;		 helm-source-bookmarks
-					;		 helm-source-locate
-;;helm-source-ls-git
-					;		 )
-					;      :buffer "*helm-everything")
-
 (helm-mode t)
 
 ;;this is extra features over the default bookmarks+
@@ -108,6 +99,10 @@
 ;;enter on a heading in org-mode, it will merge the current heading with the ones above it, into a
 ;;paragraph.
 (setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
+;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
+;;emacs will assume the thing that matches it is a paragraph seperator. This bit of code is really only for
+;;org-mode, and it should make org-mode and refill mode play nicely!
+(setq     paragraph-separate "[ 	]*$\\|^\\*+.*")
 (setq org-default-notes-file "~/.emacs.d/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
 
@@ -121,16 +116,15 @@
 ;; the following lines must be before init loads my hooks, because my hooks
 ;; change some viper commands based upon what file is loaded.
 ;; For example, my org-mode-hook binds "ct" to (org-todo).
-(setq viper-mode t)
-(require 'viper)
+;;(setq viper-mode t)
+;;(require 'viper)
 
-;;(require 'modal-mode)
-;;(setq default-major-mode 'modal-fundamental-mode)
-;;(modal-mode 1)
-;;(when window-system
-;; (modal-mode-line-background-mode 1))
-;;;   ;;;
-;;;   ;;; end modal-mode setup
+
+(setq evil-find-skip-newlines t)
+(setq evil-move-cursor-back nil)
+(require 'evil)
+(evil-mode 1)
+(load-file "~/.emacs.d/my-custom-files/evil-changes.el")
 
 ;; this is helpful for gnus and rmail I believe.
 (setq user-full-name "Joshua Branson"
@@ -151,10 +145,11 @@
 ;; don't show the startup screen
 (setq inhibit-startup-message t)
 ;;Tell emacs where you want to save backups.
-;;(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
 ;; tell emacs to stop making backups
-(setq auto-save-default nil)
+;;(SETQ auto-save-default nil) this one does not work!!
+;;(setq make-backup-files nil)
 
 ;; show matching parenthesis
 (show-paren-mode t)
@@ -177,8 +172,10 @@
 ;; (setq ido-max-work-file-list 20)
 
 ;; tell emacs where my agenda file is
-(setq org-agenda-files (quote ("~/documents/things_to_do.org")))
-
+(require 'org)
+(setq org-agenda-files (quote ("~/programming/org/gtd/gtd.org")))
+;; this lets you open links in org mode.
+(setq org-return-follows-link t)
 ;;this will record what time TODO items were finished and the line containing 'note will make org prompt you for a note when you finish
 ;; a task
 (setq org-log-done 'time)
@@ -187,6 +184,7 @@
 (setq org-agenda-start-with-follow-mode t)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
+;; these commands are nice, but they are probably moving my cursor to random spots at times.
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling

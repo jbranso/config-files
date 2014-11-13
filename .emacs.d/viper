@@ -137,16 +137,6 @@
 		(interactive)
 		(other-window 1)
 		(delete-other-windows)))
-(define-key viper-vi-global-user-map
-  (kbd "cle") 'copy-last-html-element)
-(define-key viper-vi-global-user-map
-  (kbd "cne") 'copy-next-html-element)
-(define-key viper-vi-global-user-map
-  (kbd "cj") 'join-bottom-line)
-(define-key viper-vi-global-user-map
-  (kbd "cq") 'delete-window)
-
-
 ;;the m commands
 (define-key viper-vi-global-user-map
   (kbd "mlu") 'move-line-up)
@@ -274,7 +264,14 @@
 (define-key viper-vi-global-user-map
   (kbd "pf") 'web-mode-fold-or-unfold)
 (define-key viper-vi-global-user-map
-  (kbd "pb") 'helm-mini)
+  (kbd "pb") '(lambda ()
+		(interactive)
+		(helm :sources '(helm-source-recentf
+				 helm-source-buffers-list
+				 ;; this next one is supposed to work really well, but it more of a pain
+				 ;; really.
+				 helm-source-bookmarks))))
+
 ;;copy marked region
 (define-key viper-vi-global-user-map
   (kbd "pc") 'kill-ring-save)
@@ -336,8 +333,8 @@
   (kbd "C-t") 'previous-line)
 (define-key viper-insert-global-user-map
   (kbd "C-s") 'forward-char)
-
-
+(define-key viper-insert-global-user-map (kbd "C-c h") 'help)
+(define-key viper-insert-global-user-map (kbd "C-g") 'viper-intercept-ESC-key)
 
 ;; dired
 (define-key viper-dired-modifier-map "h" 'dired-next-line)

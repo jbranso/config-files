@@ -29,3 +29,4 @@ pacman_program="yaourt"
 
 # This starts ssh-agent, which will remember my ssh password.
 eval $(ssh-agent)
+ssh-add

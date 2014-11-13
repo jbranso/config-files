@@ -22,7 +22,7 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 ;; the default file emacs opens.
-(find-file "/home/joshua/.emacs.d/gtd.org")
+(find-file "/home/joshua/programming/org/gtd/gtd.org")
 
 ;; Your init file should contain only one such instance.
 ;; If there is more than one, they won't work right.
@@ -41,6 +41,12 @@
     ("3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" default)))
  '(electric-pair-mode t)
  '(global-hl-line-mode t)
+ '(org-agenda-files (quote ("~/programming/org/gtd/gtd.org")))
+ '(org-export-backends (quote (ascii beamer html icalendar latex odt texinfo)))
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-mouse org-rmail org-w3m org-drill)))
+ '(paragraph-separate "[ 	]*$\\|^\\*+.*")
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -48,4 +54,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'scroll-left 'disabled nil)
