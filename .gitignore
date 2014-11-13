@@ -116,3 +116,7 @@ videos/
 .newsrc.eld
 /.emacs.d/gtd.org
 /Mail/
+/.emacs.d/yasnippet-snippets/web-mode/
+/.toe-scores
+/programming/org/
+/.emacs.d/notes.org
