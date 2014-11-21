@@ -34,6 +34,11 @@
 (define-key evil-normal-state-map "n" 'evil-backward-char)
 (define-key evil-normal-state-map "t" 'evil-previous-line)
 (define-key evil-normal-state-map "h" 'evil-next-line)
+(define-key evil-visual-state-map "s" 'evil-forward-char)
+(define-key evil-visual-state-map "n" 'evil-backward-char)
+(define-key evil-visual-state-map "t" 'evil-previous-line)
+(define-key evil-visual-state-map "h" 'evil-next-line)
+
 (define-key evil-normal-state-map (kbd "C-l") 'recenter-top-bottom)
 (define-key evil-normal-state-map "l" 'recenter-top-bottom)
 (define-key evil-normal-state-map "o" 'evil-backward-word-end)
@@ -45,6 +50,9 @@
 (define-key evil-normal-state-map (kbd "C-c h") 'help)
 (define-key evil-normal-state-map "," 'undo-tree-undo)
 (define-key evil-normal-state-map "/" 'helm-swoop)
+(define-key evil-normal-state-map "'" 'evil-goto-mark)
+(define-key evil-normal-state-map (kbd "C-c m") 'evil-record-macro)
+(define-key evil-normal-state-map (kbd "C-c b") 'eval-buffer)
 
 (define-key evil-normal-state-map
   (kbd "<backspace>") 'delete-backward-char)
@@ -58,16 +66,15 @@
 (define-key evil-normal-state-map
   (kbd "C-a") 'mark-whole-buffer)
 
-(define-key evil-normal-state-map
-  (kbd "a") 'evil-digit-argument-or-evil-beginning-of-line)
-(define-key evil-normal-state-map (kbd "u") 'evil-end-of-line)
-(define-key evil-normal-state-map
-  (kbd "M-a") 'backward-paragraph)
-(define-key evil-normal-state-map
-  (kbd "M-u") 'forward-paragraph)
 
 (define-key evil-normal-state-map
-  (kbd "C-h") 'help)
+  (kbd "a") 'evil-first-non-blank)
+(define-key evil-normal-state-map
+  (kbd "A") 'evil-insert-line)
+(define-key evil-normal-state-map (kbd "u") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "U") 'evil-append-line)
+
+(define-key evil-normal-state-map (kbd "C-c m") 'helm-mini)
 (define-key evil-normal-state-map
   (kbd "C-d") 'delete-char)
 
@@ -94,9 +101,10 @@
   (kbd "C-a") 'mark-whole-buffer)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
 (define-key evil-normal-state-map
-  (kbd "C-h") 'help)
-(define-key evil-normal-state-map
   (kbd "C-d") 'delete-char)
+(define-key evil-normal-state-map
+  (kbd "C-c e") 'helm-M-x)
+
 
 
 ;;This is an awesome idea for a command, but I'm not sure how to do it.

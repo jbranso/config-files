@@ -722,10 +722,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- awful.util.spawn_with_shell("firefox")
 -- awful.util.spawn_with_shell("xfce4-panel --disable-wm-check")
-run_once("firefox")
+run_once("firefox-nightly -P nightly")
+run_once("workrave")
 --run_once("thunar")
 awful.util.spawn("xcalib /home/joshua/colorprofile/color.icc")
-awful.util.spawn_with_shell("run_once nm-applet")
+-- the --sm-disable & lets the nm-applet menu work nicely.
+awful.util.spawn_with_shell("run_once nm-applet --sm-disable &")
 -- this next line was for getting network-manager working. I probably don't need it.
 -- awful.util.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 -- run_once("xfce4-panel --disable-wm-check")
