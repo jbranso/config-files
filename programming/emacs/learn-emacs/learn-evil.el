@@ -78,7 +78,7 @@ If the return value is a number, it is used as the timer period."
   "Vector of colors of the various shapes in text mode."
   :group 'learn-evil
   :type '(vector (color :tag "Shape 1")
-		 (color :tag "Shape 7")))
+		 (color :tag "Shape 2")))
 
 (defcustom learn-evil-x-colors
 					; these are in the format:: [red green blue]
@@ -323,7 +323,7 @@ each one of its four blocks.")
 (defun learn-evil-new-shape ()
   (setq learn-evil-shape learn-evil-next-shape)
   (setq learn-evil-rot 0)
-  (setq learn-evil-next-shape (random 7))
+  (setq learn-evil-next-shape (random 2))
   (setq learn-evil-pos-x (/ (- learn-evil-width (learn-evil-shape-width)) 2))
   (setq learn-evil-pos-y 0)
   (if (learn-evil-test-shape)
