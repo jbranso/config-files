@@ -479,6 +479,7 @@ each one of its four blocks.")
 	learn-evil-paused	nil)
   (learn-evil-new-shape))
 
+"
 (defun learn-evil-shape-done ()
   (learn-evil-shift-down)
   (setq learn-evil-n-shapes (1+ learn-evil-n-shapes))
@@ -487,6 +488,15 @@ each one of its four blocks.")
 	   (aref (aref learn-evil-shape-scores learn-evil-shape) learn-evil-rot)))
   (learn-evil-update-score)
   (learn-evil-new-shape))
+"
+(defun learn-evil-shape-done ()
+  (interactive)
+  (unless learn-evil-paused
+    (let ((hit nil))
+      (learn-evil-erase-shape)
+      (setq learn-evil-pos-y learn-evil-top-left-y)
+      (setq learn-evil-pos-x learn-evil-top-left-x)
+      (learn-evil-draw-shape))))
 
 (defun learn-evil-update-game (learn-evil-buffer)
   "Called on each clock tick.
