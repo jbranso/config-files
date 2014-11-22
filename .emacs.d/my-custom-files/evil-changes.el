@@ -54,6 +54,7 @@
 (define-key evil-normal-state-map (kbd "C-c m") 'evil-record-macro)
 (define-key evil-normal-state-map (kbd "C-c b") 'eval-buffer)
 (define-key evil-normal-state-map "Q" 'query-replace)
+(define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 
 (define-key evil-normal-state-map
