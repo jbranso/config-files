@@ -79,7 +79,7 @@ If the return value is a number, it is used as the timer period."
   :group 'learn-evil
   :type '(vector (color :tag "Shape 1")
 		 (color :tag "Shape 2")
-		 (color :tag "Shape 3")
+                 (color :tag "Shape 3")
 		 (color :tag "Shape 4")
 		 (color :tag "Shape 5")
 		 (color :tag "Shape 6")
@@ -96,7 +96,7 @@ If the return value is a number, it is used as the timer period."
   :group 'learn-evil
   :type 'string)
 
-(defcustom learn-evil-buffer-width 150
+(defcustom learn-evil-buffer-width 70
   "Width of used portion of buffer."
   :group 'learn-evil
   :type 'number)
@@ -106,7 +106,7 @@ If the return value is a number, it is used as the timer period."
   :group 'learn-evil
   :type 'number)
 
-(defcustom learn-evil-width 130
+(defcustom learn-evil-width 50
   "Width of playing area."
   :group 'learn-evil
   :type 'number)
