@@ -74,19 +74,17 @@ If the return value is a number, it is used as the timer period."
   :type 'hook)
 
 (defcustom learn-evil-tty-colors
-  ["blue" "white" "yellow" "magenta" "cyan" "green" "red"]
+  ["blue" "red"]
   "Vector of colors of the various shapes in text mode."
   :group 'learn-evil
   :type '(vector (color :tag "Shape 1")
-		 (color :tag "Shape 2")
-                 (color :tag "Shape 3")
-		 (color :tag "Shape 4")
-		 (color :tag "Shape 5")
-		 (color :tag "Shape 6")
 		 (color :tag "Shape 7")))
 
 (defcustom learn-evil-x-colors
-  [[0 0 1] [0.7 0 1] [1 1 0] [1 0 1] [0 1 1] [0 1 0] [1 0 0]]
+					; these are in the format:: [red green blue]
+  [[0 0 1]  ;the blue box
+   [1 0 0]  ;the red log
+   ]
   "Vector of colors of the various shapes."
   :group 'learn-evil
   :type 'sexp)
@@ -187,28 +185,7 @@ If the return value is a number, it is used as the timer period."
 (defconst learn-evil-shapes
   [[[[0  0] [1  0] [0  1] [1  1]]] ; blue square shape 1
 
-   [[[0  0] [1  0] [2  0] [2  1]]
-    [[1 -1] [1  0] [1  1] [0  1]]
-    [[0 -1] [0  0] [1  0] [2  0]]
-    [[1 -1] [2 -1] [1  0] [1  1]]]
-
-   [[[0  0] [1  0] [2  0] [0  1]]
-    [[0 -1] [1 -1] [1  0] [1  1]]
-    [[2 -1] [0  0] [1  0] [2  0]]
-    [[1 -1] [1  0] [1  1] [2  1]]]
-
-   [[[0  0] [1  0] [1  1] [2  1]]
-    [[1  0] [0  1] [1  1] [0  2]]]
-
-   [[[1  0] [2  0] [0  1] [1  1]]
-    [[0  0] [0  1] [1  1] [1  2]]]
-
-   [[[1  0] [0  1] [1  1] [2  1]]
-    [[1  0] [1  1] [2  1] [1  2]]
-    [[0  1] [1  1] [2  1] [1  2]]
-    [[1  0] [0  1] [1  1] [1  2]]]
-
-   [[[0  0] [1  0] [2  0] [3  0]]
+   [[[0  0] [1  0] [2  0] [3  0]]    ;the red log
     [[1 -1] [1  0] [1  1] [1  2]]]]
   "Each shape is described by a vector that contains the coordinates of
 each one of its four blocks.")
@@ -217,11 +194,12 @@ each one of its four blocks.")
 ;;depending on their rotation
 
 (defconst learn-evil-shape-scores
-  [[6] [6 7 6 7] [6 7 6 7] [6 7] [6 7] [5 5 6 5] [5 8]] )
+  [[6] ; the blue square
+   [5 8]] ;the red log
+  )
 
 (defconst learn-evil-shape-dimensions
   [[2 2] ;the square
-   [3 2] [3 2] [3 2] [3 2] [3 2]
    [4 1]] ;the red log
   )
 
@@ -275,7 +253,7 @@ each one of its four blocks.")
     (define-key map "w"          'learn-evil-move-word)
     (define-key map "e"          'learn-evil-move-word-end)
     (define-key map "b"          'learn-evil-move-word-back)
-    
+
 					;    (define-key map [up]	'learn-evil-rotate-prev)
 					;    (define-key map [down]	'learn-evil-rotate-next)
     map))

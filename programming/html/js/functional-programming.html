@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+  <head></head>
+  <body>
+    // Allright let's give this a try.
+
+    //you use abstraction to use functions to do cool stuff.
+    // functions are immutable. You can't change original data.
+    //stateless, they act the same way each time you use them.
+
+    //functions should accept at least 1 argument
+    //functions should return at data or another function
+    //functions should not use loops
+
+    //lisp and scheme do this. But you can also use js
+
+    <script>
+     function log(arg) {
+       document.writeln(arg)
+     }
+
+     function identity(x) {
+       return x;
+     }
+
+     function add(a, b) {
+       return a + b;
+     }
+
+     function sub(a, b) {
+       return a-b;
+     }
+
+     //recursion is good for functional programming
+
+     function identityf(arg) {
+       return function() {
+	 return arg;
+       };
+     }
+
+     //addf(5)(3) adds 5 and 3
+     function addf(a) {
+       return function(b) {
+	 return add(a, b);
+       };
+     }
+
+     function curry(fun, a) {
+       return function(b) {
+	 return fun(a, b)
+       };
+     }
+
+     //A binary function is one that takes 2 arguments
+     //I've learned currying.
+     function liftf(fun) {
+       return function(a) {
+	 return function(b) {
+	   return add(a, b)
+	 };
+       };
+     }
+
+     //this is a function
+     var increment1 = addf(1);
+
+     //write a function that reverses the arguments of a function
+     //so reverse(sub)(2, 3) = 1
+     function reverse(fun) {
+       return function(a,b) {
+	 return fun(b, a)
+       };
+     }
+
+     //this returns an object that contains 2 functions that add or subtract by 1 the object.
+     function counter(fun) {
+       return {
+	 next: function() { return arg += 1; }
+	 prev: function() { return arg -= 1; }
+       }
+     }
+
+     //returns the next number in the fibonacci sequence
+     function fibbonaccif(a, b) {
+       return function() {
+	 var n = a;
+	 a = b;
+	 b += n;
+	 return n;
+       };
+     }
+
+     // make a function that continually adds numbers until there are no more arguments
+     /* addgroup() = undefined
+	addgroup(5)()
+	addgroup(6)(6)()
+	addgroup(4)(5)(2)()
+      */
+     function addgroup() {
+       if (a === undefined) {
+	 return a;
+       }
+       else
+	 return function g(b) {
+	   if (b !=== undefined) {
+	     return addgroup(a+b)
+	   }
+	   return
+	 }
+     }
+
+    </script>
+  </body>
+</html>
+
+
+//fn.js underscore.js bacon.js
