@@ -264,13 +264,18 @@ each one of its four blocks.")
     (define-key map "q"		 'learn-evil-end-game)
     (define-key map "p"		 'learn-evil-pause-game)
 
-    (define-key map " "		 'learn-evil-move-bottom)
+    (define-key map "G"		 'learn-evil-move-bottom)
+    (define-key map (kbd "g g")  'learn-evil-move-top)
     (define-key map [left]	 'learn-evil-move-left)
     (define-key map [right]	 'learn-evil-move-right)
     (define-key map "h"          'learn-evil-move-left)
     (define-key map "l"	         'learn-evil-move-right)
     (define-key map "k"          'learn-evil-move-up)
     (define-key map "j"	         'learn-evil-move-down)
+    (define-key map "w"          'learn-evil-move-word)
+    (define-key map "e"          'learn-evil-move-word-end)
+    (define-key map "b"          'learn-evil-move-word-back)
+    
 					;    (define-key map [up]	'learn-evil-rotate-prev)
 					;    (define-key map [down]	'learn-evil-rotate-next)
     map))
@@ -511,6 +516,17 @@ Drops the shape one square, testing for collision."
       (learn-evil-draw-shape)
       (learn-evil-shape-done))))
 
+(defun learn-evil-move-top ()
+  (interactive)
+  (unless learn-evil-paused
+    (let ((hit nil))
+      (learn-evil-erase-shape)
+      (while (not hit)
+        (setq learn-evil-pos-y (1- learn-evil-pos-y))
+        (setq hit (learn-evil-test-shape)))
+      (setq learn-evil-pos-y (1+ learn-evil-pos-y)))
+    (learn-evil-draw-shape)))
+
 (defun learn-evil-move-down ()
   "Move the shape one square to the up."
   (interactive)
@@ -539,6 +555,36 @@ Drops the shape one square, testing for collision."
     (setq learn-evil-pos-x (1- learn-evil-pos-x))
     (if (learn-evil-test-shape)
         (setq learn-evil-pos-x (1+ learn-evil-pos-x)))
+    (learn-evil-draw-shape)))
+
+(defun learn-evil-move-word ()
+  "Move the player to the beginning of the next 'word'"
+  (interactive)
+  (unless learn-evil-paused
+    (learn-evil-erase-shape)
+    (setq learn-evil-pos-x (1- learn-evil-pos-x))
+    (if (learn-evil-test-shape)
+        (setq learn-evil-pos-x (+ 5 learn-evil-pos-x)))
+    (learn-evil-draw-shape)))
+
+(defun learn-evil-move-word-end ()
+  "Move the player to the beginning of the next 'word'"
+  (interactive)
+  (unless learn-evil-paused
+    (learn-evil-erase-shape)
+    (setq learn-evil-pos-x (1- learn-evil-pos-x))
+    (if (learn-evil-test-shape)
+        (setq learn-evil-pos-x (+ 3 learn-evil-pos-x)))
+    (learn-evil-draw-shape)))
+
+(defun learn-evil-move-word-back ()
+  "Move the player to the beginning of the next 'word'"
+  (interactive)
+  (unless learn-evil-paused
+    (learn-evil-erase-shape)
+    (setq learn-evil-pos-x (1- learn-evil-pos-x))
+    (if (learn-evil-test-shape)
+        (setq learn-evil-pos-x (- 5 learn-evil-pos-x)))
     (learn-evil-draw-shape)))
 
 (defun learn-evil-move-right ()
@@ -620,6 +666,10 @@ learn-evil-mode keybindings:
 \\[learn-evil-rotate-prev]	Rotates the shape clockwise
 \\[learn-evil-rotate-next]	Rotates the shape anticlockwise
 \\[learn-evil-move-bottom]	Drops the shape to the bottom of the playing area
+\\[learn-evil-move-top]         Moves the player to the top of the screen
+\\[learn-evil-move-word]        Moves the player to the beginning of the next word
+\\[learn-evil-move-word-end]    Moves the player to the end of the word
+\\[learn-evil-move-word-back]   Moves the player to the beginning of the word
 
 "
   (interactive)
