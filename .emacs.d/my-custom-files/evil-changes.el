@@ -38,6 +38,10 @@
 (define-key evil-visual-state-map "n" 'evil-backward-char)
 (define-key evil-visual-state-map "t" 'evil-previous-line)
 (define-key evil-visual-state-map "h" 'evil-next-line)
+(define-key evil-visual-state-map "u" 'evil-end-of-line)
+(define-key evil-visual-state-map "a" 'evil-first-non-blank)
+(define-key evil-visual-state-map "o" 'evil-backward-word)
+(define-key evil-visual-state-map "e" 'evil-forward-word)
 
 (define-key evil-normal-state-map (kbd "C-l") 'recenter-top-bottom)
 (define-key evil-normal-state-map "l" 'recenter-top-bottom)
@@ -53,11 +57,13 @@
 (define-key evil-normal-state-map "'" 'evil-goto-mark)
 (define-key evil-normal-state-map (kbd "C-c m") 'evil-record-macro)
 (define-key evil-normal-state-map (kbd "C-c b") 'eval-buffer)
+(define-key evil-normal-state-map (kbd "C-c t") '(lambda ()
+						   (interactive)
+						   (eval-buffer nil)
+						   (learn-evil)))
 (define-key evil-normal-state-map "Q" 'query-replace)
 (define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
-(define-key evil-normal-state-map
-  (kbd "<backspace>") 'delete-backward-char)
 (define-key evil-normal-state-map
   (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
@@ -90,8 +96,6 @@
 	       (interactive)
 	       (let (kill-buffer-query-functions) (kill-buffer))))
 
-(define-key evil-normal-state-map
-  (kbd "<backspace>") 'delete-backward-char)
 (define-key evil-normal-state-map
   (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.

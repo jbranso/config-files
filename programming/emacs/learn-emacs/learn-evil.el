@@ -243,7 +243,9 @@ each one of its four blocks.")
     (define-key map "p"		 'learn-evil-pause-game)
 
     (define-key map "G"		 'learn-evil-move-bottom)
+    (define-key map "L"		 'learn-evil-move-bottom)
     (define-key map (kbd "g g")  'learn-evil-move-top)
+    (define-key map  "H"         'learn-evil-move-top)
     (define-key map [left]	 'learn-evil-move-left)
     (define-key map [right]	 'learn-evil-move-right)
     (define-key map "h"          'learn-evil-move-left)
@@ -253,7 +255,8 @@ each one of its four blocks.")
     (define-key map "w"          'learn-evil-move-word)
     (define-key map "e"          'learn-evil-move-word-end)
     (define-key map "b"          'learn-evil-move-word-back)
-
+    (define-key map "$"          'learn-evil-move-end-of-line)
+    (define-key map "^"          'learn-evil-move-beginning-of-line)
 					;    (define-key map [up]	'learn-evil-rotate-prev)
 					;    (define-key map [down]	'learn-evil-rotate-next)
     map))
@@ -490,6 +493,32 @@ Drops the shape one square, testing for collision."
 	(learn-evil-draw-shape)
 	(if hit
 	    (learn-evil-shape-done)))))
+
+(defun learn-evil-beginning-of-line ()
+  "Drop the shape to the bottom of the playing area."
+  (interactive)
+  (unless learn-evil-paused
+    (let ((hit nil))
+      (learn-evil-erase-shape)
+      (while (not hit)
+        (setq learn-evil-pos-x (1- learn-evil-pos-x))
+        (setq hit (learn-evil-test-shape)))
+      (setq learn-evil-pos-x (1+ learn-evil-pos-x))
+      (learn-evil-draw-shape)
+      (learn-evil-shape-done))))
+
+(defun learn-evil-move-end-of-line ()
+  "Drop the shape to the bottom of the playing area."
+  (interactive)
+  (unless learn-evil-paused
+    (let ((hit nil))
+      (learn-evil-erase-shape)
+      (while (not hit)
+        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
+        (setq hit (learn-evil-test-shape)))
+      (setq learn-evil-pos-x (1- learn-evil-pos-x))
+      (learn-evil-draw-shape)
+      (learn-evil-shape-done))))
 
 (defun learn-evil-move-bottom ()
   "Drop the shape to the bottom of the playing area."
