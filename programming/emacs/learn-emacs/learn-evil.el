@@ -236,7 +236,7 @@ each one of its four blocks.")
 (make-variable-buffer-local 'learn-evil-line-list)
 (make-variable-buffer-local 'learn-evil-player-shape)
 (make-variable-buffer-local 'learn-evil-ticks)
-(defvar learn-evil-lives 5)
+(make-variable-buffer-local 'learn-evil-lives)
 
 ;; ;;;;;;;;;;;;; keymaps ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -308,11 +308,9 @@ each one of its four blocks.")
   (aref (aref learn-evil-shape-dimensions (object-shape obj)) 0))
 
 (defun learn-evil-draw-score ()
-  (let ((strings (vector (format "Shapes: %05d" learn-evil-n-shapes)
-			 (format "Rows:   %05d" learn-evil-n-rows)
-			 (format "Lives:   %05d" learn-evil-lives)
-			 (format "Score:  %05d" learn-evil-score))))
-    (dotimes (y 3)
+  (let ((strings (vector (format "Lives:  %05d" learn-evil-lives)
+                         (format "Score:  %05d" learn-evil-score))))
+    (dotimes (y 2)
       (let* ((string (aref strings y))
              (len (length string)))
         (dotimes (x len)
@@ -447,7 +445,6 @@ each one of its four blocks.")
 Drops the shape one square, testing for collision.
 Need to call for all in list of lines
 "
-  (setq learn-evil-ticks (1+ learn-evil-ticks))
   ;;every so often make a new shape
   (if (= 7 (mod learn-evil-ticks 8))
       (learn-evil-new-shape))
@@ -455,6 +452,7 @@ Need to call for all in list of lines
   (if (and (not learn-evil-paused)
 	   (eq (current-buffer) learn-evil-buffer))
       (let ((line-list learn-evil-line-list))
+        (setq learn-evil-ticks (1+ learn-evil-ticks))
         (let (hit)
           (dolist (shape line-list)
             (learn-evil-erase-shape shape)
