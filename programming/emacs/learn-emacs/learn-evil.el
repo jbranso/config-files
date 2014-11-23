@@ -1,4 +1,4 @@
-;; learn-evil--- learn basic evil-mode commands in a game for Emacs
+;; learn-evil-- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
@@ -465,6 +465,11 @@ Need to call for all in list of lines
                 (setf (object-pos-y shape)
                       (1- (object-pos-y shape))))
             (learn-evil-draw-shape shape)
+	    ;; if the red or blue object is not object-pos-y < learn-evil-height, then
+	    ;; the game should reset and learn-evil-lives =- 1
+	    ;; (if (< object-pos-y learn-evil-height)
+	    ;;	(setq (1- learn-evil-lives))
+	    ;;    (learn-evil-reset-game))
             (if hit
                 (learn-evil-shape-done shape)))))))
 
