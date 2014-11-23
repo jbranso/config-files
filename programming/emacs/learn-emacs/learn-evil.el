@@ -223,7 +223,7 @@ each one of its four blocks.")
 (defvar learn-evil-score 0)
 (defvar learn-evil-paused nil)
 (defvar learn-evil-line-list (list (make-object :shape 1 :pos-x 10 :pos-y 0)))
-(defvar learn-evil-player-shape (make-object :shape 0 :pos-x 0 :pos-y 0))
+(defvar learn-evil-player-shape (make-object :shape 0 :pos-x 25 :pos-y 15))
 (defvar learn-evil-ticks 0)
 (defvar learn-evil-lives 5)
 
@@ -325,7 +325,7 @@ each one of its four blocks.")
 
 (defun learn-evil-new-shape ()
   (setq learn-evil-line-list (append learn-evil-line-list
-                                     (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 20) 5) :pos-y 0))))
+                                     (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 45) 3) :pos-y 0))))
   (learn-evil-draw-shape (car learn-evil-line-list))
   (learn-evil-update-score))
 
@@ -467,8 +467,10 @@ Need to call for all in list of lines
 	    ;; the game should reset and learn-evil-lives =- 1
 					;(print (object-pos-y shape))
 	    (when (and
+		   ;; the red block has not touched the bottom and hit is t.
 		   (< (object-pos-y shape) 26)
 		   hit)
+	      ;;if learn-evil-lives is 1 or more, then -1
 	      (if (> learn-evil-lives 0)
 		  ;;then
 		  (progn
@@ -478,7 +480,8 @@ Need to call for all in list of lines
 		    ;;but it is not.
 		    (learn-evil-start-game)
 		    (return t))
-		()))
+		;;else, end the game
+		(learn-evil-end-game)))
 	    (if hit
 		(learn-evil-shape-done shape)))))))
 
