@@ -469,12 +469,15 @@ Need to call for all in list of lines
 	    (when (and
 		   (< (object-pos-y shape) 26)
 		   hit)
-	      (setq  learn-evil-lives (1- learn-evil-lives))
-	      ;; this function should not be necessary, but learn-evil-start-game is not working.
-	      ;;this next function should be erasing the board and restarting the game,
-	      ;;but it is not.
-	      (learn-evil-start-game)
-	      (return t))
+	      (if (> learn-evil-lives 0)
+		  ;;then
+		  (progn
+		    (setq  learn-evil-lives (1- learn-evil-lives))
+		    ;; this function should not be necessary, but learn-evil-start-game is not working.
+		    ;;this next function should be erasing the board and restarting the game,
+		    ;;but it is not.
+		    (learn-evil-start-game)
+		    (return t))))
 	    (if hit
 		(learn-evil-shape-done shape)))))))
 
