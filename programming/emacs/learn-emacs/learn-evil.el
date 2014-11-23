@@ -1,4 +1,4 @@
-;; learn-evil.l --- learn basic evil-mode commands in a game for Emacs
+;; learn-evil--- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
@@ -225,6 +225,7 @@ each one of its four blocks.")
 (defvar learn-evil-line-list (list (make-object :shape 1 :pos-x 10 :pos-y 0)))
 (defvar learn-evil-player-shape (make-object :shape 0 :pos-x 0 :pos-y 0))
 (defvar learn-evil-ticks 0)
+(defvar learn-evil-lives 5)
 
 (make-variable-buffer-local 'learn-evil-shape)
 (make-variable-buffer-local 'learn-evil-next-shape)
@@ -235,6 +236,7 @@ each one of its four blocks.")
 (make-variable-buffer-local 'learn-evil-line-list)
 (make-variable-buffer-local 'learn-evil-player-shape)
 (make-variable-buffer-local 'learn-evil-ticks)
+(defvar learn-evil-lives 5)
 
 ;; ;;;;;;;;;;;;; keymaps ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -308,6 +310,7 @@ each one of its four blocks.")
 (defun learn-evil-draw-score ()
   (let ((strings (vector (format "Shapes: %05d" learn-evil-n-shapes)
 			 (format "Rows:   %05d" learn-evil-n-rows)
+			 (format "Lives:   %05d" learn-evil-lives)
 			 (format "Score:  %05d" learn-evil-score))))
     (dotimes (y 3)
       (let* ((string (aref strings y))
@@ -445,8 +448,10 @@ Drops the shape one square, testing for collision.
 Need to call for all in list of lines
 "
   (setq learn-evil-ticks (1+ learn-evil-ticks))
+  ;;every so often make a new shape
   (if (= 7 (mod learn-evil-ticks 8))
       (learn-evil-new-shape))
+  ;;error checking
   (if (and (not learn-evil-paused)
 	   (eq (current-buffer) learn-evil-buffer))
       (let ((line-list learn-evil-line-list))
@@ -464,7 +469,7 @@ Need to call for all in list of lines
                 (learn-evil-shape-done shape)))))))
 
 (defun learn-evil-move-beginning-of-line ()
-  "Drop the shape to the bottom of the playing area."
+  "Drop the shape to beginning of the line."
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
@@ -476,7 +481,7 @@ Need to call for all in list of lines
       (learn-evil-draw-shape learn-evil-player-shape))))
 
 (defun learn-evil-move-end-of-line ()
-  "Drop the shape to the bottom of the playing area."
+  "Drop the shape to the end of the line."
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
