@@ -56,7 +56,6 @@
 (define-key evil-normal-state-map "Q" 'query-replace)
 (define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
-
 (define-key evil-normal-state-map
   (kbd "<backspace>") 'delete-backward-char)
 (define-key evil-normal-state-map
