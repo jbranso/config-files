@@ -193,9 +193,8 @@ each one of its four blocks.")
 
 ;;the scoring rules were taken from "xlearn-evil".  Blocks score differently
 ;;depending on their rotation
-
 (defconst learn-evil-shape-scores
-  [[6] ; the blue square
+  [[6] ; the blue square ;; the blue square does not need a score anymore; this should be deleted.
    [5] ;the red log
    [5]] ;the rotated log
   )
@@ -230,6 +229,7 @@ each one of its four blocks.")
 
 (make-variable-buffer-local 'learn-evil-shape)
 ;; it would be nice to delete this next variable, but
+;; several functions still use it.
 (make-variable-buffer-local 'learn-evil-rot)
 (make-variable-buffer-local 'learn-evil-next-shape)
 (make-variable-buffer-local 'learn-evil-n-shapes)
@@ -256,6 +256,8 @@ each one of its four blocks.")
     (define-key map [right]	 'learn-evil-move-right)
     (define-key map "h"          'learn-evil-move-left)
     (define-key map "l"	         'learn-evil-move-right)
+    (define-key map (kbd "<up>")          'learn-evil-move-up)
+    (define-key map (kbd "<down>")	         'learn-evil-move-down)
     (define-key map "k"          'learn-evil-move-up)
     (define-key map "j"	         'learn-evil-move-down)
     (define-key map "w"          'learn-evil-move-word)
@@ -687,9 +689,8 @@ Drops the shape one square, testing for collision."
 ;;;###autoload
 (defun learn-evil ()
   "Play the Learn-Evil game.
-Shapes drop from the top of the screen, and the user has to move and
-rotate the shape to fit in with those at the bottom of the screen so
-as to form complete rows.
+Shapes drop from the top of the screen, and the user has to dodge the
+falling shapes.
 
 learn-evil-mode keybindings:
    \\<learn-evil-mode-map>
