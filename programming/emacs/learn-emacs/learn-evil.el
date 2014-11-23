@@ -506,7 +506,7 @@ Drops the shape one square, testing for collision."
 	(if hit
 	    (learn-evil-shape-done)))))
 
-(defun learn-evil-beginning-of-line ()
+(defun learn-evil-move-beginning-of-line ()
   "Drop the shape to the bottom of the playing area."
   (interactive)
   (unless learn-evil-paused
