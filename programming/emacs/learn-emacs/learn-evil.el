@@ -465,11 +465,19 @@ Need to call for all in list of lines
             (learn-evil-draw-shape shape)
 	    ;; if the red or blue object is not object-pos-y < learn-evil-height, then
 	    ;; the game should reset and learn-evil-lives =- 1
-	    ;; (if (< object-pos-y learn-evil-height)
-	    ;;	(setq (1- learn-evil-lives))
-	    ;;    (learn-evil-reset-game))
-            (if hit
-                (learn-evil-shape-done shape)))))))
+					;(print (object-pos-y shape))
+	    (when (and
+		   (< (object-pos-y shape) 26)
+		   hit)
+	      (setq  learn-evil-lives (1- learn-evil-lives))
+	      ;; this function should not be necessary, but learn-evil-start-game is not working.
+	      (learn-evil-erase-shape shape)
+	      ;;this next function should be erasing the board and restarting the game,
+	      ;;but it is not.
+	      (learn-evil-start-game)
+	      (learn-evil-start-game))
+	    (if hit
+		(learn-evil-shape-done shape)))))))
 
 (defun learn-evil-move-beginning-of-line ()
   "Drop the shape to beginning of the line."
