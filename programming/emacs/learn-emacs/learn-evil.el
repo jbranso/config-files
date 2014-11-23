@@ -138,14 +138,6 @@ If the return value is a number, it is used as the timer period."
 (defvar learn-evil-score-y (+ learn-evil-next-y 6)
   "Y position of score.")
 
-;; It is not safe to put this in /tmp.
-;; Someone could make a symlink in /tmp
-;; pointing to a file you don't want to clobber.
-(defvar learn-evil-score-file "learn-evil-scores"
-  ;; anybody with a well-connected server want to host this?
-					;(defvar learn-evil-score-file "/anonymous@ftp.pgt.com:/pub/cgw/learn-evil-scores"
-  "File for holding high scores.")
-
 ;; ;;;;;;;;;;;;; display options ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar learn-evil-blank-options
