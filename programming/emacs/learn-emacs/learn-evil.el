@@ -1,4 +1,4 @@
-;; learn-evil.l --- learn basic evil-mode commands in a game for Emacs
+;; learn-evil--- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
@@ -448,8 +448,10 @@ Drops the shape one square, testing for collision.
 Need to call for all in list of lines
 "
   (setq learn-evil-ticks (1+ learn-evil-ticks))
+  ;;every so often make a new shape
   (if (= 7 (mod learn-evil-ticks 8))
       (learn-evil-new-shape))
+  ;;error checking
   (if (and (not learn-evil-paused)
 	   (eq (current-buffer) learn-evil-buffer))
       (let (hit)
