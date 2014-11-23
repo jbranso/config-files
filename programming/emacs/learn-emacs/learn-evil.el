@@ -229,7 +229,6 @@ each one of its four blocks.")
 (defvar learn-evil-player-created nil)
 
 (make-variable-buffer-local 'learn-evil-shape)
-(make-variable-buffer-local 'learn-evil-rot)
 (make-variable-buffer-local 'learn-evil-next-shape)
 (make-variable-buffer-local 'learn-evil-n-shapes)
 (make-variable-buffer-local 'learn-evil-n-rows)
