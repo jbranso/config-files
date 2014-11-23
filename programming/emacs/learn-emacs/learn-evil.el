@@ -227,12 +227,6 @@ each one of its four blocks.")
 (defvar learn-evil-ticks 0)
 
 (make-variable-buffer-local 'learn-evil-shape)
-<<<<<<< HEAD
-;; it would be nice to delete this next variable, but
-;; several functions still use it.
-(make-variable-buffer-local 'learn-evil-rot)
-=======
->>>>>>> 3610e2d65f1f6890ecdd4c2f6bc52f6315d42e3f
 (make-variable-buffer-local 'learn-evil-next-shape)
 (make-variable-buffer-local 'learn-evil-n-shapes)
 (make-variable-buffer-local 'learn-evil-n-rows)
