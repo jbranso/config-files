@@ -1,10 +1,10 @@
-;; learn-evil.el --- implementation of Tetris for Emacs
+;; learn-evil.el --- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
-;; Author: Glynn Clements <glynn@sensei.co.uk>
-;; Version: 2.01
-;; Created: 1997-08-13
+;; Authors: Kenneth Ozdowy <kozdowy@umich.edu> and Joshua Branso <jbranso@purdue.edu>
+;; Version: 0.1
+;; Created: 2014-11-22
 ;; Keywords: games
 
 ;; This file is part of GNU Emacs.
@@ -52,7 +52,7 @@
   :group 'learn-evil
   :type 'boolean)
 
-(defcustom learn-evil-default-tick-period 0.3
+(defcustom learn-evil-default-tick-period 0.08
   "The default time taken for a shape to drop one row."
   :group 'learn-evil
   :type 'number)
@@ -74,16 +74,18 @@ If the return value is a number, it is used as the timer period."
   :type 'hook)
 
 (defcustom learn-evil-tty-colors
-  ["blue" "red"]
+  ["blue" "red" "red"]
   "Vector of colors of the various shapes in text mode."
   :group 'learn-evil
   :type '(vector (color :tag "Shape 1")
-		 (color :tag "Shape 2")))
+		 (color :tag "Shape 2")
+                 (color :tag "Shape 3")))
 
 (defcustom learn-evil-x-colors
 					; these are in the format:: [red green blue]
   [[0 0 1]  ;the blue box
    [1 0 0]  ;the red log
+   [1 0 0]  ;the other red log
    ]
   "Vector of colors of the various shapes."
   :group 'learn-evil
@@ -184,9 +186,8 @@ If the return value is a number, it is used as the timer period."
 
 (defconst learn-evil-shapes
   [[[[0  0] [1  0] [0  1] [1  1]]] ; blue square shape 1
-
-   [[[0  0] [1  0] [2  0] [3  0]]    ;the red log
-    [[1 -1] [1  0] [1  1] [1  2]]]]
+   [[[0  0] [1  0] [2  0] [3  0]]]    ;the red log
+   [[[1  0] [1  1] [1  2] [1  3]]]]   ;the rotated red log
   "Each shape is described by a vector that contains the coordinates of
 each one of its four blocks.")
 
@@ -195,12 +196,14 @@ each one of its four blocks.")
 
 (defconst learn-evil-shape-scores
   [[6] ; the blue square
-   [5 8]] ;the red log
+   [5] ;the red log
+   [5]] ;the rotated log
   )
 
 (defconst learn-evil-shape-dimensions
   [[2 2] ;the square
-   [4 1]] ;the red log
+   [4 1] ;the red log
+   [1 4]];the other red log
   )
 
 (defconst learn-evil-blank 7)
@@ -223,6 +226,7 @@ each one of its four blocks.")
 (defvar learn-evil-pos-x 0)
 (defvar learn-evil-pos-y 0)
 (defvar learn-evil-paused nil)
+(defvar learn-evil-player-created nil)
 
 (make-variable-buffer-local 'learn-evil-shape)
 (make-variable-buffer-local 'learn-evil-rot)
@@ -233,6 +237,7 @@ each one of its four blocks.")
 (make-variable-buffer-local 'learn-evil-pos-x)
 (make-variable-buffer-local 'learn-evil-pos-y)
 (make-variable-buffer-local 'learn-evil-paused)
+(make-variable-buffer-local 'learn-evil-player-created)
 
 ;; ;;;;;;;;;;;;; keymaps ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -271,7 +276,7 @@ each one of its four blocks.")
       (aset options c
 	    (cond ((= c learn-evil-blank)
                    learn-evil-blank-options)
-                  ((and (>= c 0) (<= c 1))
+                  ((and (>= c 0) (<= c 2))
 		   (append
 		    learn-evil-cell-options
 		    `((((glyph color-x) ,(aref learn-evil-x-colors c))
@@ -323,7 +328,14 @@ each one of its four blocks.")
 (defun learn-evil-new-shape ()
   (setq learn-evil-shape learn-evil-next-shape)
   (setq learn-evil-rot 0)
-  (setq learn-evil-next-shape (random 2))
+  "
+  (if (not learn-evil-player-created)
+      (progn
+        (setq learn-evil-next-shape 0)
+        (setq learn-evil-player-created t))
+    (setq learn-evil-next-shape (+ 1 (random 2))))
+"
+  (setq learn-evil-next-shape (+ 1 (random 2)))
   (setq learn-evil-pos-x (/ (- learn-evil-width (learn-evil-shape-width)) 2))
   (setq learn-evil-pos-y 0)
   (if (learn-evil-test-shape)
@@ -446,18 +458,18 @@ each one of its four blocks.")
 (defun learn-evil-reset-game ()
   (gamegrid-kill-timer)
   (learn-evil-init-buffer)
-  (setq learn-evil-next-shape (random 2))
+  (setq learn-evil-next-shape 0)
   (setq learn-evil-shape	0
-	learn-evil-rot	0
-	learn-evil-pos-x	0
-	learn-evil-pos-y	0
-	learn-evil-n-shapes	0
-	learn-evil-n-rows	0
-	learn-evil-score	0
-	learn-evil-paused	nil)
+        learn-evil-rot	0
+        learn-evil-pos-x	0
+        learn-evil-pos-y	0
+        learn-evil-n-shapes	0
+        learn-evil-n-rows	0
+        learn-evil-score	0
+        learn-evil-paused	nil)
   (learn-evil-new-shape))
 
-"
+
 (defun learn-evil-shape-done ()
   (learn-evil-shift-down)
   (setq learn-evil-n-shapes (1+ learn-evil-n-shapes))
@@ -475,7 +487,7 @@ each one of its four blocks.")
       (setq learn-evil-pos-y learn-evil-top-left-y)
       (setq learn-evil-pos-x learn-evil-top-left-x)
       (learn-evil-draw-shape))))
-
+"
 (defun learn-evil-update-game (learn-evil-buffer)
   "Called on each clock tick.
 Drops the shape one square, testing for collision."
