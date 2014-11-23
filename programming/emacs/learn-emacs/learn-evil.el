@@ -1,4 +1,4 @@
-;; learn-evil.el --- learn basic evil-mode commands in a game for Emacs
+;; learn-evil.l --- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
@@ -327,6 +327,7 @@ each one of its four blocks.")
                                      (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 20) 5) :pos-y 0))))
   (learn-evil-draw-shape (car learn-evil-line-list))
   (learn-evil-update-score))
+
 "
 (defun learn-evil-draw-next-shape ()
   (dotimes (x 4)
@@ -430,14 +431,13 @@ each one of its four blocks.")
         learn-evil-line-list    nil)
   (learn-evil-new-shape))
 
-
 (defun learn-evil-shape-done (obj)
-  (learn-evil-shape-erase obj)
-  (setq learn-evil-n-shapes (1+ learn-evil-n-shapes))
+  (learn-evil-erase-shape obj)
+  (setq learn-evil-n-shapes (1- learn-evil-n-shapes))
+  (setq learn-evil-line-list (cdr learn-evil-line-list))
   (setq learn-evil-score
-	(+ learn-evil-score 1))
-  (learn-evil-update-score)
-  (learn-evil-new-shape))
+	(1+ learn-evil-score))
+  (learn-evil-update-score))
 
 (defun learn-evil-update-game (learn-evil-buffer)
   "Called on each clock tick.
@@ -449,27 +449,19 @@ Need to call for all in list of lines
       (learn-evil-new-shape))
   (if (and (not learn-evil-paused)
 	   (eq (current-buffer) learn-evil-buffer))
-      (let (hit)
-        (dolist (shape learn-evil-line-list)
-          (learn-evil-erase-shape shape)
-          (setf (object-pos-y shape)
-                (1+ (object-pos-y shape)))
-          (setf hit (learn-evil-test-shape shape))
-          (if hit
-              (setf (object-pos-y shape)
-                    (1- (object-pos-y shape))))
-          (learn-evil-draw-shape shape)
-          (if hit
-              (learn-evil-shape-done shape))))))
-
-(defun learn-evil-object-fall (obj)
-  "Move the shape one square to the up."
-  (unless learn-evil-paused
-    (learn-evil-erase-shape obj)
-    (setf (object-pos-y obj) (1+ (object-pos-y obj)))
-    (if (learn-evil-test-shape obj)
-        (setf (object-pos-y obj) (1- (object-pos-y obj))))
-    (learn-evil-draw-shape obj)))
+      (let ((line-list learn-evil-line-list))
+        (let (hit)
+          (dolist (shape line-list)
+            (learn-evil-erase-shape shape)
+            (setf (object-pos-y shape)
+                  (1+ (object-pos-y shape)))
+            (setf hit (learn-evil-test-shape shape))
+            (if hit
+                (setf (object-pos-y shape)
+                      (1- (object-pos-y shape))))
+            (learn-evil-draw-shape shape)
+            (if hit
+                (learn-evil-shape-done shape)))))))
 
 (defun learn-evil-move-beginning-of-line ()
   "Drop the shape to the bottom of the playing area."
