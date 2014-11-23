@@ -550,9 +550,12 @@ Drops the shape one square, testing for collision."
   (interactive)
   (unless learn-evil-paused
     (learn-evil-erase-shape)
-    (setq learn-evil-pos-x (+ 5 learn-evil-pos-x))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+    (let ((i 0))
+      (while (and (< i 5) t)
+        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
+        (if (learn-evil-test-shape)
+            (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+        (setq i (1+ i))))
     (learn-evil-draw-shape)))
 
 (defun learn-evil-move-word-end ()
@@ -560,9 +563,12 @@ Drops the shape one square, testing for collision."
   (interactive)
   (unless learn-evil-paused
     (learn-evil-erase-shape)
-    (setq learn-evil-pos-x (+ learn-evil-pos-x 3))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+    (let ((i 0))
+      (while (< i 3)
+        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
+        (if (learn-evil-test-shape)
+            (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+        (setq i (1+ i))))
     (learn-evil-draw-shape)))
 
 (defun learn-evil-move-word-back ()
@@ -570,9 +576,12 @@ Drops the shape one square, testing for collision."
   (interactive)
   (unless learn-evil-paused
     (learn-evil-erase-shape)
-    (setq learn-evil-pos-x (- learn-evil-pos-x 5))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+    (let ((i 0))
+      (while (and (< i 5) t)
+        (setq learn-evil-pos-x (1- learn-evil-pos-x))
+        (if (learn-evil-test-shape)
+            (setq learn-evil-pos-x (1+ learn-evil-pos-x)))
+        (setq i (1+ i))))
     (learn-evil-draw-shape)))
 
 (defun learn-evil-move-right ()
