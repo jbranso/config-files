@@ -1,4 +1,4 @@
-;; learn-evil.el --- learn basic evil-mode ommands in a game for Emacs
+;; learn-evil.el --- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 
@@ -260,8 +260,6 @@ each one of its four blocks.")
     (define-key map "b"          'learn-evil-move-word-back)
     (define-key map "$"          'learn-evil-move-end-of-line)
     (define-key map "^"          'learn-evil-move-beginning-of-line)
-					;    (define-key map [up]	'learn-evil-rotate-prev)
-					;    (define-key map [down]	'learn-evil-rotate-next)
     map))
 
 (defvar learn-evil-null-map
@@ -328,7 +326,6 @@ each one of its four blocks.")
                                      (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 20) 5) :pos-y 0))))
   (learn-evil-draw-shape (car learn-evil-line-list))
   (learn-evil-update-score))
-
 "
 (defun learn-evil-draw-next-shape ()
   (dotimes (x 4)
@@ -473,7 +470,7 @@ Need to call for all in list of lines
         (setf (object-pos-y obj) (1- (object-pos-y obj))))
     (learn-evil-draw-shape obj)))
 
-(defun learn-evil-beginning-of-line ()
+(defun learn-evil-move-beginning-of-line ()
   "Drop the shape to the bottom of the playing area."
   (interactive)
   (unless learn-evil-paused
@@ -665,10 +662,10 @@ learn-evil-mode keybindings:
 \\[learn-evil-pause-game]	Pauses (or resumes) the current game
 \\[learn-evil-move-left]	Moves the shape one square to the left
 \\[learn-evil-move-right]	Moves the shape one square to the right
-\\[learn-evil-rotate-prev]	Rotates the shape clockwise
-\\[learn-evil-rotate-next]	Rotates the shape anticlockwise
 \\[learn-evil-move-bottom]	Drops the shape to the bottom of the playing area
 \\[learn-evil-move-top]         Moves the player to the top of the screen
+\\[learn-evil-move-beginning-of-line] moves the player to the beginning of the line
+\\[learn-evil-move-end-of-line] moves the player to the end of the line
 \\[learn-evil-move-word]        Moves the player to the beginning of the next word
 \\[learn-evil-move-word-end]    Moves the player to the end of the word
 \\[learn-evil-move-word-back]   Moves the player to the beginning of the word
