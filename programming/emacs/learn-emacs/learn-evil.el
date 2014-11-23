@@ -717,6 +717,7 @@ learn-evil-mode keybindings:
   (switch-to-buffer learn-evil-buffer-name)
   (gamegrid-kill-timer)
   (learn-evil-mode)
+  (turn-off-evil-mode)
   (learn-evil-start-game))
 
 (provide 'learn-evil)
