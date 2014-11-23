@@ -223,7 +223,7 @@ each one of its four blocks.")
 (defvar learn-evil-score 0)
 (defvar learn-evil-paused nil)
 (defvar learn-evil-line-list (list (make-object :shape 1 :pos-x 10 :pos-y 0)))
-(defvar learn-evil-player-shape (make-object :shape 0 :pos-x 0 :pos-y 0))
+(defvar learn-evil-player-shape (make-object :shape 0 :pos-x 25 :pos-y 15))
 (defvar learn-evil-ticks 0)
 (defvar learn-evil-lives 5)
 
@@ -325,7 +325,7 @@ each one of its four blocks.")
 
 (defun learn-evil-new-shape ()
   (setq learn-evil-line-list (append learn-evil-line-list
-                                     (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 20) 5) :pos-y 0))))
+                                     (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 45) 3) :pos-y 0))))
   (learn-evil-draw-shape (car learn-evil-line-list))
   (learn-evil-update-score))
 
@@ -470,6 +470,8 @@ Need to call for all in list of lines
 		   (< (object-pos-y shape) 26)
 		   hit)
 	      (setq  learn-evil-lives (1- learn-evil-lives))
+              (setf (object-pos-x learn-evil-player-shape) 25)
+              (setf (object-pos-y learn-evil-player-shape) 15)
 	      ;; this function should not be necessary, but learn-evil-start-game is not working.
 	      ;;this next function should be erasing the board and restarting the game,
 	      ;;but it is not.
