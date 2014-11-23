@@ -446,7 +446,7 @@ each one of its four blocks.")
 (defun learn-evil-reset-game ()
   (gamegrid-kill-timer)
   (learn-evil-init-buffer)
-  (setq learn-evil-next-shape (random 7))
+  (setq learn-evil-next-shape (random 2))
   (setq learn-evil-shape	0
 	learn-evil-rot	0
 	learn-evil-pos-x	0
