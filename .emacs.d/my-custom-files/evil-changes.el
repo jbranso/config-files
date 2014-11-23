@@ -40,8 +40,8 @@
 (define-key evil-visual-state-map "h" 'evil-next-line)
 (define-key evil-visual-state-map "u" 'evil-end-of-line)
 (define-key evil-visual-state-map "a" 'evil-first-non-blank)
-(define-key evil-visual-state-map "o" 'evil-backward-word)
-(define-key evil-visual-state-map "e" 'evil-forward-word)
+(define-key evil-visual-state-map "o" 'evil-backward-word-begin)
+(define-key evil-visual-state-map "e" 'evil-forward-word-begin)
 
 (define-key evil-normal-state-map (kbd "C-l") 'recenter-top-bottom)
 (define-key evil-normal-state-map "l" 'recenter-top-bottom)

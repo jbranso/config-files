@@ -478,6 +478,8 @@ Need to call for all in list of lines
 		    ;; this function should not be necessary, but learn-evil-start-game is not working.
 		    ;;this next function should be erasing the board and restarting the game,
 		    ;;but it is not.
+		    (setf (object-pos-x learn-evil-player-shape) 25)
+		    (setf (object-pos-y learn-evil-player-shape) 15)
 		    (learn-evil-start-game)
 		    (return t))
 		;;else, end the game
