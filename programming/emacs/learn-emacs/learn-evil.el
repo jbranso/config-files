@@ -52,7 +52,7 @@
   :group 'learn-evil
   :type 'boolean)
 
-(defcustom learn-evil-default-tick-period 0.08
+(defcustom learn-evil-default-tick-period 0.5
   "The default time taken for a shape to drop one row."
   :group 'learn-evil
   :type 'number)
@@ -216,29 +216,31 @@ each one of its four blocks.")
 
 ;; ;;;;;;;;;;;;; variables ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar learn-evil-shape 0)
-(defvar learn-evil-rot 0)
-(defvar learn-evil-next-shape 0)
+(cl-defstruct object shape pos-x pos-y)
+
 (defvar learn-evil-n-shapes 0)
 (defvar learn-evil-n-rows 0)
 (defvar learn-evil-score 0)
-(defvar learn-evil-pos-x 0)
-(defvar learn-evil-pos-y 0)
 (defvar learn-evil-paused nil)
-(defvar learn-evil-player-created nil)
+(defvar learn-evil-line-list (list (make-object :shape 1 :pos-x 10 :pos-y 0)))
+(defvar learn-evil-player-shape (make-object :shape 0 :pos-x 0 :pos-y 0))
+(defvar learn-evil-ticks 0)
 
 (make-variable-buffer-local 'learn-evil-shape)
+<<<<<<< HEAD
 ;; it would be nice to delete this next variable, but
 ;; several functions still use it.
 (make-variable-buffer-local 'learn-evil-rot)
+=======
+>>>>>>> 3610e2d65f1f6890ecdd4c2f6bc52f6315d42e3f
 (make-variable-buffer-local 'learn-evil-next-shape)
 (make-variable-buffer-local 'learn-evil-n-shapes)
 (make-variable-buffer-local 'learn-evil-n-rows)
 (make-variable-buffer-local 'learn-evil-score)
-(make-variable-buffer-local 'learn-evil-pos-x)
-(make-variable-buffer-local 'learn-evil-pos-y)
 (make-variable-buffer-local 'learn-evil-paused)
-(make-variable-buffer-local 'learn-evil-player-created)
+(make-variable-buffer-local 'learn-evil-line-list)
+(make-variable-buffer-local 'learn-evil-player-shape)
+(make-variable-buffer-local 'learn-evil-ticks)
 
 ;; ;;;;;;;;;;;;; keymaps ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -301,16 +303,13 @@ each one of its four blocks.")
 			   learn-evil-n-rows nil)))
 	(and (numberp period) period))))
 
-(defun learn-evil-get-shape-cell (block)
+(defun learn-evil-get-shape-cell (block obj)
   (aref (aref  (aref learn-evil-shapes
-                     learn-evil-shape) learn-evil-rot)
+                     (object-shape obj)) 0)
         block))
 
-(defun learn-evil-shape-width ()
-  (aref (aref learn-evil-shape-dimensions learn-evil-shape) 0))
-
-(defun learn-evil-shape-rotations ()
-  (length (aref learn-evil-shapes learn-evil-shape)))
+(defun learn-evil-shape-width (obj)
+  (aref (aref learn-evil-shape-dimensions (object-shape obj)) 0))
 
 (defun learn-evil-draw-score ()
   (let ((strings (vector (format "Shapes: %05d" learn-evil-n-shapes)
@@ -330,23 +329,11 @@ each one of its four blocks.")
     (if period (gamegrid-set-timer period))))
 
 (defun learn-evil-new-shape ()
-  (setq learn-evil-shape learn-evil-next-shape)
-  "
-  (if (not learn-evil-player-created)
-      (progn
-        (setq learn-evil-next-shape 0)
-        (setq learn-evil-player-created t))
-    (setq learn-evil-next-shape (+ 1 (random 2))))
+  (setq learn-evil-line-list (append learn-evil-line-list
+                                     (list (make-object :shape (+ 1 (random 2)) :pos-x (+ (random 20) 5) :pos-y 0))))
+  (learn-evil-draw-shape (car learn-evil-line-list))
+  (learn-evil-update-score))
 "
-  (setq learn-evil-next-shape (+ 1 (random 2)))
-  (setq learn-evil-pos-x (/ (- learn-evil-width (learn-evil-shape-width)) 2))
-  (setq learn-evil-pos-y 0)
-  (if (learn-evil-test-shape)
-      (learn-evil-end-game)
-    (learn-evil-draw-shape)
-    (learn-evil-draw-next-shape)
-    (learn-evil-update-score)))
-
 (defun learn-evil-draw-next-shape ()
   (dotimes (x 4)
     (dotimes (y 4)
@@ -360,39 +347,40 @@ each one of its four blocks.")
                             (aref (learn-evil-get-shape-cell i) 0))
                          (+ learn-evil-next-y
                             (aref (learn-evil-get-shape-cell i) 1))
-                         learn-evil-shape))))
+                         (elt learn-evil-shape 0)))))
+"
 
-(defun learn-evil-draw-shape ()
+(defun learn-evil-draw-shape (obj)
   (dotimes (i 4)
-    (let ((c (learn-evil-get-shape-cell i)))
+    (let ((c (learn-evil-get-shape-cell i obj)))
       (gamegrid-set-cell (+ learn-evil-top-left-x
-                            learn-evil-pos-x
+                            (object-pos-x obj)
                             (aref c 0))
                          (+ learn-evil-top-left-y
-                            learn-evil-pos-y
+                            (object-pos-y obj)
                             (aref c 1))
-                         learn-evil-shape))))
+                         (object-shape obj)))))
 
-(defun learn-evil-erase-shape ()
+(defun learn-evil-erase-shape (obj)
   (dotimes (i 4)
-    (let ((c (learn-evil-get-shape-cell i)))
+    (let ((c (learn-evil-get-shape-cell i obj)))
       (gamegrid-set-cell (+ learn-evil-top-left-x
-                            learn-evil-pos-x
+                            (object-pos-x obj)
                             (aref c 0))
                          (+ learn-evil-top-left-y
-                            learn-evil-pos-y
+                            (object-pos-y obj)
                             (aref c 1))
                          learn-evil-blank))))
 
-(defun learn-evil-test-shape ()
+(defun learn-evil-test-shape (obj)
   (let ((hit nil))
     (dotimes (i 4)
       (unless hit
         (setq hit
-              (let* ((c (learn-evil-get-shape-cell i))
-                     (xx (+ learn-evil-pos-x
+              (let* ((c (learn-evil-get-shape-cell i obj))
+                     (xx (+ (object-pos-x obj)
                             (aref c 0)))
-                     (yy (+ learn-evil-pos-y
+                     (yy (+ (object-pos-y obj)
                             (aref c 1))))
                 (or (>= xx learn-evil-width)
                     (>= yy learn-evil-height)
@@ -410,26 +398,6 @@ each one of its four blocks.")
              learn-evil-blank)
           (setq full nil)))
     full))
-
-(defun learn-evil-shift-row (y)
-  (if (= y 0)
-      (dotimes (x learn-evil-width)
-	(gamegrid-set-cell (+ learn-evil-top-left-x x)
-			   (+ learn-evil-top-left-y y)
-			   learn-evil-blank))
-    (dotimes (x learn-evil-width)
-      (let ((c (gamegrid-get-cell (+ learn-evil-top-left-x x)
-                                  (+ learn-evil-top-left-y y -1))))
-        (gamegrid-set-cell (+ learn-evil-top-left-x x)
-                           (+ learn-evil-top-left-y y)
-			   c)))))
-
-(defun learn-evil-shift-down ()
-  (dotimes (y0 learn-evil-height)
-    (when (learn-evil-full-row y0)
-      (setq learn-evil-n-rows (1+ learn-evil-n-rows))
-      (cl-loop for y from y0 downto 0 do
-               (learn-evil-shift-row y)))))
 
 (defun learn-evil-draw-border-p ()
   (or (not (eq gamegrid-display-mode 'glyph))
@@ -461,178 +429,179 @@ each one of its four blocks.")
 (defun learn-evil-reset-game ()
   (gamegrid-kill-timer)
   (learn-evil-init-buffer)
-  (setq learn-evil-next-shape 0)
-  (setq learn-evil-shape	0
-        learn-evil-pos-x	0
-        learn-evil-pos-y	0
-        learn-evil-n-shapes	0
+  (setq learn-evil-n-shapes	0
         learn-evil-n-rows	0
         learn-evil-score	0
-        learn-evil-paused	nil)
+        learn-evil-paused	nil
+        learn-evil-line-list    nil)
   (learn-evil-new-shape))
 
 
-(defun learn-evil-shape-done ()
-  (learn-evil-shift-down)
+(defun learn-evil-shape-done (obj)
+  (learn-evil-shape-erase obj)
   (setq learn-evil-n-shapes (1+ learn-evil-n-shapes))
   (setq learn-evil-score
-	(+ learn-evil-score
-	   (aref (aref learn-evil-shape-scores learn-evil-shape) learn-evil-rot)))
+	(+ learn-evil-score 1))
   (learn-evil-update-score)
   (learn-evil-new-shape))
-"
-(defun learn-evil-shape-done ()
-  (interactive)
-  (unless learn-evil-paused
-    (let ((hit nil))
-      (learn-evil-erase-shape)
-      (setq learn-evil-pos-y learn-evil-top-left-y)
-      (setq learn-evil-pos-x learn-evil-top-left-x)
-      (learn-evil-draw-shape))))
-"
+
 (defun learn-evil-update-game (learn-evil-buffer)
   "Called on each clock tick.
-Drops the shape one square, testing for collision."
+Drops the shape one square, testing for collision.
+Need to call for all in list of lines
+"
+  (setq learn-evil-ticks (1+ learn-evil-ticks))
+  (if (= 7 (mod learn-evil-ticks 8))
+      (learn-evil-new-shape))
   (if (and (not learn-evil-paused)
 	   (eq (current-buffer) learn-evil-buffer))
       (let (hit)
-	(learn-evil-erase-shape)
-	(setq learn-evil-pos-y (1+ learn-evil-pos-y))
-	(setq hit (learn-evil-test-shape))
-	(if hit
-	    (setq learn-evil-pos-y (1- learn-evil-pos-y)))
-	(learn-evil-draw-shape)
-	(if hit
-	    (learn-evil-shape-done)))))
+        (dolist (shape learn-evil-line-list)
+          (learn-evil-erase-shape shape)
+          (setf (object-pos-y shape)
+                (1+ (object-pos-y shape)))
+          (setf hit (learn-evil-test-shape shape))
+          (if hit
+              (setf (object-pos-y shape)
+                    (1- (object-pos-y shape))))
+          (learn-evil-draw-shape shape)
+          (if hit
+              (learn-evil-shape-done shape))))))
+
+(defun learn-evil-object-fall (obj)
+  "Move the shape one square to the up."
+  (unless learn-evil-paused
+    (learn-evil-erase-shape obj)
+    (setf (object-pos-y obj) (1+ (object-pos-y obj)))
+    (if (learn-evil-test-shape obj)
+        (setf (object-pos-y obj) (1- (object-pos-y obj))))
+    (learn-evil-draw-shape obj)))
 
 (defun learn-evil-move-beginning-of-line ()
   "Drop the shape to the bottom of the playing area."
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
-      (learn-evil-erase-shape)
+      (learn-evil-erase-shape learn-evil-player-shape)
       (while (not hit)
-        (setq learn-evil-pos-x (1- learn-evil-pos-x))
-        (setq hit (learn-evil-test-shape)))
-      (setq learn-evil-pos-x (1+ learn-evil-pos-x))
-      (learn-evil-draw-shape)
-      (learn-evil-shape-done))))
+        (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape)))
+        (setq hit (learn-evil-test-shape learn-evil-player-shape)))
+      (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
+      (learn-evil-draw-shape learn-evil-player-shape))))
 
 (defun learn-evil-move-end-of-line ()
   "Drop the shape to the bottom of the playing area."
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
-      (learn-evil-erase-shape)
+      (learn-evil-erase-shape learn-evil-player-shape)
       (while (not hit)
-        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
-        (setq hit (learn-evil-test-shape)))
-      (setq learn-evil-pos-x (1- learn-evil-pos-x))
-      (learn-evil-draw-shape)
-      (learn-evil-shape-done))))
+        (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
+        (setq hit (learn-evil-test-shape learn-evil-player-shape)))
+      (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape)))
+      (learn-evil-draw-shape learn-evil-player-shape))))
 
 (defun learn-evil-move-bottom ()
   "Drop the shape to the bottom of the playing area."
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
-      (learn-evil-erase-shape)
+      (learn-evil-erase-shape learn-evil-player-shape)
       (while (not hit)
-        (setq learn-evil-pos-y (1+ learn-evil-pos-y))
-        (setq hit (learn-evil-test-shape)))
-      (setq learn-evil-pos-y (1- learn-evil-pos-y))
-      (learn-evil-draw-shape)
-      (learn-evil-shape-done))))
+        (setf (object-pos-y learn-evil-player-shape) (1+ (object-pos-y learn-evil-player-shape)))
+        (setq hit (learn-evil-test-shape learn-evil-player-shape)))
+      (setf (object-pos-y learn-evil-player-shape) (1- (object-pos-y learn-evil-player-shape)))
+      (learn-evil-draw-shape learn-evil-player-shape))))
 
 (defun learn-evil-move-top ()
   (interactive)
   (unless learn-evil-paused
     (let ((hit nil))
-      (learn-evil-erase-shape)
+      (learn-evil-erase-shape learn-evil-player-shape)
       (while (not hit)
-        (setq learn-evil-pos-y (1- learn-evil-pos-y))
-        (setq hit (learn-evil-test-shape)))
-      (setq learn-evil-pos-y (1+ learn-evil-pos-y)))
-    (learn-evil-draw-shape)))
+        (setf (object-pos-y learn-evil-player-shape) (1- (object-pos-y learn-evil-player-shape)))
+        (setq hit (learn-evil-test-shape learn-evil-player-shape)))
+      (setf (object-pos-y learn-evil-player-shape) (1+ (object-pos-y learn-evil-player-shape))))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-down ()
   "Move the shape one square to the up."
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
-    (setq learn-evil-pos-y (1+ learn-evil-pos-y))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-y (1- learn-evil-pos-y)))
-    (learn-evil-draw-shape)))
+    (learn-evil-erase-shape learn-evil-player-shape)
+    (setf (object-pos-y learn-evil-player-shape) (1+ (object-pos-y learn-evil-player-shape)))
+    (if (learn-evil-test-shape learn-evil-player-shape)
+        (setf (object-pos-y learn-evil-player-shape) (1- (object-pos-y learn-evil-player-shape))))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-up ()
   "Move the shape one square to the up."
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
-    (setq learn-evil-pos-y (1- learn-evil-pos-y))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-y (1+ learn-evil-pos-y)))
-    (learn-evil-draw-shape)))
+    (learn-evil-erase-shape learn-evil-player-shape)
+    (setf (object-pos-y learn-evil-player-shape) (1- (object-pos-y learn-evil-player-shape)))
+    (if (learn-evil-test-shape learn-evil-player-shape)
+        (setf (object-pos-y learn-evil-player-shape) (1+ (object-pos-y learn-evil-player-shape))))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-left ()
   "Move the shape one square to the left."
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
-    (setq learn-evil-pos-x (1- learn-evil-pos-x))
-    (if (learn-evil-test-shape)
-        (setq learn-evil-pos-x (1+ learn-evil-pos-x)))
-    (learn-evil-draw-shape)))
+    (learn-evil-erase-shape learn-evil-player-shape)
+    (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape)))
+    (if (learn-evil-test-shape learn-evil-player-shape)
+        (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape))))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-word ()
   "Move the player to the beginning of the next 'word'"
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
+    (learn-evil-erase-shape learn-evil-player-shape)
     (let ((i 0))
       (while (and (< i 5) t)
-        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
-        (if (learn-evil-test-shape)
-            (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+        (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
+        (if (learn-evil-test-shape learn-evil-player-shape)
+            (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape))))
         (setq i (1+ i))))
-    (learn-evil-draw-shape)))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-word-end ()
   "Move the player to the beginning of the next 'word'"
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
+    (learn-evil-erase-shape learn-evil-player-shape)
     (let ((i 0))
       (while (< i 3)
-        (setq learn-evil-pos-x (1+ learn-evil-pos-x))
-        (if (learn-evil-test-shape)
-            (setq learn-evil-pos-x (1- learn-evil-pos-x)))
+        (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
+        (if (learn-evil-test-shape learn-evil-player-shape)
+            (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape))))
         (setq i (1+ i))))
-    (learn-evil-draw-shape)))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-word-back ()
   "Move the player to the beginning of the next 'word'"
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
+    (learn-evil-erase-shape learn-evil-player-shape)
     (let ((i 0))
       (while (and (< i 5) t)
-        (setq learn-evil-pos-x (1- learn-evil-pos-x))
-        (if (learn-evil-test-shape)
-            (setq learn-evil-pos-x (1+ learn-evil-pos-x)))
+        (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape)))
+        (if (learn-evil-test-shape learn-evil-player-shape)
+            (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape))))
         (setq i (1+ i))))
-    (learn-evil-draw-shape)))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-right ()
   "Move the shape one square to the right."
   (interactive)
   (unless learn-evil-paused
-    (learn-evil-erase-shape)
-    (setq learn-evil-pos-x (1+ learn-evil-pos-x))
-    (if (learn-evil-test-shape)
-	(setq learn-evil-pos-x (1- learn-evil-pos-x)))
-    (learn-evil-draw-shape)))
+    (learn-evil-erase-shape learn-evil-player-shape)
+    (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
+    (if (learn-evil-test-shape learn-evil-player-shape)
+	(setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape))))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-end-game ()
   "Terminate the current game."
