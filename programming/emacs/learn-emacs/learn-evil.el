@@ -271,7 +271,7 @@ each one of its four blocks.")
       (aset options c
 	    (cond ((= c learn-evil-blank)
                    learn-evil-blank-options)
-                  ((and (>= c 0) (<= c 6))
+                  ((and (>= c 0) (<= c 1))
 		   (append
 		    learn-evil-cell-options
 		    `((((glyph color-x) ,(aref learn-evil-x-colors c))
