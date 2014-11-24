@@ -29,11 +29,6 @@
 (define-key evil-insert-state-map
   (kbd "ESC") 'evil-normal-state)
 
-(define-key evil-normal-state-map (kbd "C-s") 'evil-substitute)
-(define-key evil-normal-state-map "s" 'evil-forward-char)
-(define-key evil-normal-state-map "n" 'evil-backward-char)
-(define-key evil-normal-state-map "t" 'evil-previous-line)
-(define-key evil-normal-state-map "h" 'evil-next-line)
 (define-key evil-visual-state-map "s" 'evil-forward-char)
 (define-key evil-visual-state-map "n" 'evil-backward-char)
 (define-key evil-visual-state-map "t" 'evil-previous-line)
@@ -43,6 +38,23 @@
 (define-key evil-visual-state-map "o" 'evil-backward-word-begin)
 (define-key evil-visual-state-map "e" 'evil-forward-word-begin)
 
+(define-key evil-replace-state-map (kbd "C-s") 'evil-substitute)
+(define-key evil-replace-state-map "s" 'evil-forward-char)
+(define-key evil-replace-state-map "n" 'evil-backward-char)
+(define-key evil-replace-state-map "t" 'evil-previous-line)
+(define-key evil-replace-state-map "h" 'evil-next-line)
+(define-key evil-replace-state-map "u" 'evil-end-of-line)
+(define-key evil-replace-state-map "a" 'evil-first-non-blank)
+(define-key evil-replace-state-map "o" 'evil-backward-word-begin)
+(define-key evil-replace-state-map "e" 'evil-forward-word-begin)
+;; this is sooo cool!!!!
+(define-key evil-replace-state-map (kbd "<backspace>") 'ace-jump-char-mode)
+
+(define-key evil-normal-state-map (kbd "C-s") 'evil-substitute)
+(define-key evil-normal-state-map "s" 'evil-forward-char)
+(define-key evil-normal-state-map "n" 'evil-backward-char)
+(define-key evil-normal-state-map "t" 'evil-previous-line)
+(define-key evil-normal-state-map "h" 'evil-next-line)
 (define-key evil-normal-state-map (kbd "C-l") 'recenter-top-bottom)
 (define-key evil-normal-state-map "l" 'recenter-top-bottom)
 (define-key evil-normal-state-map "o" 'evil-backward-word-end)
@@ -63,6 +75,7 @@
 						   (learn-evil)))
 (define-key evil-normal-state-map "Q" 'query-replace)
 (define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
+
 
 (define-key evil-normal-state-map
   (kbd "l") 'recenter-top-bottom)
