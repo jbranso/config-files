@@ -122,6 +122,9 @@
 
 (setq evil-find-skip-newlines t)
 (setq evil-move-cursor-back nil)
+;;make the replace cursor red
+(setq evil-replace-state-cursor '("red" box))
+(setq evil-emacs-state-cursor '("green" box))
 (require 'evil)
 (evil-mode 1)
 (load-file "~/.emacs.d/my-custom-files/evil-changes.el")

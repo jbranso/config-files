@@ -47,6 +47,24 @@
    (quote
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-mouse org-rmail org-w3m org-drill)))
  '(paragraph-separate "[ 	]*$\\|^\\*+.*")
+ '(semantic-new-buffer-setup-functions
+   (quote
+    ((emacs-lisp-mode . semantic-default-scheme-setup)
+     (c-mode . semantic-default-c-setup)
+     (c++-mode . semantic-default-c-setup)
+     (html-mode . semantic-default-html-setup)
+     (java-mode . wisent-java-default-setup)
+     (js-mode . wisent-javascript-setup-parser)
+     (python-mode . wisent-python-default-setup)
+     (scheme-mode . semantic-default-scheme-setup)
+     (srecode-template-mode . srecode-template-setup-parser)
+     (texinfo-mode . semantic-default-texi-setup)
+     (makefile-automake-mode . semantic-default-make-setup)
+     (makefile-gmake-mode . semantic-default-make-setup)
+     (makefile-makepp-mode . semantic-default-make-setup)
+     (makefile-bsdmake-mode . semantic-default-make-setup)
+     (makefile-imake-mode . semantic-default-make-setup)
+     (makefile-mode . semantic-default-make-setup))))
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

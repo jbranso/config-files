@@ -13,7 +13,8 @@
 table5={
    ["Control-e"]={"emacs", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
-   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
+   -- Mod-C-n is for unminimizing applications.
+   --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox -P default","Firefox"},
    ["Control-g"]={"gimp-2.8", "Gimp-2.8"},
    ["Control-t"]={"thunderbird", "Thunderbird"},

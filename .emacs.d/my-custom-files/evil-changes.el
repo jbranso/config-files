@@ -1,5 +1,4 @@
 ;; evil-changes.el --- My custom evil stuff         -*- lexical-binding: t; -*-
-
 ;; Copyright (C) 2014
 
 ;; Author:  <joshua@arch>
@@ -24,10 +23,37 @@
 
 ;;; Code:
 
+;; the complete list of evil states:
+;; <N> normal state
+;; <I> insert state
+;; <V> visual state
+;; <R> replace state
+;; <O> operator pending state
+;; <M> motion state
+;; <E> emacs state
+
 ;; Make evil-insert-mode allow emacs keybindings
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map
   (kbd "ESC") 'evil-normal-state)
+
+(define-key evil-motion-state-map "s" 'evil-forward-char)
+(define-key evil-motion-state-map "n" 'evil-backward-char)
+(define-key evil-motion-state-map "t" 'evil-previous-line)
+(define-key evil-motion-state-map "h" 'evil-next-line)
+(define-key evil-motion-state-map "u" 'evil-end-of-line)
+(define-key evil-motion-state-map "a" 'evil-first-non-blank)
+(define-key evil-motion-state-map "o" 'evil-backward-word-begin)
+(define-key evil-motion-state-map "e" 'evil-forward-word-begin)
+
+(define-key evil-operator-state-map "s" 'evil-forward-char)
+(define-key evil-operator-state-map "n" 'evil-backward-char)
+(define-key evil-operator-state-map "t" 'evil-previous-line)
+(define-key evil-operator-state-map "h" 'evil-next-line)
+(define-key evil-operator-state-map "u" 'evil-end-of-line)
+(define-key evil-operator-state-map "a" 'evil-first-non-blank)
+(define-key evil-operator-state-map "o" 'evil-backward-word-begin)
+(define-key evil-operator-state-map "e" 'evil-forward-word-begin)
 
 (define-key evil-visual-state-map "s" 'evil-forward-char)
 (define-key evil-visual-state-map "n" 'evil-backward-char)
@@ -51,6 +77,7 @@
 (define-key evil-replace-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 (define-key evil-normal-state-map (kbd "C-s") 'evil-substitute)
+(define-key evil-normal-state-map "$" 'ispell-word)
 (define-key evil-normal-state-map "s" 'evil-forward-char)
 (define-key evil-normal-state-map "n" 'evil-backward-char)
 (define-key evil-normal-state-map "t" 'evil-previous-line)
