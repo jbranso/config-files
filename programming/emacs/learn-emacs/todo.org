@@ -1,0 +1,20 @@
+#+SHOWALL
+This file contains a list of open bugs that need work.
+
+* The preview area should visually show how the hjkl keys move the blue box.
+  
+* rewrite ^ and $ to teleport the blue box. Currently, the blue box just
+  slides accross the screen. If it hits something it stops there.
+  
+* make the score persistant after the user dies. Currently, when the user dies
+  the score goes to 0.
+  
+** as the score increases, make the blocks fall faster. and possibly more block to fall.
+   
+* the blue box should be redrawn after the user dies.
+  
+* One cannot quit the game with w/ q
+  
+* When the game ends after the user has lost of of his lives,
+  an error appears that says, error running timer, learn-evil-update-game void variable
+  learn-evil-score-file whatever that means.
