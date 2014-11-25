@@ -25,7 +25,6 @@
 ;;; Commentary:
 
 ;;; Code:
-
 (eval-when-compile (require 'cl-lib))
 
 (require 'gamegrid)
@@ -686,7 +685,7 @@ learn-evil-mode keybindings:
   (switch-to-buffer learn-evil-buffer-name)
   (gamegrid-kill-timer)
   (learn-evil-mode)
-  (turn-off-evil-mode)
+  (evil-set-initial-state 'learn-evil-mode 'emacs)
   (learn-evil-start-game))
 
 (provide 'learn-evil)
