@@ -1,4 +1,4 @@
-;; learn-evil-- learn basic evil-mode commands in a game for Emacs
+;; learn-evil--- learn basic evil-mode commands in a game for Emacs
 
 ;; Copyright (C) 1997, 2001-2014 Free Software Foundation, Inc.
 

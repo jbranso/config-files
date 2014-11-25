@@ -21,15 +21,24 @@
 	    (delete-trailing-whitespace)
 	    (indent-region (point-min) (point-max))))
 
+;; if the current buffer that is being saved is an .el file, then eval it, and byte recomplile all my start
+;; up emacs files
 (add-hook 'after-save-hook
 	  (lambda ()
-	    (byte-compile-file "/home/joshua/.emacs.d/init.el")
-	    (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files")))
+	    (when (string-match "\\.el$" (buffer-file-name))
+	      (eval-buffer nil)
+	      (byte-compile-file "/home/joshua/.emacs.d/init.el")
+	      (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files"))))
 
 ;; lisp mode hook
 (add-hook 'lisp-mode-hook '(lambda ()
 			     ;;  auto-fill-mode is great for comments in lisp
 			     (auto-fill-mode)))
+
+;; emacs-lisp mode hook
+(add-hook 'emacs-lisp-mode-hook '(lambda ()
+				   ;;  auto-fill-mode is great for comments in lisp
+				   (auto-fill-mode)))
 
 ;; make org mode start up with auto fill mode
 (add-hook 'org-mode-hook '(lambda ()
@@ -70,6 +79,7 @@
 	    (yas-minor-mode)
 	    (emmet-mode)
 	    (visual-line-mode)
+	    (auto-fill-mode)
 	    ;;  (ac-ispell-ac-setup)
 	    (setq ac-sources '(ac-source-semantic
 			       ac-source-yasnippet

@@ -1,11 +1,4 @@
-;; evil-changes.el --- My custom evil stuff         -*- lexical-binding: t; -*-
-;; Copyright (C) 2014
-
-;; Author:  <joshua@arch>
-;; Keywords: wp
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
+;;rs of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
 
@@ -45,15 +38,25 @@
 (define-key evil-motion-state-map "a" 'evil-first-non-blank)
 (define-key evil-motion-state-map "o" 'evil-backward-word-begin)
 (define-key evil-motion-state-map "e" 'evil-forward-word-begin)
+;; I would like to use these, but they do not work well with golden-ratio-mode
+;;(define-key evil-motion-state-map (kbd "C-w h") 'evil-window-down)
+;;(define-key evil-motion-state-map (kbd "C-w t") 'evil-window-up)
+;;(define-key evil-motion-state-map (kbd "C-w n") 'evil-window-left)
+;;(define-key evil-motion-state-map (kbd "C-w s") 'evil-window-right)
+(define-key evil-motion-state-map (kbd "C-w h") 'windmove-down)
+(define-key evil-motion-state-map (kbd "C-w t") 'windmove-up)
+(define-key evil-motion-state-map (kbd "C-w n") 'windmove-left)
+(define-key evil-motion-state-map (kbd "C-w s") 'windmove-right)
 
 (define-key evil-operator-state-map "s" 'evil-forward-char)
 (define-key evil-operator-state-map "n" 'evil-backward-char)
 (define-key evil-operator-state-map "t" 'evil-previous-line)
 (define-key evil-operator-state-map "h" 'evil-next-line)
-(define-key evil-operator-state-map "u" 'evil-end-of-line)
-(define-key evil-operator-state-map "a" 'evil-first-non-blank)
+;;(define-key evil-operator-state-map "u" 'evil-end-of-line)
+;;(define-key evil-operator-state-map "a" 'evil-first-non-blank)
 (define-key evil-operator-state-map "o" 'evil-backward-word-begin)
 (define-key evil-operator-state-map "e" 'evil-forward-word-begin)
+(define-key evil-operator-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 (define-key evil-visual-state-map "s" 'evil-forward-char)
 (define-key evil-visual-state-map "n" 'evil-backward-char)
@@ -64,6 +67,7 @@
 ;;(define-key evil-visual-state-map "a" 'evil-first-non-blank)
 (define-key evil-visual-state-map "o" 'evil-backward-word-begin)
 (define-key evil-visual-state-map "e" 'evil-forward-word-begin)
+(define-key evil-visual-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 (define-key evil-replace-state-map (kbd "C-s") 'evil-substitute)
 (define-key evil-replace-state-map "s" 'evil-forward-char)
@@ -102,13 +106,20 @@
 						   (interactive)
 						   (eval-buffer nil)
 						   (learn-evil)))
+;; I would like to use these, but they do not work well with golden-ratio-mode
+;;(define-key evil-normal-state-map (kbd "C-w h") 'evil-window-down)
+;;(define-key evil-normal-state-map (kbd "C-w t") 'evil-window-up)
+;;(define-key evil-normal-state-map (kbd "C-w n") 'evil-window-left)
+;;(define-key evil-normal-state-map (kbd "C-w s") 'evil-window-right)
+(define-key evil-normal-state-map (kbd "C-w h") 'windmove-down)
+(define-key evil-normal-state-map (kbd "C-w t") 'windmove-up)
+(define-key evil-normal-state-map (kbd "C-w n") 'windmove-left)
+(define-key evil-normal-state-map (kbd "C-w s") 'windmove-right)
 (define-key evil-normal-state-map "," 'undo-tree-undo)
 (define-key evil-normal-state-map "/" 'helm-swoop)
 (define-key evil-normal-state-map "'" 'evil-goto-mark)
 (define-key evil-normal-state-map "Q" 'query-replace)
 (define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
-
-
 (define-key evil-normal-state-map
   (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
@@ -118,29 +129,23 @@
   (kbd "SPC") 'viper-space)
 (define-key evil-normal-state-map
   (kbd "C-a") 'mark-whole-buffer)
-
-
 (define-key evil-normal-state-map
   (kbd "a") 'evil-first-non-blank)
 (define-key evil-normal-state-map
   (kbd "A") 'evil-insert-line)
 (define-key evil-normal-state-map (kbd "u") 'evil-end-of-line)
 (define-key evil-normal-state-map (kbd "U") 'evil-append-line)
-
 (define-key evil-normal-state-map (kbd "C-c m") 'helm-mini)
 (define-key evil-normal-state-map
   (kbd "C-d") 'delete-char)
-
 (define-key evil-normal-state-map
   (kbd "<") 'beginning-of-buffer)
 (define-key evil-normal-state-map
   (kbd ">") 'end-of-buffer)
-
 (define-key evil-normal-state-map
   (kbd "q") '(lambda ()
 	       (interactive)
 	       (let (kill-buffer-query-functions) (kill-buffer))))
-
 (define-key evil-normal-state-map
   (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
@@ -155,19 +160,10 @@
   (kbd "C-d") 'delete-char)
 (define-key evil-normal-state-map
   (kbd "C-c e") 'helm-M-x)
-
-
-
-;;This is an awesome idea for a command, but I'm not sure how to do it.
-
-;; pa copies from point to beginning of line
-;; pu copies from point to the beginning of the line
-
 (define-key evil-normal-state-map
   (kbd "q") '(lambda ()
 	       (interactive)
 	       (let (kill-buffer-query-functions) (kill-buffer))))
-
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map
