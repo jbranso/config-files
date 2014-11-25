@@ -97,6 +97,7 @@
 (define-key evil-normal-state-map (kbd "C-h") 'evil-open-below)
 (define-key evil-normal-state-map (kbd "C-t") 'evil-open-above)
 (define-key evil-normal-state-map (kbd "C-c h") 'help)
+(define-key evil-normal-state-map (kbd "C-c d") 'dired-jump)
 (define-key evil-normal-state-map (kbd "C-c g") 'magit-status)
 (define-key evil-normal-state-map (kbd "C-c b") 'eval-buffer)
 (define-key evil-normal-state-map (kbd "C-c l") 'eval-last-sexp)

@@ -23,6 +23,7 @@
 
 ;; if the current buffer that is being saved is an .el file, then eval it, and byte recomplile all my start
 ;; up emacs files
+;; the eval-buffer, does not seem to be working.
 (add-hook 'after-save-hook
 	  (lambda ()
 	    (when (string-match "\\.el$" (buffer-file-name))

@@ -97,12 +97,14 @@
 ;;(refill-paragraph), so you never have to press M-q again. However, you need this next line, tell Refill
 ;;mode NOT to pull in headings into a paragraph. This not not quite working the it should be. When you press
 ;;enter on a heading in org-mode, it will merge the current heading with the ones above it, into a
-;;paragraph.
-(setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
+;;paragraph. The setq paragraph-separate seems to be working nicely. If it seems to have fixed it, then I
+;;can delete the next line.
+;;(setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
 ;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
 ;;emacs will assume the thing that matches it is a paragraph seperator. This bit of code is really only for
 ;;org-mode, and it should make org-mode and refill mode play nicely!
-(setq     paragraph-separate "[ 	]*$\\|^\\*+.*")
+;;(setq     paragraph-separate "[ 	]*$\\|^\\*+.*\|$\\*")
+(setq paragraph-separate "[ 	]*$\|^\\*+.*")
 (setq org-default-notes-file "~/.emacs.d/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
 
