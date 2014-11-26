@@ -90,10 +90,11 @@
 (define-key evil-normal-state-map "h" 'evil-next-line)
 (define-key evil-normal-state-map (kbd "C-l") 'recenter-top-bottom)
 (define-key evil-normal-state-map "l" 'recenter-top-bottom)
-(define-key evil-normal-state-map "o" 'evil-backward-word-end)
-(define-key evil-normal-state-map "e" 'evil-forward-word-end)
+(define-key evil-normal-state-map "o" 'evil-backward-word-begin)
+(define-key evil-normal-state-map "e" 'evil-forward-word-begin)
 (define-key evil-normal-state-map "O" 'evil-backward-WORD-end)
 (define-key evil-normal-state-map "E" 'evil-forward-WORD-end)
+(define-key evil-normal-state-map "j" 'evil-join)
 (define-key evil-normal-state-map (kbd "C-h") 'evil-open-below)
 (define-key evil-normal-state-map (kbd "C-t") 'evil-open-above)
 (define-key evil-normal-state-map (kbd "C-c h") 'help)
@@ -122,50 +123,34 @@
 (define-key evil-normal-state-map "'" 'evil-goto-mark)
 (define-key evil-normal-state-map "Q" 'query-replace)
 (define-key evil-normal-state-map (kbd "<backspace>") 'ace-jump-char-mode)
-(define-key evil-normal-state-map
-  (kbd "l") 'recenter-top-bottom)
+(define-key evil-normal-state-map (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
-(define-key evil-normal-state-map
-  (kbd "<return>") 'newline)
-(define-key evil-normal-state-map
-  (kbd "SPC") 'viper-space)
-(define-key evil-normal-state-map
-  (kbd "C-a") 'mark-whole-buffer)
-(define-key evil-normal-state-map
-  (kbd "a") 'evil-first-non-blank)
-(define-key evil-normal-state-map
-  (kbd "A") 'evil-insert-line)
+(define-key evil-normal-state-map (kbd "<return>") 'newline)
+(define-key evil-normal-state-map (kbd "SPC") 'viper-space)
+(define-key evil-normal-state-map (kbd "C-a") 'mark-whole-buffer)
+(define-key evil-normal-state-map (kbd "a") 'evil-first-non-blank)
+(define-key evil-normal-state-map (kbd "A") 'evil-insert-line)
 (define-key evil-normal-state-map (kbd "u") 'evil-end-of-line)
 (define-key evil-normal-state-map (kbd "U") 'evil-append-line)
 (define-key evil-normal-state-map (kbd "C-c m") 'helm-mini)
-(define-key evil-normal-state-map
-  (kbd "C-d") 'delete-char)
-(define-key evil-normal-state-map
-  (kbd "<") 'beginning-of-buffer)
-(define-key evil-normal-state-map
-  (kbd ">") 'end-of-buffer)
+(define-key evil-normal-state-map (kbd "C-d") 'delete-char)
+(define-key evil-normal-state-map (kbd "<") 'beginning-of-buffer)
+(define-key evil-normal-state-map (kbd ">") 'end-of-buffer)
 (define-key evil-normal-state-map
   (kbd "q") '(lambda ()
 	       (interactive)
 	       (let (kill-buffer-query-functions) (kill-buffer))))
-(define-key evil-normal-state-map
-  (kbd "l") 'recenter-top-bottom)
+(define-key evil-normal-state-map (kbd "l") 'recenter-top-bottom)
 ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
-(define-key evil-normal-state-map
-  (kbd "<return>") 'newline)
-(define-key evil-normal-state-map
-  (kbd "SPC") 'viper-space)
-(define-key evil-normal-state-map
-  (kbd "C-a") 'mark-whole-buffer)
+(define-key evil-normal-state-map (kbd "<return>") 'newline)
+(define-key evil-normal-state-map (kbd "SPC") 'viper-space)
+(define-key evil-normal-state-map (kbd "C-a") 'mark-whole-buffer)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
-(define-key evil-normal-state-map
-  (kbd "C-d") 'delete-char)
-(define-key evil-normal-state-map
-  (kbd "C-c e") 'helm-M-x)
-(define-key evil-normal-state-map
-  (kbd "q") '(lambda ()
-	       (interactive)
-	       (let (kill-buffer-query-functions) (kill-buffer))))
+(define-key evil-normal-state-map (kbd "C-d") 'delete-char)
+(define-key evil-normal-state-map (kbd "C-c e") 'helm-M-x)
+(define-key evil-normal-state-map (kbd "q") '(lambda ()
+					       (interactive)
+					       (let (kill-buffer-query-functions) (kill-buffer))))
 
 ;; this should prevent making the escape key moving the cursor backwards but...
 ;; (define-key viper-insert-global-user-map

@@ -24,7 +24,14 @@ This file contains a list of open bugs that need work.
 * Explain movements over time. Perhaps, pause the game, tell the user what to do, and
   temporarily suspend gravity, and let only the user's blue box move.
   
-  
+* When the program starts, display the options for the user:
+  Would you like to learn:
+  vim commands
+  emacs commands
+  god-mode commands
+  dired commands
+  etc.
+  he or she can then decide what he or she wants to play.
   
 * Here is an overview of how the game works:
   

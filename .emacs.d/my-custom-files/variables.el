@@ -44,15 +44,13 @@
 
 (require 'package)
 ;; emacs loads all the packages you've installed with M-x packages-list-packages in the next line
-(package-initialize)
-(setq package-archives
-      ;; gnu elpa contains packages that the FSF endorses. This means that it has a GPL compatible license, and all the authors of the code grant GNU copyright to their code.
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-	;; this repo allows users to create accounts and uploads packages. These packages can be outdated, but typically stable.
-	("marmalade" . "http://marmalade-repo.org/packages/")
-	;;melpa is like a git for packages. With melpa, package maintainers upload their code, and melpa regulary compiles the code for whoever wants the package. It's packages can be really up to date, and slightly unstable.
-	("melpa" . "http://melpa.org/packages/")))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+;; For important compatibility libraries like cl-lib
+
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 ;; this sets up the packages I have installed.
+(package-initialize)
 
 (require 'recentf)
 (setq recentf-max-saved-items 500)

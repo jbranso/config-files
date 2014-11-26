@@ -178,7 +178,7 @@ If the return value is a number, it is used as the timer period."
 (defconst learn-evil-shapes
   [[[[0  0] [1  0] [0  1] [1  1]]] ; blue square shape 1
    [[[0  0] [1  0] [2  0] [3  0]]]    ;the red log
-   [[[1  0] [1  1] [1  2] [1  3]]]]   ;the rotated red log
+   [[[1  0] [1  1] [1  2] [1  3]]]]   ;the rotated red log (horizontal)
   "Each shape is described by a vector that contains the coordinates of
 each one of its four blocks.")
 
@@ -187,13 +187,13 @@ each one of its four blocks.")
 (defconst learn-evil-shape-scores
   [[6] ; the blue square ;; the blue square does not need a score anymore; this should be deleted.
    [5] ;the red log
-   [5]] ;the rotated log
+   [5]] ;the rotated log (horizontal)
   )
 
 (defconst learn-evil-shape-dimensions
   [[2 2] ;the square
    [4 1] ;the red log
-   [1 4]];the other red log
+   [1 4]];the other red log (horizontal)
   )
 
 (defconst learn-evil-blank 7)
@@ -270,8 +270,6 @@ each one of its four blocks.")
     ;;(define-key map "n"		       'learn-evil-start-game)
     map))
 
-
-
 (defvar learn-emacs-mode-map
   (let ((map (make-sparse-keymap 'learn-emacs-mode-map)))
 
@@ -285,7 +283,6 @@ each one of its four blocks.")
     (define-key map (kbd "M-f")	         'learn-evil-move-right)
     (define-key map "n"		'learn-evil-start-game)
     map))
-
 
 (defvar learn-evil-null-map
   (let ((map (make-sparse-keymap 'learn-evil-null-map)))
