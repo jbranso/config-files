@@ -107,6 +107,7 @@
 						   (interactive)
 						   (eval-buffer nil)
 						   (learn-evil)))
+(define-key evil-normal-state-map (kbd "M") (kbd "ESC"))
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(define-key evil-normal-state-map (kbd "C-w h") 'evil-window-down)
 ;;(define-key evil-normal-state-map (kbd "C-w t") 'evil-window-up)

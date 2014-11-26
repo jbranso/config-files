@@ -21,7 +21,7 @@ DIFFEDITCMD="ediff"
 pacdiff_program="ediff"
 pacman_program="yaourt"
 
-#This automagically starts awesome after I log in
+#This automagically starts x after I log in
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 #If you're using arch linux check out https://wiki.archlinux.org/index.php/Automatic_login_to_virtual_console

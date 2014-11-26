@@ -256,6 +256,37 @@ each one of its four blocks.")
     (define-key map "^"          'learn-evil-move-beginning-of-line)
     map))
 
+(defvar learn-god-mode-map
+  (let ((map (make-sparse-keymap 'learn-god-mode-map)))
+
+    (define-key map (kbd "p")          'learn-evil-move-up)
+    (define-key map (kbd "n")	         'learn-evil-move-down)
+    (define-key map (kbd "b")          'learn-evil-move-left)
+    (define-key map (kbd "f")	         'learn-evil-move-right)
+    (define-key map (kbd "p")          'learn-evil-move-up)
+    (define-key map (kbd "n")	         'learn-evil-move-down)
+    (define-key map (kbd "b")          'learn-evil-move-left)
+    (define-key map (kbd "f")	         'learn-evil-move-right)
+    ;;(define-key map "n"		       'learn-evil-start-game)
+    map))
+
+
+
+(defvar learn-emacs-mode-map
+  (let ((map (make-sparse-keymap 'learn-emacs-mode-map)))
+
+    (define-key map (kbd "M-p")          'learn-evil-move-up)
+    (define-key map (kbd "M-n")	         'learn-evil-move-down)
+    (define-key map (kbd "M-b")          'learn-evil-move-left)
+    (define-key map (kbd "M-f")	         'learn-evil-move-right)
+    (define-key map (kbd "M-p")          'learn-evil-move-up)
+    (define-key map (kbd "M-n")	         'learn-evil-move-down)
+    (define-key map (kbd "M-b")          'learn-evil-move-left)
+    (define-key map (kbd "M-f")	         'learn-evil-move-right)
+    (define-key map "n"		'learn-evil-start-game)
+    map))
+
+
 (defvar learn-evil-null-map
   (let ((map (make-sparse-keymap 'learn-evil-null-map)))
     (define-key map "n"		'learn-evil-start-game)

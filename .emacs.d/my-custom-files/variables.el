@@ -112,8 +112,9 @@
 (semantic-mode 1)
 ;; let's define a function which adds semantic as a suggestion backend to auto complete
 ;; and hook this function to c-mode-common-hook
-(defun my:add-semantic-to-autocomplete()
-  (add-to-list 'ac-sources 'ac-source-semantic))
+(add-to-list 'ac-sources 'ac-source-semantic)
+
+(global-ede-mode t)
 
 ;; the following lines must be before init loads my hooks, because my hooks
 ;; change some viper commands based upon what file is loaded.
