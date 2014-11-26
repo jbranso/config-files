@@ -36,6 +36,19 @@
 			     ;;  auto-fill-mode is great for comments in lisp
 			     (auto-fill-mode)))
 
+;; A classic example would be lambda from various Lisp dialects that many people prefer to replace with the greek letter λ (small lambda). prettify-symbols-mode allows you to achieve this by relying on a simple mapping expressed in the form of an alist that each major mode must initialize (prettify-symbols-alist). Simply put - major modes have to provide the configuration for prettify-symbols-mode.
+
+;; Lisp modes do this via lisp--prettify-symbols-alist:
+
+;; (defconst lisp--prettify-symbols-alist
+;;   '(("lambda"  . ?λ)))
+
+;; This means that out of the box only lambda will get replaced. You can, of course, add more mappings for different major modes:
+
+;; (add-hook 'emacs-lisp-mode-hook
+;;             (lambda ()
+;;               (push '(">=" . ?≥) prettify-symbols-alist)))
+
 ;; emacs-lisp mode hook
 (add-hook 'emacs-lisp-mode-hook '(lambda ()
 				   ;;  auto-fill-mode is great for comments in lisp
@@ -55,17 +68,12 @@
 			    ;; bad things will happen. You have been warned.
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
-			    ;; refill-mode is nice, but it's not working right now.
-			    ;;(refill-mode)
+			    (refill-mode)
 			    (let ((original-command (lookup-key org-mode-map [tab])))
 			      `(lambda ()
 				 (setq yas-fallback-behavior
 				       '(apply ,original-command))
-				 (local-set-key [tab] 'yas-expand)))
-			    (setq ac-sources '(ac-source-semantic
-					       ac-source-yasnippet
-					       ac-source-ispell
-					       ac-source-ispell-fuzzy))))
+				 (local-set-key [tab] 'yas-expand)))))
 
 ;;enabling minor modes for my major modes
 ;;(add-hook '<major mode>-mode-hook '<minor mode name>-mode) this works.
@@ -82,12 +90,8 @@
 	    (visual-line-mode)
 	    (auto-fill-mode)
 	    ;;  (ac-ispell-ac-setup)
-	    (setq ac-sources '(ac-source-semantic
-			       ac-source-yasnippet
-			       ac-source-jquery
-			       ac-source-css-property
-			       ac-source-ispell
-			       ac-source-ispell-fuzzy))))
+	    (add-to-list 'ac-sources 'ac-source-jquery)
+	    (add-to-list 'ac-sources 'ac-source-css-property)))
 
 (add-hook 'c++-mode-hook
 	  '(lambda ()
@@ -98,8 +102,8 @@
 (add-hook 'c-mode-hook '(lambda ()
 			  (flyspell-prog-mode)
 			  (yas-minor-mode)
-			  (setq ac-sources '(ac-source-ispell
-					     ac-source-ispell-fuzzy))))
+			  ;;(add-to-list 'ac-sources 'ac-source-c-headers)
+			  ))
 (add-hook 'lua-mode-hook
 	  (lambda ()
 	    (flyspell-prog-mode)
@@ -121,6 +125,6 @@
 			    (setq buffer-save-without-query t)
 			    (auto-insert)))
 ;; not working
-(add-hook 'eshell-first-time-mode-hook 'viper-change-state-to-emacs)
-(add-hook 'eshell-mode-hook 'viper-change-state-to-emacs)
-(add-hook 'term-mode-hook 'viper-change-state-to-emacs)
+(evil-set-initial-state 'eshell-mode 'emacs)
+(evil-set-initial-state 'term-mode 'emacs)
+(evil-set-initial-state 'git-mode 'emacs)

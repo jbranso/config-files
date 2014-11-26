@@ -14,20 +14,12 @@
 ;;(load "evil-changes")
 
 ;;make emacs shell output color
-(ansi-color-for-comint-mode-on)
+;;(ansi-color-for-comint-mode-on)
 
 ;;web mode
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-
-;; the default file emacs opens.
-;;(find-file "/home/joshua/programming/org/gtd/gtd.org")
-(org-agenda-files (quote ("~/programming/org/gtd/gtd.org")))
-;;(org-export-backends (quote (ascii beamer html icalendar latex odt texinfo)))
-;;(org-modules
-;; (quote
-;;  (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-mouse org-rmail org-w3m org-drill)))
 
 ;; Your init file should contain only one such instance.
 ;; If there is more than one, they won't work right.

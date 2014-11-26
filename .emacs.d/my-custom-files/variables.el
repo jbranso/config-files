@@ -21,25 +21,13 @@
 ;; put numbers on the side of the editor
 (global-linum-mode 1)
 ;; this is an alternative to skeletons
-;;(require 'yasnippet)
+(require 'yasnippet)
 (setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets/")
+
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;;We'll see if this is worth it
-;; A classic example would be lambda from various Lisp dialects that many people prefer to replace with the greek letter λ (small lambda). prettify-symbols-mode allows you to achieve this by relying on a simple mapping expressed in the form of an alist that each major mode must initialize (prettify-symbols-alist). Simply put - major modes have to provide the configuration for prettify-symbols-mode.
-
-;; Lisp modes do this via lisp--prettify-symbols-alist:
-
-;; (defconst lisp--prettify-symbols-alist
-;;   '(("lambda"  . ?λ)))
-
-;; This means that out of the box only lambda will get replaced. You can, of course, add more mappings for different major modes:
-
-
-;; (add-hook 'emacs-lisp-mode-hook
-;;             (lambda ()
-;;               (push '(">=" . ?≥) prettify-symbols-alist)))
+;; this at the moment turns 'lambda' into a very cool looking symbol.
 (global-prettify-symbols-mode +1)
 
 (require 'package)
@@ -62,11 +50,6 @@
 ;; C-x jj jumps you to a bookmark
 ;; C-x pm creates a bookmark with the current file.
 (require 'bookmark+)
-;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
 
 ;; set the font size... This species a font size of 14 pt
 (set-face-attribute 'default nil :height 140)
@@ -84,27 +67,9 @@
 (setq ispell-complete-word-dictionary "usr/bin/aspell")
 ;;(setq ispell-alternate-dictionary "usr/bin/aspell")
 
-;;speed up flyspell
-(setq flyspell-issue-message-flag nil)
-
 ;;This package is quite nice. It makes whatever window that currently has focus, be the largest window!
 (require 'golden-ratio)
 (golden-ratio-mode 1)
-
-;; This next line lets org-mode and refill-mode play together.  Refill-mode automatically calls M-q
-;;(refill-paragraph), so you never have to press M-q again. However, you need this next line, tell Refill
-;;mode NOT to pull in headings into a paragraph. This not not quite working the it should be. When you press
-;;enter on a heading in org-mode, it will merge the current heading with the ones above it, into a
-;;paragraph. The setq paragraph-separate seems to be working nicely. If it seems to have fixed it, then I
-;;can delete the next line.
-;;(setq adaptive-fill-regexp   "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
-;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
-;;emacs will assume the thing that matches it is a paragraph seperator. This bit of code is really only for
-;;org-mode, and it should make org-mode and refill mode play nicely!
-;;(setq     paragraph-separate "[ 	]*$\\|^\\*+.*\|$\\*")
-(setq paragraph-separate "[ 	]*$\|^\\*+.*")
-(setq org-default-notes-file "~/.emacs.d/notes.org")
-(define-key global-map "\C-cc" 'org-capture)
 
 ;; turn on Semantic this looks at every file and remembers functions and other good stuff for you to use.
 (semantic-mode 1)
@@ -158,25 +123,26 @@
 ;; show matching parenthesis
 (show-paren-mode t)
 
-;; I'm trying to get away from ido-mode
-;; (ido-mode 1)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-create-new-buffer 'always)
-;; (setq ido-use-filename-at-point 'guess)
-;; (setq ido-auto-merge-delay-time 1.0)
-;; (setq ido-cannot-complete-command (quote ido-next-match))
-;; (setq ido-enable-regexp t)
-;; ;;this is so helpful!!!! you need to enable ido fuzzy matching
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-enable-tramp-completion t)
-;; (setq ido-ignore-buffers (quote ("\*scratch\*" "\*Completions\*" "\*Messages\*" "\*Compile-Log\*" "\*help\*" "*.vr" "*.tp" "*.toc" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\` ")))
-;; (setq ido-ignore-files (quote ("*.vr" "*.toc" "*.tp" "*.pg" "*.log" "*.ky" "*.fn" "*.cp" "*.aux" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
-;; (setq ido-max-dir-file-cache 200)
-;; (setq ido-max-work-directory-list 100)
-;; (setq ido-max-work-file-list 20)
+;; >>>> org customizations >>>>> ;;;
+
+;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;; tell emacs where my agenda file is
 (require 'org)
+
+;; This next line lets org-mode and refill-mode play together.  Refill-mode automatically calls M-q
+;;(refill-paragraph), so you never have to press M-q again.
+;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
+;;emacs will assume the thing that matches it is a paragraph seperator.
+;; if the next line is a bunch of white space OR an org heading, then it seperates paragraphs!
+(setq paragraph-separate "[ 	]*$\|^\\*+.*")
+(setq org-default-notes-file "~/.emacs.d/notes.org")
+(define-key global-map "\C-cc" 'org-capture)
+
 (setq org-agenda-files (quote ("~/programming/org/gtd/gtd.org")))
 ;; this lets you open links in org mode.
 (setq org-return-follows-link t)
@@ -184,8 +150,15 @@
 ;; a task
 (setq org-log-done 'time)
 
+(org-export-backends (quote (ascii beamer html icalendar latex odt texinfo)))
+;;(org-modules
+;;(quote
+;;(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-mouse org-rmail org-w3m org-drill)))
+
 ;; toggle follow mode in emacs agenda mode
 (setq org-agenda-start-with-follow-mode t)
+
+;; >>>>>> org customizations >>>>>>>>
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 ;; these commands are nice, but they are probably moving my cursor to random spots at times.
