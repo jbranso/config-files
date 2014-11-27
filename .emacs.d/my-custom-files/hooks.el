@@ -79,7 +79,6 @@
 	  (lambda ()
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
-	    (emmet-mode)
 	    (visual-line-mode)
 	    (auto-fill-mode)
 	    ;;  (ac-ispell-ac-setup)

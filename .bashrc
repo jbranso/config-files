@@ -62,6 +62,7 @@ alias schgrp='sudo chgrp'
 alias schmod='sudo chmod'
 alias server='ssh -p 31456 joshua@192.168.3.43'
 alias sftpserver='sftp -P 31456 joshua@192.168.3.43'
+alias purdue='sftp jbranso@mace.itap.purdue.edu'
 
 if [ $UID -ne 0 ]
 then

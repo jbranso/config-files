@@ -56,6 +56,8 @@
 ;;(define-key evil-operator-state-map "a" 'evil-first-non-blank)
 (define-key evil-operator-state-map "o" 'evil-backward-word-begin)
 (define-key evil-operator-state-map "e" 'evil-forward-word-begin)
+(define-key evil-operator-state-map "O" 'evil-backward-WORD-end)
+(define-key evil-operator-state-map "E" 'evil-forward-WORD-end)
 (define-key evil-operator-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 (define-key evil-visual-state-map "s" 'evil-forward-char)
@@ -67,6 +69,8 @@
 ;;(define-key evil-visual-state-map "a" 'evil-first-non-blank)
 (define-key evil-visual-state-map "o" 'evil-backward-word-begin)
 (define-key evil-visual-state-map "e" 'evil-forward-word-begin)
+(define-key evil-visual-state-map "O" 'evil-backward-WORD-end)
+(define-key evil-visual-state-map "E" 'evil-forward-WORD-end)
 (define-key evil-visual-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
 (define-key evil-replace-state-map (kbd "C-s") 'evil-substitute)
@@ -79,6 +83,8 @@
 ;;(define-key evil-replace-state-map "a" 'evil-first-non-blank)
 (define-key evil-replace-state-map "o" 'evil-backward-word-begin)
 (define-key evil-replace-state-map "e" 'evil-forward-word-begin)
+(define-key evil-replace-state-map "O" 'evil-backward-WORD-end)
+(define-key evil-replace-state-map "E" 'evil-forward-WORD-end)
 ;; this is sooo cool!!!!
 (define-key evil-replace-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
