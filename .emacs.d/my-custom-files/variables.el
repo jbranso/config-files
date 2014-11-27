@@ -12,17 +12,11 @@
 ;; this version of emacs does not have a package manager
 ;; this next line needs to be there! It will prompt you to update packages.
 
-;;(keyboard-translate ?\C-x ?\M-x) ;;make C-x mean M-x
-;;(keyboard-translate ?\C-t ?\C-x) ;;make C-t mean C-x
-
 ;;tool-bar-mode is nice for listing the available commands.
 (tool-bar-mode -1)
 ;;(menu-bar-mode -1)
 ;; put numbers on the side of the editor
 (global-linum-mode 1)
-;; this is an alternative to skeletons
-(require 'yasnippet)
-(setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets/")
 
 ;;change yes or no to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -30,18 +24,29 @@
 ;; this at the moment turns 'lambda' into a very cool looking symbol.
 (global-prettify-symbols-mode +1)
 
+;; >>>>> package set up >>>>>>>
 (require 'package)
+(package-initialize)
 ;; emacs loads all the packages you've installed with M-x packages-list-packages in the next line
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+	     '("melpa" . "http://melpa.org/packages/") t)
 ;; For important compatibility libraries like cl-lib
-
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-;; this sets up the packages I have installed.
-(package-initialize)
+;;; >>>> package set up >>>>>>
+					;
+;; this does not work at all.
+;;(require 'aggressive-indent)
+;;(global-aggressive-indent-mode 1)
+;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+;; this is an alternative to skeletons
+(require 'yasnippet)
+(yas-global-mode 1)
+;;(setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets/")
 
 (require 'recentf)
-(setq recentf-max-saved-items 500)
+(setq recentf-max-saved-items 200)
+
 
 (require 'helm-config)
 (helm-mode t)
@@ -91,13 +96,14 @@
 ;;make the replace cursor red
 (setq evil-replace-state-cursor '("red" box))
 (setq evil-emacs-state-cursor '("green" box))
+
+;; >>>>>> evil config >>>>>
 (require 'evil)
 (evil-mode 1)
 (load-file "~/.emacs.d/my-custom-files/evil-changes.el")
+;; >>>>> evil config >>>>>>
 
-;; this is helpful for gnus and rmail I believe.
-(setq user-full-name "Joshua Branson"
-      user-mail-address "jbranso@purdue.edu")
+;;(require 'emmet)
 
 ;;the default char count that auto-fill-mode will auto-insert a new-line
 ;;this next line should be a if windows use a larger value. If not then use this value.
@@ -149,11 +155,6 @@
 ;;this will record what time TODO items were finished and the line containing 'note will make org prompt you for a note when you finish
 ;; a task
 (setq org-log-done 'time)
-
-(org-export-backends (quote (ascii beamer html icalendar latex odt texinfo)))
-;;(org-modules
-;;(quote
-;;(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-mouse org-rmail org-w3m org-drill)))
 
 ;; toggle follow mode in emacs agenda mode
 (setq org-agenda-start-with-follow-mode t)

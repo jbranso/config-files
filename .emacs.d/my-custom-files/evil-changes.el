@@ -167,5 +167,28 @@
 (define-key evil-insert-state-map (kbd "C-c h") 'help)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
 
+(define-key evil-emacs-state-map (kbd "C-c h") 'help)
+(define-key evil-emacs-state-map (kbd "C-c d") 'dired-jump)
+(define-key evil-emacs-state-map (kbd "C-c g") 'magit-status)
+(define-key evil-emacs-state-map (kbd "C-c b") 'eval-buffer)
+(define-key evil-emacs-state-map (kbd "C-c l") 'eval-last-sexp)
+(define-key evil-emacs-state-map (kbd "C-c r") 'evil-record-macro)
+(define-key evil-emacs-state-map (kbd "C-c b") 'eval-buffer)
+(define-key evil-emacs-state-map (kbd "C-c t") '(lambda ()
+						  (interactive)
+						  (eval-buffer nil)
+						  (learn-evil)))
+(define-key evil-emacs-state-map (kbd "M") (kbd "ESC"))
+;; I would like to use these, but they do not work well with golden-ratio-mode
+;;(define-key evil-emacs-state-map (kbd "C-w h") 'evil-window-down)
+;;(define-key evil-emacs-state-map (kbd "C-w t") 'evil-window-up)
+;;(define-key evil-emacs-state-map (kbd "C-w n") 'evil-window-left)
+;;(define-key evil-emacs-state-map (kbd "C-w s") 'evil-window-right)
+(define-key evil-emacs-state-map (kbd "C-w h") 'windmove-down)
+(define-key evil-emacs-state-map (kbd "C-w t") 'windmove-up)
+(define-key evil-emacs-state-map (kbd "C-w n") 'windmove-left)
+(define-key evil-emacs-state-map (kbd "C-w s") 'windmove-right)
+
+
 (provide 'evil-changes)
 ;;; evil-changes.el ends here

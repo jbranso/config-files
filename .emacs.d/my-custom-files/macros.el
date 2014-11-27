@@ -19,17 +19,5 @@
 
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(fset 'copy-next-html-element
-   (lambda (&optional arg) "Keyboard macro."
-     (interactive "p")
-     (kmacro-exec-ring-item (quote ("ps<[a-z]nnm.sps>cc" 0 "%d")) arg)))
-
-(fset 'copy-last-html-element
-   "pb>\C-msm.ncncccn")
-
 (fset 'viper-space
-   "\C-z \C-z")
-
-;;it works when you do ce viper-copy line, but you cannot bind it to a key.
-(fset 'viper-copy-line
-   "ddcP")
+      "\C-z \C-z")

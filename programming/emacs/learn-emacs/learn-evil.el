@@ -481,6 +481,9 @@ Need to call for all in list of lines
             (if hit
                 (setf (object-pos-y shape)
                       (1- (object-pos-y shape))))
+	    ;; this next line might be a hack. The learn-evil-draw shape, should probably also redraw the
+	    ;; players shape as well.
+	    (learn-evil-draw-shape learn-evil-player-shape)
             (learn-evil-draw-shape shape)
 	    ;; if the red or blue object is not object-pos-y < learn-evil-height, then
 	    ;; the game should reset and learn-evil-lives =- 1

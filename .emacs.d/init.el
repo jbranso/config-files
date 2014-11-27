@@ -2,11 +2,10 @@
 ;; do not add "~/emacs.d" to the load path. This can apparently cause problems.
 (add-to-list 'load-path "~/.emacs.d/my-custom-files")
 (add-to-list 'load-path "~/.emacs.d/elpa")
-(add-to-list 'load-path "~/.emacs.d/modal")
 
+(load "definitions")
 (load "variables")
 (load "macros")
-(load "definitions")
 (load "hooks")
 (load "skeletons")
 (load "set-global-keys")

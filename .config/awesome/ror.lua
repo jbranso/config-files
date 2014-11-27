@@ -11,7 +11,7 @@
 -- WM_NAME(STRING) gives you the name of the selected window (usually something like the web page title
 -- for browsers, or the file name for emacs).
 table5={
-   ["Control-e"]={"emacsclient -c programming/org/gtd/gtd.org", "Emacs"},
+   ["Control-e"]={"emacs programming/org/gtd/gtd.org", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},

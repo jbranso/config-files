@@ -13,7 +13,7 @@ alias ls='ls --color=auto'
 alias lls='ls --color=auto -la'
 
 #pacman stuff
-alias pac='sudo pacmatic -Syu; yaourt -Syua'
+alias pac='sudo pacmatic -Syu; yaourt -Syua; yaourt -S firefox-nightly'
 alias pacman='pacmatic'
 alias pacs="sudo pacmatic -S"
 alias pacr="sudo pacmatic -Rs"
