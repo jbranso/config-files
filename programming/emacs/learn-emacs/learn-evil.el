@@ -710,8 +710,8 @@ learn-evil-mode keybindings:
 		     (selected-window)))
   (switch-to-buffer learn-evil-buffer-name)
   (gamegrid-kill-timer)
-  (learn-evil-mode)
   (evil-set-initial-state 'learn-evil-mode 'emacs)
+  (learn-evil-mode)
   (learn-evil-start-game))
 
 (provide 'learn-evil)
