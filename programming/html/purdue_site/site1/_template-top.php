@@ -41,6 +41,7 @@
 			    <li><a  onclick="loadAbout()">About Me</a></li>
 			    <li><a  onclick="loadSkills()">Skills</a></li>
 			    <li><a  onclick="loadExperience()">Experience</a></li>
+			    <li><a  onclick="loadHowIMade()">How I made this Site</a></li>
 			</ul>
 		    </div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->

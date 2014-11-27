@@ -86,6 +86,19 @@
      }
      history.pushState(null, null, "experience.php")
  }
+ function loadHowIMade() {
+     var xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET","howIMade.txt",true);
+     xmlhttp.send();
+     xmlhttp.onreadystatechange=function()
+     {
+	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	 {
+	     document.getElementById("content").innerHTML=xmlhttp.responseText;
+	 }
+     }
+     history.pushState(null, null, "howIMade.php")
+ }
  function swapPhoto(href) {
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET",

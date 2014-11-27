@@ -29,12 +29,10 @@ img.right {
 }
 img.left {
     float:left;
-    animation:image_grow 2s;
 }
 h1
 {
     color:#E18A07;
-    animation:text-grow 1s;
 }
 .regular
 {
