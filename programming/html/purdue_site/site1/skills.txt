@@ -4,7 +4,7 @@
 <div class="jumbotron">
 <div class="row">
 <a href="http://www.w3schools.com/default.asp" target="_blank">
-<img src="./images/html.png" width="199px;" hight="122px;" class="right" alt="GNU" id="skills_img"></a>
+<img src="./images/html.png"  class="right img-responsive" alt="GNU" id="skills_img"></a>
 <p>
 Working knowledge of HTML, CSS, jQuery, javascript, php, and MySQL. I did make this site,
 which uses twitter's <a href="http://getbootstrap.com">bootstrap</a>.<br><br>

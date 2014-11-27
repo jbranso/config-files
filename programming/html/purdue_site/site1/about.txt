@@ -4,7 +4,7 @@
 <div class="jumbotron">
 <div class="row">
 <div class="col-sm-6">
-<img src="images/me.jpg" class="right" width="242" height="203" />
+<img src="images/me.jpg" class="right img-responsive"  />
 </div>
 <div class="col-sm-6">
 <h3 style="color:#E18A07">

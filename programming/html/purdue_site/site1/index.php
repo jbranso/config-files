@@ -8,7 +8,7 @@
 	<div class="jumbotron">
 	    <div class="row">
 		<div class="col-sm-4">
-		    <img src="./images/me.jpg" class="left" width="242" height="203" />
+		    <img src="./images/me.jpg" class="left img-responsive"  />
 		</div>
 		<div class="col-sm-5">
 		    <h1 id="hello" style="color:#E18A07">

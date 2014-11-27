@@ -8,7 +8,7 @@
 	<div class="jumbotron">
 	    <div class="row">
 		<div class="col-sm-12">
-		    <img src="images/logo1.png" class="right" width="141" height="151"/>
+		    <img src="images/logo1.png" class="right img-responsive">
 		    <h3 style="color:#E18A07">I currently work for the Center for Science of Information at Purdue University.</h3>
 		    <p>
 			Recently, I have been migrating the current site to use Twitter's Bootstrap. You can look

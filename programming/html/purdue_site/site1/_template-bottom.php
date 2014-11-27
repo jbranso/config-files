@@ -14,10 +14,10 @@
 		Favorite Quotation
 	    </h6>
 	    <p>
-		Never forget what you are. <i>The rest of the world will not.</i> Wear it like armor,
-		and it can never be used to harm you.<br/>
-		-Tyrion Lannister
-		<em>Game of Thrones</em>
+		Anyone can love a thing <em>because.</em> That's as easy as putting a penny in your
+		pocket. But to love something <em>despite.</em> To know the flaws and love them too. That is
+		rare and pure and perfect.<br>
+		-Patrick Rothfuss, <a href="http://www.patrickrothfuss.com/content/books.asp">The Name Of The Wind</a>
 	    </p>
 	</div>
 	<div class="col-sm-4">
@@ -36,7 +36,7 @@
 <script>
  function loadHome() {
      var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","index.xml",true);
+     xmlhttp.open("GET","index.txt",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
@@ -45,6 +45,7 @@
 	     document.getElementById("content").innerHTML=xmlhttp.responseText;
 	 }
      }
+     history.pushState(null, null, "index.php")
  }
  function loadAbout() {
      var xmlhttp = new XMLHttpRequest();
@@ -57,6 +58,7 @@
 	     document.getElementById("content").innerHTML=xmlhttp.responseText;
 	 }
      }
+     history.pushState(null, null, "about.php")
  }
  function loadSkills() {
      var xmlhttp = new XMLHttpRequest();
@@ -69,6 +71,7 @@
 	     document.getElementById("content").innerHTML=xmlhttp.responseText;
 	 }
      }
+     history.pushState(null, null, "skills.php")
  }
  function loadExperience() {
      var xmlhttp = new XMLHttpRequest();
@@ -81,7 +84,26 @@
 	     document.getElementById("content").innerHTML=xmlhttp.responseText;
 	 }
      }
+     history.pushState(null, null, "experience.php")
  }
+ function swapPhoto(href) {
+     var xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET",
+		  location.pathname.toString().split("/").pop().split(".")[0].concat(".txt"),
+		  true);
+     xmlhttp.send();
+     xmlhttp.onreadystatechange=function()
+     {
+	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	 {
+	     document.getElementById("content").innerHTML=xmlhttp.responseText;
+	 }
+     }
+ }
+ window.addEventListener("popstate", function(e) {
+     swapPhoto(location.pathname);
+ });
+
 </script>
   </body>
 </html>
