@@ -7,7 +7,7 @@
 ;; Created: 2014-11-22
 ;; Keywords: games
 
-;; This file is part of GNU Emacs.
+;; This file is part NOT part of GNU Emacs, but it's so cool that it should be!
 
 ;; GNU Emacs is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,7 +22,10 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Commentary:
+;;; Commentary: This game was inspired by Vim adventures: http://vim-adventures.com/
+;;; However, it has the potential to be better. This game can provide an easy way for
+;;; an emacs newbie to learn out-of-the-box-commands, vim commands, god-mode commands,
+;;; dired commands, or any mode commands.
 
 ;;; Code:
 (eval-when-compile (require 'cl-lib))
