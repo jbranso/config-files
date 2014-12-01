@@ -1,18 +1,18 @@
 <div class="container footer">
     <div class="row">
 	<div class="col-sm-4">
-	    <h6>
+	    <h4>
 		<a href="work.html">Work Experience</a>
-	    </h6>
+	    </h4>
 	    <p>
 		I am currently working as a Web Production Assistant. In other words, I work with numerous
 		open source web technologies: HTML, CSS, javascript, jQuery, php, and MySQL.
 	    </p>
 	</div>
 	<div class="col-sm-4">
-	    <h6 class="brown">
+	    <h4 class="brown">
 		Favorite Quotation
-	    </h6>
+	    </h4>
 	    <p>
 		Anyone can love a thing <em>because.</em> That's as easy as putting a penny in your
 		pocket. But to love something <em>despite.</em> To know the flaws and love them too. That is
@@ -21,7 +21,7 @@
 	    </p>
 	</div>
 	<div class="col-sm-4">
-	    <a href="www.gnu.org">
+	    <a href="http://www.gnu.org">
 		<img src="images/gnu.png"" class="right img-responsive" />
 	    </a>
 	</div>
