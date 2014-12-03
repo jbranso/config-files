@@ -513,11 +513,12 @@ Need to call for all in list of lines
   (unless learn-evil-paused
     (let ((hit nil))
       (learn-evil-erase-shape learn-evil-player-shape)
-      (while (not hit)
-        (setf (object-pos-x learn-evil-player-shape) (1- (object-pos-x learn-evil-player-shape)))
-        (setq hit (learn-evil-test-shape learn-evil-player-shape)))
-      (setf (object-pos-x learn-evil-player-shape) (1+ (object-pos-x learn-evil-player-shape)))
-      (learn-evil-draw-shape learn-evil-player-shape))))
+      (setf learn-evil-player-orinigal-position (object-pos-x learn-evil-player-shape))
+      (setf (object-pos-x learn-evil-player-shape) 0)
+      (setq hit (learn-evil-test-shape learn-evil-player-shape))
+      (if hit
+	  (setf (object-pos-x learn-evil-player-shape) learn-evil-player-orinigal-position)))
+    (learn-evil-draw-shape learn-evil-player-shape)))
 
 (defun learn-evil-move-end-of-line ()
   "Drop the shape to the end of the line."

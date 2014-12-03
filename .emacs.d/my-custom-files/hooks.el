@@ -27,6 +27,7 @@
 ;; lisp mode hook
 (add-hook 'lisp-mode-hook '(lambda ()
 			     ;;  auto-fill-mode is great for comments in lisp
+			     (git-gutter-mode)
 			     (auto-fill-mode)))
 
 ;; A classic example would be lambda from various Lisp dialects that many people prefer to replace with the greek letter λ (small lambda). prettify-symbols-mode allows you to achieve this by relying on a simple mapping expressed in the form of an alist that each major mode must initialize (prettify-symbols-alist). Simply put - major modes have to provide the configuration for prettify-symbols-mode.
@@ -45,6 +46,7 @@
 ;; emacs-lisp mode hook
 (add-hook 'emacs-lisp-mode-hook '(lambda ()
 				   ;;  auto-fill-mode is great for comments in lisp
+				   (git-gutter-mode)
 				   (auto-fill-mode)))
 
 ;; make org mode start up with auto fill mode

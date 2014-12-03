@@ -91,6 +91,9 @@
 (require 'golden-ratio)
 (golden-ratio-mode 1)
 
+(require 'git-gutter)
+(git-gutter:linum-setup)
+
 ;; turn on Semantic this looks at every file and remembers functions and other good stuff for you to use.
 (semantic-mode 1)
 ;; let's define a function which adds semantic as a suggestion backend to auto complete
