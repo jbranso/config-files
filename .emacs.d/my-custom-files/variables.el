@@ -84,7 +84,8 @@
 		   ac-source-ispell
 		   ac-source-ispell-fuzzy))
 
-(setq ispell-complete-word-dictionary "usr/bin/aspell")
+;; using aspell may be causing problems
+;;(setq ispell-complete-word-dictionary "usr/bin/aspell")
 ;;(setq ispell-alternate-dictionary "usr/bin/aspell")
 
 ;;This package is quite nice. It makes whatever window that currently has focus, be the largest window!
@@ -163,7 +164,8 @@
 ;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
 ;;emacs will assume the thing that matches it is a paragraph seperator.
 ;; if the next line is a bunch of white space OR an org heading, then it seperates paragraphs!
-(setq paragraph-separate "[ 	]*$\|^\\*+.*")
+(setq paragraph-separate "[ 	]*$\\|^\\*+.*")
+(setq paragraph-start   "\f\\|[ 	]*$\f\\|[ 	]\\**$")
 (setq org-default-notes-file "~/.emacs.d/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
 

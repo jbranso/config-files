@@ -627,6 +627,13 @@ awful.rules.rules = {
 	opacity = 0.9,
      },
    },
+   { rule = { class = "workrave" },
+     properties = {
+	hidden = true,
+	opacity = 0,
+	below = true,
+     },
+   },
    { rule = { class = "Emacs" },
      properties = {
 	opacity = 0.95

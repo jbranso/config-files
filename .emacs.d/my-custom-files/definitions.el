@@ -32,6 +32,12 @@
 	(file2 (pop command-line-args-left)))
     (ediff file1 file2)))
 
+;; save the current file in the dev server to the soihub live server
+(defun save-current-buffer-to-live-server ()
+  (interactive)
+  ;;do some more stuff
+  )
+
 ;;(add-to-list 'command-switch-alist '("-diff" . command-line-diff))
 
 ;;this function creates a hot-key M-x gtd that will open my gtd file
