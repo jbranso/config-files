@@ -144,3 +144,4 @@ videos/
 /.emacs.d/.#tramp
 /programming/emacs/learn-emacs/todo.org
 /.emacs.d/el-get/
+/.#.recentf

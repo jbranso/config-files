@@ -115,10 +115,18 @@
 
 ;;auto-insert, specifes default stuff to load into the emacs file when you create a file.
 ;; setq buffer-save... will let you save every buffer you open without asking if you want to save it.
-(add-hook 'find-file-hook (lambda ()
-			    (setq buffer-save-without-query t)
-			    (auto-insert)))
+(add-hook 'find-file-hook '(lambda ()
+			     (setq buffer-save-without-query t)
+			     (auto-insert)))
 ;; not working
 (evil-set-initial-state 'eshell-mode 'emacs)
 (evil-set-initial-state 'term-mode 'emacs)
 (evil-set-initial-state 'git-mode 'emacs)
+
+;; this is in the right direction, but I the evil-normal-state-exit hook is not working to make m go back to
+;;being the regular key it is supposed to be.
+;;(add-hook 'evil-normal-state-entry-hook '(lambda ()
+;;					  (define-key key-translation-map "M" (kbd "ESC"))))
+
+;;(add-hook 'evil-normal-state-exit-hook '(lambda ()
+;;					  (define-key key-translation-map "M" "M")))

@@ -62,7 +62,6 @@
 (require 'recentf)
 (setq recentf-max-saved-items 200)
 
-
 (require 'helm-config)
 (helm-mode t)
 
@@ -109,7 +108,6 @@
 ;;(setq viper-mode t)
 ;;(require 'viper)
 
-
 (setq evil-find-skip-newlines t)
 (setq evil-move-cursor-back nil)
 ;;make the replace cursor red
@@ -148,6 +146,17 @@
 ;; show matching parenthesis
 (show-paren-mode t)
 
+;; >>>> multiple cursors stuff >>>>
+
+(require 'multiple-cursors)
+
+;; set a cursor on marked text that spans multiple lines
+;; I can also probably change the following into viper specific commands for visual mode
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-c>") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
 ;; >>>> org customizations >>>>> ;;;
 
 ;;default keybindings for org-mode. I added these myself. They make any file that ends in .org, be opened in org mode.
@@ -164,8 +173,8 @@
 ;; this next lines specifes the regexp that seperates paragraphs. If something matches this regexp, then,
 ;;emacs will assume the thing that matches it is a paragraph seperator.
 ;; if the next line is a bunch of white space OR an org heading, then it seperates paragraphs!
-(setq paragraph-separate "[ 	]*$\\|^\\*+.*")
-(setq paragraph-start   "\f\\|[ 	]*$\f\\|[ 	]\\**$")
+;;(setq paragraph-separate "[ 	]*$\\|^\\*+.*")
+;;(setq paragraph-start   "\f\\|[ 	]*$\f\\|[ 	]\\**$")
 (setq org-default-notes-file "~/.emacs.d/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
 
@@ -183,6 +192,7 @@
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 ;; these commands are nice, but they are probably moving my cursor to random spots at times.
+
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
