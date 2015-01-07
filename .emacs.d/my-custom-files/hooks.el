@@ -99,19 +99,26 @@
 			  ;;(add-to-list 'ac-sources 'ac-source-c-headers)
 			  ))
 (add-hook 'lua-mode-hook
-	  (lambda ()
-	    (flyspell-prog-mode)
-	    ))
+	  '(lambda ()
+	     (flyspell-prog-mode)
+	     ))
 
 (add-hook 'python-mode-hook
-	  (lambda ()
-	    (flyspell-prog-mode)
-	    ))
+	  '(lambda ()
+	     (flyspell-prog-mode)
+	     ))
 
 (add-hook 'bash-mode-hook
-	  (lambda ()
-	    (flyspell-prog-mode)
-	    ))
+	  '(lambda ()
+	     (flyspell-prog-mode)
+	     ))
+
+(add-hook 'text-mode-hook
+	  '(lambda ()
+	     (refill-mode)
+	     (flyspell-mode)
+	     (set-fill-column 70)
+	     (ruler-mode)))
 
 ;;auto-insert, specifes default stuff to load into the emacs file when you create a file.
 ;; setq buffer-save... will let you save every buffer you open without asking if you want to save it.

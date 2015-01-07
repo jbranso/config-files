@@ -145,3 +145,7 @@ videos/
 /programming/emacs/learn-emacs/todo.org
 /.emacs.d/el-get/
 /.#.recentf
+/.java/
+/.config/wpa_supplicant/
+/.config/monitors.xml
+/.config/caja/

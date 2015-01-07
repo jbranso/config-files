@@ -9,10 +9,10 @@
 
 (define-abbrev-table 'c-mode-abbrev-table
   '(
-    ("else" "" else-statement 0)
-    ("elseif" "" elseif-statement 0)
-    ("ifst" "" if-statement 0)
-   ))
+    ;;    ("else" "" else-statement 0)
+    ;;    ("elseif" "" elseif-statement 0)
+    ;;    ("ifst" "" if-statement 0)
+    ))
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
@@ -66,7 +66,9 @@
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
-(define-abbrev-table 'text-mode-abbrev-table '())
+(define-abbrev-table 'text-mode-abbrev-table
+  '(
+    ))
 
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
@@ -74,27 +76,27 @@
 
 (define-abbrev-table 'web-mode-abbrev-table
   '(
-    ("ael" "" a-element 0)
-    ("bodyel" "" body-element 0)
-    ("br" "" br-element 3)
-    ("divel" "" div-element 2)
-    ("elseif" "" elseif-statement 0)
-    ("h1" "" h1-element 0)
-    ("h2" "" h2-element 0)
-    ("h3" "" h3-element 0)
-    ("h4" "" h4-element 0)
-    ("h5" "" h5-element 0)
-    ("h6" "" h6-element 0)
-    ("h7" "" h7-element 0)
-    ("h8" "" h8-element 0)
-    ("html" "" html-element 0)
-    ("ifst" "" if-statement 1)
-    ("meta" "" meta-element 0)
-    ("p" "" p-element 1)
-    ("pel" "" p-element 1)
-    ("ptr" "" ptr-statement 0)
-    ("script" "" script-element 1)
-    ("span" "" span-element 0)
-    ("title" "" title-element 0)
-    ("while" "" while-statement 0)
-   ))
+    ;;("ael" "" a-element 0)
+    ;;("bodyel" "" body-element 0)
+    ;;("br" "" br-element 3)
+    ;;("divel" "" div-element 2)
+    ;;("elseif" "" elseif-statement 0)
+    ;;("h1" "" h1-element 0)
+    ;;("h2" "" h2-element 0)
+    ;;("h3" "" h3-element 0)
+    ;;("h4" "" h4-element 0)
+    ;;("h5" "" h5-element 0)
+    ;;("h6" "" h6-element 0)
+    ;;("h7" "" h7-element 0)
+    ;;("h8" "" h8-element 0)
+    ;;("html" "" html-element 0)
+    ;;("ifst" "" if-statement 1)
+    ;;("meta" "" meta-element 0)
+    ;;("p" "" p-element 1)
+    ;;("pel" "" p-element 1)
+    ;;("ptr" "" ptr-statement 0)
+    ;;("script" "" script-element 1)
+    ;;("span" "" span-element 0)
+    ;;("title" "" title-element 0)
+    ;;("while" "" while-statement 0)
+    ))

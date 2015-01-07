@@ -15,8 +15,15 @@
 
 xmodmap ~/.xmodmaprc
 
+#This next line crashes don't put it here.
+#/usr/bin/lxpolkit
+
+
 #run awesome
 exec awesome
+
+#run mate
+#exec mate-session
 
 #run gnome
 #exec gnome-session

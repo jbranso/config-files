@@ -30,8 +30,11 @@
 (define-key evil-insert-state-map
   (kbd "ESC") 'evil-normal-state)
 
-(define-key evil-motion-state-map "s" 'evil-forward-char)
+
+(define-key evil-motion-state-map "k" 'kill-line)
 (define-key evil-motion-state-map "n" 'evil-backward-char)
+(define-key evil-motion-state-map "s" 'evil-forward-char)
+(define-key evil-motion-state-map "s" 'evil-forward-char)
 (define-key evil-motion-state-map "t" 'evil-previous-line)
 (define-key evil-motion-state-map "h" 'evil-next-line)
 (define-key evil-motion-state-map "u" 'evil-end-of-line)
@@ -88,8 +91,10 @@
 ;; this is sooo cool!!!!
 (define-key evil-replace-state-map (kbd "<backspace>") 'ace-jump-char-mode)
 
-(define-key evil-normal-state-map (kbd "C-s") 'evil-substitute)
+
+(define-key evil-normal-state-map (kbd "I") 'evil-append)
 (define-key evil-normal-state-map "$" 'ispell-word)
+(define-key evil-normal-state-map (kbd "C-s") 'evil-substitute)
 (define-key evil-normal-state-map "s" 'evil-forward-char)
 (define-key evil-normal-state-map "n" 'evil-backward-char)
 (define-key evil-normal-state-map "t" 'evil-previous-line)
@@ -115,6 +120,8 @@
 						   (eval-buffer nil)
 						   (learn-evil)))
 (define-key evil-normal-state-map (kbd "M") (kbd "ESC"))
+(define-key evil-normal-state-map (kbd "C-c C-x r") 'refill-mode)
+
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(define-key evil-normal-state-map (kbd "C-w h") 'evil-window-down)
 ;;(define-key evil-normal-state-map (kbd "C-w t") 'evil-window-up)

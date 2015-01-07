@@ -4,6 +4,11 @@
 (add-to-list 'load-path "~/.emacs.d/elpa")
 
 (load "definitions")
+(add-to-list 'load-path "~/.emacs.d/my-custom-files/auto-compile")
+(setq load-prefer-newer t)
+(require 'auto-compile)
+(auto-compile-on-load-mode 1)
+(auto-compile-on-save-mode 1)
 (load "variables")
 (load "macros")
 (load "hooks")

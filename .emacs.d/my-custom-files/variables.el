@@ -24,6 +24,14 @@
 ;; this at the moment turns 'lambda' into a very cool looking symbol.
 (global-prettify-symbols-mode +1)
 
+;;when you press C-v or C-F, scroll one complete page down. Do not scroll nearly one page down.
+(setq next-screen-context-lines -1)
+
+
+;; >>>>>> auto-compile set up
+
+
+
 ;; >>>>> package set up >>>>>>>
 (require 'package)
 (package-initialize)
@@ -153,8 +161,8 @@
 ;; set a cursor on marked text that spans multiple lines
 ;; I can also probably change the following into viper specific commands for visual mode
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-c>") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; >>>> org customizations >>>>> ;;;
