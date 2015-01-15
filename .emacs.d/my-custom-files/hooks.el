@@ -22,7 +22,8 @@
 	     (indent-region (point-min) (point-max))))
 ;; if the current buffer that is being saved is an .el file, then eval it, and byte recomplile all my start
 ;; up emacs files
-(add-hook 'after-save-hook 'byte-recompile-emacs-config-files)
+;; This next line should not be needed since, I've downloaded autocompile.
+;;(add-hook 'after-save-hook 'byte-recompile-emacs-config-files)
 
 ;; lisp mode hook
 (add-hook 'lisp-mode-hook '(lambda ()
@@ -33,7 +34,6 @@
 ;; A classic example would be lambda from various Lisp dialects that many people prefer to replace with the greek letter λ (small lambda). prettify-symbols-mode allows you to achieve this by relying on a simple mapping expressed in the form of an alist that each major mode must initialize (prettify-symbols-alist). Simply put - major modes have to provide the configuration for prettify-symbols-mode.
 
 ;; Lisp modes do this via lisp--prettify-symbols-alist:
-
 ;; (defconst lisp--prettify-symbols-alist
 ;;   '(("lambda"  . ?λ)))
 
@@ -47,7 +47,9 @@
 (add-hook 'emacs-lisp-mode-hook '(lambda ()
 				   ;;  auto-fill-mode is great for comments in lisp
 				   (git-gutter-mode)
-				   (auto-fill-mode)))
+				   (auto-fill-mode)
+				   (push '(">=" . ?≥) prettify-symbols-alist)))
+
 
 ;; make org mode start up with auto fill mode
 (add-hook 'org-mode-hook '(lambda ()
@@ -64,6 +66,26 @@
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
 			    ;;https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 			    (refill-mode)
+			    (push '(">=" . ?≥) prettify-symbols-alist)
+			    (push '("<=" . ?≤) prettify-symbols-alist)
+			    (push '("\\geq" . ?≥) prettify-symbols-alist)
+			    (push '("\\leq" . ?≤) prettify-symbols-alist)
+			    (push '("\\neg" . ?¬) prettify-symbols-alist)
+			    (push '("\\rightarrow" . ?→) prettify-symbols-alist)
+			    (push '("\\leftarrow" . ?←) prettify-symbols-alist)
+			    (push '("\\infty" . ?∞) prettify-symbols-alist)
+			    (push '("-->" . ?→) prettify-symbols-alist)
+			    (push '("<--" . ?←) prettify-symbols-alist)
+			    (push '("\\exists" . ?∃) prettify-symbols-alist)
+			    (push '("\\nexists" . ?∄) prettify-symbols-alist)
+			    (push '("\\forall" . ?∀) prettify-symbols-alist)
+			    (push '("\\or" . ?∨) prettify-symbols-alist)
+			    (push '("\\and" . ?∧) prettify-symbols-alist)
+			    (push '(":)" . ?☺) prettify-symbols-alist)
+			    (push '("):" . ?☹) prettify-symbols-alist)
+			    (push '(":D" . ?☺) prettify-symbols-alist)
+			    (push '("^_^" . ?☻) prettify-symbols-alist)
+
 			    (let ((original-command (lookup-key org-mode-map [tab])))
 			      `(lambda ()
 				 (setq yas-fallback-behavior
@@ -72,16 +94,21 @@
 
 ;;enabling minor modes for my major modes
 ;;(add-hook '<major mode>-mode-hook '<minor mode name>-mode) this works.
-(add-hook 'cc-mode-hook 'yas-minor-mode)
-(add-hook 'c++-mode-hook 'yas-minor-mode)
-(add-hook 'python-mode-hook 'yas-minor-mode)
-(add-hook 'lua-mode-hook 'yas-minor-mode)
+(add-hook 'cc-mode-hook '(lambda () (interactive)
+			   (push '("function" . ?𝆑) prettify-symbols-alist)
+			   (push '(">=" . ?≥) prettify-symbols-alist)
+			   (push '("<=" . ?≤) prettify-symbols-alist)
+			   yas-minor-mode))
 
 (add-hook 'web-mode-hook
 	  (lambda ()
 	    (flyspell-prog-mode)
 	    (yas-minor-mode)
+	    (push '("function" . ?𝆑) prettify-symbols-alist)
+	    (push '(">=" . ?≥) prettify-symbols-alist)
+	    (push '("<=" . ?≤) prettify-symbols-alist)
 	    (visual-line-mode)
+
 	    (auto-fill-mode)
 	    ;;  (ac-ispell-ac-setup)
 	    (add-to-list 'ac-sources 'ac-source-jquery)
@@ -96,28 +123,48 @@
 (add-hook 'c-mode-hook '(lambda ()
 			  (flyspell-prog-mode)
 			  (yas-minor-mode)
+			  (push '("function" . ?𝆑) prettify-symbols-alist)
+			  (push '(">=" . ?≥) prettify-symbols-alist)
+			  (push '("<=" . ?≤) prettify-symbols-alist)
 			  ;;(add-to-list 'ac-sources 'ac-source-c-headers)
 			  ))
 (add-hook 'lua-mode-hook
 	  '(lambda ()
 	     (flyspell-prog-mode)
+	     (yas-minor-mode)
+	     (push '("function" . ?𝆑) prettify-symbols-alist)
+	     (push '(">=" . ?≥) prettify-symbols-alist)
+	     (push '("<=" . ?≤) prettify-symbols-alist)
 	     ))
 
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (flyspell-prog-mode)
+	     (yas-minor-mode)
+	     (push '("function" . ?𝆑) prettify-symbols-alist)
+	     (push '(">=" . ?≥) prettify-symbols-alist)
+	     (push '("<=" . ?≤) prettify-symbols-alist)
 	     ))
 
 (add-hook 'bash-mode-hook
 	  '(lambda ()
 	     (flyspell-prog-mode)
+	     (push '("function" . ?𝆑) prettify-symbols-alist)
+	     (push '(">=" . ?≥) prettify-symbols-alist)
+	     (push '("<=" . ?≤) prettify-symbols-alist)
 	     ))
 
 (add-hook 'text-mode-hook
 	  '(lambda ()
 	     (refill-mode)
 	     (flyspell-mode)
-	     (set-fill-column 70)
+	     (set-fill-column 108)
+	     (push '(":)" . ?☺) prettify-symbols-alist)
+	     (push '("):" . ?☹) prettify-symbols-alist)
+	     (push '(":D" . ?☺) prettify-symbols-alist)
+	     (push '("^_^" . ?☻) prettify-symbols-alist)
+	     (push '(">=" . ?≥) prettify-symbols-alist)
+	     (push '("<=" . ?≤) prettify-symbols-alist)
 	     (ruler-mode)))
 
 ;;auto-insert, specifes default stuff to load into the emacs file when you create a file.
@@ -125,10 +172,6 @@
 (add-hook 'find-file-hook '(lambda ()
 			     (setq buffer-save-without-query t)
 			     (auto-insert)))
-;; not working
-(evil-set-initial-state 'eshell-mode 'emacs)
-(evil-set-initial-state 'term-mode 'emacs)
-(evil-set-initial-state 'git-mode 'emacs)
 
 ;; this is in the right direction, but I the evil-normal-state-exit hook is not working to make m go back to
 ;;being the regular key it is supposed to be.

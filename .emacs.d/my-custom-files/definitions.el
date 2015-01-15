@@ -20,11 +20,12 @@
      ;; For important compatibility libraries like cl-lib
      (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)))
 
-(defun byte-recompile-emacs-config-files () (interactive)
-       (when (string-match "\\.el$" (buffer-file-name) 0)
-	 ;;eval the current buffer
-	 (byte-compile-file "/home/joshua/.emacs.d/init.el")
-	 (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files")))
+;;delete this after febuary.
+;;(defun byte-recompile-emacs-config-files () (interactive)
+;;       (when (string-match "\\.el$" (buffer-file-name) 0)
+;;eval the current buffer
+;;	 (byte-compile-file "/home/joshua/.emacs.d/init.el")
+;;	 (byte-recompile-directory "/home/joshua/.emacs.d/my-custom-files")))
 
 ;; Usage: emacs -diff file1 file2
 (defun command-line-diff (switch)

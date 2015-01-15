@@ -115,10 +115,6 @@
 (define-key evil-normal-state-map (kbd "C-c l") 'eval-last-sexp)
 (define-key evil-normal-state-map (kbd "C-c r") 'evil-record-macro)
 (define-key evil-normal-state-map (kbd "C-c b") 'eval-buffer)
-(define-key evil-normal-state-map (kbd "C-c t") '(lambda ()
-						   (interactive)
-						   (eval-buffer nil)
-						   (learn-evil)))
 (define-key evil-normal-state-map (kbd "M") (kbd "ESC"))
 
 ;; I would like to use these, but they do not work well with golden-ratio-mode
@@ -186,10 +182,6 @@
 (define-key evil-emacs-state-map (kbd "C-c l") 'eval-last-sexp)
 (define-key evil-emacs-state-map (kbd "C-c r") 'evil-record-macro)
 (define-key evil-emacs-state-map (kbd "C-c b") 'eval-buffer)
-(define-key evil-emacs-state-map (kbd "C-c t") '(lambda ()
-						  (interactive)
-						  (eval-buffer nil)
-						  (learn-evil)))
 (define-key evil-emacs-state-map (kbd "M") (kbd "ESC"))
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(define-key evil-emacs-state-map (kbd "C-w h") 'evil-window-down)
@@ -204,8 +196,10 @@
 ;; Set the default state for various buffers
 (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'snake-mode 'emacs)
+(evil-set-initial-state 'eshell-mode 'emacs)
+(evil-set-initial-state 'term-mode 'emacs)
+;;This next one is working or not?
 (evil-set-initial-state 'git-mode 'emacs)
-
 
 (provide 'evil-changes)
 ;;; evil-changes.el ends here

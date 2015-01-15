@@ -22,15 +22,14 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; this at the moment turns 'lambda' into a very cool looking symbol.
+;;I'd like to be able to turn --> and ==> into cool looking arrows. as well as :) into smileys.
 (global-prettify-symbols-mode +1)
 
 ;;when you press C-v or C-F, scroll one complete page down. Do not scroll nearly one page down.
 (setq next-screen-context-lines -1)
 
-
-;; >>>>>> auto-compile set up
-
-
+;; set the font size... This species a font size of 14 pt
+(set-face-attribute 'default nil :height 140)
 
 ;; >>>>> package set up >>>>>>>
 (require 'package)
@@ -56,7 +55,6 @@
 (el-get 'sync)
 ;;;; >>>>> set up elget >>>>>
 
-					;
 ;; this does not work at all.
 ;;(require 'aggressive-indent)
 ;;(global-aggressive-indent-mode 1)
@@ -78,16 +76,12 @@
 ;; C-x pm creates a bookmark with the current file.
 (require 'bookmark+)
 
-;; set the font size... This species a font size of 14 pt
-(set-face-attribute 'default nil :height 140)
-
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 ;; This next line is sooo helpful!!!! It makes tab try to auto-complete for you.
 (ac-set-trigger-key "TAB")
-(setq ac-sources '(ac-source-semantic
-		   ac-source-yasnippet
+(setq ac-sources '(ac-source-yasnippet
 		   ac-source-ispell
 		   ac-source-ispell-fuzzy))
 
@@ -108,13 +102,8 @@
 ;; and hook this function to c-mode-common-hook
 (add-to-list 'ac-sources 'ac-source-semantic)
 
-(global-ede-mode t)
-
-;; the following lines must be before init loads my hooks, because my hooks
-;; change some viper commands based upon what file is loaded.
-;; For example, my org-mode-hook binds "ct" to (org-todo).
-;;(setq viper-mode t)
-;;(require 'viper)
+;; Since I'm not using this, why enable it?
+;;(global-ede-mode t)
 
 (setq evil-find-skip-newlines t)
 (setq evil-move-cursor-back nil)
@@ -128,12 +117,12 @@
 (load-file "~/.emacs.d/my-custom-files/evil-changes.el")
 ;; >>>>> evil config >>>>>>
 
+;;Since I'm not using it, let's not add it.
 ;;(require 'emmet)
 
-;;the default char count that auto-fill-mode will auto-insert a new-line
-;;this next line should be a if windows use a larger value. If not then use this value.
-(setq-default fill-column 108)
-(setq next-line-add-newlines t)
+;;the default char count that auto-fill-mode will auto-insert a new-line this next line should be a if
+;;windows use a larger value. If not then use this value.  (setq-default fill-column 108) (setq
+;;next-line-add-newlines t)
 
 ;;yes I do want to kill this shell, even though it has a process attached to it.
 (setq kill-buffer-query-functions
@@ -155,7 +144,6 @@
 (show-paren-mode t)
 
 ;; >>>> multiple cursors stuff >>>>
-
 (require 'multiple-cursors)
 
 ;; set a cursor on marked text that spans multiple lines

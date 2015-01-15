@@ -9,13 +9,13 @@
 (require 'auto-compile)
 (auto-compile-on-load-mode 1)
 (auto-compile-on-save-mode 1)
-(load "variables")
+(load "variables") ;; (load "variables") loads evil-changes, which is
+;; my evil config file.
 (load "macros")
 (load "hooks")
 (load "skeletons")
 (load "set-global-keys")
 ;;(load "gnus-set-up.el")
-;;(load "evil-changes")
 
 ;;make emacs shell output color
 ;;(ansi-color-for-comint-mode-on)
