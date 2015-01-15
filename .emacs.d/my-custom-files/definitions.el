@@ -38,8 +38,6 @@
   ;;do some more stuff
   )
 
-;;(add-to-list 'command-switch-alist '("-diff" . command-line-diff))
-
 ;;this function creates a hot-key M-x gtd that will open my gtd file
 (defun gtd ()
   "This command opens ~/things_to_do.org"
@@ -98,11 +96,6 @@
   (interactive)
   (find-file "~/.emacs.d/my-custom-files/abbrev_defs"))
 
-(defun modal-emacs ()
-  "command opens ~/.emacs.d/modal/modal-changes.el"
-  (interactive)
-  (find-file "~/.emacs.d/modal/modal-changes.el"))
-
 (defun evil ()
   "this command opens ~/.emacs.d/my-custom-files/evil-changes.el"
   (interactive)
@@ -131,6 +124,7 @@
 ;; you can use start-process like this:
 ;; (start-process NAME BUFFER PROGRAM &rest PROGRAM-ARGS))
 
+;;What does this do?
 (defun th-rename-tramp-buffer ()
   (when (file-remote-p (buffer-file-name))
     (rename-buffer

@@ -120,7 +120,6 @@
 						   (eval-buffer nil)
 						   (learn-evil)))
 (define-key evil-normal-state-map (kbd "M") (kbd "ESC"))
-(define-key evil-normal-state-map (kbd "C-c C-x r") 'refill-mode)
 
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(define-key evil-normal-state-map (kbd "C-w h") 'evil-window-down)
@@ -179,7 +178,6 @@
 (define-key evil-insert-state-map (kbd "C-s") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-c h") 'help)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
-(define-key evil-insert-state-map (kbd "C-c C-x r") 'refill-mode)
 
 (define-key evil-emacs-state-map (kbd "C-c h") 'help)
 (define-key evil-emacs-state-map (kbd "C-c d") 'dired-jump)
@@ -202,6 +200,11 @@
 (define-key evil-emacs-state-map (kbd "C-w t") 'windmove-up)
 (define-key evil-emacs-state-map (kbd "C-w n") 'windmove-left)
 (define-key evil-emacs-state-map (kbd "C-w s") 'windmove-right)
+
+;; Set the default state for various buffers
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'snake-mode 'emacs)
+(evil-set-initial-state 'git-mode 'emacs)
 
 
 (provide 'evil-changes)
