@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: br
-# key:<br
+# name: divci
+# key: <divci
 # binding: direct-keybinding
 # --
-<br />
+<div id="$1" class="$2">$0</div>

@@ -179,6 +179,7 @@
 (define-key evil-insert-state-map (kbd "C-s") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-c h") 'help)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
+(define-key evil-insert-state-map (kbd "C-c C-x r") 'refill-mode)
 
 (define-key evil-emacs-state-map (kbd "C-c h") 'help)
 (define-key evil-emacs-state-map (kbd "C-c d") 'dired-jump)
