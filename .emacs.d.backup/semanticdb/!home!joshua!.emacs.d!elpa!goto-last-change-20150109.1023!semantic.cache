@@ -1,0 +1,16 @@
+;; Object goto-last-change-20150109.1023/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "goto-last-change-20150109.1023/"
+  :tables
+  (list
+    (semanticdb-table "goto-last-change-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "goto-last-change-autoloads.el"
+      :pointmax 305
+      :fsize 822
+      :lastmodtime '(21687 57807 404915 644000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!goto-last-change-20150109.1023!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

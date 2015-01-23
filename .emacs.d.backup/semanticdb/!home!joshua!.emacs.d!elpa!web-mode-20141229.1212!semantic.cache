@@ -1,0 +1,16 @@
+;; Object web-mode-20141229.1212/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "web-mode-20141229.1212/"
+  :tables
+  (list
+    (semanticdb-table "web-mode-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "web-mode-autoloads.el"
+      :pointmax 289
+      :fsize 510
+      :lastmodtime '(21666 56245 206905 438000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!web-mode-20141229.1212!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

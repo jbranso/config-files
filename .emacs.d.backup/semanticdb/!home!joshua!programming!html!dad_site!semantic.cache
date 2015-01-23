@@ -1,0 +1,18 @@
+;; Object dad_site/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "dad_site/"
+  :tables (list 
+   (semanticdb-table "index.html"
+    :major-mode 'html-mode
+    :tags nil
+    :file "index.html"
+    :pointmax 10087
+    :fsize 10085
+    :lastmodtime '(21383 23730 743887 329000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!joshua!programming!html!dad_site!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

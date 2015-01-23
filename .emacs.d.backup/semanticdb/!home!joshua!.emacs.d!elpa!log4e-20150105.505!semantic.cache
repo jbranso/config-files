@@ -1,0 +1,16 @@
+;; Object log4e-20150105.505/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "log4e-20150105.505/"
+  :tables
+  (list
+    (semanticdb-table "log4e-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "log4e-autoloads.el"
+      :pointmax 283
+      :fsize 360
+      :lastmodtime '(21677 38225 830599 985000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!log4e-20150105.505!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

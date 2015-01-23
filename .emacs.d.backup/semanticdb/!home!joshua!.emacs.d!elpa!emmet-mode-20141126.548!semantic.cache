@@ -1,0 +1,16 @@
+;; Object emmet-mode-20141126.548/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "emmet-mode-20141126.548/"
+  :tables
+  (list
+    (semanticdb-table "emmet-mode-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "emmet-mode-autoloads.el"
+      :pointmax 3117
+      :fsize 3116
+      :lastmodtime '(21622 3699 584352 137000)
+      :unmatched-syntax '((semantic-list 3038 . 3108) (semantic-list 2966 . 3036) (semantic-list 2865 . 2964) (semantic-list 2666 . 2863) (semantic-list 2605 . 2664) (semantic-list 2150 . 2603) (semantic-list 1836 . 2148) (semantic-list 1484 . 1554) (semantic-list 1412 . 1482) (semantic-list 1311 . 1410) (semantic-list 1112 . 1309) (semantic-list 1051 . 1110) (semantic-list 596 . 1049) (semantic-list 282 . 594) (semantic-list 80 . 150))))
+  :file "!home!joshua!.emacs.d!elpa!emmet-mode-20141126.548!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

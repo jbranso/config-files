@@ -1,0 +1,24 @@
+;; Object play/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "play/"
+  :tables
+  (list
+    (semanticdb-table "blackbox.el.gz"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "blackbox.el.gz"
+      :pointmax 15184
+      :fsize 4906
+      :lastmodtime '(21291 53104 0 0)
+      :unmatched-syntax '((semantic-list 15137 . 15156) (semantic-list 14973 . 15135) (semantic-list 14896 . 14971) (semantic-list 14825 . 14894) (semantic-list 14545 . 14823) (semantic-list 14397 . 14543) (semantic-list 13684 . 14395) (semantic-list 13265 . 13682) (semantic-list 12180 . 13263) (semantic-list 11852 . 12178) (semantic-list 11632 . 11850) (semantic-list 11551 . 11630) (semantic-list 11471 . 11549) (semantic-list 11298 . 11469) (semantic-list 11122 . 11296) (semantic-list 10961 . 11120) (semantic-list 10801 . 10959) (semantic-list 10471 . 10799) (semantic-list 10225 . 10469) (semantic-list 4940 . 10223) (semantic-list 4460 . 4923) (semantic-list 3655 . 4393) (semantic-list 3484 . 3652) (semantic-list 3174 . 3236) (semantic-list 3123 . 3172) (semantic-list 3083 . 3121) (semantic-list 3041 . 3081) (semantic-list 2999 . 3039) (semantic-list 2956 . 2997)))
+    (semanticdb-table "gamegrid.el.gz"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "gamegrid.el.gz"
+      :pointmax 19138
+      :fsize 5361
+      :lastmodtime '(21291 53104 0 0)
+      :unmatched-syntax '((semantic-list 19091 . 19110) (semantic-list 18241 . 19008) (semantic-list 16853 . 18239) (semantic-list 15370 . 16851) (semantic-list 15335 . 15368) (semantic-list 13163 . 14183) (semantic-list 12892 . 13081) (semantic-list 12606 . 12890) (semantic-list 12339 . 12604) (semantic-list 12057 . 12257) (semantic-list 11386 . 12055) (semantic-list 11178 . 11384) (semantic-list 11103 . 11176) (semantic-list 10914 . 11021) (semantic-list 10625 . 10912) (semantic-list 10064 . 10622) (semantic-list 9073 . 10062) (semantic-list 9002 . 9071) (semantic-list 8739 . 9000) (semantic-list 8380 . 8737) (semantic-list 8127 . 8378) (semantic-list 7721 . 8125) (semantic-list 7560 . 7719) (semantic-list 7302 . 7558) (semantic-list 6873 . 7300) (semantic-list 6135 . 6871) (semantic-list 5919 . 6133) (semantic-list 5650 . 5917) (semantic-list 5521 . 5648) (semantic-list 5262 . 5519) (semantic-list 5124 . 5260) (semantic-list 4796 . 5122) (semantic-list 4663 . 4794) (semantic-list 4472 . 4661) (semantic-list 4264 . 4390) (semantic-list 4136 . 4262) (semantic-list 4027 . 4134) (semantic-list 3561 . 3945) (semantic-list 2973 . 3559) (semantic-list 2936 . 2971) (semantic-list 2819 . 2854) (semantic-list 2785 . 2818) (semantic-list 2751 . 2784) (semantic-list 2613 . 2669) (semantic-list 2561 . 2612) (semantic-list 2511 . 2560) (semantic-list 2458 . 2510) (semantic-list 2406 . 2457) (semantic-list 2361 . 2405) (semantic-list 2316 . 2360) (semantic-list 2263 . 2315) (semantic-list 2211 . 2262) (semantic-list 2156 . 2210) (semantic-list 2112 . 2155) (semantic-list 2063 . 2111) (semantic-list 2013 . 2062) (semantic-list 1784 . 2011) (semantic-list 1709 . 1782) (semantic-list 1675 . 1707) (semantic-list 1641 . 1673) (semantic-list 1608 . 1639) (semantic-list 1572 . 1606) (semantic-list 1543 . 1570) (semantic-list 1516 . 1541) (semantic-list 1482 . 1515) (semantic-list 1449 . 1481) (semantic-list 1410 . 1447) (semantic-list 1365 . 1408) (semantic-list 1294 . 1364) (semantic-list 1180 . 1292) (semantic-list 1105 . 1178) (semantic-list 1028 . 1103))))
+  :file "!usr!share!emacs!24.4!lisp!play!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

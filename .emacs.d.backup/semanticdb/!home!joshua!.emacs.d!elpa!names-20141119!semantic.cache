@@ -1,0 +1,16 @@
+;; Object names-20141119/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "names-20141119/"
+  :tables
+  (list
+    (semanticdb-table "names-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "names-autoloads.el"
+      :pointmax 283
+      :fsize 2959
+      :lastmodtime '(21622 28575 829338 271000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!names-20141119!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

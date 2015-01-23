@@ -1,0 +1,16 @@
+;; Object aggressive-indent-20141130.315/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "aggressive-indent-20141130.315/"
+  :tables
+  (list
+    (semanticdb-table "aggressive-indent-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "aggressive-indent-autoloads.el"
+      :pointmax 307
+      :fsize 2355
+      :lastmodtime '(21631 8793 253292 343000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!aggressive-indent-20141130.315!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

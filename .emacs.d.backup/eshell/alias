@@ -1,0 +1,17 @@
+alias emacs find-file $1
+alias clear recenter 0
+alias clua cd /home/joshua/programming/lua
+alias cpython cd /home/joshua/programming/python
+alias chtml cd /home/joshua/programming/html
+alias cdesktop cd /home/joshua/Desktop
+alias cdownloads cd /home/joshua/downloads
+alias cvideos cd /home/joshua/videos
+alias chtml cd /home/joshua/programming/html
+alias cbash cd /home/joshua/programming/bash
+alias cmanuals cd /home/joshua/manuals
+alias cheatsheats cd /home/joshua/manuals/cheatsheats
+alias cawesome cd /home/joshua/.config/awesome/
+alias pac sudo pacmatic -Syu; yaourt -Syua
+alias abbrev find-file /home/joshua/.emacs.d/eshell/alias
+alias github /home/joshua/programming/bash/github.bash
+alias test-awesome start-process test-awesome /home/joshua/programming/bash/test-awesome.bash

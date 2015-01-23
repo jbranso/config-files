@@ -1,0 +1,16 @@
+;; Object gnuplot-mode-20131203.2159/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "gnuplot-mode-20131203.2159/"
+  :tables
+  (list
+    (semanticdb-table "gnuplot-mode-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "gnuplot-mode-autoloads.el"
+      :pointmax 297
+      :fsize 1173
+      :lastmodtime '(21677 38232 420628 983000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!gnuplot-mode-20131203.2159!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

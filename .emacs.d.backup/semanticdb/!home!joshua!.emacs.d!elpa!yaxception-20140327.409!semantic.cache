@@ -1,0 +1,16 @@
+;; Object yaxception-20140327.409/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "yaxception-20140327.409/"
+  :tables
+  (list
+    (semanticdb-table "yaxception-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "yaxception-autoloads.el"
+      :pointmax 293
+      :fsize 373
+      :lastmodtime '(21622 4438 285120 260000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!yaxception-20140327.409!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

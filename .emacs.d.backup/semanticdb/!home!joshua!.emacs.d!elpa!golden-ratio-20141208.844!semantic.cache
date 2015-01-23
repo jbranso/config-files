@@ -1,0 +1,16 @@
+;; Object golden-ratio-20141208.844/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "golden-ratio-20141208.844/"
+  :tables
+  (list
+    (semanticdb-table "golden-ratio-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "golden-ratio-autoloads.el"
+      :pointmax 297
+      :fsize 1051
+      :lastmodtime '(21641 59189 85589 552000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!golden-ratio-20141208.844!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

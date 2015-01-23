@@ -1,0 +1,128 @@
+git status
+new file:   fancysite/images/title_background.png
+github.bash 
+sudo git commit -m 'added stuff'
+git create mode 100755 programming/html/fancysite/skills.html
+github
+colorprofile/
+ls
+rm -r bootstrap-3.1.1/
+ls
+unzip bootstrap-3.1.1-dist.zip 
+ls
+rm bootstrap-3.1.1-dist.zip 
+ls
+cd bootstrap-3.1.1-dist/
+ls
+cd ..
+mv bootstrap-3.1.1-dist/ bootstrap/
+ls
+cd bootstrap/
+ls
+cd css/
+ls
+cd 
+chtml 
+ls
+ls
+cd bootstrap/
+ls
+cd ..
+cd bootstrap/css/
+ls
+ls
+ls
+ls
+cp index.html contact.html 
+cp index.html about.html 
+ls
+ls
+chtml 
+cd dad_site/
+ls
+cp index.html contact.html 
+cp index.html about.html 
+cp index.html about.html 
+cp index.html contact.html 
+git status
+Untracked files:
+github
+error: insufficient permission for adding an object to repository database .git/objects
+github.bash 
+cd
+git add programming/bash/ programming/c/ programming/html/bootstrap/ programming/html/dad_site/
+sudo git add programming/bash/ programming/c/ programming/html/bootstrap/ programming/html/dad_site/
+git status
+colorprofile/
+git status
+git status
+../.config/libreoffice/
+git status
+../gtk-2.0/
+git status
+Untracked files:
+ch
+cd
+git status
+../autostart/
+git status
+.cache/
+cd
+git status
+.cache/
+git status
+../.emacs.d/#ede-projects.el#
+cd
+git status
+git add .bash_profile
+git add .bash_his
+git add .bash_history 
+git add .bash_logout 
+git add .emacs.d/hooks.el .emacs.d/semanticdb/ .emacs.d/skeletons.el .emacs.d/viper
+git add colorprofile/
+git add manuals/systemd
+github
+/home/joshua/programming/bash:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
+sudo git commit -m 'my script does not seem to be working'
+create mode 100755 programming/c/random
+github
+ls
+cd .emacs.d/
+ls
+rm viper.el 
+cat tramp 
+cd
+test-awesome
+ls
+ls
+cd ..
+ls
+ls .emacs.d/
+ls .emacs.d/
+cd .emacs.d/
+ls
+cd model/
+ls
+cd .emacs.d/model/
+ls
+pwd
+ls
+cd
+ls
+cd .emacs.d/
+ls
+cat gtd.org 
+rm gtd.org
+ls
+cat init.el 
+ls
+rm init.el~
+ls
+rm bookmarks\~
+ls
+cd my-custom-files/
+ls
+ls
+cd
+cd .emacs.d/my-custom-files/
+ls

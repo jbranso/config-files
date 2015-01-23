@@ -1,0 +1,16 @@
+;; Object bookmark+-20141205.319/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bookmark+-20141205.319/"
+  :tables
+  (list
+    (semanticdb-table "bookmark+-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "bookmark+-autoloads.el"
+      :pointmax 291
+      :fsize 25048
+      :lastmodtime '(21641 59202 428360 674000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!bookmark+-20141205.319!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

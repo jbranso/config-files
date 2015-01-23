@@ -1,0 +1,16 @@
+;; Object evil-20141228.901/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "evil-20141228.901/"
+  :tables
+  (list
+    (semanticdb-table "evil-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "evil-autoloads.el"
+      :pointmax 281
+      :fsize 1451
+      :lastmodtime '(21666 56280 207049 852000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!evil-20141228.901!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

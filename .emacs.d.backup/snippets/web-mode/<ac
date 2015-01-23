@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: <ac
+# key: <ac
+# binding: direct-keybinding
+# --
+<a class="$1" href="$2">$0</a>

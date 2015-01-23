@@ -1,0 +1,45 @@
+* Tasks
+** TODO This is my first note.[2014-11-05 Wed] [[file:~/.emacs.d/my-custom-files/variables.el::(define-key%20global-map%20"\C-cc"%20'org-capture)][file:~/.emacs.d/my-custom-files/variables.el::(define-key global-map "\C-cc"
+   'org-capture)]]
+** TODO This is my second task.
+   [2014-11-05 Wed]
+   [[file:~/.emacs.d/my-custom-files/variables.el::'(progn]]
+** TODO check out git-timemachine
+   p takes you to a previous version
+   n takes you to the next historical version
+   w copies the hash of the current version
+   q exits the buffer.
+   [2014-11-07 Fri] [[file:~/documents/things_to_do.org::*IN][IN]]
+** TODO When opening magit-status from with gtd.org and commiting and pushing changes,
+   then when I type q, to close the magit buffer, what was the magit buffer turns into
+   the scratch buffer. So I end up with having 2 frames. One is my org buffer and the
+   other is the scratch buffer. I would like to be able to type q on magit, and move to
+   my org buffer.
+   [2014-11-09 Sun] [[file:~/.emacs.d/gtd.org]]
+** TODO make emmet mode even more awesome... Suppore you make something like this:
+   ul>li*8 and then press C-j to expand. emment mode auto inserts that stuff and puts
+   your cursor right <li>HERE</li>. When you press tab it should put you in the next one.
+   [2014-11-10 Mon]
+   [[file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/education.php::<li></li>]]
+** TODO Turn keycord on in vi-insert mode. You can make "pp" mean paste.
+   [2014-11-12 Wed]
+   [[file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/education.php::<li><a%20href%3D"http://learninghub.soihub.org/"%20Online%20Learning%20HUB</li>][file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/education.php::<li><a href="http://learninghub.soihub.org/" Online Learning HUB</li>]]
+** TODO look at the emacs manual for paragraphs. It has explanations for what constitutes a paragraph. The variables 'paragraph-start' and 'paragraph-seperate' should be really useful in working with org buffers.
+   [2014-11-12 Wed]
+   [[info:emacs#Paragraphs]]
+** TODO consider using god-mode for emacs...it's like evil, but for emacs....
+   http://chrisdone.com/posts/god-mode
+   [2014-11-14 Fri]
+   [[file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/research-teams.php::target%3D"_new"><img%20src%3D"img/icon-pdf.gif"%20alt%3D""%20align%3D"absmiddle"%20/>%202013%20Annual%20Report</a>%20(pdf)][file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/research-teams.php::target="_new"><img src="img/icon-pdf.gif" alt="" align="absmiddle" /> 2013 Annual Report</a> (pdf)]]
+** TODO make vim emacs-mode be god-mode.
+   [2014-11-14 Fri]
+   [[file:/ssh:jbranso@locutus.cs.purdue.edu:/home/isi-wiki/dev/soihub-home-page/research-teams.php::<?php]]
+** TODO / which is /dev/sda2 is 70% full. It has 12 of 18 gigs used.
+   [2014-11-17 Mon]
+   [[info:coreutils#Mode%20Structure][info:coreutils#Mode Structure]]
+** TODO extend evil, by adding in (evil-set-initial-state 'emacs 'game-modes) to all the built in emacs games.
+   [2014-11-25 Tue]
+   [[file:~/.emacs.d/games/snake-scores::1%20joshua%20Joshua%20Branson%20<jbranso@purdue.edu>%20Tue%20Nov%2025%2014:39:50%202014][file:~/.emacs.d/games/snake-scores::1 joshua Joshua Branson <jbranso@purdue.edu> Tue Nov 25 14:39:50 2014]]
+** TODO in org mode, <return> should be bound to C-j when the user is on a heading.
+   [2014-11-26 Wed]
+   [[file:~/programming/emacs/learn-emacs/todo.org::*suppose%20the%20user's%20score%20is%203.%20If%20the%20user%20presses%20n,%20his%20score%20is%20still%203.%20It%20should%20be][suppose the user's score is 3. If the user presses n, his score is still 3. It should be]]

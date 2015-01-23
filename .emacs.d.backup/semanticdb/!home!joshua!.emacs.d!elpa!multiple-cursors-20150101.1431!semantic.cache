@@ -1,0 +1,16 @@
+;; Object multiple-cursors-20150101.1431/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "multiple-cursors-20150101.1431/"
+  :tables
+  (list
+    (semanticdb-table "multiple-cursors-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "multiple-cursors-autoloads.el"
+      :pointmax 305
+      :fsize 7827
+      :lastmodtime '(21677 38224 400593 627000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!multiple-cursors-20150101.1431!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

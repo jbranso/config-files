@@ -1,0 +1,43 @@
+;; Object takehometest/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "takehometest/"
+  :tables
+  (list
+    (semanticdb-table "order.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "order.js"
+      :pointmax 752
+      :fsize 751
+      :lastmodtime '(21684 10822 82596 93000)
+      :unmatched-syntax '((SEMICOLON 435 . 436) (VARIABLE 589 . 594) (FUNCTION 603 . 611) (PAREN_BLOCK 612 . 625) (BRACE_BLOCK 13 . 15) (SEMICOLON 15 . 16) (VARIABLE 368 . 373) (FUNCTION 383 . 391) (PAREN_BLOCK 392 . 402)))
+    (semanticdb-table "jstest.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "jstest.js"
+      :pointmax 1448
+      :fsize 1447
+      :lastmodtime '(21682 34818 124330 906000)
+      :unmatched-syntax '((VARIABLE 1287 . 1293) (PAREN_BLOCK 1293 . 1317) (VARIABLE 1015 . 1020) (PAREN_BLOCK 1026 . 1164) (VARIABLE 943 . 948) (PAREN_BLOCK 955 . 963) (PAREN_BLOCK 879 . 890) (COMMA 859 . 860) (PAREN_BLOCK 454 . 460) (COMMA 431 . 432) (PAREN_BLOCK 418 . 428) (COMMA 359 . 360) (PAREN_BLOCK 223 . 235) (COMMA 203 . 204) (PAREN_BLOCK 194 . 200)))
+    (semanticdb-table "orders.json"
+      :major-mode 'js-mode
+      :tags nil
+      :file "orders.json"
+      :pointmax 161
+      :fsize 160
+      :lastmodtime '(21682 34818 124330 906000)
+      :unmatched-syntax '((BRACK_BLOCK 1 . 160)))
+    (semanticdb-table "ensure.js"
+      :major-mode 'js-mode
+      :tags 
+        '( ("ensure" function (:arguments 
+              ( ("e" variable nil (reparse-symbol FormalParameterList) [17 18])
+                ("r" variable nil (reparse-symbol FormalParameterList) [19 20]))              ) nil [1 200]))          
+      :file "ensure.js"
+      :pointmax 244
+      :fsize 243
+      :lastmodtime '(21682 34818 124330 906000)
+      :unmatched-syntax '((VAR 200 . 203) (PAREN_BLOCK 214 . 220))))
+  :file "!home!joshua!programming!takehome!takehometest!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,16 @@
+;; Object diff-hl-20150102.1543/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "diff-hl-20150102.1543/"
+  :tables
+  (list
+    (semanticdb-table "diff-hl-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "diff-hl-autoloads.el"
+      :pointmax 287
+      :fsize 3784
+      :lastmodtime '(21677 38251 7374 816000)
+      :unmatched-syntax nil))
+  :file "!home!joshua!.emacs.d!elpa!diff-hl-20150102.1543!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
