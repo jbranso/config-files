@@ -32,5 +32,6 @@
 (autoload 'turn-on-css-eldoc "css-eldoc")
 (add-hook 'css-mode-hook 'turn-on-css-eldoc)
 
+(add-to-list 'ac-sourcs 'ac-source-css-property)
 
 (provide 'init-css)

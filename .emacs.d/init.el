@@ -1,70 +1,146 @@
-;; this is useful for creating custum lisp filse
-;; do not add "~/emacs.d" to the load path. This can apparently cause problems.
-(add-to-list 'load-path "~/.emacs.d/my-custom-files")
-(add-to-list 'load-path "~/.emacs.d/elpa")
 
-(load "definitions")
-(add-to-list 'load-path "~/.emacs.d/my-custom-files/auto-compile")
-(setq load-prefer-newer t)
-(require 'auto-compile)
-(auto-compile-on-load-mode 1)
-(auto-compile-on-save-mode 1)
-(load "variables") ;; (load "variables") loads evil-changes, which is
-;; my evil config file.
-(load "macros")
-(load "hooks")
-(load "skeletons")
-(load "set-global-keys")
-;;(load "gnus-set-up.el")
+;;; This file bootstraps the configuration, which is divided into
+;;; a number of other files.
 
-;;make emacs shell output color
-;;(ansi-color-for-comint-mode-on)
+(let ((minver "23.3"))
+  (when (version<= emacs-version "23.1")
+    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
+(when (version<= emacs-version "24")
+  (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
-;;web mode
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-benchmarking) ;; Measure startup time
 
-;; Your init file should contain only one such instance.
-;; If there is more than one, they won't work right.
-;;'(hl-line ((t (:background "dim gray"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(adaptive-fill-regexp "[ 	]*\\([-–!|#%;>·•‣⁃◦]+[ 	]*\\)*")
- '(ansi-color-names-vector
-   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
- '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes
-   (quote
-    ("9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" default)))
- '(electric-pair-mode t)
- '(global-hl-line-mode t)
- '(semantic-new-buffer-setup-functions
-   (quote
-    ((emacs-lisp-mode . semantic-default-scheme-setup)
-     (c-mode . semantic-default-c-setup)
-     (c++-mode . semantic-default-c-setup)
-     (html-mode . semantic-default-html-setup)
-     (java-mode . wisent-java-default-setup)
-     (js-mode . wisent-javascript-setup-parser)
-     (python-mode . wisent-python-default-setup)
-     (scheme-mode . semantic-default-scheme-setup)
-     (srecode-template-mode . srecode-template-setup-parser)
-     (texinfo-mode . semantic-default-texi-setup)
-     (makefile-automake-mode . semantic-default-make-setup)
-     (makefile-gmake-mode . semantic-default-make-setup)
-     (makefile-makepp-mode . semantic-default-make-setup)
-     (makefile-bsdmake-mode . semantic-default-make-setup)
-     (makefile-imake-mode . semantic-default-make-setup)
-     (makefile-mode . semantic-default-make-setup))))
- '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
+(defconst *is-a-mac* (eq system-type 'darwin))
+
+;;----------------------------------------------------------------------------
+;; Bootstrap config
+;;----------------------------------------------------------------------------
+(require 'init-compat)
+(require 'init-utils)
+(require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
+(require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-exec-path) ;; Set up $PATH
+
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-preload-local.el"
+;;----------------------------------------------------------------------------
+(require 'init-preload-local nil t)
+
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+
+(require-package 'wgrep)
+(require-package 'project-local-variables)
+(require-package 'diminish)
+(require-package 'scratch)
+(require-package 'mwe-log-commands)
+
+(require 'init-frame-hooks)
+(require 'init-xterm)
+;;(require 'init-themes)
+(require 'init-osx-keys)
+(require 'init-gui-frames)
+(require 'init-proxies)
+(require 'init-dired)
+(require 'init-isearch)
+(require 'init-grep)
+(require 'init-uniquify)
+(require 'init-ibuffer)
+(require 'init-flycheck)
+
+(require 'init-recentf)
+(require 'init-ido)
+(require 'init-hippie-expand)
+(require 'init-cedet)
+(require 'init-yasnippet)
+(require 'init-windows)
+(require 'init-sessions)
+(require 'init-fonts)
+
+(require 'init-editing-utils)
+(require 'init-evil)
+
+(require 'init-vc)
+(require 'init-darcs)
+(require 'init-git)
+(require 'init-github)
+
+(require 'init-compile)
+(require 'init-crontab)
+(require 'init-textile)
+
+(require 'init-javascript)
+(require 'init-org)
+(require 'init-text)
+(require 'init-html)
+(require 'init-css)
+(require 'init-python-mode)
+(require 'init-sql)
+
+(require 'init-paredit)
+(require 'init-lisp)
+(require 'init-clojure)
+(when (>= emacs-major-version 24)
+  (require 'init-clojure-cider))
+(require 'init-common-lisp)
+
+(when *spell-check-support-enabled*
+  (require 'init-spelling))
+
+(require 'init-misc)
+
+(require 'init-dash)
+(require 'init-ledger)
+;; Extra packages which don't require any configuration
+
+(require-package 'gnuplot)
+(require-package 'lua-mode)
+(require-package 'htmlize)
+(require-package 'dsvn)
+(when *is-a-mac*
+  (require-package 'osx-location))
+(require-package 'regex-tool)
+
+;;----------------------------------------------------------------------------
+;; Allow access from emacsclient
+;;----------------------------------------------------------------------------
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;;----------------------------------------------------------------------------
+;; Variables configured via the interactive 'customize' interface
+;;----------------------------------------------------------------------------
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-local" containing personal settings
+;;----------------------------------------------------------------------------
+(when (file-exists-p (expand-file-name "init-local.el" user-emacs-directory))
+  (error "Please move init-local.el to ~/.emacs.d/lisp"))
+(require 'init-local nil t)
+
+
+;;----------------------------------------------------------------------------
+;; Locales (setting them earlier in this file doesn't work in X)
+;;----------------------------------------------------------------------------
+(require 'init-locales)
+
+(add-hook 'after-init-hook
+          (lambda ()
+            (message "init completed in %.2fms"
+                     (sanityinc/time-subtract-millis after-init-time before-init-time))))
+
+
+(provide 'init)
+
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:

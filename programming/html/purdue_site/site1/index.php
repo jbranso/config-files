@@ -1,10 +1,7 @@
 <?php include "_template-top.php" ?>
-
 <div id="content">
-
     <div class="container">
 	<br/><br/>
-
 	<div class="jumbotron">
 	    <div class="row">
 		<div class="col-sm-4">
@@ -41,5 +38,6 @@
 <br/><br/>
 
 </div>
+
 
 <?php include "_template-bottom.php" ?>

@@ -1,0 +1,46 @@
+body {
+    background-color:rgb(10,90,90);
+
+}
+
+p.red {
+    background-color: red;
+    color:white;
+}
+
+.green {
+    color: white;
+    background-color:green;
+}
+
+.text-center {
+    text-align:center;
+}
+
+.text-right {
+    text-align:right;
+}
+
+.text-left {
+    text-align:left;
+}
+
+.text-justify {
+    text-align:text-justify;
+}
+
+.overline {
+    text-decoration:overline;
+}
+
+.line-through {
+    text-decoration:line-through;
+}
+
+.underline {
+    text-decoration:under-line;
+}
+
+.line-height {
+    line-height:120%;
+}

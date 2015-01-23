@@ -29,13 +29,24 @@
 </div>
 <br/><br/><br/>
 <!-- Bootstrap core JavaScript
-================================================== -->
+        ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="bs3.3/js/bootstrap.min.js"></script>
 <script>
  function loadHome() {
-     var xmlhttp = new XMLHttpRequest();
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
+
+var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","index.txt",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
@@ -98,6 +109,19 @@
 	 }
      }
      history.pushState(null, null, "howIMade.php")
+ }
+ function loadPortfolio() {
+     var xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET","portfolio.txt",true);
+     xmlhttp.send();
+     xmlhttp.onreadystatechange=function()
+     {
+	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	 {
+	     document.getElementById("content").innerHTML=xmlhttp.responseText;
+	 }
+     }
+     history.pushState(null, null, "portfolio.php")
  }
  function swapPhoto(href) {
      var xmlhttp = new XMLHttpRequest();

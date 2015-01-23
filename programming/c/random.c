@@ -1,35 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
+#include "math.h"
+#include "dumb.h"
+#include "void.h"
 
-void change (char studentID)
-{
-  printf ("the length of studentId == %d\n", strlen (&studentID));
-}
 
 int main ()
 {
-  /* char array[12] = "12345678901"; */
+  int   a = 8;
+  int b = 3;
 
-  /* change (*array); */
+  char string = 'hello';
 
-  /* int w = 4; */
-  /* int x = 13; */
+  int sumAB = sum (a,b);
 
-  /* int *y; */
-  /* int *z; */
+  int diffAB = diff (a, b);
 
-  /* y = &x; */
-  /* z = &w; */
+  double meanAB = mean (a, b);
 
-  /*  *z = *y % *z; */
+  printf ("The sum is: %d, the difference is: %d, the mean is: %.2f\n", sumAB, diffAB, meanAB);
 
-  /* z = &x; */
-  /* y = z; */
-  /* printf ("%d\n", *y); */
+  printf("C is %s\n", string);
 
-  char array[5] = {0};
+  hello_world ();
 
-  printf ("array[0] = %d array[1] = %d array[2] = %d\n", array[0], array[1], array[2]);
+  swap (&a, &b);
+
+  print_nonsense ();
+
   return 0;
 }

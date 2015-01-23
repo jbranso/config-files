@@ -11,7 +11,6 @@
 
 (add-hook 'web-mode-hook (lambda ()
                            (flyspell-prog-mode)
-                           (yas-minor-mode)
                            (yas-reload-all)
                            (push '("function" . ?𝆑) prettify-symbols-alist)
                            (push '(">=" . ?≥) prettify-symbols-alist)

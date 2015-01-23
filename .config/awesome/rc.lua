@@ -319,6 +319,7 @@ globalkeys = awful.util.table.join(
 			     "cte     copies the current (this) html element\n" ..
 			     "gg      go to line numeber\n" ..
 			     "gc      go to char\n" ..
+                             "gf      find file at point\n" ..
 			     "SPC     go to work\n" ..
 			     "mnt     mark next like this\n" ..
 			     "mpt     mark previous like this\n" ..
