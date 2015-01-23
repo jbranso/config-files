@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Starter Template for Bootstrap</title>
+	<title>Joshua Branson</title>
 	<!-- Custom styles for this template -->
 	<!-- Bootstrap core CSS -->
 	<link href="bs3.3/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,7 @@
     </head>
     <body>
 	<div class="container regular">
+            <br/>
 	    <nav id="navbar" class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		    <!-- brand and toggle get grouped for better mobile display -->

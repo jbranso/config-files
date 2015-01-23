@@ -22,7 +22,7 @@
 	</div>
 	<div class="col-sm-4">
 	    <a href="http://www.gnu.org">
-		<img src="images/gnu.png"" class="right img-responsive" />
+		<img src="images/gnu.png" class="center img-responsive" style="max-height:125px; max-width:125px;" />
 	    </a>
 	</div>
     </div>
@@ -35,6 +35,8 @@
 <script src="bs3.3/js/bootstrap.min.js"></script>
 <script>
  function loadHome() {
+     // reload the navbar, so the navbar does not stay collapsed
+     // this is a hack. I need to find a way to tell javascript to just collapse the navbar
      var xmlhttpnavbar = new XMLHttpRequest();
      xmlhttpnavbar.open("GET","navbar.txt",true);
      xmlhttpnavbar.send();
@@ -45,7 +47,6 @@
 	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
 	 }
      }
-
 var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","index.txt",true);
      xmlhttp.send();
@@ -59,6 +60,16 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "index.php")
  }
  function loadAbout() {
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","about.txt",true);
      xmlhttp.send();
@@ -72,6 +83,17 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "about.php")
  }
  function loadSkills() {
+
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","skills.txt",true);
      xmlhttp.send();
@@ -85,7 +107,17 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "skills.php")
  }
  function loadExperience() {
-     var xmlhttp = new XMLHttpRequest();
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
+    var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","experience.txt",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
@@ -98,6 +130,16 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "experience.php")
  }
  function loadHowIMade() {
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","howIMade.txt",true);
      xmlhttp.send();
@@ -111,6 +153,16 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "howIMade.php")
  }
  function loadPortfolio() {
+     var xmlhttpnavbar = new XMLHttpRequest();
+     xmlhttpnavbar.open("GET","navbar.txt",true);
+     xmlhttpnavbar.send();
+     xmlhttpnavbar.onreadystatechange=function()
+     {
+	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
+	 {
+	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
+	 }
+     }
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","portfolio.txt",true);
      xmlhttp.send();

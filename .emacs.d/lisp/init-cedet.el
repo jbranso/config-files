@@ -127,8 +127,7 @@
                ac-source-yasnippet
                ac-source-dictionary
                ac-source-words-in-buffer
-               ac-source-html-tag
-               ac-source-html-attribute
+               ac-source-semantic
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 

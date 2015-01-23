@@ -30,6 +30,11 @@ img.right {
 img.left {
     float:left;
 }
+img.center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
 h1
 {
     color:#E18A07;
