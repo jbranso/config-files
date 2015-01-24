@@ -152,6 +152,7 @@
 (define-key evil-insert-state-map (kbd "<return>") 'newline-and-indent)
 (define-key evil-insert-state-map (kbd "C-h") 'next-line)
 (define-key evil-insert-state-map (kbd "C-t") 'previous-line)
+(define-key evil-insert-state-map (kbd "C-n") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-s") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
 

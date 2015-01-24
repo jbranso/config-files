@@ -41,11 +41,5 @@ vicious.cache(vicious.widgets.mem)
 vicious.register(memwidget, vicious.widgets.mem, " mem $1%", 13)
 
 -- create some launchers to add to the wibox...
-firefox_launcher     = awful.widget.launcher({ image = configd .. "icons/Faenza/apps/48/firefox.png",
-					       command = "firefox" })
-emacs_launcher       = awful.widget.launcher({ image = configd .. "icons/Faenza/apps/48/emacs.png",
-					       command = "emacs" })
-thunderbird_launcher = awful.widget.launcher({ image = configd .. "icons/Faenza/apps/48/thunderbird.png",
-					       command = "thunderbird" })
-thunar_launcher      = awful.widget.launcher({ image = configd .. "icons/Faenza/apps/48/libreoffice-writer.png",
-					       command = "libreoffice --writer" })
+thunar_launcher      = awful.widget.launcher({ image = configd .. "icons/Faenza/actions/48/stock_home.png",
+					       command = "thunar" })

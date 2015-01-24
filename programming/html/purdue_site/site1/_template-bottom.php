@@ -13,6 +13,11 @@
                         <img src="images/linked-in.png" style="max-width:20px;max-height:20px;" />
                     </a>
                 </div>
+                <div class="col-xs-1">
+                    <a href="mailto:jbranso@purdue.edu" target="_blank">
+                        <img alt="email-icon" src="images/email-icon.png"/>
+                    </a>
+                </div>
             </div>
         </div><!-- col-sm-6 -->
 	<div class="col-sm-6">
