@@ -27,22 +27,21 @@
 		<div class="container-fluid">
 		    <!-- brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 			    <span class="sr-only">toggle navigation</span>
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"  onclick="loadHome()">Home</a>
+			<a class="navbar-brand"  onclick="loadHome()">Joshua Branson</a>
 		    </div>
 
 		    <!-- collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav">
 			    <li><a  onclick="loadAbout()">About Me</a></li>
 			    <li><a  onclick="loadSkills()">Skills</a></li>
 			    <li><a  onclick="loadExperience()">Experience</a></li>
-			    <li><a  onclick="loadHowIMade()">How I Made This Site</a></li>
 			    <li><a  onclick="loadPortfolio()">Portfolio</a></li>
 			</ul>
 		    </div><!-- /.navbar-collapse -->

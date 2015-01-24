@@ -1,53 +1,36 @@
 <div class="container footer">
     <div class="row">
-	<div class="col-sm-4">
-	    <h4>
-		<a href="work.html">Work Experience</a>
-	    </h4>
-	    <p>
-		I am currently working as a Web Production Assistant. In other words, I work with numerous
-		open source web technologies: HTML, CSS, javascript, jQuery, php, and MySQL.
-	    </p>
-	</div>
-	<div class="col-sm-4">
-	    <h4 class="brown">
-		Favorite Quotation
-	    </h4>
-	    <p>
-		Anyone can love a thing <em>because.</em> That's as easy as putting a penny in your
-		pocket. But to love something <em>despite.</em> To know the flaws and love them too. That is
-		rare and pure and perfect.<br>
-		-Patrick Rothfuss, <a href="http://www.patrickrothfuss.com/content/books.asp">The Name Of The Wind</a>
-	    </p>
-	</div>
-	<div class="col-sm-4">
-	    <a href="http://www.gnu.org">
-		<img src="images/gnu.png" class="center img-responsive" style="max-height:125px; max-width:125px;" />
-	    </a>
+	<div class="col-sm-6">
+	    <h4 class="brown">Connect with Me</a></h4>
+            <div class="row">
+                <div class="col-xs-1">
+                    <a href="https://github.com/jbranso" target="_blank">
+                        <img src="images/github.png" style="max-width:20px;max-height:20px;" />
+                    </a>
+                </div>
+                <div class="col-xs-1">
+                    <a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile" target="_blank">
+                        <img src="images/linked-in.png" style="max-width:20px;max-height:20px;" />
+                    </a>
+                </div>
+            </div>
+        </div><!-- col-sm-6 -->
+	<div class="col-sm-6">
+	        <h4 class="brown">What runs this site</h4>
+                This is powered by some pretty amazing web technologies including bootstrap, jQuery, ajax, php, html5, and javascript!
 	</div>
     </div>
-</div>
-<br/><br/><br/>
-<!-- Bootstrap core JavaScript
+    <br/><br/><br/>
+    <!-- Bootstrap core JavaScript
         ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="bs3.3/js/bootstrap.min.js"></script>
 <script>
  function loadHome() {
-     // reload the navbar, so the navbar does not stay collapsed
-     // this is a hack. I need to find a way to tell javascript to just collapse the navbar
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
-var xmlhttp = new XMLHttpRequest();
+     // collapse the navbar when the user selects home
+     $("#navbar-collapse").collapse("hide");
+     var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","index.txt",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
@@ -60,18 +43,9 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "index.php")
  }
  function loadAbout() {
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
+     $("#navbar-collapse").collapse("hide");
      var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","about.txt",true);
+     xmlhttp.open("GET","about.html",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
@@ -83,19 +57,9 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "about.php")
  }
  function loadSkills() {
-
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
+     $("#navbar-collapse").collapse("hide");
      var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","skills.txt",true);
+     xmlhttp.open("GET","skills.html",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
@@ -107,18 +71,9 @@ var xmlhttp = new XMLHttpRequest();
      history.pushState(null, null, "skills.php")
  }
  function loadExperience() {
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
-    var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","experience.txt",true);
+     $("#navbar-collapse").collapse("hide");
+     var xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET","experience.html",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
@@ -129,42 +84,10 @@ var xmlhttp = new XMLHttpRequest();
      }
      history.pushState(null, null, "experience.php")
  }
- function loadHowIMade() {
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
-     var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","howIMade.txt",true);
-     xmlhttp.send();
-     xmlhttp.onreadystatechange=function()
-     {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
-     }
-     history.pushState(null, null, "howIMade.php")
- }
  function loadPortfolio() {
-     var xmlhttpnavbar = new XMLHttpRequest();
-     xmlhttpnavbar.open("GET","navbar.txt",true);
-     xmlhttpnavbar.send();
-     xmlhttpnavbar.onreadystatechange=function()
-     {
-	 if (xmlhttpnavbar.readyState==4 && xmlhttpnavbar.status==200)
-	 {
-	     document.getElementById("navbar").innerHTML=xmlhttpnavbar.responseText;
-	 }
-     }
+     $("#navbar-collapse").collapse("hide");
      var xmlhttp = new XMLHttpRequest();
-     xmlhttp.open("GET","portfolio.txt",true);
+     xmlhttp.open("GET","portfolio.html",true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {

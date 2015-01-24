@@ -5,7 +5,5 @@
     <?php include "about.html"; ?>
 
 </div>
-
-<br/><br/>
-
+<br/>
 <?php include "_template-bottom.php"; ?>

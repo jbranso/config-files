@@ -2,86 +2,9 @@
 
 <div id="content">
 
-    <div class="container">
-	<br/><br/>
-
-	<div class="jumbotron">
-	    <div class="row">
-		<div class="col-sm-12">
-		    <img src="images/logo1.png" class="right img-responsive">
-		    <h3 style="color:#E18A07">I currently work for the Center for Science of Information at Purdue University.</h3>
-		    <p>
-			Recently, I have been migrating the current site to use Twitter's Bootstrap. You can look
-			at some of my <a href="http://www.soihub.org/summer-school.php">work here.</a>
-		    </p>
-		</div>
-	    </div>
-	</div>
-    </div>
-
-    <br />
-
-    <div class="container">
-	<br/><br/>
-
-	<div class="jumbotron">
-	    <div class="row">
-		<div class="col-sm-12">
-		    <p>
-			I worked for Purdue's Agriculture Information Technology (AgIT). I
-			installed Windows on Dells, HPs, ThinkPads, etc. I also installed Mac OSX on
-			iMacs and macbooks.
-			I worked with active directory, and I troubleshooted users' problems for
-			several campus buildings including Lilly Hall, the Biochemestry building,
-			Smith Hall, Nelson Hall, and others.
-		    </p>
-		</div>
-	    </div>
-	</div>
-    </div>
-
-    <br />
-
-    <div class="container">
-	<br/><br/>
-	<div class="jumbotron">
-	    <div class="row">
-		<div class="col-sm-12">
-		    <p>
-			<img src="./images/website.jpg" width="120" height="97" class="right">
-			I was the webmaster for <a href="http://www.wvba.us/" target="_blank">
-			    The Wabash Valley Baptist Association</a>. I was responsible for timely updating contact
-			information for twenty-three churches as well as any other edits the website needed. <br><br><br><br>
-			<!-- those <br>s needs to be replaced -->
-		    </p>
-		</div>
-	    </div>
-	</div>
-    </div>
-
-    <br/>
-
-    <div class="container">
-	<br/><br/>
-	<div class="jumbotron">
-	    <div class="row">
-		<div class="col-sm-12">
-		    <p>
-			<img src="./images/website.jpg" width="120" height="97" class="right">
-      			I was the webmaster for
-			<a href="http://epics.ecn.purdue.edu/disc/index.php/" target="_blank">
-			    Database and Innovative Software for the Community</a> (DISC) for a semester. I was responsible for
-			timely uploading my teammates photos, for publishing any DISC news updates to the website, and ensuring
-			the website looked professional. <br><br><br> <!-- this needs to be fixed -->
-
-		    </p>
-		</div>
-	    </div>
-	</div>
-
-    </div><!-- /.container -->
-    <br/><br/>
+    <?php include "experience.html"; ?>
 
 </div>
+<br/>
 
 <?php include "_template-bottom.php"; ?>

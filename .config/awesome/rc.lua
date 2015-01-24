@@ -614,6 +614,7 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
+-- this is really helpful. http://awesome.naquadah.org/wiki/Understanding_Rules
 awful.rules.rules = {
    -- All clients will match this rule.
    { rule = { },
@@ -628,13 +629,15 @@ awful.rules.rules = {
 	opacity = 0.9,
      },
    },
-   { rule = { class = "workrave" },
-     properties = {
-	hidden = true,
-	opacity = 0,
-	below = true,
-     },
-   },
+   -- I really do not like seeing workrave. At ALL! this hides it.
+   -- it also unfortunately hides the preferences panel..
+   { rule = { instance = "workrave" },
+    properties = {
+   	hidden = true,
+   	opacity = 0,
+ 	below = true,
+    },
+  },
    { rule = { class = "Emacs" },
      properties = {
 	opacity = 0.95

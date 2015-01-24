@@ -4,14 +4,14 @@
   <div class="jumbotron">
     <div class="row">
       <div class="col-sm-4">
-	<img src="./images/me.jpg" class="left img-responsive"  />
+	<img src="./images/me.png" class="left img-responsive"  />
       </div>
       <div class="col-sm-5">
 	<h1 id="hello" style="color:#E18A07">
 	  Hello,
 	</h1>
 	<p>
-	  I am seeking a valuable position at your company.
+	    My name is Joshua Branson, and I am seeking a valuable position at your company.
 	</p>
       </div>
       <div class="col-sm-3">
@@ -22,9 +22,9 @@
 	<p>
 	  (765)-366-6279
 	</p>
-	<p class="brown">
-	  Email:
-	</p>
+	<h3 class="brown">
+	    Email:
+	</h3>
 	<p>
 	  jbranso@purdue.edu
 	</p>
@@ -32,6 +32,3 @@
     </div>
   </div>
 </div>
-
-</div><!-- /.container -->
-<br/><br/>

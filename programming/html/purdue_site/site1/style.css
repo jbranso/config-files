@@ -1,16 +1,13 @@
-a
+/* the more specific css path overrides bootstrap's stylesheet. */
+ul.nav.navbar-nav>li>a:hover
 {
-    color:#E18A07;
-}
-a:hover
-{
-    font-size:150%;
     color:#E18A07;
     text-decoration:none;
 }
 body
 {
     background-color:#C0C0C0;
+    font-family:georgian, helvetica, sans-serif;
 }
 .brown
 {

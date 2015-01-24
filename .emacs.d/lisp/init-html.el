@@ -13,7 +13,9 @@
 
 (add-hook 'web-mode-hook (lambda ()
                            (flyspell-prog-mode)
-                           (yas-reload-all)
+                           ;;emmet mode is sooo much better than yas
+                           ;; (yas-minor-mode)
+                           ;;(yas-reload-all)
                            (emmet-mode)
                            (push '("function" . ?𝆑) prettify-symbols-alist)
                            (push '(">=" . ?≥) prettify-symbols-alist)
