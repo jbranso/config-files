@@ -1,6 +1,6 @@
-<div class="container footer">
+<div class="brownContainer footer">
     <div class="row">
-	<div class="col-sm-6">
+	<div class="col-sm-offset-1 col-sm-4">
 	    <h4 class="brown">Connect with Me</a></h4>
             <div class="row">
                 <div class="col-xs-1">
@@ -20,12 +20,14 @@
                 </div>
             </div>
         </div><!-- col-sm-6 -->
-	<div class="col-sm-6">
-	        <h4 class="brown">What runs this site</h4>
-                This is powered by some pretty amazing web technologies including bootstrap, jQuery, ajax, php, html5, and javascript!
+	<div class="col-sm-4">
+	    <h4 class="brown">What runs this site</h4>
+            This site is powered by some pretty amazing web technologies including bootstrap, jQuery, ajax, php, html5, and javascript!
 	</div>
     </div>
     <br/><br/><br/>
+    </div><!-- .container -->
+
     <!-- Bootstrap core JavaScript
         ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -33,7 +35,7 @@
 <script src="bs3.3/js/bootstrap.min.js"></script>
 <script>
  function loadHome() {
-     // collapse the navbar when the user selects home
+     /* collapse the navbar when the user selects home */
      $("#navbar-collapse").collapse("hide");
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET","index.txt",true);

@@ -1,4 +1,9 @@
 /* the more specific css path overrides bootstrap's stylesheet. */
+div.navbar-header>a.navbar-brand:hover
+{
+    color:#E18A07;
+    text-decoration:none;
+}
 ul.nav.navbar-nav>li>a:hover
 {
     color:#E18A07;
@@ -13,12 +18,18 @@ body
 {
     color:#E18A07;
 }
-.container
+div.brownContainer
 {
     border:solid;
     border-radius:10px;
     border-color:#E18A07;
     background-color:#FFFFFF;
+}
+.text-left {
+    text-align:left;
+}
+.text-center {
+    text-align:center;
 }
 img.right {
     float:right;
@@ -35,6 +46,12 @@ img.center {
 h1
 {
     color:#E18A07;
+}
+p.big {
+    font-size:18px;
+    font-weight:200;
+    line-height:30px;
+    margin:0px 0px 10px;
 }
 .regular
 {

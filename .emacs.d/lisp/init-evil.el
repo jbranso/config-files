@@ -5,6 +5,7 @@
 ;;I don't know why this is not working.
 ;;(add-hook 'evil-mode-hook 'turn-on-surround-mode)
 
+(setq evil-move-cursor-back nil)
 ;; macros
 (fset 'viper-space "\C-z \C-z")
 
@@ -57,6 +58,7 @@
 (define-key evil-visual-state-map "O" 'evil-backward-WORD-end)
 (define-key evil-visual-state-map "E" 'evil-forward-WORD-end)
 (define-key evil-visual-state-map (kbd "<backspace>") 'ace-jump-char-mode)
+(define-key evil-visual-state-map (kbd ";") 'comment-dwim)
 
 (define-key evil-replace-state-map (kbd "C-s") 'evil-substitute)
 (define-key evil-replace-state-map "s" 'evil-forward-char)
@@ -155,6 +157,7 @@
 (define-key evil-insert-state-map (kbd "C-n") 'backward-char)
 (define-key evil-insert-state-map (kbd "C-s") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-i") 'info-display-manual)
+(define-key evil-insert-state-map (kbd "C-z") 'evil-normal-state)
 
 ;; these bindings have been placed into init-editing-utils.el, which is where
 ;; most of my global key-bindings are.

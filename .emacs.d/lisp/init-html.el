@@ -1,15 +1,38 @@
 (require 'web-mode)
 
-(require 'emmet-mode)
+(defun web-mode-attribute-kill ()
+  "Kill the current html attribute."
+  (interactive)
+  (web-mode-attribute-select)
+  (when mark-active
+    (kill-region (region-beginning) (region-end))))
+
+(define-key web-mode-map (kbd "C-c C-a k") 'web-mode-attribute-kill)
+
+;; I'd like to start using use-package, but it does not seem to be working.
+;; (require 'use-package)
+;; (use-package web-mode
+;;   :mode ("\\.html\\'" . web-mode)
+;;   :mode ("\\.php\\'" . web-mode)
+;;   :init
+;;   (progn
+;;     (defun web-mode-attribute-kill ()
+;;       "Kill the current html attribute."
+;;       (interactive)
+;;       (web-mode-attribute-select)
+;;       (when mark-active
+;;         (kill-region (region-beginning) (region-end)))))
+;;   :bind  ("C-c C-a k" . web-mode-attribute-kill))
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml?\\'" . web-mode))
 
 (setq web-mode-engines-alist
       '(("php"    . "\\.phtml\\'")
         ("php"  . "\\.php\\.")
         ("django"  . "\\.djhtml\\.")))
+
+(require 'emmet-mode)
 
 (add-hook 'web-mode-hook (lambda ()
                            (flyspell-prog-mode)

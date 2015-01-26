@@ -1,67 +1,80 @@
-<div class="container">
-    <br/><br/>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-sm-4">
-                <img class="img-responsive" src="images/captcha.png" alt="captcha"></img>
-            </div>
-            <div class="col-sm-8">
-                <p class="brown">
-                    My first task for soihub.org was to create a captcha, that would hopefully stop spammers from creating accounts on
-                    the website.  After I uploaded this captcha to the website, spammers have been prevented from creating accounts.
-                </p>
-            </div>
+<div class="brownContainer">
+    <br/>
+    <div class="row">
+        <div class="col-sm-4">
+            <!-- width:574; height:221; -->
+            <img class="img-responsive" src="images/captcha.png" alt="captcha" onclick='$("#modal1").modal({keyboard: false})'
+                 onmouseover="this.src='images/glass.png'" onmouseout="this.src='images/captcha.png'" >
+</img>
+<!-- Large modal -->
+<div id="modal1" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <h4 class="brown text-center">Creating a captcha</h4>
+            <hr/>
+            <img class="img-responsive center" src="images/captcha.png" alt="captcha"></img>
+            <hr/>
+            <p class="text-center big">
+                When my boss first told me to create a captcha for soihub.org, I created a few javascript functions to implement the
+                functionality, and the captcha has been successful preventing spammers from accessing the website inappropriately.
+            </p>
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="col-sm-8">
+            <h4 class="brown">My first task for soihub.org was to create a captcha,</h4>
+            <p class="big">
+                that would hopefully stop spammers from creating accounts on
+                the website.  After I uploaded this captcha to the website, spammers have been prevented from creating accounts.
+            </p>
         </div>
     </div>
 </div>
 <br/>
-<div class="container">
-    <br/><br/>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-sm-4">
-                <img class="img-responsive" src="images/csoi.png" alt="captcha"></img>
-            </div>
-            <div class="col-sm-8">
-                <p class="brown">
-                    This is the original version of soihub.org.  It is <em>not</em> using bootstrap. The design is slightly dated,
-                    and the website is not responsive.
-                </p>
-            </div>
+<div class="brownContainer">
+    <br/>
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="img-responsive" src="images/csoi.png" alt="captcha"></img>
+        </div>
+        <div class="col-sm-8">
+            <h4 class="brown">This is the original version of soihub.org.</h4>
+            <p class="big">
+                  It is <em>not</em> using bootstrap. The design is slightly dated,
+                and the website is not responsive.
+            </p>
         </div>
     </div>
 </div>
 <br/>
-<div class="container">
-    <br/><br/>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-sm-4">
-                <img class="img-responsive" src="images/bootstrap-csoi.png" alt="captcha"></img>
-            </div>
-            <div class="col-sm-8">
-                <p class="brown">
-                    After I created the captcha, I began to port the website to using Twitter's bootstrap framework.  This is the
-                    result of my efforts.  The site's design is modern and appealing.
-                </p>
-            </div>
+<div class="brownContainer">
+    <br/>
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="img-responsive" src="images/bootstrap-csoi.png" alt="captcha"></img>
+        </div>
+        <div class="col-sm-8">
+            <h4 class="brown">After I created the captcha, I began to port the website to using</h4>
+            <p class="big">
+                 Twitter's bootstrap framework.  This is the
+                result of my efforts.  The site's design is modern and appealing.
+            </p>
         </div>
     </div>
 </div>
 <br/>
-<div class="container">
-    <br/><br/>
-
-    <div class="jumbotron">
-        <div class="row">
+<div class="brownContainer">
+    <br/>
+    <div class="row">
+    </div> <br class="visible-xs-block" />
+    <div class="row">
+        <div class="col-sm-6">
+            <img class="img-responsive" src="images/csoi-minimized.png" alt="old csoi minimized"></img>
         </div> <br class="visible-xs-block" />
-        <div class="row">
-            <div class="col-sm-6">
-                <img class="img-responsive" src="images/csoi-minimized.png" alt="old csoi minimized"></img>
-            </div> <br class="visible-xs-block" />
-            <div class="col-sm-6">
-                <img class="img-responsive" src="images/csoi-minimized-bootstrap.png" alt="new csoi minimized"></img>
-            </div>
+        <div class="col-sm-6">
+            <img class="img-responsive" src="images/csoi-minimized-bootstrap.png" alt="new csoi minimized"></img>
         </div>
     </div>
 </div>
