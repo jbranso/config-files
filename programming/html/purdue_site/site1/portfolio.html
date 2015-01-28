@@ -1,27 +1,103 @@
+<div id="modal1" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="brown text-center">Creating a captcha</h4>
+            </div>
+            <img class="img-responsive center" src="images/captcha.png" alt="captcha"></img>
+            <hr/>
+            <p class="big">
+                When my boss first told me to create a captcha for soihub.org, I created a few javascript functions, with the help of
+                jQuery, to implement the functionality, and the captcha has been successful preventing spammers from accessing the
+                website inappropriately.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="modal2" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="brown text-center">The Original Soihub</h4>
+            </div>
+            <img class="img-responsive center" src="images/csoi.png" alt="captcha"></img>
+            <hr/>
+            <p class="big">
+                The original site of soihub.org lacked a modern appeal.  Some things on this page do not look appropriate.  The log-in
+                form cuts into the image in the header, and some of the styles look dated.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="modal3" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="brown text-center">Soihub Now</h4>
+            </div>
+            <img class="img-responsive center" src="images/bootstrap-csoi.png" alt="captcha"></img>
+            <hr/>
+            <p class="big">
+                Soihub is in the process of moving to bootstrap.  Most of its pages are using Twitter's CSS framework and look modern
+                and elegant.  This page is lively and up to date.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="modal4" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="brown text-center">Soihub Now</h4>
+            </div>
+            <img class="img-responsive center" src="images/csoi-minimized.png" alt="captcha"></img>
+            <hr/>
+            <p class="big">
+                You can see that soihub.org needed an update, because the webpage does not scale well.  In the mobile view, only half
+                of the page is visible.  The user would have a difficult time browsing the website.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="modal5" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="brown text-center">Soihub Now</h4>
+            </div>
+            <img class="img-responsive center" src="images/csoi-minimized-bootstrap.png" alt="captcha"></img>
+            <hr/>
+            <p class="big">
+                Now that soihub.org uses bootstrap the user can intuitively navigate the website.  The menu collapses on the mobile
+                view, and the rest of the page is flawlessly displayed.
+            </p>
+        </div>
+    </div>
+</div>
+
 <div class="brownContainer">
     <br/>
     <div class="row">
         <div class="col-sm-4">
             <!-- width:574; height:221; -->
-            <img class="img-responsive" src="images/captcha.png" alt="captcha" onclick='$("#modal1").modal({keyboard: false})'
+            <img class="img-responsive" src="images/captcha.png" alt="captcha" onclick='$("#modal1").modal("toggle");'
                  onmouseover="this.src='images/glass.png'" onmouseout="this.src='images/captcha.png'" >
 </img>
+<button type="button" class="visible-xs btn-default btn btn-sm center" onclick="$('#modal1').modal('toggle');" aria-label="Close">
+    Read More
+</button>
 <!-- Large modal -->
-<div id="modal1" class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <h4 class="brown text-center">Creating a captcha</h4>
-            <hr/>
-            <img class="img-responsive center" src="images/captcha.png" alt="captcha"></img>
-            <hr/>
-            <p class="text-center big">
-                When my boss first told me to create a captcha for soihub.org, I created a few javascript functions to implement the
-                functionality, and the captcha has been successful preventing spammers from accessing the website inappropriately.
-            </p>
-            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-    </div>
-</div>
+
         </div>
         <div class="col-sm-8">
             <h4 class="brown">My first task for soihub.org was to create a captcha,</h4>
@@ -37,13 +113,18 @@
     <br/>
     <div class="row">
         <div class="col-sm-4">
-            <img class="img-responsive" src="images/csoi.png" alt="captcha"></img>
+            <img class="img-responsive" src="images/csoi.png" alt="captcha"  onclick='$("#modal2").modal("toggle");'
+                 onmouseover="this.src='images/glass-medium.png'" onmouseout="this.src='images/csoi.png'"></img>
+            <button type="button" class="visible-xs btn-default btn btn-sm center" onclick="$('#modal2').modal('toggle');" aria-label="Close">
+    Read More
+</button>
+
         </div>
         <div class="col-sm-8">
             <h4 class="brown">This is the original version of soihub.org.</h4>
             <p class="big">
-                  It is <em>not</em> using bootstrap. The design is slightly dated,
-                and the website is not responsive.
+                This is how soihub.org looked before I started porting it to bootstrap. The design is slightly dated,
+                and the website is not responsive.  The background color is slighty odd, and the website lacks a modern apeal.
             </p>
         </div>
     </div>
@@ -53,12 +134,17 @@
     <br/>
     <div class="row">
         <div class="col-sm-4">
-            <img class="img-responsive" src="images/bootstrap-csoi.png" alt="captcha"></img>
+            <img class="img-responsive" src="images/bootstrap-csoi.png" alt="captcha"  onclick='$("#modal3").modal("toggle");'
+                 onmouseover="this.src='images/glass-medium.png'" onmouseout="this.src='images/bootstrap-csoi.png'"></img>
+            <button type="button" class="visible-xs btn-default btn btn-sm center" onclick="$('#modal3').modal('toggle');"
+                    aria-label="Close">
+                Read More
+            </button>
         </div>
         <div class="col-sm-8">
-            <h4 class="brown">After I created the captcha, I began to port the website to using</h4>
+            <h4 class="brown">After I created the captcha, I began to port the website to </h4>
             <p class="big">
-                 Twitter's bootstrap framework.  This is the
+                Twitter's bootstrap framework.  This is the
                 result of my efforts.  The site's design is modern and appealing.
             </p>
         </div>
@@ -71,10 +157,17 @@
     </div> <br class="visible-xs-block" />
     <div class="row">
         <div class="col-sm-6">
-            <img class="img-responsive" src="images/csoi-minimized.png" alt="old csoi minimized"></img>
+            <img class="img-responsive" src="images/csoi-minimized.png" alt="old csoi minimized" onclick='$("#modal4").modal("toggle");'
+                 onmouseover="this.src='images/glass-large.png'" onmouseout="this.src='images/csoi-minimized.png'"></img>
+            <button type="button" class="visible-xs btn-default btn btn-sm center" onclick="$('#modal4').modal('toggle');"
+                    aria-label="Close">
+                Read More
+            </button>
+
         </div> <br class="visible-xs-block" />
         <div class="col-sm-6">
-            <img class="img-responsive" src="images/csoi-minimized-bootstrap.png" alt="new csoi minimized"></img>
+            <img class="img-responsive" src="images/csoi-minimized-bootstrap.png" alt="new csoi minimized"  onclick='$("#modal5").modal("toggle");'
+                 onmouseover="this.src='images/glass-large.png'" onmouseout="this.src='images/csoi-minimized-bootstrap.png'"></img>
         </div>
     </div>
 </div>

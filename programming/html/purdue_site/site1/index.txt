@@ -1,5 +1,4 @@
 <div class="brownContainer">
-    <br/><br/>
     <div class="jumbotron">
         <div class="row">
             <div class="col-sm-4">
@@ -9,7 +8,8 @@
 	        <h1 id="hello" style="color:#E18A07">
 	            Hello,
 	        </h1>
-	        <p>
+
+                <p>
 	            My name is Joshua Branson, and I am seeking a valuable position in your company.
 	        </p>
             </div>

@@ -4,6 +4,9 @@ div.navbar-header>a.navbar-brand:hover
     color:#E18A07;
     text-decoration:none;
 }
+div.jumbotron {
+    background-color:white;
+}
 ul.nav.navbar-nav>li>a:hover
 {
     color:#E18A07;
@@ -17,6 +20,11 @@ body
 .brown
 {
     color:#E18A07;
+}
+button.center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 div.brownContainer
 {
@@ -51,7 +59,7 @@ p.big {
     font-size:18px;
     font-weight:200;
     line-height:30px;
-    margin:0px 0px 10px;
+    margin:10px 10px 10px;
 }
 .regular
 {

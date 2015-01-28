@@ -134,6 +134,7 @@ videos/
 /programming/html/purdue_site/site1/bs3.3/js/bootstrap.js
 /programming/html/purdue_site/site1/bs3.3/js/bootstrap.min.js
 /programming/html/purdue_site/site1/bs3.3/js/npm.js
+/programming/emacs/learn-emacs/
 /.ICEauthority
 /.config/epiphany/
 /.config/evolution/
@@ -171,3 +172,8 @@ videos/
 /programming/html/purdue_site/site1/images/glass.png
 /programming/html/purdue_site/site1/images/purdue-ag.png
 /programming/html/purdue_site/site1/images/wvba.jpg
+/.emacs.d/lisp/evil-dvorak.el
+/programming/html/purdue_site/site1/images/glass-large.png
+/programming/html/purdue_site/site1/images/glass-medium.png
+/programming/html/purdue_site/site1/images/purdue-icon.gif
+/programming/html/purdue_site/site1/images/bootstrap-csoi.png

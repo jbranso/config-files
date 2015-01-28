@@ -1,6 +1,6 @@
 <div class="brownContainer footer">
     <div class="row">
-	<div class="col-sm-offset-1 col-sm-4">
+	<div class="col-sm-offset-2 col-sm-4">
 	    <h4 class="brown">Connect with Me</a></h4>
             <div class="row">
                 <div class="col-xs-1">

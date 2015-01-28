@@ -721,4 +721,3 @@ learn-evil-mode keybindings:
 (provide 'learn-evil)
 
 ;;; learn-evil.el ends here
-;;; learn-evil.el --- a way to learn emacs          -*- lexical-binding: t; -*-

@@ -628,13 +628,13 @@ awful.rules.rules = {
    },
    -- I really do not like seeing workrave. At ALL! this hides it.
    -- it also unfortunately hides the preferences panel..
-   { rule = { instance = "workrave" },
-    properties = {
-   	hidden = true,
-   	opacity = 0,
- 	below = true,
-    },
-  },
+  --  { rule = { instance = "workrave" },
+  --   properties = {
+  --  	hidden = true,
+  --  	opacity = 0,
+  --       below = true,
+  --   },
+  -- },
    { rule = { class = "Emacs" },
      properties = {
 	opacity = 0.95

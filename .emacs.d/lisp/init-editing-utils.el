@@ -20,7 +20,12 @@
  next-line-add-newlines t
  indent-tabs-mode nil
  make-backup-files nil
- auto-save-timeout 300
+ ;; only auto-save when the buffer has been idle for 1 hour.  This has no purpose other than to stop auto-saves
+ ;; the next two lines are dumb hacks to try to stop auto-saving
+ ;;auto-save-timeout 3600
+ ;;auto-save-interval 2000
+ ;; this should turn off auto-saving the proper way.
+ auto-save-default t
  mouse-yank-at-point t
  save-interprogram-paste-before-kill t
  scroll-preserve-screen-position 'always

@@ -7,7 +7,7 @@ Fair warning. I use a dvorak keyboard and I love evil-mode, so my modified
 keybindings reflect this. My .emacs.d comes from
 https://github.com/purcell/emacs.d, but I've changed some things.
 
-You should use my .emacs.d if you use the dvorak keyboard layout
+You should use my init.el if you use the dvorak keyboard layout
 (http://mashable.com/2012/09/18/qwerty-keyboard/) and if you're
 interested in:
 
@@ -24,3 +24,5 @@ css
 php
 javascript
 MySQL
+
+Cheers.
