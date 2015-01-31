@@ -17,6 +17,12 @@ body
     background-color:#C0C0C0;
     font-family:georgian, helvetica, sans-serif;
 }
+body img.borderBrown {
+    border-color:#E18A07;
+    border-width:2px;
+    border-style:solid;
+    margin-bottom:15px;
+}
 .brown
 {
     color:#E18A07;
@@ -32,6 +38,7 @@ div.brownContainer
     border-radius:10px;
     border-color:#E18A07;
     background-color:#FFFFFF;
+    /* padding: 10px 10px 10px 10px; */
 }
 .text-left {
     text-align:left;

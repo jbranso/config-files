@@ -13,6 +13,7 @@
 table5={
    ["Control-e"]={"emacs programming/org/gtd/gtd.org", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
+   ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox -P default","Firefox"},

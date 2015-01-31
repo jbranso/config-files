@@ -1,6 +1,17 @@
 <div class="brownContainer footer">
     <div class="row">
-	<div class="col-sm-offset-2 col-sm-4">
+        <div class="col-sm-4">
+            <h4 class="brown">Responsive Design</h4>
+            <p class="hidden-xs">
+                This site uses responsive HTML5 technologies to work on most, if not all platforms.  Try it; view this website on a
+                phone!
+            </p>
+            <p class="visible-xs-block">
+                This site uses responsive HTML5 technologies to work on most, if not all platforms. Try it; view this website with a
+                laptop or a desktop computer.
+            </p>
+        </div>
+	<div class="col-sm-3 col-sm-offset-1">
 	    <h4 class="brown">Connect with Me</a></h4>
             <div class="row">
                 <div class="col-xs-1">

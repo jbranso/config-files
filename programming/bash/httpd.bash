@@ -1,2 +1,2 @@
-!#/bin/bash
+#!/bin/bash
 sudo systemctl start httpd.service

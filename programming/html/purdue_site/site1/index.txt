@@ -2,15 +2,15 @@
     <div class="jumbotron">
         <div class="row">
             <div class="col-sm-4">
-	        <img src="./images/me.png" class="left img-responsive"  />
+	        <img src="./images/me1.jpg" class="center img-responsive"  />
             </div>
             <div class="col-sm-5">
 	        <h1 id="hello" style="color:#E18A07">
 	            Hello,
 	        </h1>
-
                 <p>
-	            My name is Joshua Branson, and I am seeking a valuable position in your company.
+	            My name is Joshua Branson, and I am seeking a valuable position in your company. You may download my resume
+                    <a href="Resume.pdf" target="_blank">here.</a>
 	        </p>
             </div>
             <div class="col-sm-3">
@@ -25,7 +25,7 @@
 	            Email:
 	        </h3>
 	        <p>
-	            jbranso@purdue.edu
+	            jbranso@<br class="hidden-lg hidden-xs">purdue.edu
 	        </p>
             </div>
         </div>
