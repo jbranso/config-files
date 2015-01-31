@@ -187,7 +187,6 @@ videos/
 /programming/html/purdue_site/site1/images/me1.jpg
 /programming/html/purdue_site/site1/images/me2.png
 /programming/html/purdue_site/site1/images/shania.png
-/.config/awesome/rc.lua
 /.emacs.d/.gitignore
 /.emacs.d/init.el
 /.emacs.d/lisp/init-editing-utils.el
