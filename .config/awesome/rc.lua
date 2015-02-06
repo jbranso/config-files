@@ -275,11 +275,12 @@ globalkeys = awful.util.table.join(
    awful.key({ modkey,           }, ".",   awful.tag.viewprev       ),
    awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
-   awful.key({ modkey,           }, "u",
-      function ()
-	 awful.client.focus.byidx( 1)
-	 if client.focus then client.focus:raise() end
-   end),
+   -- I don't use this key, so I'm freeing it up, so my emacs config can use it instead.
+   --awful.key({ modkey,           }, "u",
+   --   function ()
+	-- awful.client.focus.byidx( 1)
+--	 if client.focus then client.focus:raise() end
+  -- end),
    awful.key({ modkey,           }, "e",
       function ()
 	 awful.client.focus.byidx(-1)
@@ -501,8 +502,6 @@ globalkeys = awful.util.table.join(
 	 current_client:raise ()
 					 end,
       "raise and focus a minimized client"),
-
-
 
    -- Prompt
    -- this binding conflicts with the binding that decreases width.

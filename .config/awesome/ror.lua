@@ -14,13 +14,13 @@ table5={
    ["Control-e"]={"emacs programming/org/gtd/gtd.org", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
+   ["Control-p"]={"firefox -P boring", "Firefox"},
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox -P default","Firefox"},
    ["Control-g"]={"gimp-2.8", "Gimp-2.8"},
    ["Control-t"]={"thunderbird", "Thunderbird"},
    ["Control-w"]={"libreoffice --writer", "libreoffice-writer"},
-   ["Control-p"]={"pidgin", "pidgin"},
-   ["Control-Enter"]={"lxterminal", "Lxterminal"},
+   ["Control-Return"]={"lxterminal", "Lxterminal"},
    ["Control-v"]={"vlc", "Vlc"}
 }
