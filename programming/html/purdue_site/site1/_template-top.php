@@ -24,28 +24,28 @@
 	<div class="container regular">
             <br/>
 	    <nav id="navbar" class="navbar navbar-inverse" role="navigation">
-		<div class="container-fluid">
+	        <div class="container-fluid">
 		    <!-- brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 			    <span class="sr-only">toggle navigation</span>
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
 			    <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand"  onclick="loadHome()">Joshua Branson</a>
+		        </button>
+		        <a class="navbar-brand"  onclick="loadHome()">Joshua Branson</a>
 		    </div>
 
 		    <!-- collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="navbar-collapse">
-			<ul class="nav navbar-nav">
+		        <ul class="nav navbar-nav">
 			    <li><a  onclick="loadAbout()">About Me</a></li>
 			    <li><a  onclick="loadSkills()">Skills</a></li>
 			    <li><a  onclick="loadExperience()">Experience</a></li>
 			    <li><a  onclick="loadPortfolio()">Portfolio</a></li>
-			</ul>
+		        </ul>
 		    </div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
+	        </div><!-- /.container-fluid -->
 	    </nav>
 	</div> <!-- container -->
         <div class="container">

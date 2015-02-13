@@ -76,16 +76,29 @@ alias wifi='nmtui'
 
 # I've just turned emacs ediff into something I can use!
 function ediff() {
-    if [ "X${2}" = "X" ]; then
-	echo "USAGE: ediff <FILE 1> <FILE 2>"
-    else
+    # if [ "X${2}" = "X" ]; then
+    #     echo "USAGE: ediff <FILE 1> <FILE 2>"
+    # else
 	# The --eval flag takes lisp code and evaluates it with EMACS
-	emacs --eval "(ediff-files \"$1\" \"$2\")"
+	emacs -nw -Q --eval "(ediff-files \"$1\" \"$2\") (load-theme 'wombat)"
+    # fi
+}
+
+# retry aura as sudo arua
+function a(){
+    AURA="$(aura "$@")"
+
+    if echo "$AURA" | grep -q '^aura >>= .*You have to use `.*sudo.*` for that.*$'
+    then
+        sudo aura "$@"
+    else
+        echo "$AURA"
     fi
 }
 
-PACMAN="pacmatic"
-DIFFEDITCMD="ediff"
-pacdiff_program="ediff"
-pacman_program="yaourt"
+# make pacmatic use ediff as its program to fix pacsaves.
+export pacdiff_program="ediff"
+# make emacs look nice when you run emacs -nw (or emacs --no-windows)
+export TERM=xterm-256color
+
 PS1='[\u@\h \W]\$ '
