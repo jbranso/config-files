@@ -21,12 +21,12 @@ DIFFEDITCMD="ediff"
 pacdiff_program="ediff"
 pacman_program="yaourt"
 
-#This automagically starts x after I log in
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+# This starts ssh-agent, which will remember my ssh password.
+# though it does not seem to work.
+# eval $(ssh-agent)
+# ssh-add
 
 #If you're using arch linux check out https://wiki.archlinux.org/index.php/Automatic_login_to_virtual_console
 #It shows you how to automatically log in at the end of the boot process.
-
-# This starts ssh-agent, which will remember my ssh password.
-eval $(ssh-agent)
-ssh-add
+#This automagically starts x after I log in
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx  
