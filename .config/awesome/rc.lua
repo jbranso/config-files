@@ -494,6 +494,7 @@ globalkeys = awful.util.table.join(
    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
    awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end,
       "change the current layout"),
+   -- this is not working.
    awful.key({ modkey, "Control" }, "-", function () awful.layout.set(_tile.bottom) end,
       "change the current layout"),
    -- awful.key({ modkey, "Control" }, "\\", function () awful.layout.suit.tile(bottom) end,
@@ -534,17 +535,8 @@ clientkeys = awful.util.table.join(
       function (c)
 	 -- The client currently has the input focus, so it cannot be
 	 -- minimized, since minimized clients can't have the focus.
-	 -- add a check here.
-	 -- if c.w_class == "Emacs" then
-	 -- c.w_class = "desktop_emacs"
-	 -- elseif c.w_class == "desktop_emacs" then
-	 -- don't do anything.
-	 -- else
-	 -- c.minimized = true
-	 -- end
-	 --
 	 c.minimized = true
-   end),
+           end),
    awful.key({ modkey,           }, "m",
       function (c)
 	 c.maximized_horizontal = not c.maximized_horizontal
@@ -560,7 +552,7 @@ clientkeys = awful.util.table.join(
 for i = 1, 9 do
    globalkeys = awful.util.table.join(globalkeys,
 				      -- View tag only.
-				      awful.key({ modkey }, "#" .. i + 9,
+				      awful.key({ modkey }, "#" .. i + 2,
 					 function ()
 					    local screen = mouse.screen
 					    local tag = awful.tag.gettags(screen)[i]
@@ -733,9 +725,37 @@ end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- battery warning
+local function trim(s)
+  return s:find'^%s*$' and '' or s:match'^%s*(.*%S)'
+end
+
+local function bat_notification()
+  local f_capacity = assert(io.open("/sys/class/power_supply/BAT0/capacity", "r"))
+  local f_status = assert(io.open("/sys/class/power_supply/BAT0/status", "r"))
+  local bat_capacity = tonumber(f_capacity:read("*all"))
+  local bat_status = trim(f_status:read("*all"))
+
+  if (bat_capacity <= 10 and bat_status == "Discharging") then
+    naughty.notify({ title      = "Battery Warning"
+      , text       = "Battery low! " .. bat_capacity .."%" .. " left!"
+      , fg="#ffffff"
+      , bg="#C91C1C"
+      , timeout    = 15
+      , position   = "bottom_right"
+    })
+  end
+end
+
+battimer = timer({timeout = 60})
+battimer:connect_signal("timeout", bat_notification)
+battimer:start()
+
+-- end here for battery warning
+
 -- awful.util.spawn_with_shell("firefox")
 -- awful.util.spawn_with_shell("xfce4-panel --disable-wm-check")
-run_once("firefox-nightly -P nightly")
+run_once("firefox -P nightly")
 run_once("workrave")
 run_once("thunar --daemon")
 --run_once("thunar")

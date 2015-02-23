@@ -18,7 +18,6 @@
 	     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	     <script src="https://oss.maxcdn.com/libs/r espond.js/1.4.2/respond.min.js"></script>
 	     <![enddif]-->
-
     </head>
     <body>
 	<div class="container regular">

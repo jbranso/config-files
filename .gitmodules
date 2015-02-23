@@ -1,0 +1,12 @@
+[submodule "programming/html/dad_site/startbootstrap-modern-business"]
+	path = programming/html/dad_site/startbootstrap-modern-business
+	url = https://github.com/IronSummitMedia/startbootstrap-modern-business.git
+[submodule "programming/arch/pacmatic"]
+	path = programming/arch/pacmatic
+	url = https://github.com/keenerd/pacmatic.git
+[submodule "programming/html/kill-em-all"]
+	path = programming/html/kill-em-all
+	url = https://github.com/n-simone/kill-em-all
+[submodule "programming/html/phaser-games"]
+	path = programming/html/phaser-games
+	url = https://github.com/jbranso/phaser-games.git
