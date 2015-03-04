@@ -621,27 +621,50 @@ awful.rules.rules = {
         opacity = 0.9,
      },
    },
+   { rule = { class = "Firefox" },
+     properties = {
+        skip_taskbar = true,
+        screen = 1,
+     },
+   },
    -- I really do not like seeing the normal workrave program
    -- This rule, searches for the normal workrave program and blocks it from popping up.
    -- it also allows all windows in minimize themselves, except for the last one.
    -- I should probably file a bug report on it, or ask for help.
    { rule = { name = "Workrave", instance = "workrave", type = "normal" },
      properties = {
-        hidden = true
+        hidden = true,
+        skip_taskbar = true,
      },
      -- callback = {
      -- },
    },
    { rule = { class = "Emacs" },
      properties = {
-        opacity = 0.95
+        skip_taskbar = true,
+        opacity = 0.95,
+        screen = 1,
      },
-     { rule = { class = "gimp" },
-       properties = { floating = true } },
+   },
+   { rule = { class = "Thunar" },
+     properties = {
+        skip_taskbar = true,
+        below = true,
+     },
+   },
+   { rule = { class = "Thunderbird" },
+     properties = {
+        skip_taskbar = true,
+        screen = 1,
+     },
+   },
+   { rule = { class = "gimp" },
+     properties = { floating = true }
+   },
      -- Set Firefox to always map on tags number 2 of screen 1.
      -- { rule = { class = "Firefox" },
      --   properties = { tag = tags[1][2] } },
-}}
+}
 -- }}}
 
 -- {{{ Signals
@@ -755,10 +778,12 @@ battimer:start()
 
 -- awful.util.spawn_with_shell("firefox")
 -- awful.util.spawn_with_shell("xfce4-panel --disable-wm-check")
-run_once("firefox -P nightly")
+run_once("firefox-nightly -P nightly")
 run_once("workrave")
 run_once("thunar --daemon")
 --run_once("thunar")
+-- This spawns my color profile that I downloaded from my macbook.
+-- Is this technically proprietary code?
 awful.util.spawn("xcalib /home/joshua/colorprofile/color.icc")
 -- the --sm-disable & lets the nm-applet menu work nicely.
 awful.util.spawn_with_shell("run_once nm-applet --sm-disable &")
