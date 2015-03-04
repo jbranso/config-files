@@ -54,7 +54,7 @@ end
 beautiful.init("/home/joshua/.config/awesome/themes/zenburn/theme.lua")
 configd = "/home/joshua/.config/awesome/"
 terminal = "lxterminal"
-editor = "emacs" -- os.getenv("EDITOR") or
+editor = "ediff" -- os.getenv("EDITOR") or
 editor_cmd = terminal .. " -e " .. editor
 
 -------------- useful functions

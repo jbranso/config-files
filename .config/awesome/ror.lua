@@ -21,6 +21,6 @@ table5={
    ["Control-g"]={"gimp-2.8", "Gimp-2.8"},
    ["Control-t"]={"thunderbird", "Thunderbird"},
    ["Control-w"]={"libreoffice --writer", "libreoffice-writer"},
-   ["Control-Return"]={"lxterminal", "Lxterminal"},
+   ["Control-x"]={"lxterminal", "Lxterminal"},
    ["Control-v"]={"vlc", "Vlc"}
 }
