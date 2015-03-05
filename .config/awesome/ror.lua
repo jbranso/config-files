@@ -18,7 +18,8 @@ table5={
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox -P default","Firefox"},
-   ["Control-g"]={"gimp-2.8", "Gimp-2.8"},
+   -- I don't use gimp often enough, and it gets in the way of mod C-c
+   --["Control-g"]={"gimp-2.8", "Gimp-2.8"},
    ["Control-t"]={"thunderbird", "Thunderbird"},
    ["Control-w"]={"libreoffice --writer", "libreoffice-writer"},
    ["Control-x"]={"lxterminal", "Lxterminal"},
