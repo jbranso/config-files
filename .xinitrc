@@ -22,6 +22,9 @@ xmodmap ~/.xmodmaprc
 #run awesome
 exec awesome
 
+#run emacs
+#exec emacs
+
 #run mate
 #exec mate-session
 
