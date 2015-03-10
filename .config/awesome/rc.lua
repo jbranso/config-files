@@ -656,6 +656,8 @@ awful.rules.rules = {
      properties = {
         skip_taskbar = true,
         screen = 1,
+        --make thunerbird map on the 1st screen, tag # 2
+        tag = tags[1][2],
      },
    },
    { rule = { class = "gimp" },
