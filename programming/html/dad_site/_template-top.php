@@ -45,3 +45,4 @@
 	                </div> <!--.nav-collapse -->
                 </div><!-- .container-fluid -->
             </nav> <br/><br/><br/>
+            <div class="container">

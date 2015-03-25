@@ -2,6 +2,18 @@ div.row.dry {
     background-image:url("../images/dry.jpg");
 }
 
+#grass-background {
+    background-image:url("../images/dry.jpg");
+    min-height:564px;
+}
+
+.text-brown {
+    color:#b89b69;
+}
+.text-white {
+    color:white;
+}
+
 footer {
     background-color:#b4b3b5;
 }

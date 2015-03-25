@@ -15,6 +15,7 @@ table5={
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
    ["Control-p"]={"firefox -P boring", "Firefox"},
+   ["Control-d"]={"firefox-developer -P nightly", "Firefox"},
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-f"]={"firefox -P default","Firefox"},
