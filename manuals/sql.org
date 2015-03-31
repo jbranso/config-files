@@ -1,0 +1,47 @@
+#+TITLE:SQL Manual
+# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
+
+# chapters, then sections, then subsections, then sub-sub-sections, etc.
+#+OPTIONS: H:10
+
+# This next line says that the table of contents should mention the chapters and the chapter sections.
+#+OPTIONS: toc:2
+* SQL Manual
+** connecting to a database via the terminal
+   ~$ mysql -h host -u <user> -p~
+
+   ~Enter password: ********~
+
+   ~MariaDB> USE <table_name>~
+
+   ~MariaDB table_name>~
+
+
+   Now you can make calls to the database like this
+
+
+   ~MariaDB table_name>SELECT * FROM people~
+** Select Syntax
+   Note this is not the complete SELECT syntax; instead, it is a simplication. See the SQL documentation here for the complete
+   syntax: http://dev.mysql.com/doc/refman/5.6/en/select.html
+   SELECT
+
+   select_expr [, select_expr ...]
+
+   [FROM table_references
+
+   [WHERE where_condition]
+
+   [GROUP BY {col_name | expr | position}
+
+      [ASC | DESC]]
+
+   [ORDER BY {col_name | expr | position}
+
+      [ASC | DESC]]
+
+   [LIMIT {[offset,] row_count | row_count OFFSET offset}]]
+
+   * select_expr indicates a column you wish to retrieve.
+
+   * table_references indicates the table of tables from which to retrieve rows

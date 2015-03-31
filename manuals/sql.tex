@@ -1,0 +1,77 @@
+% Created 2015-03-31 Tue 13:05
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\date{\today}
+\title{SQL Manual}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.4.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+\section{SQL Manual}
+\label{sec-1}
+\subsection{connecting to a database via the terminal}
+\label{sec-1-1}
+\verb~$ mysql -h host -u <user> -p~
+
+\verb~Enter password: ********~
+
+\verb~MariaDB> USE <table_name>~
+
+\verb~MariaDB table_name>~
+
+
+Now you can make calls to the database like this
+
+
+\verb~MariaDB table_name>SELECT * FROM people~
+\subsection{Select Syntax}
+\label{sec-1-2}
+Note this is not the complete SELECT syntax; instead, it is a simplication. See the SQL documentation here for the complete
+syntax: \url{http://dev.mysql.com/doc/refman/5.6/en/select.html}
+SELECT
+
+select$_{\text{expr}}$ [, select$_{\text{expr}}$ \ldots{}]
+
+[FROM table$_{\text{references}}$
+
+[WHERE where$_{\text{condition]}}$
+
+[GROUP BY \{col$_{\text{name}}$ | expr | position\}
+
+[ASC | DESC]]
+
+[ORDER BY \{col$_{\text{name}}$ | expr | position\}
+
+[ASC | DESC]]
+
+[LIMIT \{[offset,] row$_{\text{count}}$ | row$_{\text{count}}$ OFFSET offset\}]]
+
+\begin{itemize}
+\item select$_{\text{expr}}$ indicates a column you wish to retrieve.
+
+\item table$_{\text{references}}$ indicates the table of tables from which to retrieve rows
+\end{itemize}
+% Emacs 24.4.1 (Org mode 8.2.10)
+\end{document}
