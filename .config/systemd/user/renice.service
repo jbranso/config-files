@@ -1,0 +1,9 @@
+[Unit]
+Description=renice firefox, emacs, and thunderbird
+
+[Service]
+Type=oneshot
+ExecStart=/home/joshua/programming/bash/renice.sh
+
+[Install]
+WantedBy=default.target
