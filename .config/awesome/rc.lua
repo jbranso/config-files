@@ -639,13 +639,13 @@ awful.rules.rules = {
      -- callback = {
      -- },
    },
-   { rule = { class = "Emacs" },
-     properties = {
-        skip_taskbar = true,
-        opacity = 0.95,
-        screen = 1,
-     },
-   },
+   -- { rule = { class = "Emacs" },
+   --   properties = {
+   --      skip_taskbar = true,
+   --      opacity = 0.95,
+   --      screen = 1,
+   --   },
+   -- },
    { rule = { class = "Thunar" },
      properties = {
         skip_taskbar = true,
