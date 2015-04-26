@@ -10,7 +10,7 @@ function ediff() {
 	echo "USAGE: ediff <FILE 1> <FILE 2>"
     else
 	# The --eval flag takes lisp code and evaluates it with EMACS
-	emacs --eval "(ediff-files \"$1\" \"$2\")"
+	emacs -q -nw --eval "(ediff-files \"$1\" \"$2\")"
     fi
 }
 
@@ -26,7 +26,12 @@ pacman_program="yaourt"
 # eval $(ssh-agent)
 # ssh-add
 
+export EMAIL="jbranso@purdue.edu"
+export NAME="Joshua Branson"
+export SMTPSERVER="smtp.purdue.edu"
+
+
 #If you're using arch linux check out https://wiki.archlinux.org/index.php/Automatic_login_to_virtual_console
 #It shows you how to automatically log in at the end of the boot process.
 #This automagically starts x after I log in
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx  
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

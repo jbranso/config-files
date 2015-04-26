@@ -11,7 +11,11 @@
 -- WM_NAME(STRING) gives you the name of the selected window (usually something like the web page title
 -- for browsers, or the file name for emacs).
 table5={
-   ["Control-e"]={"emacs programming/org/gtd/gtd.org", "Emacs"},
+   -- You can only set a nice level lower than root if you modify this file
+   -- /etc/security/limits.conf
+   -- check out this guide: https://wiki.archlinux.org/index.php/Realtime_process_management
+
+   ["Control-e"]={"nice -n -5 emacs programming/org/gtd/gtd.org", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
    ["Control-p"]={"firefox -P boring", "Firefox"},
@@ -19,7 +23,7 @@ table5={
    -- Mod-C-n is for unminimizing applications.
    --   ["Control-n"]={"firefox-nightly -P nightly", "Firefox Nightly"},
   --   ["Control-f"]={"firefox -P default","Firefox"},
-   ["Control-h"]={"chromium","Chromium"},
+   ["Control-h"]={"nice -n -5 chromium","Chromium"},
    -- I don't use gimp often enough, and it gets in the way of mod C-c
    --["Control-g"]={"gimp-2.8", "Gimp-2.8"},
    ["Control-t"]={"thunderbird", "Thunderbird"},

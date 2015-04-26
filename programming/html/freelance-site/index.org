@@ -1,0 +1,23 @@
+#+INCLUDE: header.org
+
+#+BEGIN_H1
+Hello and welcome to Freelance.
+#+END_H1
+
+#+BEGIN_row
+
+#+BEGIN_col-sm-6
+
+hello there you beautiful person
+
+#+END_col-sm-6
+
+#+BEGIN_col-sm-6
+
+I hate your guts!
+
+#+END_col-sm-6
+
+#+END_row
+
+#+INCLUDE: footer.org

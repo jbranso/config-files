@@ -1,0 +1,7 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: html5:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="bs3/css/bootstrap.min.css" />
+#+HTML_HEAD: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+#+HTML_HEAD: <script src="/home/joshua/programming/html/freelance-site/bs3/js/bootstrap.min.js"></script>
+
+#+BEGIN_container

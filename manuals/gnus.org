@@ -1,0 +1,28 @@
+#+TITLE:GNUS Manual
+#+OPTIONS: H:10
+
+* Introduction
+  The GNUS news reader lets you read email and mail.  Follow the quick start guide [[http://www.emacswiki.org/emacs/GnusGmail#toc1][here]] to get started using gnus for gmail. GNUS
+  has a few buffers that you need to know how to use:
+
+  + the group buffer, which might display your inbox, sent, drafts, and junk folders
+  + the summary buffer, which is a more detailed view of one folder.  One summary buffer will be your inbox, which will be a long
+    listing of the emails that you can examine in your inbox.
+  + the article buffer, which will display one email.
+
+  Each of these buffers has various assorted commands with them.  When you first set up gnus, you need to call gnus by executing
+
+  ~M-x gnus~
+
+  As gnus starts, you should see the emacs icon.  Gnus will show you the icon until you press
+
+  ~t~
+
+  Then you should see the default group buffer.
+
+* The Group Buffer
+
+* The Summary Buffer
+
+
+* The Article Buffer

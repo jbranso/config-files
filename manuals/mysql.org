@@ -1,0 +1,89 @@
+#+TITLE:SQL Manual
+# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
+
+# chapters, then sections, then subsections, then sub-sub-sections, etc.
+#+OPTIONS: H:10
+
+* DataTypes
+
+  MySQL comes with 4 groups of data types:
+
+  - Numbers
+  - Text
+  - Date and Time
+  - Defined groups
+
+**  The Numbers group has 1 group called integers.  These numbers can be used to utilize MySQL’s math functions:
+  - TINYINT   (-120 - 120)            or (0 - 255)
+  - SMALLINT  (-32,000 - 32,000       or (0 - 65,000)
+  - MEDIUMINT (-8 million- 8 million) or (0 - 16 million)
+  - INT
+  - BIGINT
+
+  Any of those types can be signed up unsigned.  *Signed* means the integer can be hold negative of or positive values.
+  *Unsigned* means the integer can only be positive.
+
+  MySQL also supports Numeric and Decimal data Types, which are data types that store numbers, but once stored cannot be changed.
+  This is a safety feature.  Suppose you want to store valuable numerical data, but do not want someone accidentally changed via a
+  MySQL’s mathematical function.
+
+  Float and double are also there.  They are for numbers like 5.23409348.  For comparision of equality of numbers, float is the
+  best option.
+
+**  Representing Text
+
+    Text has a couple of ways to be put in a MySQL database.
+
+    - Char      (a contstant length of a string, that will next change.  It can be between 1-255 characters long).
+    - varchar   (a string that might change.  It can be between 1-255 characters long).
+    - text      (a long string that might change)
+    - blob      (a long string that might change)
+
+    With both char and varchar, you can specify an upper limit of what the string might be.  For example, you can specify that for
+    all of your varchars in a particuar table are only going to store the news headlines that are not quite finished as articles.
+    The title may change, but you will probably not ever see a title that is 255 chars long.  You could make the maximum to be 70
+    chars long.
+
+    You can also do the same for a char, and specify the longest it will ever be in a table as well.  This speeds up access time!
+
+    Blob types are case sensitive.  So MySQL will order Johnny, jOhnny, joHnny, johNny, johnNy, johnnY a very certain way, but
+    text types will see no differance between those names.
+
+    You can choose from
+
+    - tinytext and tinyblob
+    - text and blob
+    - mediumtext and mediumblob
+    - longtext and longblob
+
+** time and date in MySQL
+
+   here in the format:
+
+   <YEAR>-<MONTH>-<Day> <Hour>-<Minutes>-<Seconds>
+
+** Set ond enum types
+
+   These are like structs in C.  You can group several different types inside on thing.
+
+* Inserting data into tables
+
+  -  INSERT ...  VALUES
+
+     -- INSERT INTO  <table_name>  [<column_name1>[,column_name2, ...]  VALUES  <column_value1>[, <column_value2>,...];
+
+     INSERT INTO duck_title
+     VALUES
+     (1, ’Mr.’),
+     (2, ’Ms.’),
+     (3, ’Mrs.’);
+
+  -  INSERT ...  SET
+
+     -- INSERT INTO <table_name>
+        SET <column_name>=<column_value>[, <column_name>=<column_value>,...];
+
+  -  INSERT ...  SELECT
+
+     -- INSERT INTO <table_name> [column_name1[, column_name2,...]
+        SELECT <select_value> FROM <table_name>;
