@@ -14,7 +14,6 @@ table5={
    -- You can only set a nice level lower than root if you modify this file
    -- /etc/security/limits.conf
    -- check out this guide: https://wiki.archlinux.org/index.php/Realtime_process_management
-
    ["Control-e"]={"nice -n -5 emacs programming/org/gtd/gtd.org", "Emacs"},
    ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
