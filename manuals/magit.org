@@ -1,0 +1,37 @@
+#+TITLE:Magit Manual
+# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
+
+# chapters, then sections, then subsections, then sub-sub-sections, etc.
+#+OPTIONS: H:10
+
+* Introduction to Magit
+
+* Basic commands
+
+** magit commands in the status buffer
+
+   - ~s~ on a modified file will stage it
+
+   - ~S~ will stage all modified files
+
+   - ~i~ will add the current file to the project’s git ignore
+
+   - ~u~ will unstage the current modified file
+
+   - ~c c~ will commit your staged changes.  Type in a message in the buffer that appears, and then hit ~C-c C-c~ to close the buffer
+
+   - ~P P~ will push your changes
+
+   - ~F F~ will pull your changes
+
+** Branch Manager commands
+
+   - ~k~ will delete the branch under point
+
+   - ~C-u k~ will force delete a branch under point
+
+   - ~c~  will create a new branch
+
+   - ~r~ renames the branch
+
+   - ~T~ on a local branch changes which remote branch it tracks
