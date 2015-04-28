@@ -87,3 +87,58 @@
 
      -- INSERT INTO <table_name> [column_name1[, column_name2,...]
         SELECT <select_value> FROM <table_name>;
+
+
+  -  LOAD DATA INFILE
+
+  - CREATE TABLE copy-table
+    SELECT * FROM original-table
+
+* COMMENT getting information from tables
+
+  - SELECT * from table-name;
+
+  - SELECT column1.table-name, column2.table-name[, column3.table-name...];
+
+  - SELECT * from table-name LIMIT number;
+    the number, limits how many results you get
+
+  - SELECT [DISTINCT] column-name FROM table-name
+    This ensures that there are no two of the same values returned for column-name
+
+  - SELECT car.length, car.color FROM car
+    WHERE car_color=“green”
+    AND car.length>72;
+
+  - SELECT person.fname, person.age FROM person
+    WHERE person.name=“John”
+    OR person.age>10;
+
+  - SELECT * FROM toys
+    WHERE toys.color IS <NOT NULL | NULL>
+
+  - SELECT * FROM dolls
+    WHERE price.dolls>10
+    ORDER BY name.dolls;
+
+  - SELECT SUM(house-points), AVG (student-tests) FROM hogwardsGryffendor;
+
+  - SELECT <MAX | MIN>  rent FROM apt;
+
+  - SELECT ROUND (going-out-to-eat) FROM expenses;
+
+  - SELECT fname, mname, lname FROM person;
+
+  - SELECT fname, lname FROM students
+    GROUB BY lname;
+
+    This groups the output by last name.  This would be a decent way to determine if you had any siblings at your school.
+
+  - SELECT fname, lname, score FROM students
+    GROUB BY lname
+    HAVING score>=200;
+
+*
+
+
+*

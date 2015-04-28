@@ -22,7 +22,31 @@
 
 * The Group Buffer
 
+** Various commands
+
+   - ~m~
+     send a new email
+
+   - ~n~
+     go to the next group that has unread mail
+
+   - ~p~
+     go to the previous group that has unread mail
+
 * The Summary Buffer
 
+** Various commands
+  - ~C-c C-f~
+    forward the current email under point
 
 * The Article Buffer
+
+** various commands
+
+   + ~C-c C-m f~
+     attach a file
+
+   + ~C-c C-m C-s~
+
+   + ~C-c C-m C-e~
+     encrypt and sign the message
