@@ -1,4 +1,4 @@
-#+TITLE:SQL Manual
+#+TITLE:SQL Cheatsheat
 # The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
 
 # chapters, then sections, then subsections, then sub-sub-sections, etc.
@@ -6,7 +6,7 @@
 
 # This next line says that the table of contents should mention the chapters and the chapter sections.
 #+OPTIONS: toc:2
-* SQL Manual
+* SQL Cheatsheat
 ** connecting to a database via the terminal
    ~$ mysql -h host -u <user> -p~
 

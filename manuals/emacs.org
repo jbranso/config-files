@@ -1,4 +1,4 @@
-#+TITLE:Emacs Manual
+#+TITLE:Emacs Cheatsheat
 #+OPTIONS: H:10
 
 include gnus manual here eh?
@@ -13,6 +13,10 @@ include gnus manual here eh?
   - ~* s~ mark all files in the current sub-directory
   - ~% m REGEXP <RET>  mark files based on a regular expression
   - ~Q~ dired-do-query-replace-regexp lets you search and replace all marked files
+    -  Press y, to replace the current match
+    -  press ~n~ to not skip the current match
+    -  press ~!~ to replace all the matches in the current buffer
+    -  Press ~Y~ to replace all the remaining matches without question
   - how to recursively search and replace
 
     M-x find-name-dired: you will be prompted for a root directory and a filename pattern, but this file name pattern uses find’s
@@ -20,6 +24,10 @@ include gnus manual here eh?
     Press t to "toggle mark" for all files found.
     Press Q for "Query-Replace in Files...": you will be prompted for query/substitution regexps.
     Proceed as with query-replace-regexp: SPACE to replace and move to next match, n to skip a match, etc.
+      -  Press y, to replace the current match
+      -  press ~n~ to not skip the current match
+      -  press ~!~ to replace all the matches in the current buffer
+      -  Press ~Y~ to replace all the remaining matches without question
 
 * Fixing bugs in your init-file
   https://github.com/Malabarba/elisp-bug-hunter
