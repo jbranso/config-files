@@ -3,5 +3,23 @@
 
 include gnus manual here eh?
 
+* dired commands
+  - ~n~ next line
+  - ~p~ previous line
+  - ~m~ make the current file under point
+  - ~u~ unmark the current file under point
+  - ~* /~ mark all directories
+  - ~* *~ mark all executables
+  - ~* s~ mark all files in the current sub-directory
+  - ~% m REGEXP <RET>  mark files based on a regular expression
+  - ~Q~ dired-do-query-replace-regexp lets you search and replace all marked files
+  - how to recursively search and replace
+
+    M-x find-name-dired: you will be prompted for a root directory and a filename pattern, but this file name pattern uses find’s
+    version of grep.  So it does not understand “.*“.  Instead “*” is equivalent to “.*”
+    Press t to "toggle mark" for all files found.
+    Press Q for "Query-Replace in Files...": you will be prompted for query/substitution regexps.
+    Proceed as with query-replace-regexp: SPACE to replace and move to next match, n to skip a match, etc.
+
 * Fixing bugs in your init-file
   https://github.com/Malabarba/elisp-bug-hunter

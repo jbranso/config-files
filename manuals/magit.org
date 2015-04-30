@@ -10,6 +10,8 @@
 
 ** magit commands in the status buffer
 
+   - ~$~ will add another buffer that shows you the commands magit is commiting
+
    - ~s~ on a modified file will stage it
 
    - ~S~ will stage all modified files
