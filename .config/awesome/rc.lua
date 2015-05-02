@@ -648,8 +648,7 @@ awful.rules.rules = {
    -- },
    { rule = { class = "Thunar" },
      properties = {
-        skip_taskbar = true,
-        below = true,
+        -- skip_taskbar = true,
      },
    },
    { rule = { class = "Thunderbird" },
