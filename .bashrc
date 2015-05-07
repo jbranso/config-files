@@ -8,6 +8,12 @@
 # When I make the editor emacs -nw, I cannot edit my rc.lua by clicking on
 # "edit config" in the menu.
 export EDITOR="emacs -nw"
+export SSHPASS="aMIhUmbleOGOd?"
+
+# make pacmatic use ediff as its program to fix pacsaves.
+export pacdiff_program="ediff"
+# make emacs look nice when you run emacs -nw (or emacs --no-windows)
+export TERM=xterm-256color
 
 alias ls='ls --color=auto'
 alias lls='ls --color=auto -la'
@@ -101,10 +107,6 @@ function a(){
     fi
 }
 
-# make pacmatic use ediff as its program to fix pacsaves.
-export pacdiff_program="ediff"
-# make emacs look nice when you run emacs -nw (or emacs --no-windows)
-export TERM=xterm-256color
 
 #something to do with autostarting.
 PS1='[\u@\h \W]\$ '
