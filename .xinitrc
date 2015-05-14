@@ -13,7 +13,7 @@
 #DO NOT UNCOMMENT the next link it will break stuff!
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-xmodmap ~/.xmodmaprc
+#xmodmap ~/.xmodmaprc
 
 #This next line crashes don't put it here.
 #/usr/bin/lxpolkit
