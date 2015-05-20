@@ -19,7 +19,7 @@ alias ls='ls --color=auto'
 alias lls='ls --color=auto -la'
 
 #pacman stuff
-alias pac='sudo pacmatic -Syu; sudo aura -Ayu firefox-nightly; sudo aura -B; sudo aura -Bc 3; sudo aura -Cc 3;'
+alias pac='sudo pacmatic -Syu; sudo paccache -r; sudo paccache -ruk0;'
 # alias pac='sudo pacmatic -Syu; yaourt -Syua; yaourt -S firefox-nightly; pacman.bash'
 alias pacman='pacmatic'
 alias pacs="sudo pacmatic -S"
