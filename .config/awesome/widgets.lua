@@ -18,7 +18,7 @@ isBatLessThan5 = "no"
 vicious.register(batwidget, vicious.widgets.bat,
 		 function (widget, args)
 		    if isBatLessThan5 == "yes" then
-		       widget:set_color(gradient(0, 100, tonumber(args[2])))
+		       --widget:set_color(gradient(0, 100, tonumber(args[2])))
 		       return args[2]
 		    elseif args[2] < 5 then
 		       naughty.notify({
@@ -26,10 +26,10 @@ vicious.register(batwidget, vicious.widgets.bat,
 				"You should probably plug in your charger. This is your last warning."
 		       })
 		       isBatLessThan5 = "yes"
-		       widget:set_color(gradient(0, 100, tonumber(args[2])))
+		       --widget:set_color(gradient(0, 100, tonumber(args[2])))
 		       return args[2]
 		    else
-		       widget:set_color(gradient(0, 100, tonumber(args[2])))
+		       --widget:set_color(gradient(0, 100, tonumber(args[2])))
 		       return args[2]
 		    end
 		 end,
