@@ -2,7 +2,7 @@
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
-$errorReporting = false;
+$errorReporting = true;
 ?>
 <html lang="en">
     <head>
@@ -21,21 +21,25 @@ $errorReporting = false;
 
             <h3>Enter a food item</h3>
             <form class="form-horizontal" action="make-recipe.php" method="get" id="foods">
-                <div class="form-group">
+                <div class="form-group" id="form-group-1">
                     <div class="col-sm-10">
                         <input  class="form-control" id="food1" name="food1" placeholder="Oatmeal"
-                                <?php if (isset ($_GET["food1"])) {echo 'value="'.$_GET["food1"].'"'; }?>
+                                <?php
+                                $foods = array();
+                                if (isset ($_GET["food1"])) {
+                                    echo 'value="'.$_GET["food1"].'"';
+                                }?>
                                 >
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="form-group-2">
                     <div class="col-sm-10">
                         <input  class="form-control" id="food2" name="food2" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food2"])) {echo 'value="'.$_GET["food2"].'"'; }?>
                                 >
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="form-group-3">
                     <div class="col-sm-10">
                         <input  class="form-control" id="food3" name="food3" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food3"])) {echo 'value="'.$_GET["food3"].'"'; }?>
@@ -51,33 +55,62 @@ $errorReporting = false;
 
             <?php
 
-            echo strtolower(htmlspecialchars($_GET['food1']))." ".
-                 strtolower(htmlspecialchars($_GET['food2']))." ".
-                 strtolower(htmlspecialchars($_GET['food3']))." <br/>";
+            if ($errorReporting) {
+                if (isset($_GET['food1'])) {
+                    echo strtolower(htmlspecialchars($_GET['food1']))."<br>";
+                }
+
+                if (isset($_GET['food2'])) {
+                    echo strtolower(htmlspecialchars($_GET['food2']))."<br>";
+                }
+
+
+                if (isset($_GET['food3'])) {
+                    echo strtolower(htmlspecialchars($_GET['food3']))." <br/>";
+                }
+            }
 
             $foods = array();
+            //if the user's input is not good, then do not submit the php script
             if (isset($_GET['food1'])) {
-                $foods[] = strtolower($_GET['food1']);
+                $foods[] = strtolower(htmlspecialchars($_GET['food1']));
             }
 
             if (isset($_GET['food2'])) {
-                $foods[] = strtolower($_GET['food2']);
+                $foods[] = strtolower(htmlspecialchars($_GET['food2']));
             }
 
             if (isset($_GET['food3'])) {
-                $foods[] = strtolower($_GET['food3']);
+                $foods[] = strtolower(htmlspecialchars($_GET['food3']));
             }
 
             if ($errorReporting ) {
                 print_r($foods);
             }
+            //            if (!filter_var()) {
+            //    $UserInput = 'bad';
+            //} else {
+            //    $UserInput = 'good';
+            //}
+
+            echo "<br>";
+            $data = array('input_string_array' => array($foods[0], $foods[1], $foods[2]));
+            $args = array(
+                'input_string_array' => array(
+                    'filter' => FILTER_VALIDATE_REGEXP,
+                    'flags'     => FILTER_REQUIRE_ARRAY|FILTER_NULL_ON_FAILURE,
+                    'options'   => array('regexp'=>'/^[a-zA-Z ]+$/')
+                )
+            );
+
+            var_dump(filter_var_array($data, $args));
 
             //set up a connection to the database.
 
             //create a user that is 6 foot 138 lbs. (it is assumed that he works out lightly 1-3 hours per week.
             //He needs 21g P, 64g C, 9g Fat per meal if I eat 6 meals a day.
             //That is 126g P, 384g C, 54g F
-            include "connect-to-database.php";
+            //include "connect-to-database.php";
 
             function buildQuery ($query) {
                 //do some stuff
@@ -91,10 +124,14 @@ $errorReporting = false;
 
             echo "<br> ".$foods[0]." <br>";
 
-            $sql = "SELECT * FROM food WHERE name='".$foods[0]."'".
-                   " OR name='pumpkin'".
-                   " OR name='peanut butter'".
-                   " ORDER BY NAME ASC";
+            $sql = "SELECT * FROM food WHERE name='".$foods[0]."'";
+            $i = 1;
+            while (isset($foods[$i])) {
+                $sql .= " OR name='".$foods[$i]."'";
+                $i++;
+            }
+
+            $sql .= " ORDER BY NAME ASC";
 
             echo "<br>".$sql." <br>";
 
