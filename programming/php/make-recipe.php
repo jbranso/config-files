@@ -22,32 +22,40 @@ $errorReporting = true;
             <h3>Enter a food item</h3>
             <form class="form-horizontal" action="make-recipe.php" method="get" id="foods">
                 <div class="form-group" id="form-group-1">
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <input  class="form-control" id="food1" name="food1" placeholder="Oatmeal"
                                 <?php
-                                $foods = array();
                                 if (isset ($_GET["food1"])) {
                                     echo 'value="'.$_GET["food1"].'"';
                                 }?>
                                 >
                     </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-success" onclick="$(this).load('servings1.html')" ># of Servings</a>
+                    </div>
                 </div>
                 <div class="form-group" id="form-group-2">
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <input  class="form-control" id="food2" name="food2" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food2"])) {echo 'value="'.$_GET["food2"].'"'; }?>
                                 >
                     </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-success" onclick="$(this).load('servings2.html')" ># of Servings</a>
+                    </div>
                 </div>
                 <div class="form-group" id="form-group-3">
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <input  class="form-control" id="food3" name="food3" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food3"])) {echo 'value="'.$_GET["food3"].'"'; }?>
                                 >
                     </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-success"  onclick="$(this).load('servings3.html')" ># of Servings</a>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-2">
+                    <div class="col-sm-5">
                         <input class="btn btn-success" type="submit" />
                     </div>
                 </div>
@@ -93,6 +101,9 @@ $errorReporting = true;
             //    $UserInput = 'good';
             //}
 
+            // try to get php validation working.
+            // http://php.net/manual/en/function.filter-var-array.php
+            // http://php.net/manual/en/function.filter-var.php
             echo "<br>";
             $data = array('input_string_array' => array($foods[0], $foods[1], $foods[2]));
             $args = array(
@@ -235,14 +246,14 @@ $errorReporting = true;
 
                      food2: {
                          minlength: 2,
-                         maxlength: 5000,
+                         maxlength: 80,
                          required: true,
                          titleReg: "[a-zA-Z0-9 ]+"
                      },
 
                      food3: {
                          minlength: 2,
-                         maxlength: 5000,
+                         maxlength: 80,
                          required: true,
                          titleReg: "[a-zA-Z0-9 ]+"
                      },

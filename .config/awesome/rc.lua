@@ -621,6 +621,8 @@ awful.rules.rules = {
         opacity = 0.9,
      },
    },
+   { rule = { class = "gimp" },
+     properties = { floating = true } },
    { rule = { class = "Firefox" },
      properties = {
         skip_taskbar = true,
