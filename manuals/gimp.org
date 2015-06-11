@@ -1,0 +1,5 @@
+To see the colors in GIMP press `O` for color picker, then open the pointer window
+
+Window > Dockable Dialogues > Pointer
+
+The color codes are listed there.

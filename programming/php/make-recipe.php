@@ -11,7 +11,8 @@ $errorReporting = true;
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Make A Recipe</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bs3.3/css/bootstrap.min.css">
+        <link href="css/stylesheet.css" rel="stylesheet"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
     <body>
@@ -20,6 +21,11 @@ $errorReporting = true;
             <h1>Build Your Recipe</h1>
 
             <h3>Enter a food item</h3>
+            <div class="row bottom-20">
+                <div class="col-sm-8">
+                    <a class="btn btn-success pull-right" href="">Enter number of Servings (Optional)</a>
+                </div>
+            </div>
             <form class="form-horizontal" action="make-recipe.php" method="get" id="foods">
                 <div class="form-group" id="form-group-1">
                     <div class="col-sm-8">
@@ -64,6 +70,7 @@ $errorReporting = true;
             <?php
 
             if ($errorReporting) {
+                echo "You have selected:<br/>";
                 if (isset($_GET['food1'])) {
                     echo strtolower(htmlspecialchars($_GET['food1']))."<br>";
                 }
@@ -74,7 +81,7 @@ $errorReporting = true;
 
 
                 if (isset($_GET['food3'])) {
-                    echo strtolower(htmlspecialchars($_GET['food3']))." <br/>";
+                    echo strtolower(htmlspecialchars($_GET['food3']))." <br/><br/>";
                 }
             }
 
@@ -93,9 +100,10 @@ $errorReporting = true;
             }
 
             if ($errorReporting ) {
-                print_r($foods);
+                echo "The foods array will store the ".print_r($foods);
             }
-            //            if (!filter_var()) {
+
+            //  if (!filter_var()) {
             //    $UserInput = 'bad';
             //} else {
             //    $UserInput = 'good';
@@ -121,7 +129,7 @@ $errorReporting = true;
             //create a user that is 6 foot 138 lbs. (it is assumed that he works out lightly 1-3 hours per week.
             //He needs 21g P, 64g C, 9g Fat per meal if I eat 6 meals a day.
             //That is 126g P, 384g C, 54g F
-            //include "connect-to-database.php";
+            include "connect-to-database.php";
 
             function buildQuery ($query) {
                 //do some stuff
@@ -241,21 +249,21 @@ $errorReporting = true;
                          minlength: 2,
                          maxlength: 80,
                          required: true,
-                         titleReg: "[a-zA-Z0-9, ]+"
+                         titleReg: "[a-zA-Z ]+"
                      },
 
                      food2: {
                          minlength: 2,
                          maxlength: 80,
                          required: true,
-                         titleReg: "[a-zA-Z0-9 ]+"
+                         titleReg: "[a-zA-Z ]+"
                      },
 
                      food3: {
                          minlength: 2,
                          maxlength: 80,
                          required: true,
-                         titleReg: "[a-zA-Z0-9 ]+"
+                         titleReg: "[a-zA-Z ]+"
                      },
 
                  },
@@ -273,7 +281,8 @@ $errorReporting = true;
          });
         </script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="bs3.3/js/bootstrap.min.js
+"></script>
 
     </body>
 </html>
