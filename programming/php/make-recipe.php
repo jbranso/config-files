@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
+<!-- This is good for typing in the recipes! -->
+<!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
+<!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
+<!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
+
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
@@ -13,7 +19,9 @@ $errorReporting = true;
 
         <link rel="stylesheet" href="bs3.3/css/bootstrap.min.css">
         <link href="css/stylesheet.css" rel="stylesheet"/>
+        <link href="jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -22,8 +30,11 @@ $errorReporting = true;
 
             <h3>Enter a food item</h3>
             <div class="row bottom-20">
-                <div class="col-sm-8">
-                    <a class="btn btn-success pull-right" href="">Enter number of Servings (Optional)</a>
+                <div class="col-sm-1">
+                    <input name="number-of-servings" value="1" class="form-control" type="text" value=""/>
+                </div>
+                <div class="col-sm-3">
+                    <h4>Servings</h4>
                 </div>
             </div>
             <form class="form-horizontal" action="make-recipe.php" method="get" id="foods">
@@ -35,9 +46,17 @@ $errorReporting = true;
                                     echo 'value="'.$_GET["food1"].'"';
                                 }?>
                                 >
-                    </div>
-                    <div class="col-sm-2">
-                        <a class="btn btn-success" onclick="$(this).load('servings1.html')" ># of Servings</a>
+                        <script>
+                         var tags = [ "oatmeal", "rice", "peanut butter", "coldfusion", "javascript", "asp", "ruby" ];
+                         $( "#food1" ).autocomplete({
+                             source: function( request, response ) {
+                                 var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+                                 response( $.grep( tags, function( item ){
+                                     return matcher.test( item );
+                                 }) );
+                             }
+                         });
+                        </script>
                     </div>
                 </div>
                 <div class="form-group" id="form-group-2">
@@ -46,18 +65,12 @@ $errorReporting = true;
                                 <?php if (isset ($_GET["food2"])) {echo 'value="'.$_GET["food2"].'"'; }?>
                                 >
                     </div>
-                    <div class="col-sm-2">
-                        <a class="btn btn-success" onclick="$(this).load('servings2.html')" ># of Servings</a>
-                    </div>
                 </div>
                 <div class="form-group" id="form-group-3">
                     <div class="col-sm-8">
                         <input  class="form-control" id="food3" name="food3" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food3"])) {echo 'value="'.$_GET["food3"].'"'; }?>
                                 >
-                    </div>
-                    <div class="col-sm-2">
-                        <a class="btn btn-success"  onclick="$(this).load('servings3.html')" ># of Servings</a>
                     </div>
                 </div>
                 <div class="form-group">
@@ -282,7 +295,7 @@ $errorReporting = true;
         </script>
 
         <script src="bs3.3/js/bootstrap.min.js
-"></script>
+                     "></script>
 
     </body>
 </html>
