@@ -5,6 +5,9 @@
 <!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
 <!-- READ MEEE NOW!!!!!!!  http://api.jqueryui.com/autocomplete/  -->
 
+<!-- //This is what I'll have to use when my datebase for food becomes tooo big -->
+<!-- http://jqueryui.com/autocomplete/#remote -->
+
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
@@ -22,6 +25,7 @@ $errorReporting = true;
         <link href="jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="jquery-ui/jquery-ui.min.js"></script>
+        <script src="autocomplete.js"></script>
     </head>
     <body>
         <div class="container">
@@ -46,17 +50,6 @@ $errorReporting = true;
                                     echo 'value="'.$_GET["food1"].'"';
                                 }?>
                                 >
-                        <script>
-                         var tags = [ "oatmeal", "rice", "peanut butter", "coldfusion", "javascript", "asp", "ruby" ];
-                         $( "#food1" ).autocomplete({
-                             source: function( request, response ) {
-                                 var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
-                                 response( $.grep( tags, function( item ){
-                                     return matcher.test( item );
-                                 }) );
-                             }
-                         });
-                        </script>
                     </div>
                 </div>
                 <div class="form-group" id="form-group-2">
@@ -70,6 +63,48 @@ $errorReporting = true;
                     <div class="col-sm-8">
                         <input  class="form-control" id="food3" name="food3" placeholder="Oatmeal"
                                 <?php if (isset ($_GET["food3"])) {echo 'value="'.$_GET["food3"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-4">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food4" name="food4" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food4"])) {echo 'value="'.$_GET["food4"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-5">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food5" name="food5" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food5"])) {echo 'value="'.$_GET["food5"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-6">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food6" name="food6" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food6"])) {echo 'value="'.$_GET["food6"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-7">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food7" name="food7" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food7"])) {echo 'value="'.$_GET["food7"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-8">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food8" name="food8" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food8"])) {echo 'value="'.$_GET["food8"].'"'; }?>
+                                >
+                    </div>
+                </div>
+                <div class="form-group" id="form-group-9">
+                    <div class="col-sm-8">
+                        <input  class="form-control" id="food9" name="food9" placeholder="Oatmeal"
+                                <?php if (isset ($_GET["food9"])) {echo 'value="'.$_GET["food9"].'"'; }?>
                                 >
                     </div>
                 </div>
@@ -91,10 +126,26 @@ $errorReporting = true;
                 if (isset($_GET['food2'])) {
                     echo strtolower(htmlspecialchars($_GET['food2']))."<br>";
                 }
-
-
-                if (isset($_GET['food3'])) {
-                    echo strtolower(htmlspecialchars($_GET['food3']))." <br/><br/>";
+                if (isset($_GET['food4'])) {
+                    echo strtolower(htmlspecialchars($_GET['food4']))." <br/><br/>";
+                }
+                if (isset($_GET['food5'])) {
+                    echo strtolower(htmlspecialchars($_GET['food5']))." <br/><br/>";
+                }
+                if (isset($_GET['food6'])) {
+                    echo strtolower(htmlspecialchars($_GET['food6']))." <br/><br/>";
+                }
+                if (isset($_GET['food7'])) {
+                    echo strtolower(htmlspecialchars($_GET['food7']))." <br/><br/>";
+                }
+                if (isset($_GET['food8'])) {
+                    echo strtolower(htmlspecialchars($_GET['food8']))." <br/><br/>";
+                }
+                if (isset($_GET['food9'])) {
+                    echo strtolower(htmlspecialchars($_GET['food9']))." <br/><br/>";
+                }
+                if (isset($_GET['food9'])) {
+                    echo strtolower(htmlspecialchars($_GET['food9']))." <br/><br/>";
                 }
             }
 
@@ -103,13 +154,30 @@ $errorReporting = true;
             if (isset($_GET['food1'])) {
                 $foods[] = strtolower(htmlspecialchars($_GET['food1']));
             }
-
             if (isset($_GET['food2'])) {
                 $foods[] = strtolower(htmlspecialchars($_GET['food2']));
             }
 
             if (isset($_GET['food3'])) {
                 $foods[] = strtolower(htmlspecialchars($_GET['food3']));
+            }
+            if (isset($_GET['food4'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food4']));
+            }
+            if (isset($_GET['food5'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food5']));
+            }
+            if (isset($_GET['food6'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food6']));
+            }
+            if (isset($_GET['food7'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food7']));
+            }
+            if (isset($_GET['food8'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food8']));
+            }
+            if (isset($_GET['food9'])) {
+                $foods[] = strtolower(htmlspecialchars($_GET['food9']));
             }
 
             if ($errorReporting ) {
@@ -135,17 +203,28 @@ $errorReporting = true;
                 )
             );
 
-            var_dump(filter_var_array($data, $args));
+            if ($errorReporting) {
+                var_dump(filter_var_array($data, $args));
+            }
 
             //set up a connection to the database.
 
-            //create a user that is 6 foot 138 lbs. (it is assumed that he works out lightly 1-3 hours per week.
+            //create a user that is 6 foot 18 lbs. (it is assumed that he works out lightly 1-3 hours per week.
             //He needs 21g P, 64g C, 9g Fat per meal if I eat 6 meals a day.
             //That is 126g P, 384g C, 54g F
             include "connect-to-database.php";
 
-            function buildQuery ($query) {
+            function buildQuery () {
                 //do some stuff
+                global $foods;
+                $sql = "SELECT * FROM food WHERE name='".$foods[0]."'";
+                $i = 1;
+                while (isset($foods[$i])) {
+                    $sql .= " OR name='".$foods[$i]."'";
+                    $i++;
+                }
+                $sql .= " ORDER BY NAME ASC";
+
                 return $sql;
             }
             //These arrays will store the results of the queries
@@ -154,18 +233,11 @@ $errorReporting = true;
             $fat = array();
             $name = array();
 
-            echo "<br> ".$foods[0]." <br>";
+            $sql = buildQuery();
 
-            $sql = "SELECT * FROM food WHERE name='".$foods[0]."'";
-            $i = 1;
-            while (isset($foods[$i])) {
-                $sql .= " OR name='".$foods[$i]."'";
-                $i++;
+            if ($errorReporting) {
+                echo "<br>".$sql." <br>";
             }
-
-            $sql .= " ORDER BY NAME ASC";
-
-            echo "<br>".$sql." <br>";
 
             $res = $mysqli->query($sql);
             # This will be the two dimensional array, that will store the result of the query.
@@ -227,15 +299,18 @@ $errorReporting = true;
             //$carbs[0]." ".$carbs[1]." ".$carbs[2].";".
             //$fat[0]." ".$fat[1]." ".$fat[2]."]; ".
             $octaveString .= "]; b = [21; 64; 9]; a \ b' | egrep '[-]*[0-9]+\.[0-9]{3,}$' ";
-            echo $octaveString."<br>";
+            if ($errorReporting) {
+                echo $octaveString."<br>";
+            }
 
             //$result=shell_exec("octave --eval 'a = [1 3 6; 4 6 3; 4 6 9]; b = [3; 6; 9]; a \ b' | egrep '[-]*[0-9]+\.[0-9]{3,}$' ");
             $result = shell_exec($octaveString);
 
             $aString = preg_split("/[\s,]+/", $result);
 
-            print_r($aString);
-            echo "<br>";
+            if ($errorReporting) {
+                print_r($aString);
+            }
 
             results ($aString);
 
@@ -259,23 +334,45 @@ $errorReporting = true;
                  rules: {
 
                      food1: {
-                         minlength: 2,
+                         /* someday I might have to put this is there too */
+                         /* minlength: 2, */
                          maxlength: 80,
-                         required: true,
+                         /* I might have to put these in some day */
+                         /* required: true */
                          titleReg: "[a-zA-Z ]+"
                      },
 
                      food2: {
-                         minlength: 2,
                          maxlength: 80,
-                         required: true,
                          titleReg: "[a-zA-Z ]+"
                      },
 
                      food3: {
-                         minlength: 2,
                          maxlength: 80,
-                         required: true,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food4: {
+                         maxlength: 80,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food5: {
+                         maxlength: 80,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food6: {
+                         maxlength: 80,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food7: {
+                         maxlength: 80,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food8: {
+                         maxlength: 80,
+                         titleReg: "[a-zA-Z ]+"
+                     },
+                     food9: {
+                         maxlength: 80,
                          titleReg: "[a-zA-Z ]+"
                      },
 
@@ -293,9 +390,7 @@ $errorReporting = true;
              });
          });
         </script>
-
-        <script src="bs3.3/js/bootstrap.min.js
-                     "></script>
+        <script src="bs3.3/js/bootstrap.min.js"></script>
 
     </body>
 </html>
