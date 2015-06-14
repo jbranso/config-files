@@ -37,7 +37,15 @@ $errorReporting = true;
             <form class="form-horizontal" action="make-recipe.php" method="get" id="foods">
                 <div class="form-group bottom-20">
                     <div class="col-sm-1">
-                        <input class="form-control" name="numberOfServings" value="1" class="form-control" type="text" value=""/>
+                        <input class="form-control" name="numberOfServings"
+                               <?php
+                               if (trim($_GET["numberOfServings"]) == "") {
+                                   echo 'value="1"';
+                               } else {
+                                   echo 'value="'.trim($_GET["numberOfServings"]).'"';
+                               }
+                               ?>
+                               class="form-control" type="text" value=""/>
                     </div>
                     <div class="col-sm-3">
                         <h4>Meals</h4>
@@ -211,6 +219,7 @@ $errorReporting = true;
             // octave --eval 'a = [ 4 3 4; 3 2 4; 2 4 3]; b = [4; 4; 3]; a \ b' | egrep blah blah
             $octaveString = "octave --eval 'a = [";
             $numberOfFoodItems = count($foods);
+            echo "number of food items equals $numberOfFoodItems";
 
             for ($i = 0; $i < $numberOfFoodItems; $i++) {
                 $octaveString .= $protein[$i]." ";
