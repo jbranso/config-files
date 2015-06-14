@@ -40,7 +40,7 @@ $errorReporting = true;
                         <input class="form-control" name="numberOfServings" value="1" class="form-control" type="text" value=""/>
                     </div>
                     <div class="col-sm-3">
-                        <h4>Servings</h4>
+                        <h4>Meals</h4>
                     </div>
                 </div>
                 <div class="form-group" id="form-group-1">
@@ -119,33 +119,16 @@ $errorReporting = true;
 
             $foods = array();
             //if the user's input is not good, then do not submit the php script
-            if (!trim($_GET['food1']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food1'])));
+            echo "You have selected:<br>";
+            for ($i = 1; $i < 9; $i++) {
+                if (isset($_GET["food$i"])) {
+                    echo strtolower(htmlspecialchars(trim($_GET["food$i"])))."<br>";
+                    if (!trim($_GET["food$i"]) == '') {
+                        $foods[] = strtolower(htmlspecialchars(trim($_GET["food$i"])));
+                    }
+                }
             }
-            if (!trim($_GET['food2']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food2'])));
-            }
-            if (!trim($_GET['food3']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food3'])));
-            }
-            if (!trim($_GET['food4']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food4'])));
-            }
-            if (!trim($_GET['food5']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food5'])));
-            }
-            if (!trim($_GET['food6']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food6'])));
-            }
-            if (!trim($_GET['food7']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food7'])));
-            }
-            if (!trim($_GET['food8']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food8'])));
-            }
-            if (!trim($_GET['food9']) == '') {
-                $foods[] = strtolower(htmlspecialchars(trim($_GET['food9'])));
-            }
+            echo "a total of ".count($foods)." items<br><br>";
 
             if ($errorReporting ) {
                 echo "The foods array will store the names of the food that the user selected, and it looks like this: <br> \$foods: ";
@@ -200,16 +183,19 @@ $errorReporting = true;
             while ($row = $res->fetch_assoc()) {
                 if ($errorReporting) {
                     echo print_r ($row)."<br>";
-                    $protein[] = $row['protein'];
-                    $carbs[] = $row['carbs'];
-                    $fat[] = $row['fat'];
-                    $name[] = $row['name'];
                 }
+                $protein[] = $row['protein'];
+                $carbs[] = $row['carbs'];
+                $fat[] = $row['fat'];
+                $name[] = $row['name'];
             }
+            //I'm not closing this here, because I still need to make a query against the user to find
+            //his macro nutrients
+            //$mysqli->close();
             echo "<br>";
 
             if ($errorReporting) {
-                echo "\$protein, \$carbs, and \$fat look like this <br/>";
+                echo "\$protein, \$carbs, and \$fat, which will be used to tell octave the macro-contents of the select foods, look like this <br/>";
                 echo print_r($protein)."<br>";
                 echo print_r($carbs)."<br>";
                 echo print_r($fat)."<br>";
@@ -223,44 +209,8 @@ $errorReporting = true;
 
             //build the string to send into the shell. It will be of the form:
             // octave --eval 'a = [ 4 3 4; 3 2 4; 2 4 3]; b = [4; 4; 3]; a \ b' | egrep blah blah
-            $numberOfFoodItems = count ($foods);
-            if ($errorReporting) {
-                echo "<br> Number of food items == $numberOfFoodItems <br>";
-            }
-
-            if ($errorReporting) {
-                echo "You have selected:<br/>";
-                if (isset($_GET['food1'])) {
-                    echo strtolower(htmlspecialchars($_GET['food1']))."<br>";
-                }
-                if (isset($_GET['food2'])) {
-                    echo strtolower(htmlspecialchars($_GET['food2']))."<br>";
-                }
-                if (isset($_GET['food3'])) {
-                    echo strtolower(htmlspecialchars($_GET['food3']))." <br/>";
-                }
-                if (isset($_GET['food4'])) {
-                    echo strtolower(htmlspecialchars($_GET['food4']))." <br/>";
-                }
-                if (isset($_GET['food5'])) {
-                    echo strtolower(htmlspecialchars($_GET['food5']))." <br/>";
-                }
-                if (isset($_GET['food6'])) {
-                    echo strtolower(htmlspecialchars($_GET['food6']))." <br/>";
-                }
-                if (isset($_GET['food7'])) {
-                    echo strtolower(htmlspecialchars($_GET['food7']))." <br/>";
-                }
-                if (isset($_GET['food8'])) {
-                    echo strtolower(htmlspecialchars($_GET['food8']))." <br/>";
-                }
-                if (isset($_GET['food9'])) {
-                    echo strtolower(htmlspecialchars($_GET['food9']))." <br/>";
-                }
-            }
-
-
             $octaveString = "octave --eval 'a = [";
+            $numberOfFoodItems = count($foods);
 
             for ($i = 0; $i < $numberOfFoodItems; $i++) {
                 $octaveString .= $protein[$i]." ";
@@ -275,12 +225,32 @@ $errorReporting = true;
                 $octaveString .= $fat[$i]." ";
             }
 
+            //find out the user's macro requirements
+            $sql = "SELECT protein,carbs,fat FROM `user` WHERE user='joshua'";
+            echo "<br>".$sql."<br>";
             $res = $mysqli->query($sql);
-
-            if ( trim($_GET['numberOfServings']) == "1") {
-                $octaveString .= "]; b = [21; 64; 9]; ";
+            while ($row = $res->fetch_assoc()) {
+                $userProtein = $row['protein'];
+                $userCarbs = $row['carbs'];
+                $userFat = $row['fat'];
             }
-            echo trim($_GET['numberOfServings'])."<br>";
+            $mysqli->close();
+            echo "<br>";
+            //echo $sql."<br>";
+            //$res = $mysqli->query($sql);
+
+            if ($errorReporting) {
+                echo "<br>The number of meals equals ".trim($_GET['numberOfServings'])."<br>";
+            }
+
+            $numberOfServings = trim($_GET['numberOfServings']);
+            if ($numberOfServings == 1) {
+                $octaveString .= "]; b = [$userProtein; $userCarbs; $userFat]; ";
+            } else {
+                $octaveString .= "]; b = [".$userProtein * $numberOfServings."; ";
+                $octaveString .= $userCarbs * $numberOfServings."; ";
+                $octaveString .= $userFat   * $numberOfServings."]; ";
+            }
 
             $octaveString .= "a \ b' | egrep '[-]*[0-9]+\.[0-9]{3,}$' ";
             if ($errorReporting) {
@@ -293,13 +263,13 @@ $errorReporting = true;
             $aString = preg_split("/[\s,]+/", $result);
 
             if ($errorReporting) {
-                print_r($aString);
+                echo "<br>Octave's results look like:<br>";
+                echo print_r($aString)."<br>";
             }
 
             results ($aString);
 
             //Close the connection
-            $mysqli->close();
 
             ?>
         </div>

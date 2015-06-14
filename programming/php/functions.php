@@ -1,4 +1,6 @@
 <?php
+
+
 function buildQuery () {
     //do some stuff
     global $foods;
@@ -23,13 +25,13 @@ function results ($array) {
     #array[4] == null
     global $name;
     $itemsInArray = count($array) - 2;
-    echo "<br>";
     $j = 0;
     for ($i = 1; $i <= $itemsInArray; $i++ ) {
         echo "<br>";
         echo $array[$i]." servings of $name[$j]";
         $j++;
     }
+    echo "<br><br><br>";
 }
 
 
