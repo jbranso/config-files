@@ -39,10 +39,11 @@ $errorReporting = true;
                     <div class="col-sm-1">
                         <input class="form-control" name="numberOfServings"
                                <?php
-                               if (trim($_GET["numberOfServings"]) == "") {
-                                   echo 'value="1"';
+                               if (is_numeric (trim($_GET["numberOfServings"]))) {
+                                   echo 'value="'.trim($_GET["numberOfServings"]).'" ';
+                                   echo trim($_GET["numberOfServings"]);
                                } else {
-                                   echo 'value="'.trim($_GET["numberOfServings"]).'"';
+                                   echo 'value="1" ';
                                }
                                ?>
                                class="form-control" type="text" value=""/>
@@ -151,18 +152,29 @@ $errorReporting = true;
             // http://php.net/manual/en/function.filter-var-array.php
             // http://php.net/manual/en/function.filter-var.php
             echo "<br>";
-            $data = array('input_string_array' => array($foods[0], $foods[1], $foods[2]));
+            $data = array('food1' => $foods[0],
+                          'food2' => $foods[1],
+                          'food3' => $foods[2]);
             $args = array(
-                'input_string_array' => array(
-                    'filter' => FILTER_VALIDATE_REGEXP,
-                    'flags'     => FILTER_REQUIRE_ARRAY|FILTER_NULL_ON_FAILURE,
-                    'options'   => array('regexp'=>'/^[a-zA-Z ]+$/')
+                'food1'    => array('filter'    => FILTER_VALIDATE_REGEXP,
+                                    'options'   => array ('regexp' => "[A-Za-z ]+"),
+                ),
+                'food2'    => array('filter'    => FILTER_SANITIZE_STRING,
+                                    'flags'     => FILTER_FLAG_STRIP_HIGH,
+                                    'options'   => array('min_range' => 1, 'max_range' => 500)
+                ),
+                'food3'    => array('filter'    => FILTER_SANITIZE_STRING,
+                                    'flags'     => FILTER_FLAG_STRIP_HIGH,
+                                    'options'   => array('min_range' => 1, 'max_range' => 500)
                 )
             );
 
             if ($errorReporting) {
                 echo "<br>I'm trying to get php validation to work<br/>";
-                echo var_dump(filter_var_array($data, $args))."<br>";
+                echo "The var_dump of the filter_var_array is <br>".var_dump(filter_var_array($data, $args))."<br>";
+                if (filter_var_array($data, $args) == false) {
+                    echo "The inputs did not pass php form validation.";
+                }
             }
 
             //set up a connection to the database.
@@ -335,9 +347,10 @@ $errorReporting = true;
                          titleReg: "[a-zA-Z ]+"
                      },
                      food9: {
-                         maxlength: 80,
+                         maxlength: 80
+                         // move this comma , one line above to get JS validation to work
                          titleReg: "[a-zA-Z ]+"
-                     },
+                     }
 
                  },
                  highlight: function (element) {

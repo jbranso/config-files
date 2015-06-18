@@ -17,7 +17,8 @@ require("revelation")
 local keydoc = require("keydoc")
 
 --start xcompmgr to enable compositing...will allow terminal shading
-awful.util.spawn_with_shell("xcompmgr -cF &")
+-- It's just wasting resources
+--awful.util.spawn_with_shell("xcompmgr -cF &")
 
 -- make naughty popups transparent.
 -- naughty.config.presets.normal.opacity = 0.9
@@ -616,11 +617,11 @@ awful.rules.rules = {
                     raise = true,
                     keys = clientkeys,
                     buttons = clientbuttons } },
-   { rule = { class = "Lxterminal" },
-     properties = {
-        opacity = 0.9,
-     },
-   },
+   -- { rule = { class = "Lxterminal" },
+   --   properties = {
+   --      opacity = 0.9,
+   --   },
+   -- },
    { rule = { class = "gimp" },
      properties = { floating = true } },
    { rule = { class = "Firefox" },
