@@ -39,7 +39,7 @@ $errorReporting = true;
                     <div class="col-sm-1">
                         <input class="form-control" name="numberOfServings"
                                <?php
-                               if (is_numeric (trim($_GET["numberOfServings"]))) {
+                               if (isset($_GET["numberOfServings"])) {
                                    echo 'value="'.trim($_GET["numberOfServings"]).'" ';
                                    echo trim($_GET["numberOfServings"]);
                                } else {
