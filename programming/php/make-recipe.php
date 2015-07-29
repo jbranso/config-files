@@ -41,7 +41,6 @@ $errorReporting = true;
                                <?php
                                if (isset($_GET["numberOfServings"])) {
                                    echo 'value="'.trim($_GET["numberOfServings"]).'" ';
-                                   echo trim($_GET["numberOfServings"]);
                                } else {
                                    echo 'value="1" ';
                                }
@@ -347,7 +346,7 @@ $errorReporting = true;
                          titleReg: "[a-zA-Z ]+"
                      },
                      food9: {
-                         maxlength: 80
+                         maxlength: 80,
                          // move this comma , one line above to get JS validation to work
                          titleReg: "[a-zA-Z ]+"
                      }

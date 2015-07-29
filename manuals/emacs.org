@@ -49,3 +49,40 @@ include gnus manual here eh?
   - `C-c <letter>` end recording keyboard macro
   - `@ <letter>` perform keyboard macro
   - `C-x Q`  prompt the user for input
+* helm mode
+  HOLY BLIMEY COW!!! THIS MODE IS AWESOME enable it!
+
+  C-c C-f helm-find-files
+
+  In this mode typing "~/ manage js$"
+  will display a list of files in my home directory that contain the work 'manage' and end is js
+
+  Typing C-l will display the files is the parent directory
+  Typing C-z when point is on a directory, will show the files in that directory
+
+  Helm has nth commands. Instead of typing tab to get to the action menu
+  just press C-e for the 2nd action
+  and C-j for the 3rd action.
+  You can also bind a key to an action menu
+  (define-key helm-map (kbd "<C-tab>") 'helm-select-4th-action)
+
+  C-c C-u lets you view an image
+
+  Apparently helm lets you open files externally in helm-find-files with C-c C-x (not working though)
+
+  I can make personal actions on to run on files via eshell WOW!!!!
+
+  C-SPC will mark files that you can perform actions on
+
+  You can then hit copy files in the action menu, which will let you select a new destionation to copy the files. so cool!
+  You can do the same thing from the action menu with rename, symlink, hardlink
+
+  helm has support for etags
+  C-h e  will search the tags file
+  the above should create the TAGS file with tags, but it's not working
+  find . -iregex .*\.el$ | xargs etags
+
+  check out pcomplete extension
+  https://github.com/thierryvolpiatto/pcomplete-extension
+
+  I can also write my own helm commands cool!

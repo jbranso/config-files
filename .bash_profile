@@ -30,6 +30,26 @@ export EMAIL="jbranso@purdue.edu"
 export NAME="Joshua Branson"
 export SMTPSERVER="smtp.purdue.edu"
 
+export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+export GTAGSLABEL=pygments
+
+# export GTAGSLABEL=ctags
+
+# if [ -r $PWD/.globalrc ]; then
+#     GTAGSCONF=$PWD/.globalrc
+# elif [ -r $HOME/.globalrc ]; then
+#     GTAGSCONF=$HOME/.globalrc
+# elif [ -r /usr/local/share/gtags/gtags.conf ]; then
+#     GTAGSCONF=/usr/local/share/gtags/gtags.conf
+# fi
+
+# export GTAGSCONF
+
+#if which mkid > /dev/null; then
+#    gtags -I
+#else
+#    gtags
+#fi
 
 #If you're using arch linux check out https://wiki.archlinux.org/index.php/Automatic_login_to_virtual_console
 #It shows you how to automatically log in at the end of the boot process.
