@@ -1,6 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: include;
-# key: include;
-# binding: direct-keybinding
-# --
-include("$0");
