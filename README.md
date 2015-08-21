@@ -4,7 +4,7 @@ Hello, I'm an arch linux user, and these are my config files notable for rc.lua 
 among other projects.
 
 
-*NOTE: The .emacs.d/ is an outdated directory.  Use my .emacs.d/ repo (https://github.com/jbranso/.emacs.d) for the updated version.*
+*NOTE: If you are looking for a decent emacs config, then use my .emacs.d/ repo at https://github.com/jbranso/.emacs.d *
 
 The awesome window manager is a keyboard driven window manager.  A window manager only controls how your programs are displayed
 on the screen. It does not by default automatically open CDs or DVDs when you insert them, nor does it turn your screen brighter
