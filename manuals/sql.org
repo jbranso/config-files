@@ -45,3 +45,62 @@
    * select_expr indicates a column you wish to retrieve.
 
    * table_references indicates the table of tables from which to retrieve rows
+** LIMIT is particularly useful for SELECTs which use ORDER BY, DISTINCT and
+   GROUP BY, because their calculations don't have to involve all the rows.
+   this can speed the query up!
+** 4.22.9 IN and NOT IN
+   SELECT id
+   FROM stats
+   WHERE position IN ('Manager', 'Staff')
+   SELECT ownerid, 'is in both orders & antiques'
+   FROM orders, antiques WHERE ownerid = buyerid
+   UNION
+   SELECT buyerid, 'is in antiques only'
+   FROM antiques WHERE buyerid NOT IN (SELECT ownerid FROM orders)
+** 4.22.10 EXISTS and ALL
+   (Compatible: Mysql 4+)
+   SELECT ownerfirstname, ownerlastname
+   FROM owner
+   WHERE EXISTS (SELECT * FROM antiques WHERE item = 'chair')
+   SELECT buyerid, item
+   FROM antiques
+   WHERE price = ALL (SELECT price FROM antiques)
+
+** UNION == UNION DISTINCT
+   UNION ALL shows you duplicate values
+** JOINS
+*** cartesian joins you join every row of one table to every row of another table
+    SELEcT * FROM girls CROSS JOIN boys
+** subqueries appear in the where or having clause
+   a subquery can only product a single column of data as a result. Order by is not allowed, doesn't make sense
+
+   to find girls with the same last name as the boys
+   SELEct * from girls WHERE last = (SELEct last from boys)
+
+   how find a coach a little better
+   select ID from bowlers WHERE level IN ('3', '6')
+   verses
+   SELEct ID from bowlers WHERE level = '3' and level = '6'
+
+   How to find all non coaches
+   SELEct ID from bowlers WHERE level NOT IN ('3', '6')
+** LIKE
+   like has 2 special charters
+   "%" represents any sequence of chars
+   "_" means any 1 char
+
+   SELEcT girls from bowlers WHERE last LIKE 'SM_TH'
+   LIKE also works with numbers
+   SELEct ID from bowlers WHERE ID LIKE '_2%'
+   it will select 123434 or 223434 or 4222323
+** SOUNDS LIKE can check if two words sound similiar! wow!
+   SELEcT first from girls WHERE first SOUNDS LIKE 'karlie'
+** regexp
+   SELEct 'string' REGEXP pattern
+** LOAD DATA INFILE '/path/to/file' INTO TABLE usbcData
+** GREATEST (value1, value2, value3)
+** LEAST (value1, value2, value3)
+   returns the smallest value
+** IF (val1, val2, val3)
+   if val1 is true, then it returns value1. Otherwise it returns val3
+** SELECT MAX(LENGTH(CONCAT(‘first_name‘, ' ', ‘last_name‘))) FROM ‘subscribers‘

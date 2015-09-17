@@ -1,5 +1,6 @@
 local awful = require("awful")
 
+-- this function, when it worked, let you create a gradient on the battery
 function gradient(min, max, val)
   if (val > max) then val = max end
   if (val < min) then val = min end
@@ -19,6 +20,7 @@ function gradient(min, max, val)
   return string.format("#%02x%02x00", green, red)
 end
 
+--this lets you only run a command once. if you restart awesome it won't run this command again
 function run_once(cmd)
    findme = cmd
    firstspace = cmd:find(" ")

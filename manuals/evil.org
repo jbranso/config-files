@@ -1,0 +1,28 @@
+#+TITLE:Evil cheatsheet
+# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
+
+# chapters, then sections, then subsections, then sub-sub-sections, etc.
+#+OPTIONS: H:10
+
+* cool commands
+  find a replace text only in lines 50-100
+  ~:50,100s/old/new/g~
+
+  visually select words. u changes them into lowercase. U uppercases them.
+
+  3fh moves point to the 3rd occurrence of "h" on the current line
+
+  ~C-o~ in normal mode lets you jump back to the previous location
+
+  ~o~ moves you back to the beginning of the last word
+  ~O~ moves you back to the end of the last word
+  ~e~ moves you forward to the beginning of the next word
+  ~E~ moves you forward to the end of the next word
+
+  ~)~ move to the next sentence
+  ~(~ move to the last sentence
+
+  ~}~ move to the next paragraph
+  ~{~ move to the last paragraph
+
+  ~'<mark>~ moves to the mark

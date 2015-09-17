@@ -1,7 +1,6 @@
 #
 # ~/.bash_profile
 #
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # I've just turned emacs ediff into something I can use!

@@ -107,6 +107,7 @@ function a(){
     fi
 }
 
-
+# to shutdown the hurd as a normal user, issue reboot
+alias hurd='cd ~/programming/hurd; qemu-system-i386 -drive file=debian-hurd-20150320.img,cache=writeback,format=raw --curses -cpu core2duo -smp 2 -m 1G -enable-kvm --no-reboot'
 #something to do with autostarting.
 PS1='[\u@\h \W]\$ '

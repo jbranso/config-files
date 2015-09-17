@@ -34,3 +34,7 @@ The color codes are listed there.
  Entered on [2015-08-16 Sun 18:29]
 
    [[file:~/manuals/gimp.org]]
+** PSD images opened in GMIP that have had Adjustment Layers applied to them in photoshop will not show up in GIMP.
+ Entered on [2015-08-30 Sun 12:11]
+
+   [[file:~/programming/org/gtd/gtd.org]]
