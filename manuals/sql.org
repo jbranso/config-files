@@ -70,7 +70,13 @@
    UNION ALL shows you duplicate values
 ** JOINS
 *** cartesian joins you join every row of one table to every row of another table
-    SELEcT * FROM girls CROSS JOIN boys
+*** left Joins
+    Left joins allow one to combine the results from two different tables in one query.  It will only display show matching
+    records.  In the following case, it will only display records where a kid's address is the same as his parents.
+
+    SELECT * FROM girls CROSS JOIN boys
+    SELECT first, last, parents.address from kids
+    LEFT join parents on users.address = parents.address
 ** subqueries appear in the where or having clause
    a subquery can only product a single column of data as a result. Order by is not allowed, doesn't make sense
 
@@ -104,3 +110,11 @@
 ** IF (val1, val2, val3)
    if val1 is true, then it returns value1. Otherwise it returns val3
 ** SELECT MAX(LENGTH(CONCAT(‘first_name‘, ' ', ‘last_name‘))) FROM ‘subscribers‘
+** user defined variables! holy cow!
+   You can write one query and save the results in a sql variable!  Then you can refer to that variable in the union clause!
+
+   SELECT ID, first, last, schools.schoolID, level, @groupID := schools.groupID as groupID
+   FROM users LEFT JOIN schools on users.schoolID=schools.schoolID
+   WHERE (level = '3' OR level = '6' OR level = '9') AND (ID = '3')
+   UNION ALL SELECT ID, first, last, schoolID, level, schoolID as groupID from users
+   WHERE level = '2' AND schoolID = @groupID

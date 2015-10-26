@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-
 # sorts lines in a text file in ascending order
 # usage is  highest filename [howmany]
 

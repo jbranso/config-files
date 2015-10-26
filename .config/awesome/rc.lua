@@ -55,7 +55,7 @@ end
 beautiful.init("/home/joshua/.config/awesome/themes/zenburn/theme.lua")
 configd = "/home/joshua/.config/awesome/"
 terminal = "lxterminal"
-editor = "ediff" -- os.getenv("EDITOR") or
+editor = "emacsclient -nc" -- os.getenv("EDITOR") or
 editor_cmd = terminal .. " -e " .. editor
 
 -------------- useful functions
@@ -626,8 +626,8 @@ awful.rules.rules = {
      properties = { floating = true } },
    { rule = { class = "Firefox" },
      properties = {
-        skip_taskbar = true,
-        screen = 1,
+     --   skip_taskbar = true,
+       -- screen = 1,
      },
    },
    -- I really do not like seeing the normal workrave program
@@ -656,7 +656,7 @@ awful.rules.rules = {
    },
    { rule = { class = "Thunderbird" },
      properties = {
-        skip_taskbar = true,
+        --     skip_taskbar = true,
         screen = 1,
         --make thunerbird map on the 1st screen, tag # 2
         tag = tags[1][2],
@@ -787,10 +787,10 @@ run_once("workrave")
 -- run_once("thunar --daemon")
 --run_once("thunar")
 -- This spawns my color profile that I downloaded from my macbook.
--- Is this technically proprietary code?
+-- Is this technically proprietary code?  probably
 awful.util.spawn("xcalib /home/joshua/colorprofile/color.icc")
 -- the --sm-disable & lets the nm-applet menu work nicely.
-awful.util.spawn_with_shell("run_once nm-applet --sm-disable &")
+-- awful.util.spawn_with_shell("run_once nm-applet --sm-disable &")
 -- this next line was for getting network-manager working. I probably don't need it.
 -- awful.util.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 -- run_once("xfce4-panel --disable-wm-check")

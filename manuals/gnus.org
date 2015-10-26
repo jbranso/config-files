@@ -1,4 +1,4 @@
-#+TITLE:GNUS Cheatsheat
+#+TITLE:Gnus Cheatsheat
 #+OPTIONS: H:10
 
 * Introduction
@@ -33,8 +33,16 @@
    - ~p~
      go to the previous group that has unread mail
 
-* The Summary Buffer
+   - ~GG~ with point on a folder, will search the server side for email matching the search term that is in that folder
 
+
+* The Summary Buffer
+** Various commands
+   - ~//~ limit local mail by subject.  Limiting means to search mail locally.
+
+   - ~/a~
+
+   -
 ** Various commands
   - ~C-c C-f~
     forward the current email under point
@@ -50,3 +58,52 @@
 
    + ~C-c C-m C-e~
      encrypt and sign the message
+* Find the News
+** gnu-select-method tells guns where to look for news.
+   it is a list where the first element says how and the 2nd says where like
+   (setq gnus-select-method '(nntp "news.somewhere.edu"))
+* Terminology
+** News is public usenet feeds.  You comment on something and everyone can see it
+** mail is private.  You email someone and only you and the person you email can see it
+** follow up is to respond to a public article
+** reply is to reply to mail
+** the backends
+*** the nntp backend commonly gathers news articles via NNTP
+*** the nnimap backend grabs mail via IMAP
+*** the nnspool backend grabs mail via the spool directory
+*** the nnml backend grabs mail via a file format
+** native
+   gnus will always use one method (and back end) as the "native" or default way of gathering news.
+   groups from the native select method have names like gnu.emacs.gnus
+** secondary
+   a secondary backend acts like a native backend but has names like
+   nnpt+news.gmane.org:gname.emacs.gnus.devel
+** an article is a message that has been posted as news
+** a mail message is a message that has been mailed
+** message is a mail message or a news article
+** head the top part of a message where info is put
+** body is part of the message
+** NOV is news overview.  They are provied by the nntp backend. Everytime gnus enters a group it asks the backend
+   for the headers of all unread articles.  Most servers do this by using the NOV format, which is faster
+** level each group has a level
+   1-5 are subscribed
+   6-7 are unsubscribed
+   8 are zombie
+   9 are killed
+** no info is stored or updated on killed groups
+** zombie groups are like killed groups
+** active file is where the server stores info on the articles they carry. This file can be large
+** a bogus group exists in the .newsrc file BUT is not known to the server aka it likely doesn't exist
+** activating is asking the server for info on a group and computing the number of unread article that group has
+** spool news servers store their files locally. Having 1 file per article is a traditonal spool
+** a server connects to and gets the mail
+** select method  specifying the backend
+** washing taking a buffer and running it through a filter, which makes it more pleasing
+** ephemeral most groups store data on what articles one has read.  but store nada and disapear when you exit the group
+** solid groups all groups listed in the group buffer are solid groups
+** threading  to put responses to articles directly aftre the artciles they respond to
+** root the first artcile in a thread
+** parent an article that has responses
+** a child an article that responds to the parents
+** digest is a collect of mesages in a file
+** splitting is sorting your emails according to certain rules
