@@ -44,7 +44,53 @@
    - (org-agenda-entry-text-mode)
 * export to HTML
 * Org babel
-  Org babel allows you to
+  Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
+  etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
+  a program that uses 30 different languages, and each block's results can be used as input to any other block!
+** An sql example
+    :PROPERTIES:
+    :engine: mysql
+    :dbhost: localhost
+    :dbuser: root
+    :dbpassword: <your password here>
+    :database: usbc
+    :END:
+
+    #+name: my_query
+    #+BEGIN_SRC sql
+      SELECT first, last FROM users WHERE last = 'Branson' limit 5
+    #+END_SRC
+
+    #+RESULTS: my_query
+    | first  | last    |
+    |--------+---------|
+    | Joshua | Branson |
+    | Joshua | Branson |
+    | Joshua | Branson |
+    | Joshua | Branson |
+
+    That "my_query" block can be passed as input to the following code block
+    #+BEGIN_SRC emacs-lisp :var x=my_query
+      (print x)
+
+    #+END_SRC
+
+    #+RESULTS:
+    | Joshua | Branson |
+    | Joshua | Branson |
+    | Joshua | Branson |
+    | Joshua | Branson |
+
+    One can also tell emacs NOT to export the results of a code execution via
+    #+BEGIN_SRC emacs-lisp :exports none
+      (print "hello")
+    #+END_SRC
+
+    #+RESULTS:
+    : hello
+
+
+
 * Easy Templates
   Org mode supports insertion of empty structural elements (like #+BEGIN_SRC and #+END_SRC pairs) with just a few key strokes. This is achieved through a native template expansion mechanism. Note that Emacs has several other template mechanisms which could be used in a similar way, for example yasnippet.
 
