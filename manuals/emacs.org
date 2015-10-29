@@ -204,3 +204,11 @@ include gnus manual here eh?
   tab, and it will complete it for you. I'll need to check it out. What's it called?
 * install restclient or emacs. It lets you query the server via get and post.  I can view the results via emacs!
 * in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
+* tramp is an emacs extension that lets you edit remote files
+  it's syntax is done by pressing C-x C-f (find-file) then typing one of the following:
+
+     /HOST:FILENAME
+     /USER@HOST:FILENAME
+     /USER@HOST#PORT:FILENAME
+     /METHOD:USER@HOST:FILENAME
+     /METHOD:USER@HOST#PORT:FILENAME

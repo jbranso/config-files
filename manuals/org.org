@@ -2,8 +2,7 @@
 # The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
 
 # chapters, then sections, then subsections, then sub-sub-sections, etc.
-#+OPTIONS: H:10
-#+
+#+OPTIONS: H:10 toc: nil
 
 * Movement commands
   * ~C-c C-n~ Next heading
@@ -12,41 +11,38 @@
   * ~C-c C-j~  org-goto...it is super nice!!
 * Getting familiar with org-agenda
 ** commands
-   * ~v d~  or ~d~  shows’ today’s agenda
-   * ~v w~  or ~w~ shows this week’s agenda
-   * ~v m~  view this month’s agenda
-   * ~v t~  shows the fortnight
-   * ~.~  goto today’s agenda
-   * ~j~  goto a specified date
-   * ~J~ goto the currently clocked in task
-   * ~v c~  shows you overlapping clock entries
-   * ~r~ redraw the agenda buffer
-   * ~C-k~  kill the current agenda item in the agenda buffer and in the file
-   * ~C-c C-w~ refile the entry
-   * ~T~ show the tags of an entry
-   * ~:~ set the tags for the current entry
-   * ~,~  set the priority of the item
-   * ~P~  show the priority of the item
-   * ~+~ Increase its priority
-   * ~-~ minus its priority
-   * ~z~ add a note to the entry
-   * ~>~ change the timestamp with that entry
-   * ~I~ clock in on an entry
-   *  ~O~ clockout on an entry
-   * ~X~ cancel the current running clock
-   * ~m~ mark the entry at point
-   * ~u~ undo the marked point
-   *  ~U~ unmark all marked entries
-   * ~%~ mark via regexp
+   - ~v d~  or ~d~  shows’ today’s agenda
+   - ~v w~  or ~w~ shows this week’s agenda
+   - ~v m~  view this month’s agenda
+   - ~v t~  shows the fortnight
+   - ~.~  goto today’s agenda
+   - ~j~  goto a specified date
+   - ~J~ goto the currently clocked in task
+   - ~v c~  shows you overlapping clock entries
+   - ~r~ redraw the agenda buffer
+   - ~C-k~  kill the current agenda item in the agenda buffer and in the file
+   - ~C-c C-w~ refile the entry
+   - ~T~ show the tags of an entry
+   - ~:~ set the tags for the current entry
+   - ~,~  set the priority of the item
+   - ~P~  show the priority of the item
+   - ~+~ Increase its priority
+   - ~-~ minus its priority
+   - ~z~ add a note to the entry
+   - ~>~ change the timestamp with that entry
+   - ~I~ clock in on an entry
+   -  ~O~ clockout on an entry
+   - ~X~ cancel the current running clock
+   - ~m~ mark the entry at point
+   - ~u~ undo the marked point
+   -  ~U~ unmark all marked entries
+   - ~%~ mark via regexp
 ** views
-   * (org-agenda-log-mode)  enteries that were marked done while logging was on, are shone in hte agenda, as are
+   - (org-agenda-log-mode)  enteries that were marked done while logging was on, are shone in hte agenda, as are
      entries that have been clocked today.
-   * (org-agenda-clockreport-mode) the agenda view will show a table with all your currently clocked time on tasks.
-   * (org-agenda-entry-text-mode)
-   *
+   - (org-agenda-clockreport-mode) the agenda view will show a table with all your currently clocked time on tasks.
+   - (org-agenda-entry-text-mode)
 * export to HTML
-*
-*
 * Org babel
   Org babel allows you to
 * Easy Templates

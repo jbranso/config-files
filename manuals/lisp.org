@@ -1,0 +1,9 @@
+#+TITLE: Emacs Lisp Cheat Sheet
+
+* Conditionals
+  - The most powerful of the conditionals is cond conditional, which is essentially a switch statement.  It looks like this:
+    ~(cond~
+    ~((condition 1) body-forms)~
+    ~((condition 2) body-forms)~
+    ~((condition 3) body forms)~
+    ~(t default-body-forms))~
