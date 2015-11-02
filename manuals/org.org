@@ -1,14 +1,121 @@
 #+TITLE:Org Cheatsheat
+#+AUTHOR: Joshua Branson
+#+LANGUAGE: en
+#+HTML_HEAD <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 # The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
-
 # chapters, then sections, then subsections, then sub-sub-sections, etc.
-#+OPTIONS: H:10 toc: nil
 
 * Movement commands
-  * ~C-c C-n~ Next heading
-  * ~C-c C-p~ Previous heading
-  * ~C-c C-u~ backward to a higher level heading
-  * ~C-c C-j~  org-goto...it is super nice!!
+  - ~C-c C-n~ Next heading
+  - ~C-c C-p~ Previous heading
+  - ~C-c C-u~ backward to a higher level heading
+  - ~C-c C-j~  org-goto...it is super nice!!
+* "TODO" notes
+  Org mode has some VERY handy ways of keeping track of todo items.
+
+** The Default TODO/DONE state
+   When point is on a heading, pressing "C-c C-t" when insert a TODO at the begining of the line, indicatating that it is an item that
+   needs to be completed.  Pressing "C-c C-t" changes the TODO "DONE".  You can change the default values as well.
+
+** You can also break tasks into neat little subtasks.  And keep track of how much of the task is done!
+
+*** TODO Take over the world [20%]
+    :LOGBOOK:
+    - State "TODO"       from              [2015-10-31 Sat 20:20]
+    :END:
+
+**** TODO Get some converts [1/2]
+     :LOGBOOK:
+     - State "TODO"       from              [2015-10-31 Sat 20:20]
+     :END:
+
+***** TODO Talk to people [66%]
+      :LOGBOOK:
+      - State "TODO"       from              [2015-10-31 Sat 20:20]
+      :END:
+
+****** DONE Kyle
+       CLOSED: [2015-10-31 Sat 20:22]
+       :LOGBOOK:
+       - State "DONE"       from "TODO"       [2015-10-31 Sat 20:22]
+       - State "TODO"       from              [2015-10-31 Sat 20:20]
+       :END:
+
+****** TODO Jen
+       :LOGBOOK:
+       - State "TODO"       from              [2015-10-31 Sat 20:20]
+       :END:
+
+****** DONE Juice
+       CLOSED: [2015-10-31 Sat 20:21]
+       :LOGBOOK:
+       - State "DONE"       from "TODO"       [2015-10-31 Sat 20:21]
+       - State "TODO"       from              [2015-10-31 Sat 20:21]
+       :END:
+
+***** DONE Write some web blogs
+      CLOSED: [2015-10-31 Sat 20:22]
+      :LOGBOOK:
+      - State "DONE"       from              [2015-10-31 Sat 20:22]
+      :END:
+**** TODO Get some $$$  [33%]
+     :LOGBOOK:
+     - State "TODO"       from              [2015-10-31 Sat 20:20]
+     :END:
+***** DONE Rob a bank
+      CLOSED: [2015-10-31 Sat 20:21]
+      :LOGBOOK:
+      - State "DONE"       from "TODO"       [2015-10-31 Sat 20:21]
+      - State "TODO"       from              [2015-10-31 Sat 20:21]
+      :END:
+***** TODO start a business
+      :LOGBOOK:
+      - State "TODO"       from              [2015-10-31 Sat 20:21]
+      :END:
+***** TODO sell my stuff
+      :LOGBOOK:
+      - State "TODO"       from              [2015-10-31 Sat 20:22]
+      :END:
+**** DONE Overthrow the government
+     CLOSED: [2015-10-31 Sat 20:22]
+     :LOGBOOK:
+     - State "DONE"       from "TODO"       [2015-10-31 Sat 20:22]
+     - State "TODO"       from              [2015-10-31 Sat 20:20]
+     :END:
+
+**** TODO help the common man
+     :LOGBOOK:
+     - State "TODO"       from              [2015-10-31 Sat 20:20]
+     :END:
+
+**** TODO kill all the remaining zombies [1/2]
+     :LOGBOOK:
+     - State "TODO"       from              [2015-10-31 Sat 20:20]
+     :END:
+
+***** DONE kill the zombies in Africa
+      CLOSED: [2015-10-31 Sat 20:23]
+      :LOGBOOK:
+      - State "DONE"       from              [2015-10-31 Sat 20:23]
+      :END:
+
+***** STARTED kill the zombies in NY
+      :LOGBOOK:
+      - State "STARTED"    from              [2015-10-31 Sat 20:23]
+      :END:
+
+** You can also create little checkboxs too!
+
+*** TODO shopping [2/3]
+    :LOGBOOK:
+    - State "TODO"       from              [2015-10-31 Sat 20:24]
+    :END:
+
+    - [ ]  pickles
+
+    - [X] onions
+
+    - [X] lettuce
 * Getting familiar with org-agenda
 ** commands
    - ~v d~  or ~d~  shows’ today’s agenda
@@ -42,12 +149,13 @@
      entries that have been clocked today.
    - (org-agenda-clockreport-mode) the agenda view will show a table with all your currently clocked time on tasks.
    - (org-agenda-entry-text-mode)
-* export to HTML
+* export commands
+  In an org buffer type C-c C-e and org-mode will open a buffer that will prompt you for how you would like to export your document.
 * Org babel
   Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
   etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
   a program that uses 30 different languages, and each block's results can be used as input to any other block!
-** An sql example
+  - An sql example
     :PROPERTIES:
     :engine: mysql
     :dbhost: localhost
@@ -55,9 +163,10 @@
     :dbpassword: <your password here>
     :database: usbc
     :END:
-
+** sql
     #+name: my_query
-    #+BEGIN_SRC sql
+    # results output and exports both let the exported file show both the code and the results in the exported file
+    #+BEGIN_SRC sql :results output :exports both
       SELECT first, last FROM users WHERE last = 'Branson' limit 5
     #+END_SRC
 
@@ -88,9 +197,205 @@
 
     #+RESULTS:
     : hello
+  - A gnu plot example
+
+    #+BEGIN_SRC gnuplot
+    set title "My First Plot";  plot 'data';  print "all done!"
+    #+END_SRC
+** gnu calc
+   #+BEGIN_SRC calc
+     fsolve (x*2 + 4 = 5, x)
+   #+END_SRC
+
+   #+RESULTS:
+   : x = 0.5
+
+   #+BEGIN_SRC calc
+   fsolve([x + y = a, x - y = b],[x,y])
+   #+END_SRC
+
+   #+RESULTS:
+   : [x = a + (b - a) / 2, y = (a - b) / 2]
+
+  #+BEGIN_SRC calc
+  integ (x**2,x)
+  #+END_SRC
+
+  #+RESULTS:
+  : x^3 / 3
+
+** gnuplot
+   #+BEGIN_SRC gnuplot
+   plot x**2 with lines
+   #+END_SRC
+
+   #+RESULTS:
+
+** running code remotely
+    :PROPERTIES:
+    :dir: /ssh:user@host.com:/home/user
+    :END:
+    #+BEGIN_SRC sh
+      ls
+    #+END_SRC
+
+** C code
+   #+HEADERS: :includes <math.h> :flags -lm
+   #+HEADERS: :var x=1.0 :var y=4.0 :var z=10.0
+   #+BEGIN_SRC C :exports both
+     double pi = 4*atan(1);
+     double r, theta, phi;
+     r = sqrt(x*x+y*y+z*z);
+     theta = acos(z/r) * 180.0/pi;
+     phi = atan2(y,x) * 180.0/pi;
+     printf("%f %f %f", r, theta, phi);
+   #+END_SRC
+
+   #+RESULTS:
+   : 10.816654 22.406871 75.963757
+
+   To include multiple C header files
+   #+BEGIN_SRC C :includes '(<math.h> <time.h>)
+
+   #+END_SRC
+
+** org mode
+   Sometimes you may need to generate org-mode source code inside your document for exporting. So to do that you do:
+
+   #+BEGIN_SRC org
+    #+BEGIN_SRC python
+     print "foo"
+    ,#+END_SRC
+   #+END_SRC
+** simple calc example
+   :PROPERTIES:
+   :DATE:     2011-01-25
+   :END:
+#+begin_src calc
+2*3
+#+end_src
+
+#+name:
+: 6
+** lisp
+   :PROPERTIES:
+   :DATE:     2010-08-12
+   :END:
+
+#+begin_src lisp :var n=5
+  (mapcar (lambda (el) (* el el)) (append '(1 7 3 4) (list n)))
+#+end_src
+
+#+name:
+| 1 | 49 | 9 | 16 | 25 |
+
+#+name: short-list
+| 1 |
+| 2 |
+| 3 |
+
+#+begin_src lisp :var lst=short-list :session t
+  (+ 1 (length lst))
+#+end_src
+
+#+name:
+: 4
+
+*
+** bash
+  #+begin_src sh
+  echo "This file takes up `du -h org-babel.org |sed 's/\([0-9k]*\)[ ]*org-babel.org/\1/'`"
+  #+end_src
+
+  #+RESULTS:
+  : This file takes up
+
+  #+begin_src sh
+    pacman -Q firefox
+  #+end_src
+
+  #+RESULTS:
+  : firefox 41.0.1-1
+* Org spreadsheets
+  | Money I earn in a month | Expenses  | Expenses$ | Total |
+  |-------------------------+-----------+-----------+-------|
+  |                    5000 | groceries | $500      |       |
+  |                         | gas       | $200      |       |
+  |                         |           |           |       |
 
 
+  | N | N^2 | N^3 | N^4 | ~sqrt(n)~ | ~sqrt[4](N)~ |
+  |---+-----+-----+-----+-----------+--------------|
+  | / |   < |     |   > |         < |            > |
+  | 1 |   1 |   1 |   1 |         1 |            1 |
+  | 2 |   4 |   8 |  16 | 1.4142136 |    1.1892071 |
+  | 4 |  16 |  64 | 256 |         2 |    1.4142136 |
+  |---+-----+-----+-----+-----------+--------------|
+  #+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
 
+  type C-c * inside that table to update it
+
+* latex equations
+  Our best estimate of F(\nu) will be
+  \[
+  \hat{F}(\nu) = \frac{G(\nu)}{H(\nu)}.
+  \]
+
+  org-preview latex fragment with "C-c C-x C-l"
+
+  \begin{eqnarray*}
+  \hat{f}(x) & \propto & \sum_{\nu} \frac{|F(\nu)H(\nu)|^2}{|N(\nu)|^2}
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} \frac{|F(\nu)|^2}{|N(\nu)|^2} H(\nu) H^*(\nu)
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} H^*(\nu) G(\nu) e^{\frac{2 \pi i \nu x}{N}}
+           \e
+           nd{eqnarray*}
+
+
+* Agenda
+
+** Agenda commands
+   - =A= redraw the agenda view and prompt for how you want it
+   - =d= show the day's view
+   - =w= show the week's view
+   - =f= go forward in time
+   - =b= go backward in time
+   - =j= jump to a specific date
+   - =.= jump to today
+   - =D= toggle inclusion of diary entries
+   - =vl= toggle logbook mode.
+   - =vR= will toggle clockreport mode.  You will see a table showing you the total amount of time
+   - =vc= show overlaping clock entries, clocking gaps, or other clocking problems. Then press l to return to the normal
+     agenda view
+   - =G= toggle displaying of the time grid in the view
+   - =g/r= redraw the agenda buffer
+   - =/= filter by tag
+   - =\= narrow the agenda buffer further by another tag
+   - ~=~ filter the agenda view by regexp
+   - =|= remove all filters on the agenda view
+   - =a= archive the item at point
+   - =T= show the tags associated with the current item
+   - =:= set the tags for the current item
+   - =,= set the priority of the item
+   - =z= add a note to this entry
+   - =C-c C-s= attach an item to this item
+   - =I= clock in
+   - =m= mark the agenda item
+   - =u= unmark the item
+   - =U= unmark all items
+   - =%= mark all entries via a regexp
+   - =B= do a bulk action on the marked items in the agenda
+
+   When inside the calendar/agenda
+   - =i= insert a new entry into the diary
+   - =M= show the date phases of the moon
+   - =S= show sunrise and sunset times
+   - =H= show upcoming Holidays
+   - =
+* inserting a bbdb record link into the file
+    [[bbdb:Nathaniel Simone]]
+    How cool is that?
 * Easy Templates
   Org mode supports insertion of empty structural elements (like #+BEGIN_SRC and #+END_SRC pairs) with just a few key strokes. This is achieved through a native template expansion mechanism. Note that Emacs has several other template mechanisms which could be used in a similar way, for example yasnippet.
 
@@ -98,19 +403,20 @@ To insert a structural element, type a ‘<’, followed by a template selector 
 
 The following template selectors are currently supported.
 
-s	#+BEGIN_SRC ... #+END_SRC
-e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
-q	#+BEGIN_QUOTE ... #+END_QUOTE
-v	#+BEGIN_VERSE ... #+END_VERSE
-c	#+BEGIN_CENTER ... #+END_CENTER
-l	#+BEGIN_LaTeX ... #+END_LaTeX
-L	#+LaTeX:
-h	#+BEGIN_HTML ... #+END_HTML
-H	#+HTML:
-a	#+BEGIN_ASCII ... #+END_ASCII
-A	#+ASCII:
-i	#+INDEX: line
-I	#+INCLUDE: line
+- s 	#+BEGIN_SRC ... \\ #+END_SRC
+- e 	#+BEGIN_EXAMPLE ... \\ #+END_EXAMPLE
+- q 	#+BEGIN_QUOTE ... \\ #+END_QUOTE
+- v 	#+BEGIN_VERSE ... \\ #+END_VERSE
+- c 	#+BEGIN_CENTER ... \\ #+END_CENTER
+- l 	#+BEGIN_LaTeX ...  \\ #+END_LaTeX
+- L 	#+LaTeX:
+- h 	#+BEGIN_HTML ...  \\ #+END_HTML
+- H 	#+HTML:
+- a 	#+BEGIN_ASCII ... \\ #+END_ASCII
+- A 	#+ASCII:
+- i 	#+INDEX: line
+- I 	#+INCLUDE: line
+
 For example, on an empty line, typing "<e" and then pressing TAB, will expand into a complete EXAMPLE template.
 
 You can install additional templates by customizing the variable org-structure-template-alist. See the docstring of the variable for additional details.

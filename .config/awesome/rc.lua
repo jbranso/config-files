@@ -54,7 +54,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/joshua/.config/awesome/themes/zenburn/theme.lua")
 configd = "/home/joshua/.config/awesome/"
-terminal = "lxterminal"
+terminal = "gnome-terminal"
 editor = "emacsclient -nc" -- os.getenv("EDITOR") or
 editor_cmd = terminal .. " -e " .. editor
 

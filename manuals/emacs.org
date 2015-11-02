@@ -1,8 +1,6 @@
 #+TITLE:Emacs Cheatsheat
 #+OPTIONS: H:10
 
-include gnus manual here eh?
-
 * dired commands
   - ~n~ next line
   - ~p~ previous line
@@ -191,20 +189,22 @@ include gnus manual here eh?
   d  narrow to defun
   ~r~ widen to region
   ~w~ widden to the whole buffer
-* learn about defadvice run commands after or before you execute some command. very cool!
+* Elisp macro Defadvice
+  learn about defadvice run commands after or before you execute some command. very cool!
   (defadvice kill-line (after say-ouch activate)
   (message "Ouch!"))
-* set up el-doc for various modes
-  It shows help documentation as you write a function cool!
-* ttd-mode let's you specify a compile command. Everytime you save a file, it will run your compile command.
+* Awesome Emacs modes
+** El-doc
+  Set up el-doc for various modes. It shows help documentation as you write a function cool!
+** ttd-mode let's you specify a compile command. Everytime you save a file, it will run your compile command.
   If it finds an error, it will alert you at the bottom!
-* learn more about undo tree
-* try to learn paredit mode.  probably good for lisp code
-* there is a php package that turns all php functions into yasnippets.  It lets you easily type out a php function
-  tab, and it will complete it for you. I'll need to check it out. What's it called?
-* install restclient or emacs. It lets you query the server via get and post.  I can view the results via emacs!
-* in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
-* tramp is an emacs extension that lets you edit remote files
+** Undo tree
+learn more about undo tree
+** Paredit mode
+  Try to learn paredit mode.  probably good for lisp code
+** Restclient mode
+  install restclient. It lets you query the server via get and post.  I can view the results via emacs!
+** tramp is an emacs extension that lets you edit remote files
   it's syntax is done by pressing C-x C-f (find-file) then typing one of the following:
 
      /HOST:FILENAME
@@ -212,3 +212,6 @@ include gnus manual here eh?
      /USER@HOST#PORT:FILENAME
      /METHOD:USER@HOST:FILENAME
      /METHOD:USER@HOST#PORT:FILENAME
+* there is a php package that turns all php functions into yasnippets.  It lets you easily type out a php function
+  tab, and it will complete it for you. I'll need to check it out. What's it called?
+* in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
