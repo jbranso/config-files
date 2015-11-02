@@ -1,0 +1,64 @@
+#+TITLE: Core Utilities Cheat Sheet
+#+AUTHOR: Joshua Branson
+
+* find
+  - find and report all php files in the specified dir current directory
+    #+BEGIN_SRC sh :dir ~/programming/waypoint/nutripledge/
+    find . -name '.*php' -print
+    #+END_SRC
+
+    #+RESULTS:
+    | ./calendar1/__MACOSX/supercali-1.0.8/._modules.php                    |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._week.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._year.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._upcoming.php           |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._grid.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._weeklist.php           |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._day_week_functions.php |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._quarter.php            |
+    | ./calendar1/__MACOSX/supercali-1.0.8/modules/._day.php                |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._edit_users.php                 |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._delete_event.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._admin_actions.php              |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._edit_links.php                 |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._bad_password.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._login.php                      |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._notify.php            |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._session_start.php     |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._nav.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._start.php             |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._footer.php            |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._top_nav.php           |
+    | ./calendar1/__MACOSX/supercali-1.0.8/includes/._hidden_fields.php     |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._edit_categories.php            |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._upload_events.php              |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._edit_groups.php                |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._edit_event.php                 |
+    | ./calendar1/__MACOSX/supercali-1.0.8/._user_profile.php               |
+    | ./calendar1/__MACOSX/supercali-1.0.8/lang/._en_us.php                 |
+
+    To find all of the specified files in all of the subdirectories starting with dir
+    #+BEGIN_SRC sh :dir ~/programming/waypoint/henriott-group/
+    find . -name \*.php -print
+    #+END_SRC
+
+    #+RESULTS:
+    | ./.#b3.php                    |
+    | ./history.php                 |
+    | ./staff.php                   |
+    | ./p7.php                      |
+    | ./about.php                   |
+    | ./p5.php                      |
+    | ./talk.php                    |
+    | ./b3.php                      |
+    | ./industries.php              |
+    | ./account.php                 |
+    | ./industry-pictures.php       |
+    | ./2.php                       |
+    | ./css/connect-to-database.php |
+    | ./contact.php                 |
+    | ./b4.php                      |
+    | ./includes/footer.php         |
+    | ./includes/nav.php            |
+    | ./includes/header.php         |
+    | ./products.php                |
