@@ -62,3 +62,11 @@
     | ./includes/nav.php            |
     | ./includes/header.php         |
     | ./products.php                |
+
+    To find all of the selected files (including sub-directories) and then delete them
+
+  #+BEGIN_SRC sh :dir ~/programming/waypoint/nutripledge/
+   find . -name \*.pdf -exec /bin/rm {} \;
+   #+END_SRC
+
+  #+RESULTS:

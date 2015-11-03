@@ -84,6 +84,17 @@
   https://github.com/thierryvolpiatto/pcomplete-extension
 
   I can also write my own helm commands cool!
+* windows commands
+  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
+  splitting the frame in half, or in two *windows*.
+
+  - =C-x o= Delete the selected window
+  - =C-x 1= Delete all the windows except the one that currently has point
+  - =C-x ^= make the selected window taller
+  - =C-x {= make the selected window narrower
+  - =C-x }= make the selected window wider
+  - =C-x -= shrink this window if it doesn't need that many lines.
+  - =C-x += make all the windows the same height
 * evil mode
   " <letter> yy   stores the whole line into register <letter>
   " <letter> p    puts the whole line back

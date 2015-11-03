@@ -329,6 +329,11 @@ globalkeys = awful.util.table.join(
    }) end),
    -- {{ Volume Control }} --
    awful.key({ }, "XF86AudioRaiseVolume", function()
+         --make sure that the bass speaker and speaker are on full blast
+         awful.util.spawn("amixer set Speaker 93%"        , false)
+         awful.util.spawn("amixer set 'Bass Speaker' 93%" , false)
+         awful.util.spawn("amixer set Speaker on"        , false)
+         awful.util.spawn("amixer set 'Bass Speaker' on" , false)
          -- don't let the user raise the volume over a certian threshhold
          -- If they use the keyboard keys, the volume won't ever get over 94%,
          -- but if they use alsamixer, it can go over 94%. This makes sure that even if
@@ -336,8 +341,8 @@ globalkeys = awful.util.table.join(
          -- changed back to 94% when they next press the button to increase the volume
          if percent >= 95 then  --if the volume is too loud, lower it
             percent = 94
-            awful.util.spawn("amixer set Master 94%", false)
-            awful.util.spawn("amixer set Headphone 94%", false)
+            awful.util.spawn("amixer set Master 94%"         , false)
+            awful.util.spawn("amixer set Headphone 94%"      , false)
             alsamixer_launcher:set_image ( configd .. "icons/Faenza/status/48/audio-volume-high.png" )
             return
             --if the volume is at the max limit, don't do anything
@@ -370,6 +375,11 @@ globalkeys = awful.util.table.join(
          end
    end),
    awful.key({ }, "XF86AudioLowerVolume", function()
+         -- make sure speaker and base speaker are on full blast
+         awful.util.spawn("amixer set Speaker 93%"        , false)
+         awful.util.spawn("amixer set 'Bass Speaker' 93%" , false)
+         awful.util.spawn("amixer set Speaker on"        , false)
+         awful.util.spawn("amixer set 'Bass Speaker' on" , false)
       	 if volume == "off" then
             -- do not update the icon
             return
@@ -401,16 +411,14 @@ globalkeys = awful.util.table.join(
    awful.key({ }, "XF86AudioMute", function()
          --toggle the speakers with amixer. Alsamixer works really weirdly. The command to turn off master
          if volume == "on" then
-            awful.util.spawn("amixer set 'Master' toggle", false)
-            awful.util.spawn("amixer set 'Headphone' toggle", false)
+            awful.util.spawn("amixer set 'Master' toggle"       , false)
+            awful.util.spawn("amixer set 'Headphone' toggle"    , false)
             --update the image
             alsamixer_launcher:set_image ( configd .. "icons/Faenza/status/48/audio-volume-muted-blocked-panel.png" )
             volume = "off"
          else
             awful.util.spawn("amixer set 'Master' toggle" , false)
             awful.util.spawn("amixer set 'Speaker' toggle" , false)
-            awful.util.spawn("amixer set 'Headphone' toggle" , false)
-            awful.util.spawn("amixer set 'Bass Speaker' toggle" , false)
             volume = "on"
             --update the image
             if (percent <= 30) then
