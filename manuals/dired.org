@@ -1,4 +1,4 @@
-#+TITLE:Org Cheatsheat
+#+TITLE:Dired Cheatsheat
 #+AUTHOR: Joshua Branson
 #+LANGUAGE: en
 #+HTML_HEAD <link rel="stylesheet" type="text/css" href="stylesheet.css" />

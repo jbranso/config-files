@@ -81,6 +81,7 @@ fi
 alias wifi='nmtui'
 alias cdrom='sudo mount /dev/sr0 /mnt/cdrom'
 alias dvd='sudo mount /dev/sr0 /mnt/dvd; vlc'
+alias mdvd='sudo mkdir /dev/dvd; sudo mount /dev/sr0 /dev/dvd; sudo  mplayer /dev/dvd;'
 
 # I've just turned emacs ediff into something I can use!
 # function ediff() {
@@ -110,6 +111,15 @@ function a(){
 # to shutdown the hurd as a normal user, issue reboot
 alias hurd='cd ~/programming/hurd/debian-gnu-hurd; qemu-system-i386 -drive file=debian-hurd-20150424.img,cache=writeback,format=raw --curses -cpu core2duo -smp 2 -m 1G -enable-kvm --no-reboot -no-kvm-irqchip'
 
+# I wast told to put these two lines here by the gpg documentation
+# [[info:gnupg#Invoking%20GPG-AGENT][info:gnupg#Invoking GPG-AGENT]]
+GPG_TTY=$(tty)
+export GPG_TTY
+
+#emacs keeps complaning that it can't connect to dbus
+#https://bugs.archlinux.org/task/5695
+# https://stackoverflow.com/questions/26887888/connecting-to-dbus-from-emacs-daemon
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/var/run/dbus/system_bus_socket"
 
 #something to do with autostarting.
 PS1='[\u@\h \W]\$ '

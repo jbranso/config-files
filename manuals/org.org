@@ -336,22 +336,22 @@
   type C-c * inside that table to update it
 
 * latex equations
-  Our best estimate of F(\nu) will be
+
   \[
   \hat{F}(\nu) = \frac{G(\nu)}{H(\nu)}.
   \]
 
   org-preview latex fragment with "C-c C-x C-l"
 
-  \begin{eqnarray*}
-  \hat{f}(x) & \propto & \sum_{\nu} \frac{|F(\nu)H(\nu)|^2}{|N(\nu)|^2}
-           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
-           & \propto & \sum_{\nu} \frac{|F(\nu)|^2}{|N(\nu)|^2} H(\nu) H^*(\nu)
-           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
-           & \propto & \sum_{\nu} H^*(\nu) G(\nu) e^{\frac{2 \pi i \nu x}{N}}
-           \e
-           nd{eqnarray*}
+* Creating Indexes
+  You can specify entries that will be used for generating an index during
+  publishing.  This is done by lines starting with `#+INDEX'.  An entry
+  the contains an exclamation mark will create a sub item.  See *note
+  Generating an index:: for more information.
 
+     * Curriculum Vitae
+     #+INDEX: CV
+     #+INDEX: Application!CV
 
 * Agenda
 

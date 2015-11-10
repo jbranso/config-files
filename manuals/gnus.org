@@ -1,7 +1,8 @@
 #+TITLE:Gnus Cheatsheat
 #+OPTIONS: H:10
-
-* Introduction
+#+STARTUP: overview
+* Gnus Cheatsheat
+** Introduction
   The GNUS news reader lets you read email and mail.  Follow the quick start guide [[http://www.emacswiki.org/emacs/GnusGmail#toc1][here]] to get started using gnus for gmail. GNUS
   has a few buffers that you need to know how to use:
 
@@ -19,10 +20,38 @@
   ~t~
 
   Then you should see the default group buffer.
+** Find the News
+*** gnu-select-method tells guns where to look for news.
+   it is a list where the first element says how and the 2nd says where like
+   (setq gnus-select-method '(nntp "news.somewhere.edu"))
+*** Getting mail from multiple servers
 
-* The Group Buffer
+   Of course.  You can specify more sources for articles in the variable
+   gnus-secondary-select-methods.  Add something like this in ‘~/.gnus.el’:
+     (add-to-list 'gnus-secondary-select-methods
+                  '(nntp "news.yourSecondProvider.net"))
+     (add-to-list 'gnus-secondary-select-methods
+                  '(nntp "news.yourThirdProvider.net"))
 
-** Various commands
+*** the backends
+**** the nntp backend commonly gathers news articles via NNTP
+**** the nnimap backend grabs mail via IMAP
+**** the nnspool backend grabs mail via the spool directory
+**** the nnml backend grabs mail via a file format
+**** native
+   gnus will always use one method (and back end) as the "native" or default way of gathering news.
+   groups from the native select method have names like gnu.emacs.gnus
+**** secondary
+   a secondary backend acts like a native backend but has names like
+   nnpt+news.gmane.org:gname.emacs.gnus.devel
+
+** Gnus Buffers
+*** The Server Buffer
+    You can enter the server buffer by pressing ^ inside the group buffer
+**** Various Commands
+
+*** The Group Buffer
+**** Various commands
 
    - ~m~
      send a new email
@@ -35,21 +64,46 @@
 
    - ~GG~ with point on a folder, will search the server side for email matching the search term that is in that folder
 
+   - =SPC= open this group and read the first unread article
+   - =C-u 10 SPC= opens the first 10 unread articles and starts reading the first one
+   - =
 
-* The Summary Buffer
-** Various commands
+*** The Summary Buffer
+**** Various commands
    - ~//~ limit local mail by subject.  Limiting means to search mail locally.
-
    - ~/a~
-
-   -
-** Various commands
-  - ~C-c C-f~
+   - ~C-c C-f~
     forward the current email under point
 
-* The Article Buffer
+   - =u= ticks the message.  The next time you open that folder, this message will be there EVEN if it is already read
+     =d= removes the tick.
+   - =W w= wraps long lines.  Which might make the message prettier.
+   - =W r= Decodes  ROT13, which fixes the quotes from the microsoft products.
+   - =E= makes an email as expirable.  That means that gnus will automatically delete my email for me in a week after
+     I mark it expirable.
 
-** various commands
+   - =S k= Kill the current group
+   - =S z= kill zombie groups
+   - =c= mark all unticked articles in this group as read
+   - =c= mark all articles in this group as read
+   - =S l= list the level of the current group. You are reccommeded to keep all of your groups on level 1 or 2 (low).
+   - =G p/c= show the group parameters. p shows you the lisp, c shows you the customize interface.
+   - =l= list all groups that have unread articles
+   - =A != list groups with ticked articles
+   - =C-c C-s= sorts the groups
+   - =G S a= sort via alphbetically
+   - =G S u= by number of unread emails
+   - =b= delete bogus groups
+   - =F= find new groups and process 'em
+   - =C-c C-M-x= run expire on all groups. DELETE expired articles
+   - =B= browse foriegn server looking for groups
+     kind of cool.
+     [[info:gnus#Browse%20Foreign%20Server][info:gnus#Browse Foreign Server]]
+
+
+*** The Article Buffer
+
+**** various commands
 
    + ~C-c C-m f~
      attach a file
@@ -58,52 +112,58 @@
 
    + ~C-c C-m C-e~
      encrypt and sign the message
-* Find the News
-** gnu-select-method tells guns where to look for news.
-   it is a list where the first element says how and the 2nd says where like
-   (setq gnus-select-method '(nntp "news.somewhere.edu"))
-* Terminology
-** News is public usenet feeds.  You comment on something and everyone can see it
-** mail is private.  You email someone and only you and the person you email can see it
-** follow up is to respond to a public article
-** reply is to reply to mail
-** the backends
-*** the nntp backend commonly gathers news articles via NNTP
-*** the nnimap backend grabs mail via IMAP
-*** the nnspool backend grabs mail via the spool directory
-*** the nnml backend grabs mail via a file format
-** native
-   gnus will always use one method (and back end) as the "native" or default way of gathering news.
-   groups from the native select method have names like gnu.emacs.gnus
-** secondary
-   a secondary backend acts like a native backend but has names like
-   nnpt+news.gmane.org:gname.emacs.gnus.devel
-** an article is a message that has been posted as news
-** a mail message is a message that has been mailed
-** message is a mail message or a news article
-** head the top part of a message where info is put
-** body is part of the message
-** NOV is news overview.  They are provied by the nntp backend. Everytime gnus enters a group it asks the backend
-   for the headers of all unread articles.  Most servers do this by using the NOV format, which is faster
-** level each group has a level
-   1-5 are subscribed
-   6-7 are unsubscribed
-   8 are zombie
-   9 are killed
-** no info is stored or updated on killed groups
-** zombie groups are like killed groups
-** active file is where the server stores info on the articles they carry. This file can be large
-** a bogus group exists in the .newsrc file BUT is not known to the server aka it likely doesn't exist
-** activating is asking the server for info on a group and computing the number of unread article that group has
-** spool news servers store their files locally. Having 1 file per article is a traditonal spool
-** a server connects to and gets the mail
-** select method  specifying the backend
-** washing taking a buffer and running it through a filter, which makes it more pleasing
-** ephemeral most groups store data on what articles one has read.  but store nada and disapear when you exit the group
-** solid groups all groups listed in the group buffer are solid groups
-** threading  to put responses to articles directly aftre the artciles they respond to
-** root the first artcile in a thread
-** parent an article that has responses
-** a child an article that responds to the parents
-** digest is a collect of mesages in a file
-** splitting is sorting your emails according to certain rules
+** Terminology
+   News is public usenet feeds.  You comment on something and everyone can see it
+   mail is private.  You email someone and only you and the person you email can see it
+  - follow up is to respond to a public article
+  - reply is to reply to mail
+  - an article is a message that has been posted as news
+  - a mail message is a message that has been mailed
+  - message is a mail message or a news article
+  - head the top part of a message where info is put
+  - body is part of the message
+  - NOV is news overview.  They are provied by the nntp backend. Everytime gnus enters a group it asks the backend
+  - for the headers of all unread articles.  Most servers do this by using the NOV format, which is faster
+  - level each group has a level
+  - 1-5 are subscribed
+  - 6-7 are unsubscribed
+  - 8 are zombie
+  - 9 are killed
+  - no info is stored or updated on killed groups
+  - zombie groups are like killed groups
+  - active file is where the server stores info on the articles they carry. This file can be large
+  - a bogus group exists in the .newsrc file BUT is not known to the server aka it likely doesn't exist
+  - activating is asking the server for info on a group and computing the number of unread article that group has
+  - spool news servers store their files locally. Having 1 file per article is a traditonal spool
+  - a server connects to and gets the mail
+  - select method  specifying the backend
+  - washing taking a buffer and running it through a filter, which makes it more pleasing
+  - ephemeral most groups store data on what articles one has read.  but store nada and disapear when you exit the group
+  - solid groups all groups listed in the group buffer are solid groups
+  - threading  to put responses to articles directly aftre the artciles they respond to
+  - root the first artcile in a thread
+  - parent an article that has responses
+  - a child an article that responds to the parents
+  - digest is a collect of mesages in a file
+  - splitting is sorting your emails according to certain rules
+** Check section "Subscribe groups" for details.
+  After subscribing the group INBOX, the INBOX could still be invisible if INBOX does not contain unread emails. That makes no
+  sense for an email client (It does make sense for a stone age news reader)! Anyway, the solution is simple, `C-u 5
+  gnus-group-list-all-groups` will get desired result. I assigned hotkey "o" to it. Here is my elisp code you could paste into
+  your .emacs. See the Gnus Manual on Listing Groups for more details.  Or just press j
+
+  #+BEGIN_SRC emacs-lisp
+    (defun my-gnus-group-list-subscribed-groups ()
+          "List all subscribed groups with or without un-read messages"
+          (interactive)
+          (gnus-group-list-all-groups 5)
+          )
+         (add-hook 'gnus-group-mode-hook
+                   ;; list all the subscribed groups even they contain zero un-read messages
+                   (lambda () (local-set-key "o" 'my-gnus-group-list-subscribed-groups ))
+                   )
+  #+END_SRC
+
+** pressing RET on a folder will show you "smart messages" that gnus thinks are important.
+  These messages are usually the unread messages.
+  pressing C-u RET will show you all messages

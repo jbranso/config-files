@@ -78,11 +78,13 @@
 
     SELECT first, last, parents.address from kids
     LEFT join parents on users.address = parents.address
-** subqueries appear in the where or having clause
+** subqueries
+   https://dev.mysql.com/doc/refman/5.0/en/subqueries.html
+   Subqueries appear in the where or having clause, as a result in the select statement, in the FROM clause
    a subquery can only product a single column of data as a result. Order by is not allowed, doesn't make sense
 
    to find girls with the same last name as the boys
-   SELEct * from girls WHERE last = (SELEct last from boys)
+   SELECT * from girls WHERE last = (SELEct last from boys)
 
    how find a coach a little better
    select ID from bowlers WHERE level IN ('3', '6')
@@ -119,3 +121,29 @@
    WHERE (level = '3' OR level = '6' OR level = '9') AND (ID = '3')
    UNION ALL SELECT ID, first, last, schoolID, level, schoolID as groupID from users
    WHERE level = '2' AND schoolID = @groupID
+
+   You can get even crazier by defining sql variables that can be used as subqueries
+
+    #+BEGIN_SRC sql
+    SELECT users.first, users.last, users.ID, @schoolID := users.schoolID as schoolID, images.ID
+    as sig, schools.schoolID,  @groupID := (SELECT groupID FROM schools WHERE schoolID = @schoolID) as groupID,
+    (SELECT region FROM conference WHERE groupID = @groupID) as region
+    FROM users
+    LEFT JOIN schools    ON users.schoolID=schools.schoolID
+    LEFT JOIN images     ON users.ID=images.ID
+    WHERE (level = '6' OR level = '3') limit 10
+    #+END_SRC
+
+    #+RESULTS:
+    | first     | last      |  ID | schoolID | sig | schoolID | groupID | region              |
+    |-----------+-----------+-----+----------+-----+----------+---------+---------------------|
+    | Stephanie | Cooley    |  92 |      714 |  92 |      714 |       1 | Testing Conference  |
+    | Janee     | Babbitt   |  93 |       84 |  93 |       84 |      50 | Greater Lake County |
+    | Linda     | Olszewski |  95 |       79 |  95 |       79 |      50 | Greater Lake County |
+    | Edward    | Olszewski |  96 |       79 |  96 |       79 |      50 | Greater Lake County |
+    | Christine | Munsie    |  97 |       89 |  97 |       89 |      50 | Greater Lake County |
+    | Patrick   | Cobban    |  98 |       89 |  98 |       89 |      50 | Greater Lake County |
+    | Derrick   | Bohn      |  99 |      109 |  99 |      109 |      50 | Greater Lake County |
+    | Russell   | Klosinski | 107 |      184 | 107 |      184 |      55 | Michiana Central    |
+    | Tami      | Nedza     | 112 |      119 | 112 |      119 |      55 | Michiana Central    |
+    | Richard   | Hughey    | 114 |      114 | 114 |      114 |      56 | Michiana West       |

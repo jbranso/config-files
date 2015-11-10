@@ -29,6 +29,7 @@
 
 * Fixing bugs in your init-file
   https://github.com/Malabarba/elisp-bug-hunter
+  M-x bug-hunter-init-file
 * Registers
   Number Registers
 
@@ -47,7 +48,10 @@
   - `C-c <letter>` end recording keyboard macro
   - `@ <letter>` perform keyboard macro
   - `C-x Q`  prompt the user for input
-* helm mode
+  - =C-x q= prompt, when you use this macro if you want to continue.  You can enter C-r to briefly step out of the macro
+    and do some edits yourself, then C-M-c will allow you to continue execution of the macro
+* Emacs modes
+** helm mode
   HOLY BLIMEY COW!!! THIS MODE IS AWESOME enable it!
 
   C-c C-f helm-find-files
@@ -84,25 +88,16 @@
   https://github.com/thierryvolpiatto/pcomplete-extension
 
   I can also write my own helm commands cool!
-* windows commands
-  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
-  splitting the frame in half, or in two *windows*.
-
-  - =C-x o= Delete the selected window
-  - =C-x 1= Delete all the windows except the one that currently has point
-  - =C-x ^= make the selected window taller
-  - =C-x {= make the selected window narrower
-  - =C-x }= make the selected window wider
-  - =C-x -= shrink this window if it doesn't need that many lines.
-  - =C-x += make all the windows the same height
-* evil mode
+*
+** evil mode
   " <letter> yy   stores the whole line into register <letter>
   " <letter> p    puts the whole line back
+  =vip= select the paragraph that point is in.
 
   check out filters. It lets you take a line, and throw that line as a command.
   It lets you create macros that you can take a line as a command to line in bash.
   interesting
-** filters VERY cool. put the contents of the buffer through a shell command!
+*** filters VERY cool. put the contents of the buffer through a shell command!
 
    You can take a line like
 
@@ -193,20 +188,15 @@
  hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you
  hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you
  hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you
-* narrow commands
-  are entered via this syntax
-  ~C-x n <letter>~
-
-  d  narrow to defun
-  ~r~ widen to region
-  ~w~ widden to the whole buffer
-* Elisp macro Defadvice
-  learn about defadvice run commands after or before you execute some command. very cool!
-  (defadvice kill-line (after say-ouch activate)
-  (message "Ouch!"))
-* Awesome Emacs modes
 ** El-doc
   Set up el-doc for various modes. It shows help documentation as you write a function cool!
+** Semantic
+
+   Most emacs modes use a bunch of regular expressions to highlight source code. BUT semantic tries to make this better by
+   parsing the code and creating grammar with it.
+*** User commands
+    - =C-c , j= prompt for a tag in the currect file and move point to it.
+    - =C-c , J= prompt for a tag in any file that emacs has parsed and move point to it.
 ** ttd-mode let's you specify a compile command. Everytime you save a file, it will run your compile command.
   If it finds an error, it will alert you at the bottom!
 ** Undo tree
@@ -215,6 +205,24 @@ learn more about undo tree
   Try to learn paredit mode.  probably good for lisp code
 ** Restclient mode
   install restclient. It lets you query the server via get and post.  I can view the results via emacs!
+** sunrise-commander is a dired derived mode that acts like filezilla inside emacs.
+   =C= copy the current file into the other directory
+   =C-u C= copy the current file/files into the other directory in a background process
+** ediff
+   Ediff is emacs's cool way of camparing two files.  It's very cool.
+*** Commands
+   - =a= copies buffer a diff to buffer b
+   - =b= copies buffer b diff to buffer a
+   - =A= toggles readonly mode of buffer a
+   - =B= toggles readonly mode of buffer b
+   - =wa= save buffer a
+   - =wb= save buffer b
+   - =!= update the differance regions.  If you press =a= and =b= multiple times, you should probably do a =!=
+   - =*= highlights the words in the diff region that differ
+   - =ra= restore the diff region in buffer a
+   - =rb= restore the diff region in buffer b
+   - =z= suspend the ediff session
+   - =s= make the merge buffer as small as possible
 ** tramp is an emacs extension that lets you edit remote files
   it's syntax is done by pressing C-x C-f (find-file) then typing one of the following:
 
@@ -223,6 +231,50 @@ learn more about undo tree
      /USER@HOST#PORT:FILENAME
      /METHOD:USER@HOST:FILENAME
      /METHOD:USER@HOST#PORT:FILENAME
+* windows commands
+  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
+  splitting the frame in half, or in two *windows*.
+
+  - =C-x o= Delete the selected window
+  - =C-x 1= Delete all the windows except the one that currently has point
+  - =C-x ^= make the selected window taller
+  - =C-x {= make the selected window narrower
+  - =C-x }= make the selected window wider
+  - =C-x -= shrink this window if it doesn't need that many lines.
+  - =C-x += make all the windows the same height
+* Regexp
+  Regular expressions are nifty ways of specify region of text.  Even coolier, they act as smart ways to replace text.
+
+  Consider this example
+
+  #+BEGIN_SRC php
+    if (isadmin() || ismanager ()) {
+        //some code here
+    }
+  #+END_SRC
+
+  Suppose that you want to add a space between both "is" in the functions.
+
+  M-x dired-do-query-replace-regexp is\(admin\|manager\) RET is \1 RET
+
+* Rectangles
+  You can easily create a rectangle with evil mode with C-v.  Once you have a rectangle you can do these commands:
+
+  =C-x r o= insert blank spaces to the left of the rectangle region
+  =C-x r N= insert numbers all along the left of the rectangle region
+* narrow commands
+  are entered via this syntax
+  ~C-x n <letter>~
+
+  ~d~ narrow to defun
+  ~r~ widen to region
+  ~s~ narrow to a org subtree
+  ~w~ widden to the whole buffer
+* Elisp macro Defadvice
+  learn about defadvice run commands after or before you execute some command. very cool!
+  This is the old way of doing it. The newer was is to say add-function
+  (defadvice kill-line (after say-ouch activate)
+  (message "Ouch!"))
 * there is a php package that turns all php functions into yasnippets.  It lets you easily type out a php function
   tab, and it will complete it for you. I'll need to check it out. What's it called?
 * in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
