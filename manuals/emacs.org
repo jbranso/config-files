@@ -27,10 +27,8 @@
       -  press ~!~ to replace all the matches in the current buffer
       -  Press ~Y~ to replace all the remaining matches without question
 
-* Fixing bugs in your init-file
-  https://github.com/Malabarba/elisp-bug-hunter
-  M-x bug-hunter-init-file
-* Registers
+* Built in Emacs Features
+** Registers
   Number Registers
 
   -`C-u number C-x r n r`
@@ -43,14 +41,54 @@
   Insert the number from register r into the buffer.
 
   `C-x r i` is the same command used to insert any other sort of register contents into the buffer. `C-x r +` with no numeric argument increments the register value by 1; `C-x r n` with no numeric argument stores zero in the register.
-* Using macros
-  - `C-c <letter>` begin recording keyboard macro
-  - `C-c <letter>` end recording keyboard macro
+** Macros
   - `@ <letter>` perform keyboard macro
   - `C-x Q`  prompt the user for input
   - =C-x q= prompt, when you use this macro if you want to continue.  You can enter C-r to briefly step out of the macro
     and do some edits yourself, then C-M-c will allow you to continue execution of the macro
+
+*** My personal keybindings
+  - `C-c r <letter>` begin recording keyboard macro
+  - `C-c r <letter>` end recording keyboard macro
+** Bookmarks
+  Emacs bookmarks are nifty ways of saving your place in a file.
+
+  - =C-x r m=  sets a bookmark for you at point and it prompts you to name it
+  - =C-x r b=  jumps you to a bookmark
+** windows commands
+  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
+  splitting the frame in half, or in two *windows*.
+
+  - =C-x o= Delete the selected window
+  - =C-x 1= Delete all the windows except the one that currently has point
+  - =C-x ^= make the selected window taller
+  - =C-x {= make the selected window narrower
+  - =C-x }= make the selected window wider
+  - =C-x -= shrink this window if it doesn't need that many lines.
+  - =C-x += make all the windows the same height
+** Selective Display
+  Emacs can display portions of the buffer based on level of indentention.  This lets you get a nice overview of the file, which
+  is quite cool.
+  - =C-u n C-x $= hides rows that are indented n times
+  - =C-x $=  shows all rows
+** Rectangles
+  You can easily create a rectangle with evil mode with C-v.  Once you have a rectangle you can do these commands:
+
+  =C-x r o= insert blank spaces to the left of the rectangle region
+  =C-x r N= insert numbers all along the left of the rectangle region
+** narrowing
+  are entered via this syntax
+  ~C-x n <letter>~
+
+  ~d~ narrow to defun
+  ~r~ widen to region
+  ~s~ narrow to a org subtree
+  ~w~ widden to the whole buffer
 * Emacs modes
+** bug-hunter
+   This will help you find bugs in your init file. SOOO helpful.
+  https://github.com/Malabarba/elisp-bug-hunter
+  M-x bug-hunter-init-file
 ** helm mode
   HOLY BLIMEY COW!!! THIS MODE IS AWESOME enable it!
 
@@ -87,8 +125,12 @@
   check out pcomplete extension
   https://github.com/thierryvolpiatto/pcomplete-extension
 
+*** commands
   I can also write my own helm commands cool!
-*
+  =C-c h m=  open helm-man-woman
+  =C-c h h g= open helm info gnus
+  =C-c h h r= open the helm-emacs-info
+  =C-c h b= is helm-resume which opens up the last instance that you were on
 ** evil mode
   " <letter> yy   stores the whole line into register <letter>
   " <letter> p    puts the whole line back
@@ -202,7 +244,35 @@
 ** Undo tree
 learn more about undo tree
 ** Paredit mode
-  Try to learn paredit mode.  probably good for lisp code
+   Paredit mode is a superior way to interact with lisps.  It essentially offers 2 features: slurping and barfing.
+   - slurping elongates the current sexp by pulling in the closest sexp (either forward or backward)
+   - barfing shortens the currect sexp by pushing out the closest sexp (either forward or backward)
+
+     #+BEGIN_SRC emacs-lisp
+       (hello yes (how are you point) there it is) ;; C-c ) or M-x paredit-forward-slurp-sexp was used here
+       (hello yes (how are you point there) it is)
+       (hello yes (how are you) point there it is) ;; C-c } or M-x paredit-forward-barf-sexp was used here
+
+       (yup howdie (point is cool) it sure is)  ;; C-c ( or M-x paredit-backward-slup sexp was used here
+       (yup (howdie point is cool) it sure is)
+       (yup howdie (point is cool) it sure is)  ;; C-c { or M-x paredit-backward-barf-sexp was used here
+
+       ;; from here on is me playing with paredit
+
+       (defun simple-function ()
+         (interactive)
+         "Hello there you silly people"
+         (do something)
+         (do (something else))
+         (do (some more (things)))
+         (cond
+          ((string-match "/php/+$" buffer-file-name)
+           (do (some things)))
+
+          ((string-match "/js/+$" buffer-file-name)
+           (do (some things)))))
+     #+END_SRC
+
 ** Restclient mode
   install restclient. It lets you query the server via get and post.  I can view the results via emacs!
 ** sunrise-commander is a dired derived mode that acts like filezilla inside emacs.
@@ -231,17 +301,6 @@ learn more about undo tree
      /USER@HOST#PORT:FILENAME
      /METHOD:USER@HOST:FILENAME
      /METHOD:USER@HOST#PORT:FILENAME
-* windows commands
-  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
-  splitting the frame in half, or in two *windows*.
-
-  - =C-x o= Delete the selected window
-  - =C-x 1= Delete all the windows except the one that currently has point
-  - =C-x ^= make the selected window taller
-  - =C-x {= make the selected window narrower
-  - =C-x }= make the selected window wider
-  - =C-x -= shrink this window if it doesn't need that many lines.
-  - =C-x += make all the windows the same height
 * Regexp
   Regular expressions are nifty ways of specify region of text.  Even coolier, they act as smart ways to replace text.
 
@@ -256,20 +315,6 @@ learn more about undo tree
   Suppose that you want to add a space between both "is" in the functions.
 
   M-x dired-do-query-replace-regexp is\(admin\|manager\) RET is \1 RET
-
-* Rectangles
-  You can easily create a rectangle with evil mode with C-v.  Once you have a rectangle you can do these commands:
-
-  =C-x r o= insert blank spaces to the left of the rectangle region
-  =C-x r N= insert numbers all along the left of the rectangle region
-* narrow commands
-  are entered via this syntax
-  ~C-x n <letter>~
-
-  ~d~ narrow to defun
-  ~r~ widen to region
-  ~s~ narrow to a org subtree
-  ~w~ widden to the whole buffer
 * Elisp macro Defadvice
   learn about defadvice run commands after or before you execute some command. very cool!
   This is the old way of doing it. The newer was is to say add-function

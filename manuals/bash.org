@@ -1,0 +1,92 @@
+#+TITLE:Emacs Cheatsheat
+#+AUTHOR: Joshua Branson
+
+* Bash Cheatsheat
+** Introduction
+** Vocab
+   - POSIX            : a set of standards for UNIX based operating systems
+   - blank            : a space or a tab character
+   - builtin          : a command that is built into the shell itself, rather than relying on an external command
+   - control operator : a *token* that performs a task.  It can be a newline or any of the following
+     - =||=
+     - =&&=
+     - =&=
+     - =;=
+     - =;;=
+     - =|=
+     - =|&=
+     - =(=
+     - =)=
+   - exit status   : is the numerical value a command returns to its caller.  It can be [0-255]
+   - field         : is a unit of text that is the result of shell expansion.  The resulting field can be used as commands
+     or arguments
+   - job           : a collection of processes that makes up a pipeline and any processes that that pipeline spawns
+   - job control   : a method that allows users to start/stop execution of precesses
+   - metacharacter : a char, that when unquoted seperates words. A metachar is a blank or any of the following
+     - =|=
+     - =&=
+     - =;=
+     - =(=
+     - =)=
+     - =<=
+     - =>=
+   - name            : a words beginning with a letter or underscore and consisting of alphanumeric chars and underscores
+   - operator        : a control operator or a *redirection operation*
+   - process group   : a collection of processes that each have the same group ID
+   - process groupID : an ID that binds related processes in a group
+   - reserved word   : words that means things to the shell like for, while, if
+   - return status   : exit status
+   - signal          : a method, by which a process can be notified of something from the kernal
+   - special builtin : a shell builtin that is deemed special by POSIX
+   - token           : sequence of characters considered a single unit by the shell. It is either a word or an operator
+   - word            : a sequence of chars considered a unit by the shell not including unquoted metachars
+** Basic shell Features
+*** Syntax
+    - Anything inside single quotes shall not be expanded.  Also '\'' is NOT permitted in bash
+    - Double quotes preserved the literal value of whatever's in the string, except for
+      - =$=
+      - =`=
+      - =*=
+      - =@=
+*** Basic commands
+    Are words seperated by blanks terminated by one of the shell's control operators
+    So,
+
+    #+BEGIN_SRC sh
+    echo "523"
+    #+END_SRC
+
+    #+RESULTS:
+    : 523
+
+    has the command =echo= seperated by a blank space, followed by the string, which is its arguement.  Newline is the operator
+    that terminates the command.
+*** Pipelines
+    [ time ] [ ! ] command1 [ | or |& command 2 ] ...
+
+    This is what makes shell scripting really powerful.  You can make one command be another command's input.
+    So here's a simple example
+
+    #+BEGIN_SRC sh
+    ls | grep "the"
+    #+END_SRC
+
+    This lists the files in the currect directory and that output becames grep's input.  Cool eh?
+*** lists of commands
+    a list is a sequence of pipelines seperated by one of the following operators
+    - =;=
+    - =&=
+    - =&&=
+    - =||=
+
+    They can be optionally terminated by a &, which makes the whole command run in the background, ;, or a newline
+
+    A couple of examples
+
+    command1 && command2
+
+    command2 is only executed if command1 returns 0 (success)
+
+    command1 || command2
+
+    command2 is only executed if command1 returns non-0 (error)
