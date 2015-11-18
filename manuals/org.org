@@ -352,6 +352,7 @@
    - =C-c '= edit the field in a seperate window=
    - =C-c SPC= blank the field at point
    - =C-c <RET>= insert a horizontal row below point
+   - =C-c ^= sort the current table, by the column that point is in alphabetically or numerically SUPER COOL.
 * latex equations
 
   \[
