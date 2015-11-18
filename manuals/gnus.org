@@ -49,7 +49,7 @@
 *** The Server Buffer
     You can enter the server buffer by pressing ^ inside the group buffer
 **** Various Commands
-
+     - Su | u  toggles subscription of a usenet group
 *** The Group Buffer
 **** Various commands
 
@@ -99,7 +99,6 @@
    - =B= browse foriegn server looking for groups
      kind of cool.
      [[info:gnus#Browse%20Foreign%20Server][info:gnus#Browse Foreign Server]]
-
 
 *** The Article Buffer
 

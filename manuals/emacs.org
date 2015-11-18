@@ -41,6 +41,9 @@
   Insert the number from register r into the buffer.
 
   `C-x r i` is the same command used to insert any other sort of register contents into the buffer. `C-x r +` with no numeric argument increments the register value by 1; `C-x r n` with no numeric argument stores zero in the register.
+
+  =C-x r s R=  save text to register R
+  =M-x append-to-register R= appends text to Register R
 ** Macros
   - `@ <letter>` perform keyboard macro
   - `C-x Q`  prompt the user for input
@@ -293,6 +296,10 @@ learn more about undo tree
    - =rb= restore the diff region in buffer b
    - =z= suspend the ediff session
    - =s= make the merge buffer as small as possible
+
+   When you specify files, you can edit the files as root using tramp's syntax like this.
+
+   /su::/path/to/file
 ** tramp is an emacs extension that lets you edit remote files
   it's syntax is done by pressing C-x C-f (find-file) then typing one of the following:
 

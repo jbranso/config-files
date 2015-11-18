@@ -14,11 +14,29 @@
   - Defined groups
 
 **  The Numbers group has 1 group called integers.  These numbers can be used to utilize MySQL’s math functions:
-  - TINYINT   (-120 - 120)            or (0 - 255)
-  - SMALLINT  (-32,000 - 32,000       or (0 - 65,000)
-  - MEDIUMINT (-8 million- 8 million) or (0 - 16 million)
-  - INT
-  - BIGINT
+   You can find this table online at https://dev.mysql.com/doc/refman/5.0/en/integer-types.html
+   | DataType  | Storage required |   Minimum Value | Maximum Value   |
+   |-----------+------------------+-----------------+-----------------|
+   |           |                  | Signed/Unsigned | Signed/Unsigned |
+   |-----------+------------------+-----------------+-----------------|
+   | TINYINT   | 1 byte           |            -128 | 127             |
+   | TINYINT   |                  |               0 | 255             |
+   |-----------+------------------+-----------------+-----------------|
+   | SmallINT  | 2 bytes          |          -32768 | 32,767          |
+   |           |                  |               0 | 65,535          |
+   |-----------+------------------+-----------------+-----------------|
+   | MediumINT | 3 bytes          |        -8388608 | 8,388,607       |
+   |           |                  |               0 | 16,777,215      |
+   |-----------+------------------+-----------------+-----------------|
+   | INT       | 4 bytes          |   -214,748,3648 | 2,147,483,647   |
+   |           |                  |               0 | 4,294,967,295   |
+   |-----------+------------------+-----------------+-----------------|
+   | Big Int   | 8 bytes          |                 |                 |
+   |-----------+------------------+-----------------+-----------------|
+  SMALLINT  (-32,000 - 32,000)       or (0 - 65,000)
+  MEDIUMINT (-8 million- 8 million) or (0 - 16 million)
+  INT
+  BIGINT
 
   Any of those types can be signed up unsigned.  *Signed* means the integer can be hold negative of or positive values.
   *Unsigned* means the integer can only be positive.

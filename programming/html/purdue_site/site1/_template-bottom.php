@@ -1,6 +1,6 @@
-<div class="brownContainer footer">
+<div class="brownContainer footer bottom-40">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 p-left-40">
             <h4 class="brown">Responsive Design</h4>
             <p class="hidden-xs">
                 This site uses responsive HTML5 technologies to work on most, if not all platforms.  Try it; view this website on a
@@ -11,8 +11,8 @@
                 laptop or a desktop computer.
             </p>
         </div>
-	<div class="col-sm-3 col-sm-offset-1">
-	    <h4 class="brown">Connect with Me</a></h4>
+	    <div class="col-sm-3 col-sm-offset-1">
+	        <h4 class="brown">Connect with Me</a></h4>
             <div class="row">
                 <div class="col-xs-1">
                     <a href="https://github.com/jbranso" target="_blank">
@@ -31,16 +31,16 @@
                 </div>
             </div>
         </div><!-- col-sm-6 -->
-	<div class="col-sm-4">
-	    <h4 class="brown">What runs this site</h4>
+	    <div class="col-sm-4">
+	        <h4 class="brown">What runs this site</h4>
             This site is powered by some pretty amazing web technologies including bootstrap, jQuery, ajax, php, html5, and javascript!
-	</div>
+	    </div>
     </div>
     <br/><br/><br/>
-    </div><!-- .container -->
+</div><!-- .container -->
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
+<!-- Bootstrap core JavaScript
+     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="bs3.3/js/bootstrap.min.js"></script>
@@ -53,10 +53,10 @@
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
      history.pushState(null, null, "index.php")
  }
@@ -67,10 +67,10 @@
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
      history.pushState(null, null, "about.php")
  }
@@ -81,10 +81,10 @@
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
      history.pushState(null, null, "skills.php")
  }
@@ -95,10 +95,10 @@
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
      history.pushState(null, null, "experience.php")
  }
@@ -109,25 +109,25 @@
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
      history.pushState(null, null, "portfolio.php")
  }
  function swapPhoto(href) {
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET",
-		  location.pathname.toString().split("/").pop().split(".")[0].concat(".txt"),
-		  true);
+		          location.pathname.toString().split("/").pop().split(".")[0].concat(".txt"),
+		          true);
      xmlhttp.send();
      xmlhttp.onreadystatechange=function()
      {
-	 if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	 {
-	     document.getElementById("content").innerHTML=xmlhttp.responseText;
-	 }
+	     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	     {
+	         document.getElementById("content").innerHTML=xmlhttp.responseText;
+	     }
      }
  }
  window.addEventListener("popstate", function(e) {

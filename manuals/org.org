@@ -315,6 +315,20 @@
 
   #+RESULTS:
   : firefox 41.0.1-1
+
+  This program lists duplicate files.  It runs md5sum on the files to find the duplicates
+  https://www.maketecheasier.com/remove-duplicate-files-linux/
+  #+BEGIN_SRC sh :dir ~/manuals/
+  find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+  #+END_SRC
+
+  #+RESULTS:
+  | 2a44284ee46b6572872e5c704889eba4 | ./emacs.org                                               |
+  | 2a44284ee46b6572872e5c704889eba4 | ./emacs.org.backup                                        |
+  |                                  |                                                           |
+  | 7ac95b56101e570db018311e775b7952 | ./ltxpng/org_8efa66ec78ea83e97f9815c08a43ee880750b6ee.png |
+  | 7ac95b56101e570db018311e775b7952 | ./ltxpng/org_e7d761bed1cade664f3496421252f6aebdf30781.png |
+
 * Org spreadsheets/tables
   | Money I earn in a month | Expenses  | Expenses$ | Total |
   |-------------------------+-----------+-----------+-------|
@@ -323,18 +337,11 @@
   |                         |           |           |       |
 
 
-  | N | N^2 | N^3 | N^4 | ~sqrt(n)~ | ~sqrt[4](N)~ |
-  |---+-----+-----+-----+-----------+--------------|
-  | / |   < |     |   > |         < |            > |
-  | 1 |   1 |   1 |   1 |         1 |            1 |
-  | 2 |   4 |   8 |  16 | 1.4142136 |    1.1892071 |
-  | 4 |  16 |  64 | 256 |         2 |    1.4142136 |
-  |---+-----+-----+-----+-----------+--------------|
-  #+TBLFM:
 
 ** Commands
-   - =C-c *= inside that table to update it
-   - =C-c |=
+   - =C-c *= recalculates that table row
+   - =C-{= toggles showing the row and column numbers
+   - =C-c |= convert the active region to a table
    - =TAB= moves you to the next column
    - =S-TAB= takes you back to the last column
    - =org-table-delete-column= deletes the column point is in
@@ -343,6 +350,8 @@
    - =M-left= move column to the left
    - =M-right= move column to the right
    - =C-c '= edit the field in a seperate window=
+   - =C-c SPC= blank the field at point
+   - =C-c <RET>= insert a horizontal row below point
 * latex equations
 
   \[

@@ -1,0 +1,608 @@
+.height-10 {
+    height:10px;
+}
+
+.height-20 {
+    height:20px;
+}
+
+.height-30 {
+    height:30px;
+}
+
+.height-40 {
+    height:40px;
+}
+
+.height-50 {
+    height:50px;
+}
+
+.height-60 {
+    height:60px;
+}
+
+.height-70 {
+    height:70px;
+}
+
+.height-80 {
+    height:80px;
+}
+
+.height-90 {
+    height:90px;
+}
+
+.height-100 {
+    height:100px;
+}
+
+.f10 {
+    font-size:10px;
+}
+
+.f15 {
+    font-size:15px;
+}
+
+.f20 {
+    font-size:20px;
+}
+
+.f30 {
+    font-size:30px;
+}
+
+.f40 {
+    font-size:40px;
+}
+
+.f50 {
+    font-size:50px;
+}
+
+.bottom-0 {
+    margin-bottom:0px;
+}
+
+.bottom-5 {
+    margin-bottom:5px;
+}
+
+.bottom-10 {
+    margin-bottom:10px;
+}
+.bottom-20 {
+    margin-bottom:20px;
+}
+
+.bottom-30 {
+    margin-bottom:30px;
+}
+.bottom-40 {
+    margin-bottom:40px;
+}
+
+.bottom-50 {
+    margin-bottom:50px;
+}
+.bottom-60 {
+    margin-bottom:60px;
+}
+.bottom-70 {
+    margin-bottom:70px;
+}
+.bottom-80 {
+    margin-bottom:80px;
+}
+.bottom-90 {
+    margin-bottom:90px;
+}
+.bottom-100 {
+    margin-bottom:100px;
+}
+
+.left-0 {
+    margin-left:0px;
+}
+
+.left-10 {
+    margin-left:10px;
+}
+
+.left-20 {
+    margin-left:20px;
+}
+
+.left-30 {
+    margin-left:30px;
+}
+
+.left-40 {
+    margin-left:40px;
+}
+
+.left-50 {
+    margin-left:50px;
+}
+
+.left-60 {
+    margin-left:60px;
+}
+
+.left-70 {
+    margin-left:70px;
+}
+
+.left-80 {
+    margin-left:80px;
+}
+
+.left-90 {
+    margin-left:90px;
+}
+
+.left-100 {
+    margin-left:100px;
+}
+
+.right-0 {
+    margin-right:0px;
+}
+
+.right-10 {
+    margin-right:10px;
+}
+
+.right-20 {
+    margin-right:20px;
+}
+
+.right-30 {
+    margin-right:30px;
+}
+
+.right-40 {
+    margin-right:40px;
+}
+
+.right-50 {
+    margin-right:50px;
+}
+
+.right-60 {
+    margin-right:60px;
+}
+
+.right-70 {
+    margin-right:70px;
+}
+
+.right-80 {
+    margin-right:80px;
+}
+
+.right-90 {
+    margin-right:90px;
+}
+
+.right-100 {
+    margin-right:100px;
+}
+
+.top-0 {
+    margin-top:0px;
+}
+
+.top-5 {
+    margin-top:5px;
+}
+
+.top-10 {
+    margin-top:10px;
+}
+.top-20 {
+    margin-top:20px;
+}
+
+.top-30 {
+    margin-top:30px;
+}
+.top-40 {
+    margin-top:40px;
+}
+
+.top-50 {
+    margin-top:50px;
+}
+.top-60 {
+    margin-top:60px;
+}
+.top-70 {
+    margin-top:70px;
+}
+.top-80 {
+    margin-top:80px;
+}
+.top-90 {
+    margin-top:90px;
+}
+.top-100 {
+    margin-top:100px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.p-50 {
+    padding: 50px;
+}
+
+.p-60 {
+    padding: 60px;
+}
+
+.p-70 {
+    padding: 70px;
+}
+
+.p-80 {
+    padding: 80px;
+}
+
+.p-90 {
+    padding: 90px;
+}
+
+.p-100 {
+    padding: 100px;
+}
+
+.p-left-0 {
+    padding-left:0px;
+}
+
+.p-left-5 {
+    padding-left:5px;
+}
+
+.p-left-10 {
+    padding-left:10px;
+}
+
+.p-left-20 {
+    padding-left:20px;
+}
+
+.p-left-30 {
+    padding-left:30px;
+}
+
+.p-left-40 {
+    padding-left:40px;
+}
+
+.p-left-50 {
+    padding-left:50px;
+}
+
+.p-left-60 {
+    padding-left:60px;
+}
+
+.p-left-70 {
+    padding-left:70px;
+}
+
+.p-left-80 {
+    padding-left:80px;
+}
+
+.p-left-90 {
+    padding-left:90px;
+}
+
+.p-left-100 {
+    padding-left:100px;
+}
+
+.p-right-0 {
+    padding-right:0px;
+}
+
+.p-right-10 {
+    padding-right:10px;
+}
+
+.p-right-20 {
+    padding-right:20px;
+}
+
+.p-right-30 {
+    padding-right:30px;
+}
+
+.p-right-40 {
+    padding-right:40px;
+}
+
+.p-right-50 {
+    padding-right:50px;
+}
+
+.p-right-60 {
+    padding-right:60px;
+}
+
+.p-right-70 {
+    padding-right:70px;
+}
+
+.p-right-80 {
+    padding-right:80px;
+}
+
+.p-right-90 {
+    padding-right:90px;
+}
+
+.p-right-100 {
+    padding-right:100px;
+}
+
+.p-top-100 {
+    padding-top:100px;
+}
+
+.p-top-10 {
+    padding-top:10px;
+}
+
+.p-top-20 {
+    padding-top:20px;
+}
+
+.p-bottom-10 {
+    padding-bottom:10px;
+}
+
+.p-bottom-20 {
+    padding-bottom:20px;
+}
+.p-bottom-30 {
+    padding-bottom:30px;
+}
+
+.p-bottom-40 {
+    padding-bottom:40px;
+}
+
+.p-bottom-50 {
+    padding-bottom:50px;
+}
+
+.p-bottom-60 {
+    padding-bottom:60px;
+}
+
+.p-bottom-70 {
+    padding-bottom:70px;
+}
+
+.p-bottom-80 {
+    padding-bottom:80px;
+}
+
+.p-bottom-90 {
+    padding-bottom:90px;
+}
+
+.p-bottom-100 {
+    padding-bottom:100px;
+}
+
+.weight-1100 {
+    font-weight:1100;
+}
+
+.weight-1000 {
+    font-weight:1000;
+}
+
+.weight-900 {
+    font-weight:900;
+}
+
+.weight-800 {
+    font-weight:800;
+}
+
+.weight-700 {
+    font-weight:700;
+}
+
+/* this is for rows that have many columns but need space between them in the mobile view */
+.weight-600 {
+    font-weight:600;
+}
+
+.weight-500 {
+    font-weight:500;
+}
+
+.weight-400 {
+    font-weight:400;
+}
+
+.weight-300 {
+    font-weight:300;
+}
+
+.weight-200 {
+    font-weight:200;
+}
+
+.weight-100 {
+    font-weight:100;
+}
+
+
+
+/* this is for rows that have many columns but need space between them in the mobile view */
+/* a good example of this is on the staff page, you need to space out the text in the mobile view to make it easy to tell who's
+name is whose.  */
+.space {
+    height:50px;
+}
+/* this is for the .btn .btn-success. It allows me to center them, without making them too big */
+.px75 {
+    width:75px;
+    margin-bottom:80px;
+    border-radius:0px;
+}
+
+
+.f10 {
+    font-size:10px;
+}
+
+.f15 {
+    font-size:15px;
+}
+
+.f20 {
+    font-size:20px;
+}
+
+.f30 {
+    font-size:30px;
+}
+
+.f40 {
+    font-size:40px;
+}
+
+.f50 {
+    font-size:50px;
+}
+
+.bottom-0 {
+    margin-bottom:0px;
+}
+
+.bottom-5 {
+    margin-bottom:5px;
+}
+
+.bottom-10 {
+    margin-bottom:10px;
+}
+.bottom-20 {
+    margin-bottom:20px;
+}
+
+.bottom-30 {
+    margin-bottom:30px;
+}
+.bottom-40 {
+    margin-bottom:40px;
+}
+
+.bottom-50 {
+    margin-bottom:50px;
+}
+.bottom-60 {
+    margin-bottom:60px;
+}
+.bottom-70 {
+    margin-bottom:70px;
+}
+.bottom-80 {
+    margin-bottom:80px;
+}
+.bottom-90 {
+    margin-bottom:90px;
+}
+.bottom-100 {
+    margin-bottom:100px;
+}
+
+
+.p-top-100 {
+    padding-top:100px;
+}
+
+.p-top-20 {
+    padding-top:20px;
+}
+
+.weight-1100 {
+    font-weight:1100;
+}
+
+.weight-1000 {
+    font-weight:1000;
+}
+
+.weight-900 {
+    font-weight:900;
+}
+
+.weight-800 {
+    font-weight:800;
+}
+
+.weight-700 {
+    font-weight:700;
+}
+
+/* this is for rows that have many columns but need space between them in the mobile view */
+.weight-600 {
+    font-weight:600;
+}
+
+.weight-500 {
+    font-weight:500;
+}
+
+.weight-400 {
+    font-weight:400;
+}
+
+.weight-300 {
+    font-weight:300;
+}
+
+.weight-200 {
+    font-weight:200;
+}
+
+.weight-100 {
+    font-weight:100;
+}
+.text-white {
+    color:white;
+}
+.text-black {
+    color:black;
+}
+.text-danger {
+    color:#a94442;
+}
+.text-success {
+    color:#3c763d;
+}
