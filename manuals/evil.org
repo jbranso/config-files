@@ -26,3 +26,23 @@
   ~{~ move to the last paragraph
 
   ~'<mark>~ moves to the mark
+
+* evil-surround
+  Evil surround is a really cool way to surround highlighted regions of text.
+
+** Commands
+  - =dst  deletes the surrounding html element=
+
+    <h2>text text text point text text text</h2>
+
+    With point at the position "point" typing dst will delete the surrounding html element and change the text into:
+
+    =text text text point text text text=
+
+  - =cs<char><char>= change the surrounding char to char
+
+    "What what's point up dog?"
+
+    With point at the position "point" typing cs"' will delete the surrounding html element and change the text into:
+
+    'What what's point up dog?'
