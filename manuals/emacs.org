@@ -1,5 +1,5 @@
 #+TITLE:Emacs Cheatsheat
-#+OPTIONS: H:10
+#+OPTIONS: H:10 toc:nil
 
 * dired commands
   - ~n~ next line

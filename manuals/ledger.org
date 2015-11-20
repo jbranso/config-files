@@ -1,5 +1,16 @@
 #+TITLE:Ledger Cheat Sheat
 #+AUTHOR:Joshua Branson
+* Accounting Concepts
+** Double Entry Accounting
+   Ledger is a double entry accounting system.  This means ledger is like the law of thermodymnics.  No energy is ever lost or destroyed.  In the same way no money is ever lost or destroyed.  So in ledger to say that you made $500 from your paycheck, your boss gave you $-500 dollars.
+
+   #+BEGIN_SRC ledger
+     2015/11/25  Paycheck
+         Assets:Checking      $25.00
+         Income:Salary        $-25.00
+   #+END_SRC
+
+
 * Making Transactions
   Transactions happens when you money either leaves your bank account or enters your bank account. There are several possible
   initials characters that Ledger must to see when reading a transaction.

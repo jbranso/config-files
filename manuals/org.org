@@ -150,6 +150,15 @@
    - (org-agenda-entry-text-mode)
 * export commands
   In an org buffer type C-c C-e and org-mode will open a buffer that will prompt you for how you would like to export your document.
+** Export Settings
+   [[info:org#Export%20settings][info:org#Export settings]]
+   Export options can be set globally with variables, but its much easier to specify your export options in your org buffer
+
+   For example
+   =#+OPTIONS: toc:nil DATE:<2015-11-20 Fri>=  will not export your table of contents and specifies an export date
+   =+TOC:nil=  does nothing
+
+*** Trees with the tag =:noexport:= means they won't be exported
 * Org babel
   Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
   etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
