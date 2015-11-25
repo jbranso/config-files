@@ -158,7 +158,7 @@
    =#+OPTIONS: toc:nil DATE:<2015-11-20 Fri>=  will not export your table of contents and specifies an export date
    =+TOC:nil=  does nothing
 
-*** Trees with the tag =:noexport:= means they won't be exported
+   - = Trees with the tag =:noexport:= means they won't be exported
 * Org babel
   Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
   etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
@@ -362,6 +362,21 @@
    - =C-c SPC= blank the field at point
    - =C-c <RET>= insert a horizontal row below point
    - =C-c ^= sort the current table, by the column that point is in alphabetically or numerically SUPER COOL.
+* Org Columns
+  When in an org file, you can change the file to column view.  You can define a custom column format for the whole file with:
+  #+BEGIN_SRC org
+    ,#+COLUMNS: %25ITEM %TAGS %PRIORITY %TODO
+  #+END_SRC
+
+  You can define a column view for a specific subtree with
+  #+BEGIN_SRC org
+    ,** Top node for columns view
+       :PROPERTIES:
+       :COLUMNS: %25ITEM %TAGS %PRIORITY %TODO
+       :END:
+  #+END_SRC
+
+
 * latex equations
 
   \[
@@ -447,3 +462,49 @@ The following template selectors are currently supported.
 For example, on an empty line, typing "<e" and then pressing TAB, will expand into a complete EXAMPLE template.
 
 You can install additional templates by customizing the variable org-structure-template-alist. See the docstring of the variable for additional details.
+* Categories
+  I can specify Categories to show up nicely in the agenda buffer
+  Right under a tree item, I can say
+
+  #+BEGIN_SRC org
+    ,* Good Jokes
+      :PROPERTIES:
+      :CATEGORY: Projects
+      :END:
+    ,** One time this farmer
+  #+END_SRC
+* Schedulting
+  You can schedule to begin working on a TODO item by typing C-c C-s.  You can schedule a deadline for a TODO item by typing C-c C-d.
+
+  The result is this
+
+  #+BEGIN_SRC org
+    ,* TODO Walk the dog
+      SCHEDULED: <2015-11-23 Mon>
+  #+END_SRC
+
+  You can also make items repeatable like so.  This tasks repeats everyday and lets you know if you miss it.
+
+  #+BEGIN_SRC org
+    ,* TODO Walk the dog
+      SCHEDULED: <2015-11-23 Mon +1d>
+  #+END_SRC
+
+  However the above is not satisfactory.  Org-mode provides two nice extensions to this.
+
+  The below reminds you to take out your trash once a week.  BUT if you forget to do it, it'll still make you take it out on Monday.
+  The + sign is a precise mathematical operation. It precisely remembers the day to do this task.
+
+  #+BEGIN_SRC org
+    ,* TODO Take out the trash
+      SCHEDULED: <2015-11-23 Mon ++1w>
+  #+END_SRC
+
+
+  The below reminds you to brush your teeth.  BUT if you forget to do it, it'll still tell you do it the next 3rd day.
+  The . is a regexp symbol that can is a variable.  In the same way, the day that you do this task is variable.
+
+  #+BEGIN_SRC org
+    ,* TODO Work out
+      SCHEDULED: <2015-11-23 Mon .+3d>
+  #+END_SRC

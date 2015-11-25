@@ -74,8 +74,6 @@
     Left joins allow one to combine the results from two different tables in one query.  It will only display show matching
     records.  In the following case, it will only display records where a kid's address is the same as his parents.
 
-    SELECT * FROM girls CROSS JOIN boys
-
     SELECT first, last, parents.address from kids
     LEFT join parents on users.address = parents.address
 ** subqueries

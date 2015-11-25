@@ -1,4 +1,5 @@
 #+TITLE:Emacs Cheatsheat
+#+AUTHOR:Joshua Branson
 #+OPTIONS: H:10 toc:nil
 
 * dired commands
