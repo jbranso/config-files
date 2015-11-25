@@ -508,3 +508,10 @@ You can install additional templates by customizing the variable org-structure-t
     ,* TODO Work out
       SCHEDULED: <2015-11-23 Mon .+3d>
   #+END_SRC
+
+  You can also say that you want to do something at least every third day but at most every fourth day like this
+
+  #+BEGIN_SRC org
+    ,* TODO workout
+       SCHEDULED: <2015-11-26 Thu .+3d/4d>
+  #+END_SRC

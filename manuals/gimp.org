@@ -1,6 +1,6 @@
 #+TITLE:Emacs Cheatsheat
+#+AUTHOR: Joshua Branson
 #+OPTIONS: H:10
-
 * Basic Concepts
 ** Layers
    You can stack transparent layers on top of one another in gimp to create one complete image that is looked at from above all layers.
@@ -38,3 +38,10 @@ The color codes are listed there.
  Entered on [2015-08-30 Sun 12:11]
 
    [[file:~/programming/org/gtd/gtd.org]]
+
+** basic functionality I need to know for GIMP
+    - to see the colors of various stuff, open
+    Windows > dockable Dialogue > pointer
+
+    - to measure the lengths of stuff `Shift-M`
+    - to crop stuff `Shift-C`
