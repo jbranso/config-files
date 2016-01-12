@@ -1,0 +1,66 @@
+#+TITLE: Emacs Lisp Cheat Sheet
+
+* The 2 fundamental Lisp Syntax things
+  1) ~(<command> <arg1> <arg2> <arg3>)~  means to run command with arguments 1-3.
+  2) ~\'(<command> <arg1> <arg2> <arg3>)~  is like a quoted string.  The computer does NOT run any command.
+* Conditionals
+  - The most powerful of the conditionals is cond conditional, which is essentially a switch statement.  It looks like this:
+    ~(cond~
+    ~((condition 1) body-forms)~
+    ~((condition 2) body-forms)~
+    ~((condition 3) body forms)~
+    ~(t default-body-forms))~
+* Buffers
+  - (buffer-name) is the name of the current buffer
+  - (buffer-file-name) is the full path of the current buffer
+  - (current-buffer) returns the full text in the current buffer.
+  - (other-buffer) returns the full text from the last visited buffer.
+
+  - You can switch to another buffer in emacs with
+     ~(switch-to-buffer (other-buffer))~
+    OR
+     ~(switch-to-buffer (<buffer name>))~
+
+  - (buffer-size) tells you the size of the current buffer
+  - (point) tells you how many chars are between the beginning of the buffer and point
+* defuns
+  a function definition,
+
+  #+BEGIN_SRC emacs-lisp
+     (defun FUNCTION-NAME (ARGUMENTS…)
+       "OPTIONAL-DOCUMENTATION…"
+       (interactive ARGUMENT-PASSING-INFO)     ; optional
+       BODY…)
+
+  #+END_SRC
+
+  The cool thing about lisp is that you DO NOT need to use (return) to return a value. Instead, the last evaluated form in a defun
+  is what is returned!
+
+* Types
+
+** Sequence Types
+   A sequence in lisp is a set of elements.  It can either be a list of a array.
+
+   A list can hold elements of any type. ie:
+   #+BEGIN_SRC emacs-lisp
+   '(hello '(I am supper cool) '(hello again ) yup that is me)
+   #+END_SRC
+
+   An array is a fixed length sequence.  If the array can hold any element, then it is a
+   vector array.  String arrays just hold strings, and bool-vectors are either t or nil.
+   There are also char tables? [[info:elisp#Sequence%20Type][info:elisp#Sequence Type]]
+
+   Lists string and arrays share some similiarities.  ie: all have a length L, and all are
+   indexed from 0 to L minus one.
+
+   Also take
+* let
+  is a special lisp form that lets you define local variables.  Since all variables in lisp are global,
+  you need to be able to say HEY, these variables are local to this defun
+
+  Let looks like
+
+  #+BEGIN_SRC emacs-lisp
+    (let VAR-LIST BODY)
+  #+END_SRC

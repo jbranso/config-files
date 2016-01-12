@@ -9,6 +9,7 @@
 -- local ror = require("aweror")
 -- globalkeys = awful.util.table.join(globalkeys, ror.genkeys(modkey))
 
+
 -- get our key bindings from separate ror.lua file
 require("ror")
 

@@ -15,7 +15,7 @@ table5={
    -- /etc/security/limits.conf
    -- check out this guide: https://wiki.archlinux.org/index.php/Realtime_process_management
    --["Control-e"]={"nice -n -5 emacs programming/org/gtd/gtd.org", "Emacs"},
-   ["Control-e"]={"emacsclient -nc", "Emacs"},
+   ["Control-e"]={"emacs -nc", "Emacs"},
    --   ["Control-l"]={"firefox-nightly -P nightly", "Firefox Nightly"},
    -- ["Control-s"]={"firefox-nightly -P soihub", "Firefox Nightly"},
     ["Control-p"]={"firefox -P boring", "Firefox"},

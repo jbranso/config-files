@@ -9,7 +9,7 @@
 	            Hello,
 	        </h1>
                 <p>
-	            My name is Joshua Branson, and I am seeking a valuable position in your company. You may download my resume
+	            My name is Joshua Branson, and I am available for hire. You may download my resume
                     <a href="Resume.pdf" target="_blank">here.</a>
 	        </p>
             </div>
@@ -25,7 +25,7 @@
 	            Email:
 	        </h3>
 	        <p>
-	            jbranso@<br class="hidden-lg hidden-xs">purdue.edu
+	            bransoj@<br class="hidden-lg hidden-xs">hotmail.com
 	        </p>
             </div>
         </div>

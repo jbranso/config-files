@@ -14,7 +14,8 @@ libreofficemenu = { { "writer", "libreoffice --writer", configd .. "icons/Faenza
 
 multimediamenu = {  { "gimp", "gimp", configd .. "icons/Faenza/apps/32/gimp.png" },
    {"vlc", "vlc", configd .. "icons/Faenza/apps/32/vlc.png" },
-   {"recordmydesktop", "gtk-recordmydesktop", configd .. "icons/Faenza/apps/32/screenie.png" }
+   {"recordmydesktop", "gtk-recordmydesktop", configd .. "icons/Faenza/apps/32/screenie.png" },
+   {"asunder", "asunder", configd .. "icons/Faenza/apps/32/screenie.png" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },

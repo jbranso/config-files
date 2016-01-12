@@ -90,3 +90,28 @@
     command1 || command2
 
     command2 is only executed if command1 returns non-0 (error)
+** Redirection
+
+   Redirecting input can be of the form  [n]<word
+
+   Redirecting output is of the form [n]>[|]word
+
+   < means standard input
+   > means standard output
+
+   2> means standard error.  So
+
+   #+BEGIN_SRC sh
+     cat bsah 2> error.txt;
+   #+END_SRC
+
+   #+RESULTS:
+
+   Will store the error caused by "cat bsah" into the file error.txt.
+
+   #+BEGIN_SRC sh
+   cat error.txt
+   #+END_SRC
+
+   #+RESULTS:
+   : cat: bsah: No such file or directory

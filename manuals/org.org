@@ -383,6 +383,8 @@
   \hat{F}(\nu) = \frac{G(\nu)}{H(\nu)}.
   \]
 
+
+
   org-preview latex fragment with "C-c C-x C-l"
 
 * Creating Indexes
