@@ -30,11 +30,11 @@
 (while (< number 1000)
   ;;if the number is divisible by 5 or 3
   (when (or (divisible-by-3 number) (divisible-by-5 number))
-    (setq sum (+ sum number))
-    (setq number (+ number 1))
-    (print number)))
+    (setq sum (+ sum number)))
+  (setq number (+ number 1)))
 
 (print number)
+(print sum)
 
 ;;(provide '1)
 
