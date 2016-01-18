@@ -23,28 +23,48 @@
 ** Find the News
 *** gnu-select-method tells guns where to look for news.
    it is a list where the first element says how and the 2nd says where like
-   (setq gnus-select-method '(nntp "news.somewhere.edu"))
+   #+BEGIN_SRC emacs-lisp
+     (setq gnus-select-method '(nntp "news.somewhere.edu"))
+   #+END_SRC
+
+   gnus-select-method is your native group. Any other news that you get is a secondary group or a foreign group.
+
+   Also note that a group is just the mail connections you have to 1 server. ie: my "news.gwene.org" is a group,
+   BUT I have several different feeds from it.  I have xkcd, etc.
+
+   Also, if you need to change servers, think before you change gnus-select-methods.  When you change gnus-select-methods,
+   your .newsr file becomes worthless, and gnus no longer knows what articles you have read.
+
+   Just read [[info:gnus#Changing%20Servers][info:gnus#Changing Servers]] before you change gnus-select-method
+
 *** Getting mail from multiple servers
 
    Of course.  You can specify more sources for articles in the variable
-   gnus-secondary-select-methods.  Add something like this in ‘~/.gnus.el’:
+   gnus-secondary-select-methods.  These are secondary groups. NOT foreign groups.
+   Add something like this in ‘~/.gnus.el’:
+
+   #+BEGIN_SRC emacs-lisp
      (add-to-list 'gnus-secondary-select-methods
                   '(nntp "news.yourSecondProvider.net"))
      (add-to-list 'gnus-secondary-select-methods
                   '(nntp "news.yourThirdProvider.net"))
+   #+END_SRC
 
 *** the backends
 **** the nntp backend commonly gathers news articles via NNTP
 **** the nnimap backend grabs mail via IMAP
-**** the nnspool backend grabs mail via the spool directory
+**** the nnspool backend grabs mail via the spool directory.  This is local mail.
 **** the nnml backend grabs mail via a file format
 **** native
    gnus will always use one method (and back end) as the "native" or default way of gathering news.
-   groups from the native select method have names like gnu.emacs.gnus
+   groups from the native select method have names like gnu.emacs.gnus.
+   You get this group from the gnus-select-method.
 **** secondary
    a secondary backend acts like a native backend but has names like
-   nnpt+news.gmane.org:gname.emacs.gnus.devel
-
+   nnpt+news.gmane.org:gname.emacs.gnus.devel.  You get this from (setq gnus-secondary-methods)
+**** foreign groups
+     These groups are gotten NOT from the select elips methods.
+     - =G m= make a new group, and gnus will prompt you for a address and such.
 ** Gnus Buffers
 *** The Server Buffer
     You can enter the server buffer by pressing ^ inside the group buffer
@@ -62,11 +82,97 @@
    - ~p~
      go to the previous group that has unread mail
 
-   - ~GG~ with point on a folder, will search the server side for email matching the search term that is in that folder
+   - ~C-c C-a~ to attach a file
+   - ~o~ over an attachment will save the file
+   - ~Enter~ over an attachment when open the attachment
+     On Linux you need to customize ~/.mailcap
 
+     #+BEGIN_SRC org
+       # url
+       text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+       # image viewer
+       image/*; feh -F -d -S filename '%s';
+
+       # pdf
+       application/pdf; zathura '%s';
+       image/pdf; zathura '%s'
+
+       # video
+       video/* ; mplayer '%s'
+       audio/* ; mplayer '%s'
+
+       # Office files.
+       application/msword; soffice '%s'
+       application/rtf; soffice '%s'
+       text/richtext; soffice '%s'
+       application/vnd.ms-excel; soffice '%s'
+       application/vnd.ms-powerpoint; soffice '%s'
+
+     #+END_SRC
+
+   - ~G p~ will let you customize the parameters of the group. [[info:gnus#Group%20Parameters][info:gnus#Group Parameters]]
    - =SPC= open this group and read the first unread article
    - =C-u 10 SPC= opens the first 10 unread articles and starts reading the first one
-   - =
+   - =C-u RET= opens all email
+   - =A u= lists all groups whether they have unread articles or not.
+   - =G S u= sort by number of unread articles
+   - =G S v= sort by group score
+   - =C= marked all articles in the buffer (even the ticked ones) as read
+   - =c= mark all unticked articles as read
+
+***** Searching
+     - ~#~ mark groups
+     - ~G G~ with point on a folder, will search the server side for email matching the search term that is in that folder
+     or for marked groups
+     - ~//~ limit the mails by subject at the summary buffer (this is done locally)
+     - ~/a~ limit by author at the summary buffer (this is done locally)
+     - ~/A~ limit by address From/To/Cc match a given address
+     - ~/w~ to cancel the current filter
+     - more info: https://www.gnu.org/software/emacs/manual/html_mono/gnus.html#Limiting
+
+
+**** levels
+***** - =S l= will set the level of subscribedness for the group.
+      The lower the number the group, the more important it is.  All groups should be on level 1 or 2
+**** browse foreign server
+     - =B= lets you browse a foreign server and look for groups
+       You will be asked for a select method and a server name.
+
+
+     Once you are in the new server. you can do
+     - =u= to toggle subscription to the group or not.
+**** group topics
+     You can apparently arrange your groups by topic. ie;
+     [[info:gnus#Topic%20Commands][info:gnus#Topic Commands]]
+
+     Gnus
+       Emacs -- I wuw it!
+          3: comp.emacs
+          2: alt.religion.emacs
+         Naughty Emacs
+          452: alt.sex.emacs
+            0: comp.talk.emacs.recovery
+       Misc
+          8: comp.binaries.fractals
+         13: comp.sources.unix
+
+     Just press "t" to try it out.  To make it permanent, do a
+
+     #+BEGIN_SRC emacs-lisp
+       (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
+     #+END_SRC
+
+     Once you have enabled this minor mode you can sort out your groups into topics.
+
+     - =T n= create a new topic
+     - =T TAB= indent the current topic so it becomes a subtopic on the previous topic.
+     - =M TAB= unindent the current topic
+     - =C-k= and =C-y= work to seamlessly to reorganize the groups by topic.
+     - =RET= or =SPC= either fold a group or select a group
+     - =T m= move the group to a topic
+     - =T j= jump to a topic
+
 
 *** The Summary Buffer
 **** Various commands

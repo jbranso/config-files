@@ -111,6 +111,7 @@ function a(){
 # to shutdown the hurd as a normal user, issue reboot
 alias hurd='cd ~/programming/hurd/debian-gnu-hurd; qemu-system-i386 -drive file=debian-hurd-20150424.img,cache=writeback,format=raw --curses -cpu core2duo -smp 2 -m 1G -enable-kvm --no-reboot -no-kvm-irqchip'
 
+
 # I wast told to put these two lines here by the gpg documentation
 # [[info:gnupg#Invoking%20GPG-AGENT][info:gnupg#Invoking GPG-AGENT]]
 GPG_TTY=$(tty)
