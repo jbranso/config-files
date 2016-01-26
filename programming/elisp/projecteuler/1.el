@@ -10,7 +10,6 @@
 ;; with time.  Perhaps I'll do that when I try to make this better
 
 ;;(defvar numbers '(3 5))
-stauntaeuntahu
 
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
