@@ -14,12 +14,17 @@
 "This is a new thing."
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is something else that should be deleted when I press v in the history of magit
 
+<<<<<<< HEAD
 Something else that should be changed.
 
-woo hoo I am cool!
 
+=======
+>>>>>>> parent of 98ae2ff... another boring addition that I will soon revert.
+=======
+>>>>>>> parent of f600394... another boring commit.
 =======
 >>>>>>> parent of 98ae2ff... another boring addition that I will soon revert.
 (defun divisible-by-3 (number)
