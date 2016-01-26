@@ -17,16 +17,6 @@
 <<<<<<< HEAD
 This is something else that should be deleted when I press v in the history of magit
 
-<<<<<<< HEAD
-Something else that should be changed.
-
-
-=======
->>>>>>> parent of 98ae2ff... another boring addition that I will soon revert.
-=======
->>>>>>> parent of f600394... another boring commit.
-=======
->>>>>>> parent of 98ae2ff... another boring addition that I will soon revert.
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
     (if (eq (% number 3) 0)
