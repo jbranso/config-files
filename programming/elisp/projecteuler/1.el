@@ -17,6 +17,7 @@ This is something else that should be deleted when I press v in the history of m
 
 Something else that should be changed.
 
+woo hoo I am cool!
 
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
