@@ -11,12 +11,6 @@
 
 ;;(defvar numbers '(3 5))
 
-"This is a new thing."
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-This is something else that should be deleted when I press v in the history of magit
-
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
     (if (eq (% number 3) 0)
