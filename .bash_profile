@@ -14,7 +14,7 @@ function ediff() {
 }
 
 #extend my path
-PATH="/home/joshua/programming/bash:$PATH"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/joshua/programming/bash:$PATH"
 PACMAN="pacmatic"
 DIFFEDITCMD="ediff"
 pacdiff_program="ediff"

@@ -11,6 +11,7 @@
 
 ;;(defvar numbers '(3 5))
 
+"This is a new thing."
 
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."

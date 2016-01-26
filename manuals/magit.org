@@ -8,7 +8,7 @@
 
 * Basic commands
 
-** magit commands in the status buffer
+* magit commands in the status buffer
 
    - ~$~ will add another buffer that shows you the commands magit is commiting
 
@@ -26,6 +26,15 @@
 
    - ~F F~ will pull your changes
 
+** history commands
+- ~l r l~ will allow you to see the commits that make two branches differ.  This happens when branch "master" is behind branch "new feature".  You can see the differences between the two branches and cherrypick them.
+- ~a~ will apple the current commit to your current branch.  This allows me to cherry pick changes from one "bug fix" branch to the
+  "master" branch.
+- ~A~ does the same as above, but it tries to automatically commit the changes if there are no merge conflicts.
+- ~v~ will revert the commit.  It will apply the changes made by a commit in reverse.  But you still need to commit the changes.
+- ~.~ toggle mark on a commit
+- ~C-c u~ unmark marked commits
+- ~=~ show the differ between the marked commit and the commit under point
 ** Branch Manager commands
 
    - ~k~ will delete the branch under point

@@ -64,3 +64,23 @@
   #+BEGIN_SRC emacs-lisp
     (let VAR-LIST BODY)
   #+END_SRC
+
+  http://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding
+  An interesting example:
+
+  A ‘let’ expression is indeed just “syntatic sugar”, a convenience, for the corresponding ‘lambda’ form:
+
+  #+BEGIN_SRC emacs-lisp
+    (let ((a 1)
+          (b 3))
+      (+ a b))
+
+  #+END_SRC
+
+  is equivalent to:
+
+  #+BEGIN_SRC emacs-lisp
+
+    ((lambda (a b) (+ a b)) 1 3)
+
+  #+END_SRC
