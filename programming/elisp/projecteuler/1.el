@@ -14,9 +14,6 @@ stauntaeuntahu
 
 sntaunthshntahue
 
-
-commit 3
-
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
     (if (eq (% number 3) 0)
