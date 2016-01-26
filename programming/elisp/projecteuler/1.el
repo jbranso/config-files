@@ -15,6 +15,9 @@
 
 This is something else that should be deleted when I press v in the history of magit
 
+Something else that should be changed.
+
+
 (defun divisible-by-3 (number)
     "Is the current NUMBER divisible by 3."
     (if (eq (% number 3) 0)
