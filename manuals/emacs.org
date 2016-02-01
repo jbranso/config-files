@@ -245,6 +245,15 @@
     - =C-c , J= prompt for a tag in any file that emacs has parsed and move point to it.
 ** ttd-mode let's you specify a compile command. Everytime you save a file, it will run your compile command.
   If it finds an error, it will alert you at the bottom!
+** yasnippet
+http://ergoemacs.org/emacs/yasnippet_templates_howto.html
+*** Important Characters
+- =$&= indents the line according to the major mode
+- =`(some-lisp-code)`= embods lisp code
+- =$0= where point will be when the snippet ends
+- =$n= where n is a number ie: =$1=, =$2=, etc.  If you have multiple $3, then typing some text in one $3 will also be put in
+  the other $3.
+- =${n:<placeholder text>}
 ** Undo tree
 learn more about undo tree
 ** Paredit mode
@@ -323,6 +332,10 @@ learn more about undo tree
   Suppose that you want to add a space between both "is" in the functions.
 
   M-x dired-do-query-replace-regexp is\(admin\|manager\) RET is \1 RET
+* some nice emacs add on modes that make programming nice
+- https://github.com/kiwanami/emacs-ctable
+- s https://github.com/magnars/s.el
+- f https://github.com/rejeep/f.el
 * Elisp macro Defadvice
   learn about defadvice run commands after or before you execute some command. very cool!
   This is the old way of doing it. The newer was is to say add-function
