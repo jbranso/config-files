@@ -338,6 +338,17 @@
   | 7ac95b56101e570db018311e775b7952 | ./ltxpng/org_8efa66ec78ea83e97f9815c08a43ee880750b6ee.png |
   | 7ac95b56101e570db018311e775b7952 | ./ltxpng/org_e7d761bed1cade664f3496421252f6aebdf30781.png |
 
+
+
+  In this example both the lisp code and the results will be exported:
+
+  #+BEGIN_SRC emacs-lisp :exports both
+  (print "hello")
+  #+END_SRC
+
+  #+RESULTS:
+  : hello
+
 * Org spreadsheets/tables
   | Money I earn in a month | Expenses  | Expenses$ | Total |
   |-------------------------+-----------+-----------+-------|
@@ -375,7 +386,6 @@
        :COLUMNS: %25ITEM %TAGS %PRIORITY %TODO
        :END:
   #+END_SRC
-
 
 * latex equations
 
@@ -517,3 +527,7 @@ You can install additional templates by customizing the variable org-structure-t
     ,* TODO workout
        SCHEDULED: <2015-11-26 Thu .+3d/4d>
   #+END_SRC
+
+  # I got this text from: [[info:org#Repeated%20tasks][info:org#Repeated tasks]]
+  To mark a task with a repeater as `DONE', use `C-- 1 C-c C-t' (i.e.,
+`org-todo' with a numeric prefix argument of -1.)

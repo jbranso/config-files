@@ -70,3 +70,76 @@
    #+END_SRC
 
   #+RESULTS:
+
+* permissions
+In Unix everything is a file.  When you write a text document called "text.text", that is a Unix file.  When you create a directory (Windows users call this a folder) called "Music",  you also are creating a Unix file.  Obviously, "text.text" and "Music" behave very differently.  One has your favorite songs, and the other is a text document, BUT the linux kernel assumes that they are both Unix files.  All unix files have read, write, and execute permissions specific to each unix file.  This typiccally means that the ordinary user joshua cannot read, write, or execute anything in the =/root/= folder.
+
+# I found this segment online here: https://stackoverflow.com/questions/6732430/how-do-i-give-write-permission-to-file-in-linux
+#+BEGIN_SRC latex
+read     = 4
+write    = 2
+execute  = 1
+owner    = read | write = 6
+group    = read         = 4
+other    = read         = 4
+The basic syntax of the command to set the mode is
+
+chmod 644 [file name]
+In C, that would be
+
+#include <sys/stat.h>
+
+chmod("[file name]", 0644);
+ #+END_SRC
+
+#+RESULTS:
+#+BEGIN_LaTeX
+read     = 4
+write    = 2
+execute  = 1
+owner    = read | write = 6
+group    = read         = 4
+other    = read         = 4
+The basic syntax of the command to set the mode is
+
+chmod 644 [file name]
+In C, that would be
+
+#include <sys/stat.h>
+
+chmod("[file name]", 0644);
+#+END_LaTeX
+
+** chmod
+
+Change a file's modifications.  This specifies if what user, group, and if everyone else can read, write, or execute the file.
+
+Permissions can modify the permissions of the user's, the group's and all others.
+
+** chown
+
+chown [-R] <owner> [file | directory]
+
+
+Change the file's owner.  The file's owner is typically root or an ordinary user.
+
+Examples include
+
+
+** chgrp
+
+* How I got my local apache server working again:
+
+ For some reason, my ~/ folder had permissions =drwxrws---=
+
+ To fix it I did
+
+ #+BEGIN_SRC bash :exports both
+ cd /home/; chmod g-s joshua; ls -lh | grep joshua
+
+ #+END_SRC
+
+ #+RESULTS:
+ : drwxrwx--- 83 joshua http 4.0K Feb  2 08:04 joshua
+
+The s was magically replaced with a x

@@ -20,6 +20,12 @@
   ~t~
 
   Then you should see the default group buffer.
+
+  An article is one piece of information.  it'll have a to and a from. it could be an email or an rss iteam
+
+  a backend is one way for guns to get articles
+    rss backend
+    backend for getting stuff from the uniq spool
 ** Find the News
 *** gnu-select-method tells guns where to look for news.
    it is a list where the first element says how and the 2nd says where like

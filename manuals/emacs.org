@@ -332,8 +332,8 @@ learn more about undo tree
   Suppose that you want to add a space between both "is" in the functions.
 
   M-x dired-do-query-replace-regexp is\(admin\|manager\) RET is \1 RET
-* some nice emacs add on modes that make programming nice
-- https://github.com/kiwanami/emacs-ctable
+* some nice emacs add on modes/APIs that make programming nice
+- ctable https://github.com/kiwanami/emacs-ctable
 - s https://github.com/magnars/s.el
 - f https://github.com/rejeep/f.el
 * Elisp macro Defadvice

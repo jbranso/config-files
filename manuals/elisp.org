@@ -36,6 +36,23 @@
 
   The cool thing about lisp is that you DO NOT need to use (return) to return a value. Instead, the last evaluated form in a defun
   is what is returned!
+** Sharpquoting
+
+Here is a sharp quote:
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook #'toggle-word-wrap)
+#+END_SRC
+
+You should only sharp quote something when you are quoting a named function.  This gives the byte compiler more useful information in case of future debugging.  BUT there's no need to sharp quote a lambda expression.  So don't do this:
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mime-html-hook #'(lambda ()
+                                    (org-mime-change-element-style
+                                     "pre" (format "color: %s; background-color: %s; padding: 0.5em;"
+                                                   "#E6E1DC" "#232323"))))
+#+END_SRC
+
 
 * Types
 
