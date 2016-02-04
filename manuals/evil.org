@@ -27,6 +27,9 @@
 
   ~'<mark>~ moves to the mark
 
+  http://keyxl.com/aaa8263/290/VIM-keyboard-shortcuts.htm
+  https://www.maketecheasier.com/vim-keyboard-shortcuts-cheatsheet/
+
 * evil-surround
   Evil surround is a really cool way to surround highlighted regions of text.
 
