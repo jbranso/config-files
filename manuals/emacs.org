@@ -59,6 +59,8 @@
 
   - =C-x r m=  sets a bookmark for you at point and it prompts you to name it
   - =C-x r b=  jumps you to a bookmark
+** Advising a named Function
+[[info:elisp#Advising%20Named%20Functions][info:elisp#Advising Named Functions]]
 ** windows commands
   In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
   splitting the frame in half, or in two *windows*.
@@ -344,3 +346,17 @@ learn more about undo tree
 * there is a php package that turns all php functions into yasnippets.  It lets you easily type out a php function
   tab, and it will complete it for you. I'll need to check it out. What's it called?
 * in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
+
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC
+* entering in special characters utf8 chars
+http://www.johndcook.com/blog/emacs_unicode/
+"C-x ` e"  --> è
+
+ or you can do this, which is quite cool too:
+ http://irreal.org/blog/?p=4254
+
+ "C-\"  lets you put in utf-8 chars via TeX commands.  Ϡ â Ζ β
+
+ ie "\beta" –> β

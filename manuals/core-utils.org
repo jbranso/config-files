@@ -112,6 +112,8 @@ chmod("[file name]", 0644);
 
 ** chmod
 
+chmod [-R ] <owner> [file | directory]
+
 Change a file's modifications.  This specifies if what user, group, and if everyone else can read, write, or execute the file.
 
 Permissions can modify the permissions of the user's, the group's and all others.
@@ -120,13 +122,16 @@ Permissions can modify the permissions of the user's, the group's and all others
 
 chown [-R] <owner> [file | directory]
 
-
 Change the file's owner.  The file's owner is typically root or an ordinary user.
 
 Examples include
 
 
 ** chgrp
+
+chgrp [ -R ] <group> [file | directory]
+
+Change the group that the file or directory belongs to.
 
 * How I got my local apache server working again:
 

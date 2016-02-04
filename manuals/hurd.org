@@ -1,0 +1,12 @@
+* The GNU HURD
+
+ The GNU HURD is a multi-server kernel
+* bugs
+
+ - if a process uses device_open () but not device_close (), before exiting, the mach device remains open
+
+ - ext2fs leaks some memory when you call exec...what's exec?, from the same process
+
+ - setting a passive translator output garbage when started with settrans -P and stopped by gdb???
+
+ -
