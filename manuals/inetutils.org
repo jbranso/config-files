@@ -1,0 +1,27 @@
+#+AUTHOR: Joshua Branson
+
+* Inetutils Cheatsheet
+This cheatsheet covers some of the basics of the GNU OS.  It is based on the inetutils manual.
+
+** Common Options
+ All programs accept
+
+ - =--help=
+
+ - =--usage=
+   how to use the program
+ - =--version=
+   the version number
+
+** Exit Status
+ Almost all programs have an exit status of 0 to mean success.
+ non-0 means failure.
+
+
+** dnsdomainname
+ will show the you the domain part of the fully qualified domain name.
+
+** hostname
+get the hostname
+
+escZ

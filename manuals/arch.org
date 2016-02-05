@@ -1,0 +1,85 @@
+#+Author: Joshua Branson
+#+Title: Arch GNU/Linux CheatSheet
+
+* changing the keyboard layout when you log into a virtual console
+loadkeys dvorak
+* Some nice Xorg Settings
+You can tweak some of these settings w/ evtest tool
+** change the X keyboard layout & swap caps
+- do it through .xinitrc
+
+  #+BEGIN_SRC sh
+    cd ~/; cat .xinitrc | grep xkb;
+  #+END_SRC
+
+  #+RESULTS:
+  | setxkbmap | dvorak  |                 |
+  | setxkbmap | -option | 'ctrl:swapcaps' |
+** tweaking X11 settings
+[[https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Frequently_used_options][Frequently Used Options]]
+
+ #+BEGIN_SRC
+ Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    # You can enable or disable tap buttons
+        Option "TapButton1" "1"
+        Option "TapButton2" "2"
+        Option "TapButton3" "3"
+
+        # disable trackpad whilst typing
+        PalmDetect=1
+        # tweak the minimum amount of touch your palm has to touch to be considered a touch
+        PalmMinWidth=8
+        # tweak the minimum pressure to be considered a palm
+        PalmMinZ=100
+        # scrolling when you slide your finger down the edge of the track pad
+        Option "VertEdgeScroll" "on"
+        Option "VertTwoFingerScroll" "on"
+        Option "HorizEdgeScroll" "on"
+        Option "HorizTwoFingerScroll" "on"
+        Option "CircularScrolling" "on"
+        Option "CircScrollTrigger" "2"
+        Option "EmulateTwoFingerMinZ" "40"
+        Option "EmulateTwoFingerMinW" "8"
+        Option "CoastingSpeed" "0"
+        Option "FingerLow" "35"
+        Option "FingerHigh" "40"
+EndSection
+ #+END_SRC
+*** [[https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Disable_trackpad_while_typing][disable trackpad whilst typing]]
+
+ #+BEGIN_SRC
+ Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    # You can enable or disable tap buttons
+        Option "TapButton1" "1"
+        Option "TapButton2" "2"
+        Option "TapButton3" "3"
+
+        # disable trackpad whilst typing
+        PalmDetect=1
+        # tweak the minimum amount of touch your palm has to touch to be considered a touch
+        PalmMinWidth=8
+        # tweak the minimum pressure to be considered a palm
+        PalmMinZ=100
+
+EndSection
+ #+END_SRC
+*** disable tapping buttons (lightly touching the mouse, NOT clicking it)
+
+ #+BEGIN_SRC
+ Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    # You can enable or disable tap buttons
+        Option "TapButton1" "1"
+        Option "TapButton2" "2"
+        Option "TapButton3" "3"
+
+EndSection
+ #+END_SRC

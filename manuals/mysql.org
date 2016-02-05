@@ -160,4 +160,49 @@
 
 
 *
-* Sub
+* Sub Queries
+    :PROPERTIES:
+    :engine: mysql
+    :dbhost: setyourwaypoint.com
+    :dbuser: setyourw_admin
+    :dbpassword: ]#am!6QDxdkK
+    :database: setyourw_ihsb
+    :END:
+A sub query is running a query inside another query.
+
+It has the syntax
+
+#+BEGIN_SRC sql
+(select first from users limit 5)
+#+END_SRC
+
+#+RESULTS:
+| first  |
+|--------|
+| Steve  |
+| Jim    |
+| Fake   |
+| Rhonda |
+| Greg   |
+
+For example one might do something like this.  If you only know a bowler's ID how can I get their region?  Easy:
+You do a regular select query with the user's ID.  In that query you combine a mysql variable.
+
+
+#+BEGIN_SRC sql
+    SELECT users.first, users.last, users.ID, users.level, schools.name, images.ID
+    as sig, conference.region, @schoolID := schools.schoolID as schoolID,
+    @groupID := (SELECT groupID FROM schools WHERE schoolID = @schoolID) as groupID,
+    (SELECT region FROM conference WHERE groupID = @groupID) as region
+    FROM users
+    LEFT JOIN schools  ON users.schoolID=schools.schoolID
+    LEFT JOIN images   ON users.ID=images.ID
+    LEFT join conference on users.schoolID = conference.groupID
+    WHERE (level = '6' OR level = '3')  limit 2
+    #+END_SRC
+
+#+RESULTS:
+| first   | last      | ID | level | name                                | sig | region | schoolID | groupID | region              |
+|---------+-----------+----+-------+-------------------------------------+-----+--------+----------+---------+---------------------|
+| Linda   | Olszewski | 95 |     3 | This school is for testing purposes |  95 | NULL   |      714 |     955 | Testing Conference  |
+| Derrick | Bohn      | 99 |     3 | Clark                               |  99 | NULL   |      109 |      50 | Greater Lake County |

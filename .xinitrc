@@ -18,6 +18,8 @@
 #This next line crashes don't put it here.
 #/usr/bin/lxpolkit
 
+setxkbmap dvorak
+setxkbmap -option 'ctrl:swapcaps'
 
 #run awesome
 exec awesome
