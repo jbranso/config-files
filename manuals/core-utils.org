@@ -1,6 +1,27 @@
 #+TITLE: Core Utilities Cheat Sheet
 #+AUTHOR: Joshua Branson
 
+
+* Common Options
+** source of randon data
+/dev/random and /dev/urandom can be used as the random number generator
+--random-source=FILE
+
+** Traversing Symbolic links
+chown, chgrp, and chmod all accept -R  or the recursive option, which means do this command for all directories
+underneath what this command specifies
+
+#+BEGIN_SRC sh
+ls ~/Documents/
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC sh
+chown joshua ~/documents/
+#+END_SRC
+
 * find
   - find and report all php files in the specified dir current directory
     #+BEGIN_SRC sh :dir ~/programming/waypoint/nutripledge/

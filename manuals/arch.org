@@ -83,3 +83,29 @@ EndSection
 
 EndSection
  #+END_SRC
+* creating persistent internet device names
+
+When you first start your computer your internet device names will be odd like this:
+
+#+BEGIN_SRC sh :results raw
+ip link
+#+END_SRC
+
+#+RESULTS:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: neteth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 60:33:4b:8e:60:d0 brd ff:ff:ff:ff:ff:ff
+3: wifi0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 60:33:4b:09:d2:da brd ff:ff:ff:ff:ff:ff
+
+#+BEGIN_SRC sh export:code
+  cat /etc/udev/rules.d/10-network.rules;
+#+END_SRC
+
+#+BEGIN_SRC
+# make my wifi be named wifi0
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:09:d2:da", NAME="wifi0"
+#make my ethernet be
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:8e:60:d0", NAME="neteth0"
+#+END_SRC

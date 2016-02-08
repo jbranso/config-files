@@ -206,3 +206,14 @@ You do a regular select query with the user's ID.  In that query you combine a m
 |---------+-----------+----+-------+-------------------------------------+-----+--------+----------+---------+---------------------|
 | Linda   | Olszewski | 95 |     3 | This school is for testing purposes |  95 | NULL   |      714 |     955 | Testing Conference  |
 | Derrick | Bohn      | 99 |     3 | Clark                               |  99 | NULL   |      109 |      50 | Greater Lake County |
+* database engines
+ - innodb
+   when you apply foreign key, any transactions delete write or update will check the integrity
+
+   you can't accidentally delete everything
+
+   You can insert new data w/o doing integrity checks, because innodb does that stuff for you.
+
+-  myisam
+
+  You can put new data in, and it will not sanity check it for you.

@@ -2,7 +2,17 @@
 #+AUTHOR:Joshua Branson
 #+OPTIONS: H:10 toc:nil
 
-* dired commands
+* Built in Emacs Features
+** Advising a named Function
+[[info:elisp#Advising%20Named%20Functions][info:elisp#Advising Named Functions]]
+** Bookmarks
+  Emacs bookmarks are nifty ways of saving your place in a file.
+
+  - =C-x r m=  sets a bookmark for you at point and it prompts you to name it
+  - =C-x r b=  jumps you to a bookmark
+** dired
+Dired is the emacs file manager.  It opens a buffer displaying all your files in the specified directory.  With it you can perform numerous commands on marked files, like deleting, copying, moving, or even creating your own command.
+*** commands
   - ~n~ next line
   - ~p~ previous line
   - ~m~ make the current file under point
@@ -28,7 +38,68 @@
       -  press ~!~ to replace all the matches in the current buffer
       -  Press ~Y~ to replace all the remaining matches without question
 
-* Built in Emacs Features
+  - M-x wdired-change-to-wdired-mode
+    Makes the contents of the dired buffer editable.  Once you are done making changes type =C-c C-c=.  This saves your changes.  It is a nifty way to easily change file permissions, file names, etc.
+** Macros
+  - `@ <letter>` perform keyboard macro
+  - `C-x Q`  prompt the user for input during a macro.
+    # FIXME specify where I found this defun
+    This is not a standard emacs command; I found it on the emacs wiki.  Essentially this command tells the macro to prompt the user for input every time you call the macro.  This is useful if you have a macro that wants to write out a convoluted sequence of numbers.
+  - =C-x q= prompt, when you use this macro if you want to continue.  You can enter C-r to briefly step out of the macro
+    and do some edits yourself, then C-M-c will allow you to continue execution of the macro.
+
+*** My personal keybindings
+  - `C-c r <letter>` begin recording keyboard macro
+  - `C-c r <letter>` end recording keyboard macro
+** narrowing
+  are entered via this syntax
+  ~C-x n <letter>~
+
+  ~d~ narrow to defun
+  ~r~ widen to region
+  ~s~ narrow to a org subtree
+  ~w~ widden to the whole buffer
+
+  A much better way to use the narrowing commands is just to make emacs guess what you want whenever you press "C-x n", and that's what the following snippet does.  I recommend that you put it in your .emacs:
+
+  # FIXME  Say where I got this code snippet from
+  #+BEGIN_SRC emacs-lisp
+    ;; Also set up narrow dwin
+    (defun narrow-or-widen-dwim (p)
+      "Widen if buffer is narrowed, narrow-dwim otherwise.
+    Dwim means: region, org-src-block, org-subtree, or defun,
+    whichever applies first. Narrowing to org-src-block actually
+    calls `org-edit-src-code'.
+
+    With prefix P, don't widen, just narrow even if buffer is
+    already narrowed."
+      (interactive "P")
+      (declare (interactive-only))
+      (cond ((and (buffer-narrowed-p) (not p)) (widen))
+            ((region-active-p)
+             (narrow-to-region (region-beginning) (region-end)))
+            ((derived-mode-p 'org-mode)
+             ;; `org-edit-src-code' is not a real narrowing
+             ;; command. Remove this first conditional if you
+             ;; don't want it.
+             (cond ((ignore-errors (org-edit-src-code))
+                    (delete-other-windows))
+                   ((ignore-errors (org-narrow-to-block) t))
+                   (t (org-narrow-to-subtree))))
+            ((derived-mode-p 'latex-mode)
+             (LaTeX-narrow-to-environment))
+            (t (narrow-to-defun))))
+
+    ;; This line actually replaces Emacs' entire narrowing
+    ;; keymap, that's how much I like this command. Only copy it
+    ;; if that's what you want.
+    (define-key ctl-x-map "n" #'narrow-or-widen-dwim)
+  #+END_SRC
+** Rectangles
+  You can easily create a rectangle with evil mode with C-v.  Once you have a rectangle you can do these commands:
+
+  =C-x r o= insert blank spaces to the left of the rectangle region
+  =C-x r N= insert numbers all along the left of the rectangle region
 ** Registers
   Number Registers
 
@@ -45,25 +116,12 @@
 
   =C-x r s R=  save text to register R
   =M-x append-to-register R= appends text to Register R
-** Macros
-  - `@ <letter>` perform keyboard macro
-  - `C-x Q`  prompt the user for input
-  - =C-x q= prompt, when you use this macro if you want to continue.  You can enter C-r to briefly step out of the macro
-    and do some edits yourself, then C-M-c will allow you to continue execution of the macro
-
-*** My personal keybindings
-  - `C-c r <letter>` begin recording keyboard macro
-  - `C-c r <letter>` end recording keyboard macro
-** Bookmarks
-  Emacs bookmarks are nifty ways of saving your place in a file.
-
-  - =C-x r m=  sets a bookmark for you at point and it prompts you to name it
-  - =C-x r b=  jumps you to a bookmark
-** Advising a named Function
-[[info:elisp#Advising%20Named%20Functions][info:elisp#Advising Named Functions]]
+** Selective Display
+  Emacs can display portions of the buffer based on level of indentention.  This lets you get a nice overview of the file, which is quite cool.
+  - =C-u n C-x $= hides rows that are indented n times
+  - =C-x $=  shows all rows
 ** windows commands
-  In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by
-  splitting the frame in half, or in two *windows*.
+In emacs the entire emacs program takes up a *frame*.  But emacs allows you to view two different files in the same frame, by splitting the frame in half, or in two *windows*.
 
   - =C-x o= Delete the selected window
   - =C-x 1= Delete all the windows except the one that currently has point
@@ -72,25 +130,45 @@
   - =C-x }= make the selected window wider
   - =C-x -= shrink this window if it doesn't need that many lines.
   - =C-x += make all the windows the same height
-** Selective Display
-  Emacs can display portions of the buffer based on level of indentention.  This lets you get a nice overview of the file, which
-  is quite cool.
-  - =C-u n C-x $= hides rows that are indented n times
-  - =C-x $=  shows all rows
-** Rectangles
-  You can easily create a rectangle with evil mode with C-v.  Once you have a rectangle you can do these commands:
+** org-mode
+*** org-babel
+Org babel is a the best approach towards literate programming ever attempted, and it works!  Almost all programming languages treat code as the first order citizen and hides comments behind a simple syntax.  For example here is some javascript:
 
-  =C-x r o= insert blank spaces to the left of the rectangle region
-  =C-x r N= insert numbers all along the left of the rectangle region
-** narrowing
-  are entered via this syntax
-  ~C-x n <letter>~
+#+BEGIN_SRC js :exports code
+  // initialize the variable
+  var i = 5;
+  if (i < 6) {
+    i++;
+  }
+  console.log (i);
+#+END_SRC
 
-  ~d~ narrow to defun
-  ~r~ widen to region
-  ~s~ narrow to a org subtree
-  ~w~ widden to the whole buffer
-* Emacs modes
+The comment "initialize the variable" comes after the comment syntax "//".  In literate programming the code portion of the file is "commented" and the comments do not hide behind a comment syntax.  Let me give you an example of the literate kind:
+
+#+BEGIN_SRC org
+  Let's write a trivial js function the literate way
+  ,#+BEGIN_SRC js :exports code
+    var i = 5;
+    if (i < 6) {
+      i++;
+    }
+    console.log (i);
+  ,#+END_SRC
+#+END_SRC
+
+How cool is that?
+**** Specific header arguments
+http://orgmode.org/manual/Specific-header-arguments.html
+[[info:org#Specific%20header%20arguments][info:org#Specific header arguments]]
+
+- :results
+  syntax:
+  :results [raw | silent | ]
+- :exports [code | results | node | both]
+- :dir
+  Specify a default directory that the code is to be run in
+  :dir <dir>
+* Helpful Emacs modes
 ** bug-hunter
    This will help you find bugs in your init file. SOOO helpful.
   https://github.com/Malabarba/elisp-bug-hunter
@@ -237,7 +315,11 @@
  hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you
  hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you hello how are you
 ** El-doc
-  Set up el-doc for various modes. It shows help documentation as you write a function cool!
+  El-doc shows you what a function in the mini-bar as you write it.  By default it works for emacs lisp extremely well.  You'll notice that my emacs-lisp-mode-hook sharp quotes eldoc-mode, which means it's using the syntax =#'eldoc-mode=.  Sharping quoting is only necessary if you are quoting named emacs lisp functions.
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
+#+END_SRC
+
 ** Semantic
 
    Most emacs modes use a bunch of regular expressions to highlight source code. BUT semantic tries to make this better by
@@ -259,35 +341,78 @@ http://ergoemacs.org/emacs/yasnippet_templates_howto.html
 ** Undo tree
 learn more about undo tree
 ** Paredit mode
-   Paredit mode is a superior way to interact with lisps.  It essentially offers 2 features: slurping and barfing.
-   - slurping elongates the current sexp by pulling in the closest sexp (either forward or backward)
-   - barfing shortens the currect sexp by pushing out the closest sexp (either forward or backward)
+http://danmidwood.com/content/2014/11/21/animated-paredit.html
+Paredit mode is a superior way to interact with lisps.
 
-     #+BEGIN_SRC emacs-lisp
-       (hello yes (how are you point) there it is) ;; C-c ) or M-x paredit-forward-slurp-sexp was used here
-       (hello yes (how are you point there) it is)
-       (hello yes (how are you) point there it is) ;; C-c } or M-x paredit-forward-barf-sexp was used here
+*** slurping
 
-       (yup howdie (point is cool) it sure is)  ;; C-c ( or M-x paredit-backward-slup sexp was used here
-       (yup (howdie point is cool) it sure is)
-       (yup howdie (point is cool) it sure is)  ;; C-c { or M-x paredit-backward-barf-sexp was used here
+slurping elongates the current sexp by pulling in the closest sexp (either forward or backward)
 
-       ;; from here on is me playing with paredit
+ #+BEGIN_SRC emacs-lisp
+   ;; here I've called "C-c 0" paredit-forward-slurp-sexp
+   ;; point was always on the "h" in hello
+   ((hello) this is a nice little sentence)
+   ((hello this) is a nice little sentence)
+   ((hello this is) a nice little sentence)
+   ((hello this is a) nice little sentence)
+   ((hello this is a nice) little sentence)
+   ((hello this is a nice little) sentence)
+   ((hello this is a nice little sentence))
 
-       (defun simple-function ()
-         (interactive)
-         "Hello there you silly people"
-         (do something)
-         (do (something else))
-         (do (some more (things)))
-         (cond
-          ((string-match "/php/+$" buffer-file-name)
-           (do (some things)))
-
-          ((string-match "/js/+$" buffer-file-name)
-           (do (some things)))))
+   ;; here I've called C-c 0 paredit-backward-slurp-sexp
+   ;; which pulls in another sexp or atom into my current sexp
+   ;; point was always on "e" in sentence
+   (hello this is a nice little (sentence))
+   (hello this is a nice (little sentence))
+   (hello this is a (nice little sentence))
+   (hello this is (a nice little sentence))
+   (hello this (is a nice little sentence))
+   (hello (this is a nice little sentence))
+   ((hello this is a nice little sentence))
      #+END_SRC
 
+*** barfing
+
+barfing shortens the currect sexp by pushing out the closest sexp (either forward or backward)
+ #+BEGIN_SRC emacs-lisp
+   ;; here I've called "C-c ]" paredit-forward-barf-sexp
+   ;; point was always at the "h" in hello
+   ((hello this is a nice little sentence))
+   ((hello this is a nice little) sentence)
+   ((hello this is a nice) little sentence)
+   ((hello this is a) nice little sentence)
+   ((hello) this is a nice little sentence)
+
+
+   ;; here I've called paredit-backward-barf-sexp
+   ;; point was always at the "e" in sentence
+   ((hello this is a nice little sentence))
+   (hello (this is a nice little sentence))
+   (hello this (is a nice little sentence))
+   (hello this is (a nice little sentence))
+   (hello this is a (nice little sentence))
+   (hello this is a nice (little sentence))
+   (hello this is a nice little (sentence))
+   (hello this is a nice little sentence())
+
+       #+END_SRC
+
+
+   Paredit
+   #+BEGIN_SRC emacs-lisp
+
+   #+END_SRC
+
+*** paredit-splice-sexp
+This removes the parentheses around the current sexpression
+#+BEGIN_SRC emacs-lisp
+(cool (cool (cool (cool (cool)))))
+(cool (cool (cool (cool (cool)))))
+(cool (cool (cool (cool (cool)))))
+(cool (cool (cool (cool (cool)))))
+(cool (cool (cool (cool (cool)))))
+
+#+END_SRC
 ** Restclient mode
   install restclient. It lets you query the server via get and post.  I can view the results via emacs!
 ** sunrise-commander is a dired derived mode that acts like filezilla inside emacs.
@@ -321,7 +446,7 @@ learn more about undo tree
      /METHOD:USER@HOST:FILENAME
      /METHOD:USER@HOST#PORT:FILENAME
 * Regexp
-  Regular expressions are nifty ways of specify region of text.  Even coolier, they act as smart ways to replace text.
+  Regular expressions are nifty ways of searching/replacing regions of text.
 
   Consider this example
 
@@ -334,22 +459,18 @@ learn more about undo tree
   Suppose that you want to add a space between both "is" in the functions.
 
   M-x dired-do-query-replace-regexp is\(admin\|manager\) RET is \1 RET
-* some nice emacs add on modes/APIs that make programming nice
+
+
+  But let's get a basic understanding of regexps.
+
+* some nice emacs add on modes/APIs that make elisp programming nice
 - ctable https://github.com/kiwanami/emacs-ctable
 - s https://github.com/magnars/s.el
 - f https://github.com/rejeep/f.el
-* Elisp macro Defadvice
-  learn about defadvice run commands after or before you execute some command. very cool!
+* Elisp macro add-function
   This is the old way of doing it. The newer was is to say add-function
-  (defadvice kill-line (after say-ouch activate)
-  (message "Ouch!"))
 * there is a php package that turns all php functions into yasnippets.  It lets you easily type out a php function
   tab, and it will complete it for you. I'll need to check it out. What's it called?
-* in dired mode bind a command to wdired-change-to-wdired-mode.  It lets you edit the contents of the dired!
-
-#+BEGIN_SRC emacs-lisp
-
-#+END_SRC
 * entering in special characters utf8 chars
 http://www.johndcook.com/blog/emacs_unicode/
 "C-x ` e"  --> è

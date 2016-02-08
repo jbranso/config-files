@@ -1,53 +1,4 @@
-#+TITLE:SQL Cheatsheat
-# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
-
-# chapters, then sections, then subsections, then sub-sub-sections, etc.
-#+OPTIONS: H:10
-
-# This next line says that the table of contents should mention the chapters and the chapter sections.
-#+OPTIONS: toc:2
-* SQL Cheatsheat
-** connecting to a database via the terminal
-   ~$ mysql -h host -u <user> -p~
-
-   ~Enter password: ********~
-
-   ~MariaDB> USE <table_name>~
-
-   ~MariaDB table_name>~
-
-
-   Now you can make calls to the database like this
-
-
-   ~MariaDB table_name>SELECT * FROM people~
-** Select Syntax
-   Note this is not the complete SELECT syntax; instead, it is a simplication. See the SQL documentation here for the complete
-   syntax: http://dev.mysql.com/doc/refman/5.6/en/select.html
-   SELECT
-
-   select_expr [, select_expr ...]
-
-   [FROM table_references
-
-   [WHERE where_condition]
-
-   [GROUP BY {col_name | expr | position}
-
-      [ASC | DESC]]
-
-   [ORDER BY {col_name | expr | position}
-
-      [ASC | DESC]]
-
-   [LIMIT {[offset,] row_count | row_count OFFSET offset}]]
-
-   * select_expr indicates a column you wish to retrieve.
-
-   * table_references indicates the table of tables from which to retrieve rows
-** LIMIT is particularly useful for SELECTs which use ORDER BY, DISTINCT and
-   GROUP BY, because their calculations don't have to involve all the rows.
-   this can speed the query up!
+ the query up!
 ** 4.22.9 IN and NOT IN
    SELECT id
    FROM stats
@@ -69,6 +20,13 @@
 ** UNION == UNION DISTINCT
    UNION ALL shows you duplicate values
 ** JOINS
+    :PROPERTIES:
+    :engine: mysql
+    :dbhost: setyourwaypoint.com
+    :dbuser: ihsb_admin
+    :dbpassword: 7o Be or No7 to 13e
+    :database: ihsb_indianaBowling
+    :END:
 *** cartesian joins you join every row of one table to every row of another table
 *** left Joins
     Left joins allow one to combine the results from two different tables in one query.  It will only display show matching
@@ -76,6 +34,31 @@
 
     SELECT first, last, parents.address from kids
     LEFT join parents on users.address = parents.address
+
+    It includes
+
+
+    #+BEGIN_SRC sql
+      SELECT bowlers.first, bowlers.last, bowlers.ID, level, bowlers.schoolID,  usbcData.usbc, usbcData.year,
+      bowlerImages.ID as sig, activationEmail.ID as act
+      FROM bowlers
+      LEFT JOIN usbcData ON bowlers.usbc=usbcData.usbc
+      LEFT JOIN bowlerImages ON bowlers.ID = bowlerImages.ID
+      LEFT JOIN activationEmail on bowlers.ID = activationEmail.ID
+      WHERE (teamID = 790) AND (level = '1')
+      AND (bowlers.schoolID = 789)
+      ORDER BY bowlers.last
+    #+END_SRC
+
+    #+RESULTS:
+    | first   | last    |  ID | level | schoolID | usbc       | year | sig | act  |
+    |---------+---------+-----+-------+----------+------------+------+-----+------|
+    | Jake    | Arthur  | 546 |     1 |      789 | 7914-12959 | 2016 | 546 | NULL |
+    | Dakota  | Deibel  | 899 |     1 |      789 | NULL       | NULL | 899 | NULL |
+    | Cameron | Johnson | 545 |     1 |      789 | NULL       | NULL | 545 | NULL |
+*** inner joins
+
+does not include null values
 ** subqueries
    https://dev.mysql.com/doc/refman/5.0/en/subqueries.html
    Subqueries appear in the where or having clause, as a result in the select statement, in the FROM clause
@@ -145,3 +128,16 @@
     | Russell   | Klosinski | 107 |      184 | 107 |      184 |      55 | Michiana Central    |
     | Tami      | Nedza     | 112 |      119 | 112 |      119 |      55 | Michiana Central    |
     | Richard   | Hughey    | 114 |      114 | 114 |      114 |      56 | Michiana West       |
+** make table names be subqueries
+
+ #+BEGIN_SRC sql
+   SELECT
+   (SELECT groupID users) as users
+   (SELECT groupID bowlers) as bowlers
+   WHERE users.ID = bowlers.groupID
+ #+END_SRC
+** if statements normally are done inside a query
+
+ #+BEGIN_SRC sql
+   DELETE
+ #+END_SRC
