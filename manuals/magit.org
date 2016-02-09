@@ -8,7 +8,7 @@
 
 * Introduction to Magit
 Many commands in magit pop up a small buffer prompting you to specify options.  For example, to commit and squash commits,
-you press c s in the magit status buffer.  The "s" options pop up after you press "c".  Give it a go, because it is awesome!
+you press c s in the magit status buffer.  The "s" options pop up after you press "c".  Give it a go, because it is awesome!  Let's try it now.
 * Basic commands
 
 * magit commands in the status buffer
