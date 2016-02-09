@@ -215,6 +215,7 @@ http://orgmode.org/manual/Specific-header-arguments.html
   =C-c h h g= open helm info gnus
   =C-c h h r= open the helm-emacs-info
   =C-c h b= is helm-resume which opens up the last instance that you were on
+*** helm-descbinds
 ** evil mode
   " <letter> yy   stores the whole line into register <letter>
   " <letter> p    puts the whole line back
