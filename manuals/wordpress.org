@@ -1,0 +1,72 @@
+#+TITLE: Wordpress Cheatsheet
+#+AUTHOR: Joshua Branson
+
+* Vocab
+- *posts* are the elements that make up a blog
+- *media* pictures, video, etc. that enhance a blog
+- *categories* are a hierarchically group posts.  Each post is filed under 1 or more categories, and some categories can have parent categories.
+- *tags* are keywords that hint at the content in a post.
+- *taxonomies* are grouping constructs, of which the two default are tags and categories.
+- *custom taxonomies* are user created taxonomies that allow the end-user, which is the user visiting the site, to better search for posts, pages, or custom post types.
+- *custom post types*
+- *post meta data* is the information associated with a post.  This includes tags, categories, custom taxonomies, the author, date of publication, etc.  It is like the tag on a t-shirt.  It gives you extra information about the product, but the tag is /not/ the product.
+- *Meta Section* a section on the wordpress site that allows a user to log in.  It is like a front door in that you can walk and see the inside of the site if you log in, just like walking in a door.
+- *Pages* are static pages that are usually not changed often.
+- *custom post types* are like accrisoft's custom directories.  They group data in ways that can be queries and posted to the page.  They are like a new genetically engineered cloned new animal.  There is no other animal on earth like these clones, but I can create as many of them as I want.
+- *The Loop* processes the display of posts.  This is at the core of wordpress.  It loops over the title of an article, the excerpt, content, category, tag, etc.
+- *Template Tags* are a group of php functions that perform an action or display info
+- *Template Files* contain the programming things that control how a wordpress site looks
+- *widgets* are little programs that can be added to pages
+- *menus* a list of navigational items that help your user navigate the site
+- *Post Formats* allow one to control the display of a specific post
+- *Plugins* are add-ons that extent wordpress
+* Removing functions from wordpress themes
+[[http://code.tutsplus.com/tutorials/a-guide-to-overriding-parent-theme-functions-in-your-child-theme--cms-22623][removing functions in wordpress]]
+** Removing functions from from hooks via remove/add_action
+** Define the function in your child theme's function.php file
+Your child theme is loaded just before the parent theme, and if the parent theme is written properly, then the child's functions will override the parent's.
+
+The parent's function has to be written like this:
+
+# this is not C code, but I just wanted to get syntax highlighting to work
+#+BEGIN_SRC C
+  if ( ! function_exists( 'storefront_footer_widgets' ) ) {
+     /* some content here */
+   }
+#+END_SRC
+
+
+So if your child theme's function.php has the function
+
+#+BEGIN_SRC c
+  function storefront_footer_widgets () {
+  /* some code here */
+  }
+#+END_SRC
+
+Then your child theme's function will overwrite the parent's function.  Cool eh?
+
+* Your functions
+
+* Specific php files
+# I found this information here: https://yoast.com/wordpress-theme-anatomy/
+- *header.php*
+  Displays the header of the website
+- *The Loop* displays the contents of the main area of your site.
+- *sidebar.php* displays the sidebar on your website
+- *footer.php* displays your website's footer
+- *index.php* displays your site's index page.  By default the home page displays the most recent blog posts and an ability to see older posts.  /OR/ you can specify in wp-admin>settings>read to have the home page be a page you created yourself.
+- *single.php* displays a single post.  So, when read a post in the blog, single.php generated it.  You can also specify if you want a sidebar to show here as well.
+- *page.php* allows controls what each page looks like.  I can even specify sidebars or other element that I so desire.  I can apparently create new page templates by copying _page.php_, renaming it to whatever I want, then pasting in the following code:
+  #+BEGIN_SRC
+  <?php
+  /*
+  Template Name: YourNameHere
+  */
+  ?>
+  #+END_SRC
+- *archive.php* When viewing 10 or so archived articles blurbs, *archive.php* will configure how their appear on the page.
+- *category.php* will override archive.php for category blurbs.
+- *taps.php* will override category.php for tagged blurbs.
+- *comments.php* control the output of the comments
+- *single-<custom post type>.php* displays single custom defined posts.  For example, if you define a custom post type called "review", then you would call your file *single-review.php*, and somehow magic happens.

@@ -791,7 +791,7 @@ battimer:start()
 -- awful.util.spawn_with_shell("firefox")
 -- awful.util.spawn_with_shell("xfce4-panel --disable-wm-check")
 -- run_once("firefox-nightly -P nightly")
-run_once("workrave")
+-- run_once("workrave")
 -- run_once("thunar --daemon")
 --run_once("thunar")
 -- This spawns my color profile that I downloaded from my macbook.

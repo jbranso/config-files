@@ -15,7 +15,7 @@ Dired is the emacs file manager.  It opens a buffer displaying all your files in
 *** commands
   - ~n~ next line
   - ~p~ previous line
-  - ~m~ make the current file under point
+  - ~m~ mark the current file under point
   - ~u~ unmark the current file under point
   - ~* /~ mark all directories
   - ~* *~ mark all executables
@@ -23,16 +23,19 @@ Dired is the emacs file manager.  It opens a buffer displaying all your files in
   - ~% m REGEXP <RET>  mark files based on a regular expression
   - ~Q~ dired-do-query-replace-regexp lets you search and replace all marked files
     -  Press y, to replace the current match
-    -  press ~n~ to not skip the current match
+    -  press ~n~ to skip the current match
     -  press ~!~ to replace all the matches in the current buffer
-    -  Press ~Y~ to replace all the remaining matches without question
+    -  Press ~Y~ to replace all the remaining matches in all buffers
   - how to recursively search and replace
 
-    M-x find-name-dired: you will be prompted for a root directory and a filename pattern, but this file name pattern uses find’s
-    version of grep.  So it does not understand “.*“.  Instead “*” is equivalent to “.*”
+    M-x find-name-dired: you will be prompted for a root directory and a filename pattern, but this file name pattern uses find’s version of grep.  So it does not understand “.*“.  Instead “*” is equivalent to “.*”
+
     Press t to "toggle mark" for all files found.
+
     Press Q for "Query-Replace in Files...": you will be prompted for query/substitution regexps.
+
     Proceed as with query-replace-regexp: SPACE to replace and move to next match, n to skip a match, etc.
+
       -  Press y, to replace the current match
       -  press ~n~ to not skip the current match
       -  press ~!~ to replace all the matches in the current buffer
@@ -40,17 +43,46 @@ Dired is the emacs file manager.  It opens a buffer displaying all your files in
 
   - M-x wdired-change-to-wdired-mode
     Makes the contents of the dired buffer editable.  Once you are done making changes type =C-c C-c=.  This saves your changes.  It is a nifty way to easily change file permissions, file names, etc.
+*** image dired
+lets you view images inside dired.
+
+Mark the images you wish to view, then press C-t d (image-dired-display-thumbs)
+
+You could also just do a M-x image-dired
 ** Macros
-  - `@ <letter>` perform keyboard macro
+  -  C-x e  performs the last created keyboard macro
   - `C-x Q`  prompt the user for input during a macro.
     # FIXME specify where I found this defun
-    This is not a standard emacs command; I found it on the emacs wiki.  Essentially this command tells the macro to prompt the user for input every time you call the macro.  This is useful if you have a macro that wants to write out a convoluted sequence of numbers.
+    This is not a standard emacs command; I found it on the emacs wiki.  Essentially this command tells the macro to prompt the user for input every time you call the macro.  This is useful if you have a macro that wants to write out a convoluted sequence of numbers.  The code for this is here:
+
+    # FIXME:  WHERE DID I find this defun?? emacs wiki?
+    #+BEGIN_SRC emacs-lisp
+      ;; When you define a macro, you can type C-x Q to prompt the user for input.
+      ;; Very helpful and cool!
+      (defun my-macro-query (arg)
+        "Prompt for input using minibuffer during kbd macro execution.
+          With prefix argument, allows you to select what prompt string to use.
+          If the input is non-empty, it is inserted at point."
+        (interactive "P")
+        (let* ((query (lambda () (kbd-macro-query t)))
+               (prompt (if arg (read-from-minibuffer "PROMPT: ") "Input: "))
+               (input (unwind-protect
+                          (progn
+                            (add-hook 'minibuffer-setup-hook query)
+                            (read-from-minibuffer prompt))
+                        (remove-hook 'minibuffer-setup-hook query))))
+          (unless (string= "" input) (insert input))))
+
+      (global-set-key "\C-xQ" #'my-macro-query)
+    #+END_SRC
+
   - =C-x q= prompt, when you use this macro if you want to continue.  You can enter C-r to briefly step out of the macro
     and do some edits yourself, then C-M-c will allow you to continue execution of the macro.
 
-*** My personal keybindings
+*** My personal keybindings                                                   :noexport:
   - `C-c r <letter>` begin recording keyboard macro
   - `C-c r <letter>` end recording keyboard macro
+  - `@ <letter>` perform keyboard macro
 ** narrowing
   are entered via this syntax
   ~C-x n <letter>~
@@ -62,7 +94,8 @@ Dired is the emacs file manager.  It opens a buffer displaying all your files in
 
   A much better way to use the narrowing commands is just to make emacs guess what you want whenever you press "C-x n", and that's what the following snippet does.  I recommend that you put it in your .emacs:
 
-  # FIXME  Say where I got this code snippet from
+  I found this code snippet [[http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html][here.]]
+
   #+BEGIN_SRC emacs-lisp
     ;; Also set up narrow dwin
     (defun narrow-or-widen-dwim (p)
@@ -102,7 +135,6 @@ Dired is the emacs file manager.  It opens a buffer displaying all your files in
   =C-x r N= insert numbers all along the left of the rectangle region
 ** Registers
   Number Registers
-
   -`C-u number C-x r n r`
   Store number into register r (number-to-register).
 
@@ -211,10 +243,15 @@ http://orgmode.org/manual/Specific-header-arguments.html
 
 *** commands
   I can also write my own helm commands cool!
+  [[http://wikemacs.org/wiki/How_to_write_helm_extensions][write your own helm extentions
+  ]]
   =C-c h m=  open helm-man-woman
   =C-c h h g= open helm info gnus
   =C-c h h r= open the helm-emacs-info
   =C-c h b= is helm-resume which opens up the last instance that you were on
+  =M-<space>= mark candidate
+  =C-h m= inside a helm window will show you all of helm's keybindings
+
 *** helm-descbinds
 ** evil mode
   " <letter> yy   stores the whole line into register <letter>

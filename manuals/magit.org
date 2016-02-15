@@ -7,8 +7,7 @@
 #+OPTIONS: H:10
 
 * Introduction to Magit
-Many commands in magit pop up a small buffer prompting you to specify options.  For example, to commit and squash commits,
-you press c s in the magit status buffer.  The "s" options pop up after you press "c".  Give it a go, because it is awesome!  Let's try it now. how about now?
+Many commands in magit pop up a small buffer prompting you to specify options.  To see the commits for a specific file, in the git status buffer type "l -f <filename>".  Then you will see all of the commits for 1 file! cool!
 * Basic commands
 
 * magit commands in the status buffer

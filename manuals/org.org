@@ -348,6 +348,12 @@
 
   #+RESULTS:
   : hello
+** [[http://kitchingroup.cheme.cmu.edu/blog/2016/02/09/Calling-remote-code-blocks-in-org-mode/?utm_source=feedburner&utm_medium=twitter&utm_campaign=Feed:+TheKitchinResearchGroup+(The+Kitchin+Research+Group)#hallenbeck-2015-compar-co2][calling remote code blocks]]
+So, we make a named code block in the si.org file called "figure-1". Then we call it like this:
+
+#+BEGIN_SRC org
+  ,#+call: si.org:figure-1() :wrap html
+#+END_SRC
 
 * Org spreadsheets/tables
   | Money I earn in a month | Expenses  | Expenses$ | Total |
@@ -386,7 +392,29 @@
        :COLUMNS: %25ITEM %TAGS %PRIORITY %TODO
        :END:
   #+END_SRC
+* org lists
 
+#+BEGIN_SRC org
+  ,* hello there you cool people
+  ,* hello  C-RET will make a new item in this list
+  ,* here is that new item!
+#+END_SRC
+
+When you have a list like the one above, to add to it just type C-RET, but when you have a list like the one below, you need to type M-RET.
+
+#+BEGIN_SRC org
+  1) tahsetnhaentuh
+  2) snthaoentuhesntuh
+  3)
+  4)
+  5)
+  6)
+
+  This paragraph would mess up your list.  If you try to start a new list here, org will assume that it should start at "1)".  To fix it, you have to include the =[@<number>] text  [@<number>]=.
+
+  7) [@7] sntahenusth [@7]
+  8)
+#+END_SRC
 * latex equations
 
   \[
