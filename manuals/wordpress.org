@@ -72,3 +72,8 @@ When wordpress views a specific webpage, it selects in page that is the highest 
 - *taps.php* will override category.php for tagged blurbs.
 - *comments.php* control the output of the comments
 - *single-<custom post type>.php* displays single custom defined posts.  For example, if you define a custom post type called "review", then you would call your file *single-review.php*, and somehow magic happens.
+* The default "20" themes and _s (Underscores) theme
+wordpress wrote "20 14", "20 23", "20 12", and "20 10", for developers to study!  I can learn how wordpress builds themes by studying those themes.
+
+Developers should use the Underscores theme as a base for developing new themes.  It is a starter theme.  I can learn more about it here: http://underscores.me/
+* [[https://developer.wordpress.org/themes/getting-started/][Theme Handbook]]
