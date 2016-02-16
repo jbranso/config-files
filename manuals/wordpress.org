@@ -2,6 +2,7 @@
 #+AUTHOR: Joshua Branson
 
 * Vocab
+You can find more vocab words specific to wordpress [[https://codex.wordpress.org/][here.]]
 - *posts* are the elements that make up a blog
 - *media* pictures, video, etc. that enhance a blog
 - *categories* are a hierarchically group posts.  Each post is filed under 1 or more categories, and some categories can have parent categories.
@@ -45,9 +46,10 @@ So if your child theme's function.php has the function
 #+END_SRC
 
 Then your child theme's function will overwrite the parent's function.  Cool eh?
+* wordpress template hierarchy
+# https://developer.wordpress.org/themes/basics/template-hierarchy/
 
-* Your functions
-
+When wordpress views a specific webpage, it selects in page that is the highest in the hierarchy.
 * Specific php files
 # I found this information here: https://yoast.com/wordpress-theme-anatomy/
 - *header.php*

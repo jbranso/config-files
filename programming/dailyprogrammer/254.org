@@ -1,0 +1,56 @@
+#+AUTHOR: Joshua Branson
+#+TITLE: Challenge #254 Easy Atbash Cipher
+
+Atbash is a simple substitution cipher originally for the Hebrew alphabet, but possible with any known alphabet. It emerged around 500-600 BCE. It works by substituting the first letter of an alphabet for the last letter, the second letter for the second to last and so on, effectively reversing the alphabet. Here is the Atbash substitution table:
+Plain:  abcdefghijklmnopqrstuvwxyz
+Cipher: ZYXWVUTSRQPONMLKJIHGFEDCBA
+Amusingly, some English words Atbash into their own reverses, e.g., "wizard" = "draziw."
+This is not considered a strong cipher but was at the time.
+For more information on the cipher, please see the Wikipedia page on Atbash.
+
+** Input Description
+For this challenge you'll be asked to implement the Atbash cipher and encode (or decode) some English language words. If the character is NOT part of the English alphabet (a-z), you can keep the symbol intact. Examples:
+foobar
+wizard
+/r/dailyprogrammer
+gsrh rh zm vcznkov lu gsv zgyzhs xrksvi
+
+** Output Description
+Your program should emit the following strings as ciphertext or plaintext:
+ullyzi
+draziw
+/i/wzrobkiltiznnvi
+this is an example of the atbash cipher
+
+** Bonus preserve case
+
+
+** The code
+
+How can I implement this??? hmmm...  Interesting.  Well ASCII looks like this:
+
+Well ASCII looks like this in elisp.  That is to say that all chars in elisp (this is true in most C based programming languages, which is to say pretty much all programming languages) represent an ASCII character code.  So as the example below explains, A = 65, B = 66, Z = 90, a = 97, b = 98, z = 122.
+
+#+BEGIN_SRC emacs-lisp :results table
+  (setq stringa (number-to-string ?a))
+  (setq stringb (number-to-string ?b))
+  (setq stringc (number-to-string ?c))
+  (setq stringd (number-to-string ?d))
+  (setq stringe (number-to-string ?e))
+  (setq stringz (number-to-string ?z))
+  (setq stringA (number-to-string ?A))
+  (setq stringB (number-to-string ?B))
+  (setq stringC (number-to-string ?C))
+  (setq stringD (number-to-string ?D))
+  (setq stringE (number-to-string ?E))
+  (setq stringZ (number-to-string ?Z))
+  (print (concat " A " stringA " B " stringB " C " stringC  " D " stringD " E " stringE
+                 " Z " stringZ
+                 " a " stringa " b " stringb " c " stringc " d " stringd " e " stringe " z " stringz))
+#+END_SRC
+
+#+RESULTS:
+| A 65 B 66 C 67 D 68 E 69 Z 90 a 97 b 98 c 99 d 100 e 101 z 122 |
+
+
+So all I need to do is to implement a couple of functions.  1 function might determine if this char is capitol.  One would determine if it is lowercase.  Then I'd have 2 more functions.  If you're capitalized, then we need to find the opposite char for you.  If you're lowercase, then we need to find the other char for you.  This is probably NOT the best solution.  It's probably a pretty LONG solution.  But it would work.  Could I make this shorter?
