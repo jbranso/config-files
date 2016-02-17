@@ -1,9 +1,9 @@
 #+Author: Joshua Branson
 #+Title: Arch GNU/Linux CheatSheet
 
-* changing the keyboard layout when you log into a virtual console
+* Change the virtual console keyboard layout
 loadkeys dvorak
-* Some nice Xorg Settings
+* Configuring Xorg Settings (keyboard layout)
 You can tweak some of these settings w/ evtest tool
 ** change the X keyboard layout & swap caps
 - do it through .xinitrc
@@ -84,7 +84,8 @@ EndSection
 
 EndSection
  #+END_SRC
-* creating persistent internet device names
+* Networking
+** creating persistent internet device names
 https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name
 
 When you first start your computer your internet device names will be odd like this:
@@ -113,7 +114,7 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:09:d2:da", NAME="wifi0
 #make my ethernet be
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:8e:60:d0", NAME="neteth0"
 #+END_SRC
-* creating netctl profiles
+** creating netctl profiles
 https://wiki.archlinux.org/index.php/Netctl#Configuration
 
 Use some of the examples from
@@ -148,3 +149,58 @@ ls /etc/netctl/examples/
 =cp /etc/netctl/examples/ethernet-dhcp /etc/netctl/ethernet-dhcp;=
 
  Then you just need to change the device name to your device.
+** Controlling network traffick
+*** nftables is the NEW way of implementing networking rules on your machine:
+One can block all incoming traffic from Facebook, block specified ports, etc.
+*** IPTables is the OLD way of implementing networking rules on your machine.
+With it you can block all incoming data from facebook, a specified port, etc.
+***
+*** If you totally screw up your iptables, you can change them back to the default [[https://wiki.archlinux.org/index.php/Iptables#Resetting_rules][values]]:
+
+#+BEGIN_SRC sh
+su
+  iptables -F
+  iptables -X
+  iptables -t nat -F
+  iptables -t nat -X
+  iptables -t mangle -F
+  iptables -t mangle -X
+  iptables -t raw -F
+  iptables -t raw -X
+  iptables -t security -F
+  iptables -t security -X
+  iptables -P INPUT ACCEPT
+  iptables -P FORWARD ACCEPT
+  iptables -P OUTPUT ACCEPT
+
+#+END_SRC
+
+#+RESULTS:
+** enabling and disabling network interfaces (turning on/off wifi and ethernet)
+
+#+BEGIN_SRC sh :results raw
+  ip addr show
+#+END_SRC
+
+#+RESULTS:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: neteth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 60:33:4b:8e:60:d0 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.112.114/22 brd 172.16.115.255 scope global neteth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6233:4bff:fe8e:60d0/64 scope link
+       valid_lft forever preferred_lft forever
+3: wifi0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 60:33:4b:09:d2:da brd ff:ff:ff:ff:ff:ff
+
+#+BEGIN_SRC sh
+  su
+  ip link set neteth0 up
+#+END_SRC
+
+#+RESULTS:

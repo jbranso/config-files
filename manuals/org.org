@@ -348,6 +348,12 @@
 
   #+RESULTS:
   : hello
+
+
+ #+BEGIN_SRC emacs-lisp
+
+ #+END_SRC
+
 ** [[http://kitchingroup.cheme.cmu.edu/blog/2016/02/09/Calling-remote-code-blocks-in-org-mode/?utm_source=feedburner&utm_medium=twitter&utm_campaign=Feed:+TheKitchinResearchGroup+(The+Kitchin+Research+Group)#hallenbeck-2015-compar-co2][calling remote code blocks]]
 So, we make a named code block in the si.org file called "figure-1". Then we call it like this:
 

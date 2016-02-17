@@ -228,14 +228,17 @@
 *** The Article Buffer
 
 **** various commands
-
    + ~C-c C-m f~
      attach a file
 
    + ~C-c C-m C-s~
+     sign the message
 
    + ~C-c C-m C-e~
      encrypt and sign the message
+
+   + ~C-c C-m C-c~
+     encrypt the message
 
 **** Hiding Headers
      I could customize Gnus to only show me the author of the email and the subject and hide all other headers
