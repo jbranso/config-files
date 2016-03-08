@@ -176,6 +176,19 @@ su
 #+END_SRC
 
 #+RESULTS:
+** Apache
+** Mariadb
+*** Unable to get the mariadb daemon to start
+    #+BEGIN_SRC sh
+      sudo systemctl start mysqld.service
+    #+END_SRC
+
+    # FIXME the command for this is on the arch wiki
+    You might try a:
+
+    #+BEGIN_SRC sh
+      mysql_update_root -p
+    #+END_SRC
 ** enabling and disabling network interfaces (turning on/off wifi and ethernet)
 
 #+BEGIN_SRC sh :results raw
@@ -204,3 +217,7 @@ su
 #+END_SRC
 
 #+RESULTS:
+** openDNS.  Changing your DNS server:
+   To use alternative DNS servers, edit /etc/resolv.conf and add them to the top of the file so they are used first,
+   optionally removing or commenting out already listed servers.
+   https://wiki.archlinux.org/index.php/Resolv.conf#Preserve_DNS_settings

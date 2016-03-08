@@ -519,3 +519,50 @@ http://www.johndcook.com/blog/emacs_unicode/
  "C-\"  lets you put in utf-8 chars via TeX commands.  Ϡ â Ζ β
 
  ie "\beta" –> β
+* debugging weird errors
+** wrong type argument errors
+
+If you get a weird error like "wrong type argument : arrayp , nil", or "wrong type argument : stringp", it might be an issue with package.el.  The following might fix the error:
+
+# This may copywrited!
+# http://emacs.stackexchange.com/questions/17823/wrong-type-argument-arrayp-nil
+- Change the address for the melpa archive to: "http://melpa.org/packages"
+- Delete the ~/.emacs.d/elpa/archives/melpa/archive-contents file
+
+ #+BEGIN_SRC sh
+ rm ~/.emacs.d/elpa/archives/melpa/archive-contents
+ #+END_SRC
+- Run package-initialize and package-refresh-contents.
+
+  #+BEGIN_SRC emacs-lisp
+  (package-initialize)
+  (package-refresh-contents)
+  #+END_SRC
+
+  #+RESULTS:
+** debugging your init file
+   https://github.com/Malabarba/elisp-bug-hunter.  This is SOOO helpful!
+   M-x bug-hunter-init-file RET e
+** Variable binding depth exceeds max-specpdl-size
+   Check out this stackoverflow question:
+   http://stackoverflow.com/questions/1322591/tracking-down-max-specpdl-size-errors-in-emacs
+
+   #+BEGIN_SRC emacs-lisp
+     ;;   To track the problem down, you can try this:
+
+     (setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
+     (setq debug-on-error t)    ; now you should get a backtrace
+     ;; C-h a ; in speedbar
+   #+END_SRC
+
+   #+RESULTS:
+   : t
+
+   to go back to the state that you wanted again, you can do this:
+
+   #+BEGIN_SRC emacs-lisp
+     (setq max-specpdl-size 2580)  ; default is 1000, reduce the backtrace level
+     (setq debug-on-error nil)    ; now you should get a backtrace
+   #+END_SRC
+
+   #+RESULTS:

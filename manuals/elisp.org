@@ -107,6 +107,13 @@ and the following are all 1
 1.
 +1.
 #+END_SRC
+**** some interesting ints
+[[https://www.reddit.com/r/emacs/comments/48je3z/understanding_numbers_in_emacs_internals_int/][reddit]]
+- int is a C signed integer type.
+- EMACS_INT is a typedef in lisp.h - signed integer wide enough to hold an Emacs value. Either int, or long int, or long long int.
+- XINT is a macro for extracting integer. Something like # define lisp_h_XINT(a) (XLI (a) >> INTTYPEBITS). And XLI is # define lisp_h_XLI(o) ((o).i).
+- make_number is # define lisp_h_make_number(n) XIL ((EMACS_INT) (((EMACS_UINT) (n) << INTTYPEBITS) + Lisp_Int0))
+- CHARPOS is #define CHARPOS(POS) (POS).charpos.
 
 *** float
 Floats are for storing numbers that contain fractional parts.  They can be written with an explicit decimal part, or they can be written in scientific notation to be considered a float.

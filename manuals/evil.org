@@ -148,3 +148,47 @@ There's a nice delete indent object, that is also not working
  #+END_SRC
 
  which calls a function that lets you surround a text object with an html element.  It would be nice to have a surround for elisp function for "(" that would let you surround a text object with a lisp function!
+** use bash commands in evil with the ! operator
+
+
+Here is some original text:
+
+4 I went home
+3 I drank the juice
+2 I bought the juice
+1 I went to the store
+
+When select the paragraph, !sort,  you get the text sorted by number
+
+ 1 I went to the store
+ 2 I bought the juice
+ 3 I drank the juice
+ 4 I went home
+
+
+ When you select the paragraph, !sort -r, you get reverse order
+
+  4 I went home
+  3 I drank the juice
+  2 I bought the juice
+  1 I went to the store
+
+
+  When you select a large paragraph, !sort -R, is random order
+
+    2 I bought the juice
+    2 I bought the juice
+    4 I drank the juice
+    5 I went to the store
+    66666 nt home
+    9 I went to the store
+    1 I went to the store
+    3 I drank the juice
+    3 I drank the juice
+    3 I drank the juice
+    422 I bought the juice
+    2391 I went to the store
+    232 I bought the juice
+    4 I went home
+    4 I went home
+    4 I went home

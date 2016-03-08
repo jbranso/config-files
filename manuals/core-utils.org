@@ -92,6 +92,17 @@ chown joshua ~/documents/
 
   #+RESULTS:
 
+* grep
+  #+BEGIN_SRC
+  grep OPTIONS PATTERN INPUT_FILE_NAMES
+  #+END_SRC
+
+  If you want to search for a regexp in the current directory and all sub-directories
+
+  #+BEGIN_SRC
+  grep -lr "<PATTERN>"
+  #+END_SRC
+
 * permissions
 In Unix everything is a file.  When you write a text document called "text.text", that is a Unix file.  When you create a directory (Windows users call this a folder) called "Music",  you also are creating a Unix file.  Obviously, "text.text" and "Music" behave very differently.  One has your favorite songs, and the other is a text document, BUT the linux kernel assumes that they are both Unix files.  All unix files have read, write, and execute permissions specific to each unix file.  This typiccally means that the ordinary user joshua cannot read, write, or execute anything in the =/root/= folder.
 
@@ -154,6 +165,39 @@ chgrp [ -R ] <group> [file | directory]
 
 Change the group that the file or directory belongs to.
 
+* basic usage of the find command in GNU
+  #+BEGIN_SRC sh
+    find . -name "pattern" -print
+
+    find . -name "this-file.*" -print
+
+    find . -name "this-file.*txt" -print
+
+    find . -name "this-file\.txt" -print
+  #+END_SRC
+* touch -amc filename updates the files timestamps
+  Access
+  Modify
+  Change
+* show available disk space
+* sort
+
+sort [OPTION] [FILE]
+** options
+*** -f ignore case
+*** -g general numeric sort
+*** -h human numeric sort
+This is good for sorting
+
+50M
+-10G
+1.5K
+*** -M month sort
+*** -n numeric sort
+*** -r reverse sort
+*** -R random sort
+*** -t SEPARATOR
+use SEPARATOR as the field separator.  By default that separator is a space.  ([[info:coreutils#sort%20invocation][info:coreutils#sort invocation]])
 * How I got my local apache server working again:
 
  For some reason, my ~/ folder had permissions =drwxrws---=
@@ -169,3 +213,7 @@ Change the group that the file or directory belongs to.
  : drwxrwx--- 83 joshua http 4.0K Feb  2 08:04 joshua
 
 The s was magically replaced with a x
+* common things that you might want to do
+** get a list of files with specific attributes and have grep search those files lines matching a regexp
+
+  find . -name "*org" | grep -r "[pP]rettyhorses"

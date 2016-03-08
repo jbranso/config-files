@@ -1,4 +1,60 @@
- the query up!
+#+TITLE:SQL Cheatsheat
+# The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
+
+# chapters, then sections, then subsections, then sub-sub-sections, etc.
+#+OPTIONS: H:10
+
+# This next line says that the table of contents should mention the chapters and the chapter sections.
+#+OPTIONS: toc:2
+* SQL Cheatsheat
+     :PROPERTIES:
+     :engine:   mysql
+     :dbhost:   localhost
+     :dbuser:   root
+     :dbpassword: GraceLikeRain
+     :database: usbc
+     :END:
+** connecting to a database via the terminal
+   ~$ mysql -h host -u <user> -p~
+
+   ~Enter password: ********~
+
+   ~MariaDB> USE <table_name>~
+
+   ~MariaDB table_name>~
+
+
+   Now you can make calls to the database like this
+
+
+   ~MariaDB table_name>SELECT * FROM people~
+** Select Syntax
+   Note this is not the complete SELECT syntax; instead, it is a simplication. See the SQL documentation here for the complete
+   syntax: http://dev.mysql.com/doc/refman/5.6/en/select.html
+   SELECT
+
+   select_expr [, select_expr ...]
+
+   [FROM table_references
+
+   [WHERE where_condition]
+
+   [GROUP BY {col_name | expr | position}
+
+      [ASC | DESC]]
+
+   [ORDER BY {col_name | expr | position}
+
+      [ASC | DESC]]
+
+   [LIMIT {[offset,] row_count | row_count OFFSET offset}]]
+
+   * select_expr indicates a column you wish to retrieve.
+
+   * table_references indicates the table of tables from which to retrieve rows
+** LIMIT is particularly useful for SELECTs which use ORDER BY, DISTINCT and
+   GROUP BY, because their calculations don't have to involve all the rows.
+   this can speed the query up!
 ** 4.22.9 IN and NOT IN
    SELECT id
    FROM stats
@@ -20,13 +76,6 @@
 ** UNION == UNION DISTINCT
    UNION ALL shows you duplicate values
 ** JOINS
-    :PROPERTIES:
-    :engine: mysql
-    :dbhost: setyourwaypoint.com
-    :dbuser: ihsb_admin
-    :dbpassword: 7o Be or No7 to 13e
-    :database: ihsb_indianaBowling
-    :END:
 *** cartesian joins you join every row of one table to every row of another table
 *** left Joins
     Left joins allow one to combine the results from two different tables in one query.  It will only display show matching
@@ -34,31 +83,6 @@
 
     SELECT first, last, parents.address from kids
     LEFT join parents on users.address = parents.address
-
-    It includes
-
-
-    #+BEGIN_SRC sql
-      SELECT bowlers.first, bowlers.last, bowlers.ID, level, bowlers.schoolID,  usbcData.usbc, usbcData.year,
-      bowlerImages.ID as sig, activationEmail.ID as act
-      FROM bowlers
-      LEFT JOIN usbcData ON bowlers.usbc=usbcData.usbc
-      LEFT JOIN bowlerImages ON bowlers.ID = bowlerImages.ID
-      LEFT JOIN activationEmail on bowlers.ID = activationEmail.ID
-      WHERE (teamID = 790) AND (level = '1')
-      AND (bowlers.schoolID = 789)
-      ORDER BY bowlers.last
-    #+END_SRC
-
-    #+RESULTS:
-    | first   | last    |  ID | level | schoolID | usbc       | year | sig | act  |
-    |---------+---------+-----+-------+----------+------------+------+-----+------|
-    | Jake    | Arthur  | 546 |     1 |      789 | 7914-12959 | 2016 | 546 | NULL |
-    | Dakota  | Deibel  | 899 |     1 |      789 | NULL       | NULL | 899 | NULL |
-    | Cameron | Johnson | 545 |     1 |      789 | NULL       | NULL | 545 | NULL |
-*** inner joins
-
-does not include null values
 ** subqueries
    https://dev.mysql.com/doc/refman/5.0/en/subqueries.html
    Subqueries appear in the where or having clause, as a result in the select statement, in the FROM clause
@@ -68,12 +92,48 @@ does not include null values
    SELECT * from girls WHERE last = (SELEct last from boys)
 
    how find a coach a little better
-   select ID from bowlers WHERE level IN ('3', '6')
+   #+BEGIN_SRC sql
+   select ID, first, last from bowlers WHERE level IN ('3', '6') limit 5
+   #+END_SRC
+
+   #+RESULTS:
+   |  ID | first   | last     |
+   |-----+---------+----------|
+   | 121 | Scott   | Lohman   |
+   | 413 | Heather | Waters   |
+   | 414 | Heather | Waters   |
+   | 555 | Jessica | Zaideman |
+   | 563 | Michael | Ramos    |
+
    verses
    SELEct ID from bowlers WHERE level = '3' and level = '6'
 
    How to find all non coaches
-   SELEct ID from bowlers WHERE level NOT IN ('3', '6')
+   #+BEGIN_SRC sql
+   SELEct ID, first, last from bowlers WHERE level NOT IN ('3', '6') limit 5
+   #+END_SRC
+
+   #+RESULTS:
+   |  ID | first   | last      |
+   |-----+---------+-----------|
+   | 113 | Ryan    | Freese    |
+   | 120 | Thomas  | Sosinski  |
+   | 127 | Michael | Koliboski |
+   | 134 | Joshua  | Spotnock  |
+   | 161 | Jordan  | Shepherd  |
+
+   Counting all of the assistants, and coaches and embedding a subquery
+     #+BEGIN_SRC sql
+       SELECT COUNT(IF(level='3',1,NULL)) 'coaches', COUNT(IF(level='4',1,NULL)) 'assistants',
+       (SELECT name from schools WHERE schoolID = 714) as schoolName
+       from users
+     #+END_SRC
+
+     #+RESULTS:
+     | coaches | assistants | schoolName                                                  |
+     |---------+------------+-------------------------------------------------------------|
+     |     145 |         81 | This school is for testing purposes please do not delete it |
+
 ** LIKE
    like has 2 special charters
    "%" represents any sequence of chars
@@ -128,6 +188,11 @@ does not include null values
     | Russell   | Klosinski | 107 |      184 | 107 |      184 |      55 | Michiana Central    |
     | Tami      | Nedza     | 112 |      119 | 112 |      119 |      55 | Michiana Central    |
     | Richard   | Hughey    | 114 |      114 | 114 |      114 |      56 | Michiana West       |
+
+
+
+
+the query up!
 ** make table names be subqueries
 
  #+BEGIN_SRC sql
@@ -136,6 +201,37 @@ does not include null values
    (SELECT groupID bowlers) as bowlers
    WHERE users.ID = bowlers.groupID
  #+END_SRC
+** cool count uses
+:PROPERTIES:
+     :engine:   mysql
+     :dbhost:   localhost
+     :dbuser:   root
+     :dbpassword: GraceLikeRain
+     :database: usbc
+     :END:
+
+Select how many users there are in this database:
+
+#+BEGIN_SRC sql
+SELECT COUNT(*) from users
+#+END_SRC
+
+#+RESULTS:
+| COUNT(*) |
+|----------|
+|      342 |
+
+Select how many coaches and assistants there are.  A coach has level 3 and an assistant has level 4.  VERY COOL!
+
+#+BEGIN_SRC sql
+SELECT COUNT(IF(level='3',1,NULL)) 'coach', COUNT(IF(level='4',1,NULL)) 'assistant' from users
+#+END_SRC
+
+#+RESULTS:
+| coach | assistant |
+|-------+-----------|
+|   128 |        64 |
+
 ** if statements normally are done inside a query
 
  #+BEGIN_SRC sql
