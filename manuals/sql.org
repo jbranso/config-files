@@ -193,7 +193,7 @@
 
 
 the query up!
-** make table names be subqueries
+** make table names be subqueries  There is no from in this query.  So what's it doing?
 
  #+BEGIN_SRC sql
    SELECT
@@ -201,6 +201,9 @@ the query up!
    (SELECT groupID bowlers) as bowlers
    WHERE users.ID = bowlers.groupID
  #+END_SRC
+
+ #+RESULTS:
+
 ** cool count uses
 :PROPERTIES:
      :engine:   mysql
@@ -232,8 +235,31 @@ SELECT COUNT(IF(level='3',1,NULL)) 'coach', COUNT(IF(level='4',1,NULL)) 'assista
 |-------+-----------|
 |   128 |        64 |
 
+Throw in a subquery as a column named "schoolName".  How cool is that?
+#+BEGIN_SRC sql
+  SELECT COUNT(IF(level='3',1,NULL)) 'coaches', COUNT(IF(level='4',1,NULL)) 'assistants',
+  (SELECT name from schools WHERE schoolID = 714) as schoolName
+  from users
+#+END_SRC
+
+#+RESULTS:
+| coaches | assistants | schoolName                                                  |
+|---------+------------+-------------------------------------------------------------|
+|     145 |         81 | This school is for testing purposes please do not delete it |
+
 ** if statements normally are done inside a query
 
  #+BEGIN_SRC sql
    DELETE
  #+END_SRC
+** only show the first n chars of a value  LEFT (<column name>, <number>)
+#+BEGIN_SRC sql
+  SELECT LEFT (activationString,10), ID, initials, date FROM activationEmail limit 3
+#+END_SRC
+
+#+RESULTS:
+| LEFT (activationString,10) |   ID | initials | date       |
+|----------------------------+------+----------+------------|
+| 1000568d9f                 | 1000 |          | 05/16/2000 |
+| 1001568f2e                 | 1001 |          | 09/19/1999 |
+| 10085696df                 | 1008 |          | 01/08/2016 |

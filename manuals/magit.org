@@ -9,7 +9,6 @@
 * Introduction to Magit
 Many commands in magit pop up a small buffer prompting you to specify options.  To see the commits for a specific file, in the git status buffer type "l -f <filename>".  Then you will see all of the commits for 1 file! cool!
 * Basic commands
-
 * magit commands in the status buffer
 
    - ~$~ will add another buffer that shows you the commands magit is commiting
@@ -27,6 +26,8 @@ Many commands in magit pop up a small buffer prompting you to specify options.  
    - ~P P~ will push your changes
 
    - ~F F~ will pull your changes
+
+   - =y= will take you to the branch manager
 
 ** history commands
 - ~l r l~ will allow you to see the commits that make two branches differ.  This happens when branch "master" is behind branch "new feature".  You can see the differences between the two branches and cherrypick them.
