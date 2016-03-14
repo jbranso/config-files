@@ -188,6 +188,13 @@ The comment "initialize the variable" comes after the comment syntax "//".  In l
   ,#+END_SRC
 #+END_SRC
 
+#+BEGIN_SRC calc
+5 + 5
+#+END_SRC
+
+#+RESULTS:
+: 10
+
 How cool is that?
 **** Specific header arguments
 http://orgmode.org/manual/Specific-header-arguments.html
@@ -195,7 +202,31 @@ http://orgmode.org/manual/Specific-header-arguments.html
 
 - :results
   syntax:
-  :results [raw | silent | ]
+  :results [raw | silent | value | output ]
+  value is function mode.  It means that org-mode will use the last executed command as the value of the output.
+  ie:
+
+#+BEGIN_SRC python :results value
+import time
+print("Hello, today's date is %s" % time.ctime())
+print('Two plus two is')
+return 2 + 2
+#+END_SRC
+
+  #+RESULTS:
+  : 4
+
+#+BEGIN_SRC sh :results output
+  echo "hello world"
+  echo "big cat"
+  ls -lh | grep emacs.org
+  #+END_SRC
+
+#+RESULTS:
+: hello world
+: big cat
+: -rw-r----- 1 joshua 1000  28K Mar  9 14:51 emacs.org
+
 - :exports [code | results | node | both]
 - :dir
   Specify a default directory that the code is to be run in
@@ -566,3 +597,5 @@ If you get a weird error like "wrong type argument : arrayp , nil", or "wrong ty
    #+END_SRC
 
    #+RESULTS:
+* C-[ is another way of pressing Alt
+* C-] is a more powerful C-g

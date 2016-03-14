@@ -93,9 +93,26 @@ chown joshua ~/documents/
   #+RESULTS:
 
 * grep
+grep searching a list of file/s for a pattern and outputs the matching lines.
+There is no way to match newline characters with grep.  [[info:grep#Introduction][info:grep#Introduction]]
   #+BEGIN_SRC
-  grep OPTIONS PATTERN INPUT_FILE_NAMES
+  grep OPTIONS PATTERN [INPUT_FILE_NAMES | - ]
   #+END_SRC
+
+  The "-" for grep means standard input.
+
+  ie:
+
+  #+BEGIN_SRC sh :dir ~/
+  grep -rc th | grep -m 5 Sass -
+  #+END_SRC
+
+  #+RESULTS:
+  | .gem/ruby/2.3.0/doc/sass-3.4.21/ri/Sass/Tree/MediaNode/value-i.ri:1          |
+  | .gem/ruby/2.3.0/doc/sass-3.4.21/ri/Sass/Tree/MediaNode/resolved_value-i.ri:1 |
+  | .gem/ruby/2.3.0/doc/sass-3.4.21/ri/Sass/Tree/MediaNode/new-c.ri:1            |
+  | .gem/ruby/2.3.0/doc/sass-3.4.21/ri/Sass/Tree/MediaNode/name-i.ri:1           |
+  | .gem/ruby/2.3.0/doc/sass-3.4.21/ri/Sass/Tree/MediaNode/query-i.ri:1          |
 
   If you want to search for a regexp in the current directory and all sub-directories
 
@@ -103,6 +120,128 @@ chown joshua ~/documents/
   grep -lr "<PATTERN>"
   #+END_SRC
 
+  command options
+
+** -e PATTERN
+lets you specify a pattern by regexp, and you can specify multiple patters!
+#+BEGIN_SRC sh :dir ~/  :results output
+  grep -e be -e lint unofficial-packages.txt
+#+END_SRC
+
+#+RESULTS:
+: bemenu-git r223.c3abc43-1
+: csslint 0.10.0-1
+
+Note that the e flag should be given last on the flag list.  If it is given first, then the rest of your flags
+will be thought of as the argument.  ie:
+
+#+BEGIN_SRC sh :dir ~/ :results output
+  grep -ei -
+#+END_SRC
+
+** -r search recursively, ignore symlinks
+-R searches recursively following all symlinks
+*** --exclude-dir=GLOB
+exclude any dirs that match the GLOB
+The GLOB can use "?,*[...]" to match.  I don't believe that you can use a regexp expression though
+*** --exclude-file=GLOB
+exclude any files that match the pattern.
+The GLOB can use "?,*[...]" to match.  I don't believe that you can use a regexp expression though
+*** --include=GLOB
+include any files that match the pattern.
+The GLOB can use "?,*[...]" to match.  I don't believe that you can use a regexp expression though
+** -i ignore case
+
+This lets you say that you want to ignore case in your grep search
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+grep -i soups cooking.org
+#+END_SRC
+
+#+RESULTS:
+: * Soups
+: ** Do not push cut garlic into soups. EVER.
+
+You can see that it changed my pattern into [Ss]oups
+
+** -w word regexp
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+grep -i soup cooking.org
+#+END_SRC
+
+#+RESULTS:
+: * Soups
+: ** Do not push cut garlic into soups. EVER.
+:    You will ruin the soup.  It will be way too garlicky!
+
+Suppose that we do not only the word "soup" and not to match "soups." or "Soups".  We could do this:
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+grep -i "\bsoup\b" cooking.org
+#+END_SRC
+
+#+RESULTS:
+:    You will ruin the soup.  It will be way too garlicky!
+
+or to save some time, we could do this:
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+grep -iw soup cooking.org
+#+END_SRC
+
+#+RESULTS:
+:    You will ruin the soup.  It will be way too garlicky!
+
+** -x line regexp
+
+This just says that the regexp should match the whole line.  So it's like saying "^" PATTERN "$"
+** -c count matching lines
+output the total count the matching lines in the file
+
+#+BEGIN_SRC sh :dir ~/manuals/ :results output
+  grep -c the hurd.org
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+#+BEGIN_SRC sh :dir ~/manuals/ :results output
+  grep -c the pacman.org practical-gnus.org
+#+END_SRC
+
+#+RESULTS:
+: pacman.org:4
+: practical-gnus.org:65
+** -l print files that match the pattern
+** -L print files that do not match the pattern
+** -m <MAX Number> stop reading a file after Max matches have been found
+
+#+BEGIN_SRC sh :dir ~/manuals :results output
+grep -nm 6 -e the pacman.org practical-gnus.org
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+pacman.org:15:*** Failed to commit transaction package: /path/to/file exists in the filesystem
+pacman.org:21:  The problem is usually trivial to solve. A safe way is to first check if another package owns the file (pacman -Qo /path/to/file). If the file is owned by another package, file a bug report. If the file is not owned by another package, rename the file which 'exists in filesystem' and re-issue the update command. If all goes well, the file may then be removed.
+pacman.org:25:  Every installed package provides a /var/lib/pacman/local/$package-$version/files file that contains metadata about this package. If this file gets corrupted, is empty or goes missing, it results in file exists in filesystem errors when trying to update the package. Such an error usually concerns only one package. Instead of manually renaming and later removing all the files that belong to the package in question, you may exceptionally run pacman -S --force $package to force pacman to overwrite these files.
+pacman.org:30:[fn:1] The Official name is Arch Linux, but I prefer to call it Arch GNU/Linux, to respect the hard word that GNU put into creating the GNU/Linux operating system.  For more information, you can check out: [[https://www.gnu.org/gnu/why-gnu-linux.html%20][What's in a Name?]]  and [[https://www.gnu.org/gnu/gnu-linux-faq.html][GNU/Linux FAQ]].
+practical-gnus.org:18:Copyright: This work is licensed under the [[http://creativecommons.org/licenses/by-nc-nd/3.0/][Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License]].
+practical-gnus.org:23:People think it is hard because they get lost in its features. It would be much easier if they learned the *essential 5% features* and ignore the remaining 95%.
+practical-gnus.org:32:- Usable when offline. Check the "offline" part in the section "Advanced tips"
+practical-gnus.org:33:- powerful combined with other plugins like [[https://github.com/capitaomorte/yasnippet][yasnippet]]
+practical-gnus.org:37:- "C" means "Ctrl" and "M" means "Alt". For example, "M-x" means pressing "Alt" and "X" together.
+practical-gnus.org:41:- "Group buffer" means the list of folders.
+#+end_example
+** -A <NUM> (after)
+print NUMber of lines after the match
+** -B <NUM> (before)
+print NUM of lines before the match
+** -C <NUM> (context)
+print NUM of lines before and after.
+** -H with filename
+** -h no filename
 * permissions
 In Unix everything is a file.  When you write a text document called "text.text", that is a Unix file.  When you create a directory (Windows users call this a folder) called "Music",  you also are creating a Unix file.  Obviously, "text.text" and "Music" behave very differently.  One has your favorite songs, and the other is a text document, BUT the linux kernel assumes that they are both Unix files.  All unix files have read, write, and execute permissions specific to each unix file.  This typiccally means that the ordinary user joshua cannot read, write, or execute anything in the =/root/= folder.
 

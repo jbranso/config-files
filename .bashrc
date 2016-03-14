@@ -118,6 +118,9 @@ alias hurd='cd ~/programming/hurd/; qemu-system-i386 -drive file=debian-hurd-201
 GPG_TTY=$(tty)
 export GPG_TTY
 
+#export my go path
+export GOPATH=~/go
+
 #emacs keeps complaning that it can't connect to dbus
 #https://bugs.archlinux.org/task/5695
 # https://stackoverflow.com/questions/26887888/connecting-to-dbus-from-emacs-daemon
