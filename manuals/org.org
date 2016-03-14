@@ -160,10 +160,6 @@
 
    - = Trees with the tag =:noexport:= means they won't be exported
 * Org babel
-  Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
-  etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
-  a program that uses 30 different languages, and each block's results can be used as input to any other block!
-  - An sql example
     :PROPERTIES:
     :engine: mysql
     :dbhost: localhost
@@ -171,6 +167,19 @@
     :dbpassword: <your password here>
     :database: usbc
     :END:
+  Org babel allows you to insert code blocks into a document.  Those code block's results, can be /weaved/ to html, latex, info,
+  etc OR that code can be /tangled/ to be later run by a computer!  It super cool because inside one emacs buffer, you can be writing
+  a program that uses 30 different languages, and each block's results can be used as input to any other block!
+  - An sql example
+#+BEGIN_SRC org
+  :PROPERTIES:
+  :engine: mysql
+  :dbhost: localhost
+  :dbuser: root
+  :dbpassword: <your password here>
+  :database: usbc
+  :END:
+#+END_SRC
 ** sql
     #+name: my_query
     # results output and exports both let the exported file show both the code and the results in the exported file
@@ -205,6 +214,9 @@
 
     #+RESULTS:
     : hello
+
+    This just mean that when you export the document to html, pdf, .odt, etc., then you will not see that code block's source code or results.
+
   - A gnu plot example
 
     #+BEGIN_SRC gnuplot
@@ -361,6 +373,55 @@ So, we make a named code block in the si.org file called "figure-1". Then we cal
   ,#+call: si.org:figure-1() :wrap html
 #+END_SRC
 
+** header arguments [[info:org#Specific%20header%20arguments][info:org#Specific header arguments]]
+*** :var
+:var [<variable name>=<[ literal_value | #+table_name ]>]  [<variable name>=<[ literal_value | #+table_name ]>] ...
+
+**** :var lets you assign a variable at the top level header argument.
+#+BEGIN_SRC calc :var x=5 y=6 z=50
+x + y + z
+#+END_SRC
+
+#+RESULTS:
+: 61
+
+#+NAME:GAS
+#+BEGIN_SRC calc
+1.89
+#+END_SRC
+
+#+RESULTS: GAS
+: 1.89
+
+#+RESULTS:
+: 1.89
+
+***** you can assign a variable to a table name
+5 gallons of gas costs
+#+BEGIN_SRC calc :var gas=GAS
+5 * gas
+#+END_SRC
+
+#+RESULTS:
+: 9.45
+
+*** :dir
+#+BEGIN_SRC sh :dir ~/manuals :results output
+ls | grep -m 5 -e ".*org" -
+#+END_SRC
+
+#+RESULTS:
+: accrisoft.org
+: apache.org
+: arch.org
+: auto-complete.org
+: bash.org
+
+*** :output-dir
+*** :exports
+:exports [both | results | code | none]
+
+Export specifies what needs to be saved when you export the document
 * Org spreadsheets/tables
   | Money I earn in a month | Expenses  | Expenses$ | Total |
   |-------------------------+-----------+-----------+-------|
