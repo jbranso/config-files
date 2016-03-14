@@ -2,16 +2,19 @@
 #+AUTHOR: Joshua Branson
 
 * The 3 fundamental Lisp Syntax things
-  1) ~(<command> <arg1> <arg2> <arg3>)~  means to run command with arguments 1-3.
-  2) ~\'(<command> <arg1> <arg2> <arg3>)~  is like a quoted string.  The computer does NOT run any command.
+  1) =(<command> <arg1> <arg2> <arg3>)= means to run command with arguments 1-3.
+  2) ='(<command> <arg1> <arg2> <arg3>)=  is like a quoted string.  The computer does NOT run any command.
   3) =;= is a comment.  Anything after the =;= on that line will not be interpreted as code by the elisp interpreter.
 * Flow Control/Conditionals
   - *cond* is the most powerful of the conditionals, which is essentially a switch statement.  It looks like this:
-    ~(cond~
-    ~((condition 1) body-forms)~
-    ~((condition 2) body-forms)~
-    ~((condition 3) body forms)~
-    ~(t default-body-forms))~
+    #+BEGIN_SRC emacs-lisp
+      (cond
+       ((condition 1) body-forms)
+       ((condition 2) body-forms)
+       ((condition 3) body forms)
+       (t default-body-forms))
+    #+END_SRC
+
   - *when* is a simple if statement with no attached else.
     When =COND= is true evaluate the body forms and return the value of the last one, but if COND is not true, return nil.
     #+BEGIN_SRC emacs-lisp
@@ -22,12 +25,16 @@
   - (buffer-file-name) is the full path of the current buffer
   - (current-buffer) returns the full text in the current buffer.
   - (other-buffer) returns the full text from the last visited buffer.
-
   - You can switch to another buffer in emacs with
-     ~(switch-to-buffer (other-buffer))~
-    OR
-     ~(switch-to-buffer (<buffer name>))~
+    #+BEGIN_SRC emacs-lisp
+     (switch-to-buffer (other-buffer))
+    #+END_SRC
 
+    OR
+
+    #+BEGIN_SRC emacs-lisp
+     (switch-to-buffer (<buffer name>))
+    #+END_SRC
   - (buffer-size) tells you the size of the current buffer
   - (point) tells you how many chars are between the beginning of the buffer and point
 * defuns
