@@ -54,7 +54,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/joshua/.config/awesome/themes/zenburn/theme.lua")
 configd = "/home/joshua/.config/awesome/"
-terminal = "gnome-terminal"
+terminal = "lxterminal"
 editor = "emacsclient -nc" -- os.getenv("EDITOR") or
 editor_cmd = terminal .. " -e " .. editor
 
@@ -233,7 +233,8 @@ for s = 1, screen.count() do
    right_layout:add(thunar_launcher)
    right_layout:add(alsamixer_launcher)
    right_layout:add(memwidget)
-   right_layout:add(batwidget)
+   -- the batwidget is causing issues.  Look for a line "FIXME" to fix it
+   -- right_layout:add(batwidget)
    right_layout:add(mytextclock)
    right_layout:add(mylayoutbox[s])
 
@@ -765,6 +766,9 @@ local function trim(s)
    return s:find'^%s*$' and '' or s:match'^%s*(.*%S)'
 end
 
+-- FIXME so apparently my battery widget is causing problems.  That is fun.
+-- this line is apparently causing problems
+-- "local f_capacity = assert(io.open("/sys/class/power_supply/BAT0/capacity", "r"))"
 local function bat_notification()
    local f_capacity = assert(io.open("/sys/class/power_supply/BAT0/capacity", "r"))
    local f_status = assert(io.open("/sys/class/power_supply/BAT0/status", "r"))
@@ -782,9 +786,10 @@ local function bat_notification()
    end
 end
 
-battimer = timer({timeout = 60})
-battimer:connect_signal("timeout", bat_notification)
-battimer:start()
+-- when the FIXME thing is fixed, then I can turn this back on
+-- battimer = timer({timeout = 60})
+-- battimer:connect_signal("timeout", bat_notification)
+-- battimer:start()
 
 -- end here for battery warning
 

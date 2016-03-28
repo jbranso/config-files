@@ -1,0 +1,67 @@
+#+TITLE:Emacs Cheatsheat
+#+AUTHOR: Joshua Branson
+
+* Sed cheatsheat
+sed SCRIPT file
+sed [options] SCRIPT file
+** sed flags
+*** -n do not print out each line.  This means sed only prints things when it sees the p command.
+*** -r use extended regexps
+** a sed example
+
+#+BEGIN_SRC sh :dir ~/ :results output
+sed -n '/enabled/  s/^.*- // p ' disabled-systemd-files.org | awk '{print $1}' -
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+avahi-daemon.service
+avahi-dnsconfd.service
+console-getty.service
+console-shell.service
+gssproxy.service
+nscd.service
+serial-getty@.service
+systemd-bootchart.service
+systemd-journal-upload.service
+systemd-networkd-wait-online.service
+systemd-networkd.service
+systemd-nspawn@.service
+systemd-resolved.service
+udisks2.service
+avahi-daemon.socket
+sshd.socket
+systemd-journal-gatewayd.socket
+systemd-journal-remote.socket
+systemd-networkd.socket
+uuidd.socket
+ctrl-alt-del.target
+exit.target
+halt.target
+kexec.target
+machines.target
+poweroff.target
+reboot.target
+rescue.target
+fstrim.timer
+pacman_keyring.timer
+#+end_example
+
+** How sed works
+sed goes through the input line by line, if a line matches a particular condition, then some action is performed.
+** selecting lines with sed
+*** NUMBER
+only select this line number
+*** FIRST~STEP
+select line number at number FIRST, then every following STEP-th number.
+
+ie: 1~2  selects all odd numbered lines
+ie: 2~2  selects all even numbered lines
+ie  5~5  selects all factors of 5
+*** /REGEXP/ match every line that matches that regexp
+** sed commands
+*** =#= comment
+*** =q= exit sed NOW
+*** =d= delete pattern space, start next cycle
+*** =p= print out the pattern space
+*** ={ COMMANDS }= do more than one command on one match

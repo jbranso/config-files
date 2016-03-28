@@ -373,6 +373,19 @@ So, we make a named code block in the si.org file called "figure-1". Then we cal
   ,#+call: si.org:figure-1() :wrap html
 #+END_SRC
 
+** http
+[[https://github.com/zweifisch/ob-http][ob-http]] mode
+#+BEGIN_SRC http :pretty
+GET https://api.github.com/repos/zweifisch/ob-http/languages
+Accept: application/vnd.github.moondragon+json
+#+END_SRC
+
+#+RESULTS:
+: {
+:   "Shell": 139,
+:   "Emacs Lisp": 13293
+: }
+
 ** header arguments [[info:org#Specific%20header%20arguments][info:org#Specific header arguments]]
 *** :var
 :var [<variable name>=<[ literal_value | #+table_name ]>]  [<variable name>=<[ literal_value | #+table_name ]>] ...

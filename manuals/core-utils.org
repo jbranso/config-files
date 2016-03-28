@@ -92,8 +92,9 @@ chown joshua ~/documents/
 
   #+RESULTS:
 
-* grep
-grep searching a list of file/s for a pattern and outputs the matching lines.
+* grep/egrep/fgrep
+grep searching a list of file/s for a pattern and outputs the matching lines.  Grep only supports a handful of regular expressions.  If you want to use ALL of the regexp expression goodies, you need to use egrep.  fgrep is fast grep.  It interprets the string as a literal string and not a regexp.
+
 There is no way to match newline characters with grep.  [[info:grep#Introduction][info:grep#Introduction]]
   #+BEGIN_SRC
   grep OPTIONS PATTERN [INPUT_FILE_NAMES | - ]
@@ -131,6 +132,18 @@ lets you specify a pattern by regexp, and you can specify multiple patters!
 #+RESULTS:
 : bemenu-git r223.c3abc43-1
 : csslint 0.10.0-1
+
+So I can see "be"menu and css"lint", but you could do the same thing with
+
+#+BEGIN_SRC sh :dir ~/ :results output
+egrep "be|lint" unofficial-packages.txt
+#+END_SRC
+
+#+RESULTS:
+: bemenu-git r223.c3abc43-1
+: csslint 0.10.0-1
+
+
 
 Note that the e flag should be given last on the flag list.  If it is given first, then the rest of your flags
 will be thought of as the argument.  ie:
@@ -242,6 +255,8 @@ print NUM of lines before the match
 print NUM of lines before and after.
 ** -H with filename
 ** -h no filename
+** egrep
+egrep is extended regexp
 * permissions
 In Unix everything is a file.  When you write a text document called "text.text", that is a Unix file.  When you create a directory (Windows users call this a folder) called "Music",  you also are creating a Unix file.  Obviously, "text.text" and "Music" behave very differently.  One has your favorite songs, and the other is a text document, BUT the linux kernel assumes that they are both Unix files.  All unix files have read, write, and execute permissions specific to each unix file.  This typiccally means that the ordinary user joshua cannot read, write, or execute anything in the =/root/= folder.
 
@@ -318,6 +333,141 @@ Change the group that the file or directory belongs to.
   Access
   Modify
   Change
+* join
+
+join [OPTIONS] [FILE1 | - ] [ FILE2 | - ]
+
+A way of combining two files based on a common column.
+
+Either file1 or file2 can be "-", which is standard input.  So that is pretty cool.
+** available options
+
+
+** -a FILE-NUMBER
+print a line for each unpairable line.
+
+
+** -i ignore case differances
+
+** -1 FIELD_NUMBER
+Join on the nth column.  For example is the following line
+=this is an example line=
+
+"an" is on the 3rd field.
+
+** -2 FIELD_NUMBER
+
+Join on the nth column.  For example is the following line
+=this is an example line=
+
+"example" is on the 4th field.
+
+** JOIN in action
+
+#+BEGIN_SRC sh :dir ~/programming/bash/txt/ :results output
+join -1 1 file1.txt file2.txt
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+1 12 18 this is
+2 11 17 an interesting
+3 10 16 experiment isn't
+4 9 15 it?
+5 e e 2nd field match
+6 7 13
+7 6 12
+8 5 11
+9 f f 2nd field match
+10 3 9
+11 2 8
+12 1 7
+#+end_example
+
+
+#+BEGIN_SRC sh :dir ~/programming/bash/txt/ :results output
+join -1 2 file1.txt file2.txt
+#+END_SRC
+
+#+RESULTS:
+
+
+* xargs
+lets you get stdin and feed it to other programs that otherwise would not like it, allegedly
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+ls *org | xargs -i echo the{}et
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+theaccrisoft.orget
+theapache.orget
+thearch.orget
+theauto-complete.orget
+thebash.orget
+thebbdb.orget
+thecore-utils.orget
+thedired.orget
+thedisk.de.orget
+theelisp.orget
+theemacs.orget
+theevil-dvorak.orget
+theevil.orget
+thefirefox.orget
+thegawk.orget
+thegimp.orget
+thegit.orget
+thegnuplot.orget
+thegnus.orget
+thegpg.orget
+thehurd.orget
+thehurd-rpc.orget
+thehurd-talk.orget
+theinetutils.orget
+theiptables.orget
+thejavascript.orget
+thejson.orget
+theledger.orget
+thelinux-kernel-coding-style.orget
+themach-paging-interface.orget
+themagit.orget
+themaking-money-with-free-software.orget
+theman.orget
+themysql.orget
+thenetworks-networking-internet-ip4-tcp-udp.orget
+theorg-babel-code-block-args.orget
+theorg-babel-intro.orget
+theorg-babel-sql.orget
+theorg.orget
+thepacman.orget
+thephp.orget
+thepixi.orget
+thepractical-gnus.orget
+thesed.orget
+thesql.orget
+thesystemd.orget
+thethundertalks.orget
+thetoward-a-new-strategy-of-os-design.orget
+thetranslator-primer.orget
+thetranslators.orget
+thewhm.orget
+thewordpress.orget
+#+end_example
+
+#+BEGIN_SRC sh :dir ~/documents :results output
+ls *org | xargs -n 3
+#+END_SRC
+
+#+RESULTS:
+: 4yearsOfLife.org 4yearsOfLife.org.org a-certain-matchbox-member.org
+: a-girl-hitting-a-man-is-hypocritical.org approaching-and-meeting-people.org cooking.org
+: cover-letter.org example-latex.org gnu-assign-copyright-hurd-email-assign.org
+: how-to-succeed-in-the-army.org intro-to-gnu-linux.org letter-to-dad.org
+: letterToNicole.org letter-to-vincent.org libre-software-response.org
+: professor-snape-rachel-sweet-bread.org references.org romance-story.org
+: soihub-pages.org university-place.org why-proprietary-software-is-wrong.org
+
 * show available disk space
 * sort
 

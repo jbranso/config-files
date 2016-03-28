@@ -1,0 +1,25 @@
+#!/bin/bash
+# this is a simple number guessing game.  You have to guess what number the computer has selected
+echo -n "Guess my number.  It's between 1 and 50: "
+read userguess
+number=$RANDOM
+
+let "number = number / 300"
+echo -n "My number is $number"
+echo
+
+until [[ $number -eq $userguess ]];
+do
+    if [[ $number -gt $userguess ]];  then
+        echo -n "My number is greater than than $userguess. Guess again: ";
+        read userguess;
+    elif [[ $number -lt $userguess ]]; then
+       echo -n "My number is less than than $userguess. Guess again: ";
+       read userguess;
+    else
+        echo -n "You really screwed up bro";
+        break;
+    fi
+done
+
+echo "You guessed my number!"
