@@ -2,7 +2,39 @@
 #+Title: Arch GNU/Linux CheatSheet
 
 * Change the virtual console keyboard layout
+The virtual console is the "shell" that you use to log into and startx.  The virtual console is started before any graphical interface, and it's implemented in the kernel!!! wow!!!
+
+** temporarily
 loadkeys dvorak
+
+** permanently
+Create the following file with the following content.
+#+BEGIN_SRC sh :results output
+cat /etc/vconsole.conf
+#+END_SRC
+
+#+RESULTS:
+: KEYMAP=dvorak
+
+To see available keymaps =localectl lest-keymaps=
+#+BEGIN_SRC sh :results output
+localectl list-keymaps | egrep -m 10 ".*"
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+ANSI-dvorak
+amiga-de
+amiga-us
+applkey
+atari-de
+atari-se
+atari-uk-falcon
+atari-us
+azerty
+backspace
+#+end_example
+
 * Configuring Xorg Settings (keyboard layout)
 You can tweak some of these settings w/ evtest tool
 ** change the X keyboard layout & swap caps
@@ -253,6 +285,121 @@ systemctl enable httpd
 #+END_SRC
 
 #+RESULTS:
+*** reload a unit's configuration
+=systemctl reload unit=
+#+BEGIN_SRC sh :results output
+su
+sudo systemctl reload mbsync@.service
+#+END_SRC
+
+#+RESULTS:
+
+** using systemd as a cron replacement
+Systemd's timestamps have the format
+
+[day] [<year>-<month>-<day>] [<hour in military time>:<minutes>:<seconds>]
+
+For example: =Tue 2015-01-03 16:34:42=
+
+Systemd is a much better replacement of using cron jobs!  It gives you some nice logging information about your units.  You can use the following units to refer to time:
+
+- s --> seconds ie: =5s= is 5 seconds
+- m --> minutes ie: =5m= is 5 minutes
+- h --> hours   ie: =5h= is 5 hours
+- d --> days    ie: =5d= is 5 days
+- w --> weeks   ie: =5w= is 5 weeks
+- m --> months  ie: =5m= is 5 months
+- y --> years   ie: =5y= is 5 years
+
+  Systemd's repeating events format is the following:
+
+  [<day of week>[,<another day of the week>][,...]] DAY TIME
+
+  An example of this is:
+  =Thu,Fri 2012-*-1,5 11:12:13=
+
+  This means that at approximately 11:12am of any month in 2012, where it is the 1st or 5th of the month, systemd will execute this unit.  Think of * as the regexp ".*", anything can go inside the "*".
+
+  To clarify systemd's repeating notation let's take a look at some examples:
+
+  =hourly → *-*-* *:00:00=
+  So valid timestamps that this includes are:
+  =2015-01-01=
+  =2015-01-02=
+  =2015-01-03=
+  =2015-02-01=
+  =2015-02-02=
+  =2015-02-03=
+  =2016-02-01=
+  =2016-02-02=
+  =2016-02-03=
+
+  This means that any day of the year this event will take place.  Ok what about at what time?
+  Well valid time stamps include every hour of the day! like these:
+  =*-*-* 06:00:00=
+  =*-*-* 07:00:00=
+  =*-*-* 08:00:00=
+  =*-*-* 10:00:00=
+  =*-*-* 11:00:00=
+  =*-*-* 12:00:00=
+  =*-*-* 18:00:00=
+  So, at every hour, this systemd will trigger this event.
+
+  Let's see what daily means.
+  =daily → *-*-* 00:00:00=
+  Valid timestamps that could fix here include:
+  =2016-01-01 00:00:00=
+  =2016-01-02 00:00:00=
+  =2016-01-03 00:00:00=
+  =2016-02-01 00:00:00=
+  =2016-02-02 00:00:00=
+  =2016-02-03 00:00:00=
+  =2015-02-01 00:00:00=
+  =2015-02-02 00:00:00=
+  =2015-02-03 00:00:00=
+
+  So on any day at midnight, systemd will trigger this event.
+
+
+  Here is a complicated example:
+
+  =mon,fri *-1/2-1,3 *:30:45 → Mon,Fri *-01/2-01,03 *:30:45=
+
+  This means that any Monday or Friday on any year, during January or February, on the 1st or 3rd day,
+
+  Here are some more examples taken from the [[https://www.freedesktop.org/software/systemd/man/systemd.time.html][systemd wiki]].
+  #+begin_example
+     Sat,Thu,Mon-Wed,Sat-Sun → Mon-Thu,Sat,Sun *-*-* 00:00:00
+     Mon,Sun 12-*-* 2,1:23 → Mon,Sun 2012-*-* 01,02:23:00
+                   Wed *-1 → Wed *-*-01 00:00:00
+           Wed-Wed,Wed *-1 → Wed *-*-01 00:00:00
+                Wed, 17:48 → Wed *-*-* 17:48:00
+Wed-Sat,Tue 12-10-15 1:2:3 → Tue-Sat 2012-10-15 01:02:03
+               *-*-7 0:0:0 → *-*-07 00:00:00
+                     10-15 → *-10-15 00:00:00
+       monday *-12-* 17:00 → Mon *-12-* 17:00:00
+ Mon,Fri *-*-3,1,2 *:30:45 → Mon,Fri *-*-01,02,03 *:30:45
+      12,14,13,12:20,10,30 → *-*-* 12,13,14:10,20,30:00
+ mon,fri *-1/2-1,3 *:30:45 → Mon,Fri *-01/2-01,03 *:30:45
+            03-05 08:05:40 → *-03-05 08:05:40
+                  08:05:40 → *-*-* 08:05:40
+                     05:40 → *-*-* 05:40:00
+    Sat,Sun 12-05 08:05:40 → Sat,Sun *-12-05 08:05:40
+          Sat,Sun 08:05:40 → Sat,Sun *-*-* 08:05:40
+          2003-03-05 05:40 → 2003-03-05 05:40:00
+05:40:23.4200004/3.1700005 → 05:40:23.420000/3.170001
+      2003-03-05 05:40 UTC → 2003-03-05 05:40:00 UTC
+                2003-03-05 → 2003-03-05 00:00:00
+                     03-05 → *-03-05 00:00:00
+                    hourly → *-*-* *:00:00
+                     daily → *-*-* 00:00:00
+                 daily UTC → *-*-* 00:00:00 UTC
+                   monthly → *-*-01 00:00:00
+                    weekly → Mon *-*-* 00:00:00
+                    yearly → *-01-01 00:00:00
+                  annually → *-01-01 00:00:00
+                     *:2/3 → *-*-* *:02/3:00
+#+end_example
 
 ** journal commands
 *** -b show message from this boot
@@ -741,6 +888,10 @@ Arch GNU/Linux configuration is located in =/etc/php/php-fpm.d/www.conf=, and pm
 
     You can read more [[http://www.php.net/manual/en/install.fpm.configuration.php][here]].
 
+
+
+
+
     #+BEGIN_SRC sh :results output
     cat /etc/php/php-fpm.d/www.conf | grep "pm.max_children" -A 5 -B 3
     #+END_SRC
@@ -782,19 +933,23 @@ Arch GNU/Linux configuration is located in =/etc/php/php-fpm.d/www.conf=, and pm
     pm.start_servers = 2
 #+end_example
 
+* killing programs
+
+** kill
+kill <process ID>
+
+kill, kills the process ID.
+
+** killall
+killall PROGRAMNAME
+
+Killall kills all processes with the name PROGRAMNAME.  You might have to run it twice to kill the program successfully.
+
 * Problems I'm trying to solve
-** Well when I turn on my computer, it shuts down
-What service could it be?
-
-#+BEGIN_SRC sh
-su
-sudo systemctl disable halt.service
-sudo systemctl disable poweroff.service
-sudo systemctl disable reboot.service
-#+END_SRC
-
-#+RESULTS:
-** my ethernet randomly loses connection:
+** TODO my ethernet randomly loses connection:
+:LOGBOOK:
+- State "TODO"       from              [2016-03-29 Tue 19:06]
+:END:
 
 When this happens, I try to see the status of my ethernet device.
 #+BEGIN_SRC sh :results output
@@ -934,3 +1089,78 @@ ip link show dev neteth0
 #+RESULTS:
 : 2: neteth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
 :     link/ether 60:33:4b:8e:60:d0 brd ff:ff:ff:ff:ff:ff
+** DONE make mbsync sync every 5 minutes
+CLOSED: [2016-03-29 Tue 19:43]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2016-03-29 Tue 19:43]
+- State "TODO"       from              [2016-03-29 Tue 19:43]
+:END:
+change the line in the config file to run every 5 minutes:
+
+#+BEGIN_SRC sh :results output
+grep "OnCalendar=" /etc/systemd/system/mbsync@.timer
+#+END_SRC
+
+#+RESULTS:
+: OnCalendar=*-*-* *:*:*0,5
+
+Reload the configuration
+
+#+BEGIN_SRC sh :results output
+su
+systemctl daemon-reload
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC sh :results output
+su
+systemctl daemon-reload
+systemctl start mbsync@joshua.timer
+#+END_SRC
+
+#+RESULTS:
+
+** TODO Well when I turn on my computer, it shuts down
+:LOGBOOK:
+- State "TODO"       from "DONE"       [2016-03-31 Thu 18:59]
+- State "DONE"       from "TODO"       [2016-03-29 Tue 19:06]
+- State "TODO"       from              [2016-03-29 Tue 19:05]
+:END:
+What service could it be?
+
+#+BEGIN_SRC sh
+su
+sudo systemctl disable halt.service
+sudo systemctl disable poweroff.service
+sudo systemctl disable reboot.service
+#+END_SRC
+
+
+#+RESULTS:
+
+Well I am going to try to disable these services, and see if that helps
+#+BEGIN_SRC sh :results output
+su
+systemctl disable ctrl-alt-del.target
+systemctl disable exit.target
+systemctl disable halt.target
+systemctl disable poweroff.target
+systemctl disable reboot.target
+
+#+END_SRC
+
+#+RESULTS:
+** TODO I have a LOT of systemd services that are failing to start.
+:LOGBOOK:
+- State "TODO"       from              [2016-03-31 Thu 19:00]
+:END:
+
+This thread suggested that I should uninstall laptop mode tools, which I did.
+https://bbs.archlinux.org/viewtopic.php?id=209100
+
+And I uninstalled hdparm.
+** TODO How do I kill a program if killall PROGRAMNAME and kill PID fails?
+:LOGBOOK:
+- State "TODO"       from              [2016-04-01 Fri 08:31]
+:END:

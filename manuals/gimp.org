@@ -3,7 +3,7 @@
 #+OPTIONS: H:10
 * Basic Concepts
 ** Layers
-   You can stack transparent layers on top of one another in gimp to create one complete image that is looked at from above all layers.
+You can stack transparent layers on top of one another in gimp to create one complete image that is looked at from above all layers.
    This lets you change one layer without affecting any other layer
 *** layers dialog
     Click on Windows > dockable dialogs > Layers or C-l
@@ -18,11 +18,11 @@
 
 Window > Dockable Dialogues > Pointer
 
-The color codes are listed there.
+As you move your mouse over a color, the pointer window will show you the color in a variety of formats.
 ** To enter single window mode Windows > Single-Window-Mode
 ** To show the tools menu > C-b
 ** to delete a selection (ie: make that selection have no colors, and you'll see the grey and black of the layer)
-  select the area, via recangle, elipse, or magic wand, then press edit > clear
+select the area, via recangle, elipse, or magic wand, then press edit > clear
 ** to copy part of an image
   select the part that you want to copy, right click on it, edit > copy
   In the top of the menu bar edit > paste as new image or now layer
@@ -30,7 +30,8 @@ The color codes are listed there.
  Entered on [2015-08-16 Sun 18:29]
 
    [[file:~/manuals/gimp.org]]
-** You can expand the layer boundary by right clicking on the layer and clicking on layer boundary size or clicking on layer to image size
+** You can expand the layer boundary by right clicking on the layer and clicking on layer boundary size or clicking on layer
+to image size
  Entered on [2015-08-16 Sun 18:29]
 
    [[file:~/manuals/gimp.org]]
@@ -39,6 +40,8 @@ The color codes are listed there.
 
    [[file:~/programming/org/gtd/gtd.org]]
 
+** save a single layer as PNG
+In the layers window, select a layer, press "C-c" (Copy), press "S-C-v" (File > create > from clipboard), "C-e" (File > Export)
 ** basic functionality I need to know for GIMP
     - to see the colors of various stuff, open
     Windows > dockable Dialogue > pointer

@@ -1,5 +1,6 @@
 #+TITLE:Org Cheatsheat
 #+AUTHOR: Joshua Branson
+#+STARTUP: latexpreview
 #+LANGUAGE: en
 #+HTML_HEAD <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 # The next lines says that I can make 10 levels of headlines, and org will treat those headlines as how to structure the book into
@@ -255,7 +256,7 @@
     :PROPERTIES:
     :dir: /ssh:user@host.com:/home/user
     :END:
-    #+BEGIN_SRC sh
+    #+BEGIN_SRC sh :dir /<user>@<host>:/path/to/file
       ls
     #+END_SRC
 
@@ -409,7 +410,7 @@ x + y + z
 #+RESULTS:
 : 1.89
 
-***** you can assign a variable to a table name
+***** you can assign a variable to the result of an org src code block
 5 gallons of gas costs
 #+BEGIN_SRC calc :var gas=GAS
 5 * gas
@@ -501,9 +502,19 @@ When you have a list like the one above, to add to it just type C-RET, but when 
   \hat{F}(\nu) = \frac{G(\nu)}{H(\nu)}.
   \]
 
+  There are other ways that I'm supposed to be able to make latex fragments
+  If $a^2=b$ and \( b=2 \), then the solution must be
+     either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
 
+     \begin{equation}
+     x=\sqrt{b}
+     \end{equation}
 
   org-preview latex fragment with "C-c C-x C-l"
+
+
+
+\begin{equation} R=-µ\fraq{du_{x}}{dy} \end{equation}
 
 * Creating Indexes
   You can specify entries that will be used for generating an index during
@@ -555,9 +566,17 @@ When you have a list like the one above, to add to it just type C-RET, but when 
    - =S= show sunrise and sunset times
    - =H= show upcoming Holidays
    - =
-* inserting a bbdb record link into the file
+* inserting links
+** a bbdb record link into the file
     [[bbdb:Nathaniel Simone]]
     How cool is that?
+
+To do this "C-c I" bbdb RET <name of person>
+** an email address
+[[mailto:bransoj@hotmail.com][my email address]]
+
+To do this "C-c I" mailto RET <email address>
+** gnus links!!!???
 * Easy Templates
   Org mode supports insertion of empty structural elements (like #+BEGIN_SRC and #+END_SRC pairs) with just a few key strokes. This is achieved through a native template expansion mechanism. Note that Emacs has several other template mechanisms which could be used in a similar way, for example yasnippet.
 
