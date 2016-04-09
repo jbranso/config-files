@@ -577,6 +577,11 @@ To do this "C-c I" bbdb RET <name of person>
 
 To do this "C-c I" mailto RET <email address>
 ** gnus links!!!???
+* Putting images in the document
+
+#+CAPTION: Which key displays the current major mode's keybindings
+#+NAME:   fig:which-key
+[[~/.emacs.d/images/which-key.png]]
 * Easy Templates
   Org mode supports insertion of empty structural elements (like #+BEGIN_SRC and #+END_SRC pairs) with just a few key strokes. This is achieved through a native template expansion mechanism. Note that Emacs has several other template mechanisms which could be used in a similar way, for example yasnippet.
 
