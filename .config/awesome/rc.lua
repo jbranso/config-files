@@ -672,7 +672,16 @@ awful.rules.rules = {
      },
    },
    { rule = { class = "gimp" },
-     properties = { floating = true, screen = 1 }
+     properties = { floating = true,
+                    screen = 1,
+                    tag = tags[1][2]
+     }
+   },
+   { rule = { class = "filezilla" },
+     properties = { floating = true,
+                    screen = 1,
+                    tag = tags[1][2]
+     }
    },
      -- Set Firefox to always map on tags number 2 of screen 1.
      -- { rule = { class = "Firefox" },

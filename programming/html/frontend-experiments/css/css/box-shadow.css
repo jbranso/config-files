@@ -1,0 +1,75 @@
+div.basic {
+    background-color:yellow;
+    width:200px;
+    height:200px;
+    box-shadow:70px 20px green;
+    margin-bottom:80px;
+    margin-left:80px;
+}
+div.basic p {
+    padding-top:50px;
+    padding-left:50px;
+
+}
+
+div.blur {
+    background-color:yellow;
+    width:200px;
+    height:200px;
+    box-shadow:70px 20px 20px green;
+    margin-bottom:80px;
+    margin-left:80px;
+}
+div.blur p {
+    padding-top:50px;
+    padding-left:50px;
+
+}
+
+div.innerShadow {
+    background-color:yellow;
+    width:200px;
+    height:200px;
+    box-shadow:inset 0 -20px 50px green;
+    margin-bottom:80px;
+    margin-left:80px;
+}
+div.innerShadow p {
+    padding-top:50px;
+    padding-left:50px;
+
+}
+
+div.innerShadow {
+    background-color:yellow;
+    width:200px;
+    height:200px;
+    box-shadow:inset 0 -20px 50px green;
+    margin-bottom:80px;
+    margin-left:80px;
+}
+div.innerShadow p {
+    padding-top:50px;
+    padding-left:50px;
+
+}
+
+
+div.rainbow {
+    background-color:yellow;
+    width:50px;
+    height:50px;
+    margin-top:50px;
+    margin-bottom:80px;
+    margin-left:80px;
+    box-shadow: 0 0 20px black,
+    30px 25px 30px yellow,
+    -30px 25px 30px lime,
+    -30px -25px 30px blue,
+    30px -25px 30px red;
+}
+div.rainbow p {
+    padding-top:50px;
+    padding-left:50px;
+
+}

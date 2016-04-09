@@ -1,0 +1,58 @@
+#+TITLE: Box Shadow
+#+DESCRIPTION:Box shadow test
+#+HTML_DOCTYPE: HTML5
+#+HTML_LINK_HOME: index.html
+#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="css/box-shadow.css"/>
+#+HTML_EXTRA: <link rel="stylesheet" type="text/css" href="style1.css"/>
+#+HTML_EXTRA: <link rel="stylesheet" type="text/css" href="style2.css"/>
+
+Box shadow is a cool way to create a shadow on an element! It most basic syntax is
+
+=box-shadow: Xoffset Yoffset color=
+
+#+BEGIN_EXAMPLE
+div.basic {
+box-shadow:70px 20px green;
+}
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+
+<div class="basic"><p>div.basic</p></div>
+#+END_HTML
+
+
+#+BEGIN_EXAMPLE
+div.basic {
+box-shadow:70px 20px 20px green;
+}
+#+END_EXAMPLE
+
+If you add one more number you can specify a blur.
+#+BEGIN_HTML
+<div class="blur"><p>div.blur</p></div>
+#+END_HTML
+
+Usually box shadows are cast outside of the element, but they can also be cast inside the element.
+
+#+BEGIN_EXAMPLE
+div.innerShadow {
+    box-shadow:inset 0 20px 20px green;
+}
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+<div class="innerShadow"><p>div.innerShadow</p></div>
+#+END_HTML
+
+You can also use more than 1 shadow!!!
+
+#+BEGIN_EXAMPLE
+div.rainbow {
+    box-shadow:0 20px 20px green;
+}
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+<div class="rainbow"><p>div.rainbow</p></div>
+#+END_HTML
