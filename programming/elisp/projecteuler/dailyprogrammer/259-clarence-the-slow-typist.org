@@ -139,9 +139,23 @@ Now let's write a function that takes sees in the inputted IP address matches th
 =[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}=
 
 Doing regexp matching in elisp sucks!!!  I have to use 2 "\\" to use good regexps.
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :export none
 (require 's)
 (s-matches? "^[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}$" "223.23.2.3")
 (s-matches? "^[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}$" "223.243.2.543")
 (s-matches? "^[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}$" "223.23.52.53")
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (defun is-ip-address? (string)
+    (when (s-matches? "^[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}\.[0-9]\\{1,3\\}$" string)
+      t))
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+  (defun distance (ip-address)
+    (when (is-ip-address ip-address)
+      distance-cons ((car ip-address) ))
+    )
 #+END_SRC

@@ -1,7 +1,8 @@
 #+TITLE: Wordpress Cheatsheet
 #+AUTHOR: Joshua Branson
 
-* Vocab
+* Familiarizing Yourself With Wordpress
+** Vocab
 You can find more vocab words specific to wordpress [[https://codex.wordpress.org/Glossary][in the glossary,]]  and in the [[https://codex.wordpress.org/WordPress_Semantics][Semantics]]
 - *posts* are the elements that make up a web page.  Every time someone makes a blog post, they create a post.
 - *media* pictures, video, etc. that enhance a blog.
@@ -23,41 +24,29 @@ You can find more vocab words specific to wordpress [[https://codex.wordpress.or
 - *menus* a list of navigational items that help your user navigate the site
 - *Post Formats* allow one to control the display of a specific post
 - *Plugins* are add-ons that extend wordpress
-* Removing functions from wordpress themes
-[[http://code.tutsplus.com/tutorials/a-guide-to-overriding-parent-theme-functions-in-your-child-theme--cms-22623][removing functions in wordpress]]
-** Removing functions from from hooks via remove/add_action
-** Define the function in your child theme's function.php file
-Your child theme is loaded just before the parent theme, and if the parent theme is written properly, then the child's functions will override the parent's.
-
-The parent's function has to be written like this:
-
-# this is not C code, but I just wanted to get syntax highlighting to work
-#+BEGIN_SRC C
-  if ( ! function_exists( 'storefront_footer_widgets' ) ) {
-     /* some content here */
-   }
-#+END_SRC
-
-
-So if your child theme's function.php has the function
-
-#+BEGIN_SRC c
-  function storefront_footer_widgets () {
-  /* some code here */
-  }
-#+END_SRC
-
-Then your child theme's function will overwrite the parent's function.  Cool eh?
-* wordpress template hierarchy
-# https://developer.wordpress.org/themes/basics/template-hierarchy/
-
-When wordpress views a specific webpage, it selects in page that is the highest in the hierarchy.
-* Specific php files
+** Specific php files
 # I found this information here: https://yoast.com/wordpress-theme-anatomy/
 - *rtl.css*
   The right to left stylesheet that is included automatically if this in an english blog
 - *The Loop* displays the contents of the main area of your site.
 - *index.php* This is the main template file.  It is required in all themes.  If *home.php* does not exist, and if your site does /NOT/
+
+  A working index.php can look like this:
+
+  #+BEGIN_EXAMPLE
+<?php
+get_header();
+if (have_posts()) :
+   while (have_posts()) :
+      the_post();
+         the_content();
+   endwhile;
+endif;
+get_sidebar();
+get_footer();
+?>
+
+  #+END_EXAMPLE
 have a specified static homepage, then *index.php* will be loaded (by default to list the latest blog posts).
 - *home.php* This is the home page by default, and it normally shows the latest blog posts.  BUT if you specify that your site should have a static front page, then *front-page.php* will be used instead.
 - *front-page.php* This page is loaded if a static front page is specified under Admin > Settings > Reading.
@@ -84,7 +73,7 @@ But how would that work?  If I copy page.php on the server, then there would be 
 people.  You could have a sub-taxonomy called a /term/ Nationality with values in the database "Irish" and "German".
 - *comments.php* control the output of the comments
 - *single-<custom post type>.php* displays single custom defined posts.  For example, if you define a custom post type called "review", then you would call your file *single-review.php*, and somehow magic happens.
-* folders
+** folders
 :PROPERTIES:
 :ORDERED:  t
 :END:
@@ -96,6 +85,36 @@ people.  You could have a sub-taxonomy called a /term/ Nationality with values i
 - *wp-include*
   are the core files of wordpress.  It is how wordpress communicates to the database.
 - *wp-config.php* is at the base of the wordpress install and it has all the information for your database connections.
+* Removing functions from wordpress themes
+[[http://code.tutsplus.com/tutorials/a-guide-to-overriding-parent-theme-functions-in-your-child-theme--cms-22623][removing functions in wordpress]]
+** Removing functions from from hooks via remove/add_action
+** Define the function in your child theme's function.php file
+Your child theme is loaded just before the parent theme, and if the parent theme is written properly, then the child's functions will override the parent's.
+
+The parent's function has to be written like this:
+
+# this is not C code, but I just wanted to get syntax highlighting to work
+#+BEGIN_SRC C
+  if ( ! function_exists( 'storefront_footer_widgets' ) ) {
+     /* some content here */
+   }
+#+END_SRC
+
+
+So if your child theme's function.php has the function
+
+#+BEGIN_SRC c
+  function storefront_footer_widgets () {
+  /* some code here */
+  }
+#+END_SRC
+
+Then your child theme's function will overwrite the parent's function.  Cool eh?
+2085 Puget Drive
+West Lafayette, * wordpress template hierarchy
+# https://developer.wordpress.org/themes/basics/template-hierarchy/
+
+When wordpress views a specific webpage, it selects in page that is the highest in the hierarchy.
 * The default "20" themes and _s (Underscores) theme
 wordpress wrote "20 14", "20 23", "20 12", and "20 10", for developers to study!  I can learn how wordpress builds themes by studying those themes.
 

@@ -402,7 +402,9 @@ Wed-Sat,Tue 12-10-15 1:2:3 → Tue-Sat 2012-10-15 01:02:03
 #+end_example
 
 ** journal commands
-*** -b show message from this boot
+*** -b show message from this org previous boots
+=journalctl -b= shows messages from this boot
+=journalctl -b -N= shows messages from the nth boot ago
 *** --since="<date> [time]"
 
 #+BEGIN_SRC sh :results output
@@ -490,6 +492,7 @@ journalctl -bu httpd.service
 
 #+RESULTS:
 
+I disabled the avahi daemon.  I do not need it.
 * Networking
 ** creating persistent internet device names
 https://wiki.archlinux.org/index.php/Network_configuration#Change_device_name
@@ -520,7 +523,8 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:09:d2:da", NAME="wifi0
 #make my ethernet be
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="60:33:4b:8e:60:d0", NAME="neteth0"
 #+END_SRC
-** creating netctl profiles
+** Using netctl to connect to the internet automatically via wireless and ethernet
+
 https://wiki.archlinux.org/index.php/Netctl#Configuration
 
 Use some of the examples from
@@ -552,9 +556,34 @@ ls /etc/netctl/examples/
 | wireless-wpa-static        |
 
 
+*** Automatic wired connections
+
 =cp /etc/netctl/examples/ethernet-dhcp /etc/netctl/ethernet-dhcp;=
 
- Then you just need to change the device name to your device.
+ Then you just need to change the device name to your device.  Here, I've changed Interface=eth0 to Interface=neteth0
+#+BEGIN_SRC sh :results output
+su
+  cat /etc/netctl/neteth0-dhcp | grep Interface
+#+END_SRC
+
+#+RESULTS:
+: Interface=neteth0
+
+Download and install ifplugd, which is the arch package that handles ethernet connections.
+
+#+BEGIN_SRC sh :results output
+su
+pacman -S ifplugd
+#+END_SRC
+
+#+BEGIN_SRC sh :results output
+su
+systemctl start netctl-ifplugd@neteth0.service
+systemctl enable netctl-ifplugd@neteth0.service
+#+END_SRC
+
+#+RESULTS:
+
 ** Controlling network traffick
 *** nftables is the NEW way of implementing networking rules on your machine:
 One can block all incoming traffic from Facebook, block specified ports, etc.
@@ -935,21 +964,84 @@ Arch GNU/Linux configuration is located in =/etc/php/php-fpm.d/www.conf=, and pm
 
 * killing programs
 
-** kill
-kill <process ID>
-
-kill, kills the process ID.
+The information for killing programs for this program was be found [[http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/][here.]]
 
 ** killall
 killall PROGRAMNAME
 
 Killall kills all processes with the name PROGRAMNAME.  You might have to run it twice to kill the program successfully.
 
+For example to kill all the terminals with:
+#+BEGIN_SRC sh :results output
+killall lxterminal
+#+END_SRC
+
+#+RESULTS:
+
+That command sends the termination signal to all processes with the name "lxterminal".  =killall NAME= is the safest way to kill a non-responsive (or even responsive) program.
+
+BUT, if your program does not shutoff when you execute =killall name=, you can try
+
+#+BEGIN_SRC sh :results output
+killall -SIGHUG NAME
+#+END_SRC
+
+This reloads configuration files and open/closes log files.  I'm not sure if it actually kills the program.
+
+
+If you still can't close the program try:
+#+BEGIN_SRC sh :results output
+killall -SIGKILL
+#+END_SRC
+
+This sends the kill signal.  The program exists as fast as it can, without saving any data.
+
+** kill
+kill <process ID>
+
+kill, kills the process ID.
+
+So suppose I have several firefox instances running.  =killall firefox= would kill every instance of firefox.  I only want to
+kill the nonresponsive firefox.  That's where kill comes it.  It only kills the 1 process ID.
+
+kill PROGRAMNAME
+
+Kill with the name PROGRAMNAME.  You might have to run it twice to kill the program successfully.
+
+For example to kill all the terminals with:
+#+BEGIN_SRC sh :results output
+kill lxterminal
+#+END_SRC
+
+#+RESULTS:
+
+That command sends the termination signal to all processes with the name "lxterminal".  =kill NAME= is the safest way to kill a non-responsive (or even responsive) program.
+
+BUT, if your program does not shutoff when you execute =kill name=, you can try
+
+#+BEGIN_SRC sh :results output
+kill -SIGHUG NAME
+#+END_SRC
+
+This reloads configuration files and open/closes log files.  I'm not sure if it actually kills the program.
+
+
+If you still can't close the program try:
+#+BEGIN_SRC sh :results output
+kill -SIGKILL NAME
+#+END_SRC
+
+This sends the kill signal.  The program exists as fast as it can, without saving any data.
+
 * Problems I'm trying to solve
-** TODO my ethernet randomly loses connection:
+** DONE my ethernet randomly loses connection:
+CLOSED: [2016-04-15 Fri 07:57]
 :LOGBOOK:
+- State "DONE"       from "TODO"       [2016-04-15 Fri 07:57]
 - State "TODO"       from              [2016-03-29 Tue 19:06]
 :END:
+
+I seemed to be using a bad ethernet cord.  I switched ethernet cords and my laptop now works fine.  BUT  the "bad" ethernet cord is powering my desktop, and it doesn't have a problem staying connected to the internet.  Maybe my laptop is just a wuss at connecting to the internet.
 
 When this happens, I try to see the status of my ethernet device.
 #+BEGIN_SRC sh :results output
@@ -1151,16 +1243,92 @@ systemctl disable reboot.target
 #+END_SRC
 
 #+RESULTS:
-** TODO I have a LOT of systemd services that are failing to start.
+** DONE I have a LOT of systemd services that are failing to start.
+CLOSED: [2016-04-15 Fri 07:59]
 :LOGBOOK:
+- State "DONE"       from "TODO"       [2016-04-15 Fri 07:59]
 - State "TODO"       from              [2016-03-31 Thu 19:00]
 :END:
 
-This thread suggested that I should uninstall laptop mode tools, which I did.
+The problem was laptop mode tools. This thread suggested that I should uninstall laptop mode tools, which I did.
 https://bbs.archlinux.org/viewtopic.php?id=209100
 
 And I uninstalled hdparm.
-** TODO How do I kill a program if killall PROGRAMNAME and kill PID fails?
+** DONE How do I kill a program if killall PROGRAMNAME and kill PID fails?
+CLOSED: [2016-04-16 Sat 09:58]
 :LOGBOOK:
+- State "DONE"       from "TODO"       [2016-04-16 Sat 09:58]
 - State "TODO"       from              [2016-04-01 Fri 08:31]
 :END:
+** TODO When I shutdown ifplugd causes systemd to pause while it tries to shutoff.
+:LOGBOOK:
+- State "TODO"       from              [2016-04-18 Mon 08:43]
+:END:
+** TODO I cannot print any files in GNU/Linux
+:LOGBOOK:
+- State "TODO"       from              [2016-04-16 Sat 09:58]
+:END:
+Read the relevant documentation on [[https://wiki.archlinux.org/index.php/CUPS][CUPS]] and [[https://wiki.archlinux.org/index.php/LPRng#Configuration][LPRng]]
+avahi daemon apparently can help me find printers on the network!
+** Various issues I saw with systemd's log when examinging =journalctl -b -1=
+*** avahi  scan the network looking for printers
+#+BEGIN_EXAMPLE
+Apr 18 08:11:04 parabola nscd[352]: 352 cannot create /var/db/nscd/passwd; no persistent database used
+Apr 18 08:11:04 parabola nscd[352]: 352 cannot create /var/db/nscd/group; no persistent database used
+Apr 18 08:11:04 parabola nscd[352]: 352 cannot create /var/db/nscd/hosts; no persistent database used
+Apr 18 08:11:04 parabola nscd[352]: 352 cannot create /var/db/nscd/services; no persistent database used
+Apr 18 08:11:04 parabola nscd[352]: 352 cannot create /var/db/nscd/netgroup; no persistent database used
+#+END_EXAMPLE
+
+avahi, is a program that scans the network looking for printers.
+#+BEGIN_EXAMPLE
+Apr 18 08:11:05 parabola avahi-daemon[335]: Failed to find group 'avahi'.
+#+END_EXAMPLE
+
+*** php stuff
+**** My php.ini file has a syntax error.
+#+BEGIN_EXAMPLE
+Apr 18 08:11:06 parabola php-fpm[337]: PHP:  syntax error, unexpected '$' in /etc/php/php.ini on line 1876
+
+#+END_EXAMPLE
+
+**** php can't load a module
+#+BEGIN_EXAMPLE
+Apr 18 08:11:07 parabola php-fpm[337]: [18-Apr-2016 08:11:07] NOTICE: PHP message: PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/modules/openssl.so' - /usr/lib/php/modules/openssl.so: cannot open shared object file: No such file or directory in Unknown on line 0
+#+END_EXAMPLE
+
+*** Event buttons.  Cool!
+#+BEGIN_EXAMPLE
+Apr 18 08:11:08 parabola systemd-logind[332]: Watching system buttons on /dev/input/event4 (Power Button)
+Apr 18 08:11:08 parabola systemd-logind[332]: Watching system buttons on /dev/input/event5 (Video Bus)
+Apr 18 08:11:08 parabola systemd-logind[332]: Watching system buttons on /dev/input/event2 (Power Button)
+Apr 18 08:11:08 parabola systemd-logind[332]: Watching system buttons on /dev/input/event1 (Lid Switch)
+Apr 18 08:11:08 parabola systemd-logind[332]: Watching system buttons on /dev/input/event3 (Sleep Button)
+#+END_EXAMPLE
+*** What is this http error?
+#+BEGIN_EXAMPLE
+Apr 18 08:11:08 parabola httpd[341]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::6233:4bff:fe8e:60d0. Set the 'ServerName' directive globally to suppress this message
+#+END_EXAMPLE
+*** The shutdown error?
+Is it a logind thing?
+
+#+BEGIN_EXAMPLE
+Apr 18 08:11:13 parabola systemd-logind[332]: System is powering down.
+Apr 18 08:11:13 parabola login[457]: pam_tally(login:auth): pam_get_uid; no such user
+Apr 18 08:11:13 parabola systemd[1]: Closed Load/Save RF Kill Switch Status /dev/rfkill Watch.
+Apr 18 08:11:13 parabola login[453]: pam_systemd(login:session): Failed to create session: Start job for unit user@1000.service failed with 'canceled'
+Apr 18 08:11:13 parabola systemd[1]: Stopping Save/Restore Sound Card State...
+Apr 18 08:11:13 parabola polkitd[422]: Unregistered Authentication Agent for unix-process:559:2422 (system bus name :1.6, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Apr 18 08:11:14 parabola dhcpcd[398]: forked to background, child pid 603
+Apr 18 08:11:14 parabola ifplugd[325]: client: Started network profile 'neteth0-dhcp'
+Apr 18 08:11:14 parabola ifplugd[325]: Program executed successfully.
+Apr 18 08:11:16 parabola systemd-bootchart[148]: systemd-bootchart wrote /run/log/bootchart-20160418-0811.svg
+Apr 18 08:11:16 parabola systemd-bootchart[148]: Bootchart created: /run/log/bootchart-20160418-0811.svg
+Apr 18 08:11:16 parabola mysqld[413]: 2016-04-18  8:11:16 140682628630400 [Note] InnoDB: 128 rollback segment(s) are active.
+Apr 18 08:11:16 parabola mysqld[413]: 2016-04-18  8:11:16 140682628630400 [Note] InnoDB: Waiting for purge to start
+Apr 18 08:11:16 parabola mysqld[413]: 2016-04-18  8:11:16 140682628630400 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.28-76.1 started; log sequence number 871904946
+Apr 18 08:11:17 parabola emacs[508]: Warning: due to a long standing Gtk+ bug
+Apr 18 08:11:17 parabola emacs[508]: http://bugzilla.gnome.org/show_bug.cgi?id=85715
+Apr 18 08:11:17 parabola emacs[508]: Emacs might crash when run in daemon mode and the X11 connection is unexpectedly lost.
+Apr 18 08:11:17 parabola emacs[508]: Using an Emacs configured with --with-x-toolkit=lucid does not have this problem.
+#+END_EXAMPLE

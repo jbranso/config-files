@@ -1,0 +1,38 @@
+.green {
+    float:left;
+    width:29%;
+    margin:15px;
+    background-color:green;
+    padding:10px;
+}
+
+.red {
+    float:left;
+    width:29%;
+    margin:15px;
+    background-color:red;
+    padding:10px;
+}
+
+.blue {
+    float:left;
+    width:29%;
+    margin:15px;
+    background-color:blue;
+    padding:10px;
+}
+
+
+.height-30 {
+    height:30px;
+}
+.height-90 {
+    height:90px;
+}
+.height-150 {
+    height:150px;
+}
+
+.fix:nth-child(4n+0) {
+    clear:left;
+}

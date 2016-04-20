@@ -1,0 +1,59 @@
+.container {
+    display:flex;
+    background-color:green;
+}
+
+.container div {
+    background-color:red;
+    width:30%;
+    height:20%;
+    margin:10px;
+}
+
+.container .container {
+    background-color:blue;
+}
+.container div div {
+    background-color:green;
+    width:30%;
+    height:20%;
+    margin:10px;
+}
+
+.container .row-reverse {
+    flex-direction:row-reverse;
+}
+
+.container .column {
+    flex-direction:column;
+}
+
+.column {
+    flex-direction:column;
+}
+
+.container .column-reverse {
+    flex-direction:column-reverse;
+}
+
+.child1 {
+
+}
+
+.row {
+    flex-direction:row;
+}
+
+
+.grey-background {
+    background-color:grey;
+    display:flex;
+    padding:20px;
+    justify-content:space-between;
+}
+
+.grey-child {
+    justify-content:space-around;
+    flex-grow:1;
+    display:flex;
+}

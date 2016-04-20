@@ -1,0 +1,104 @@
+#+TITLE: Flexbox Shadow
+#+DESCRIPTION:Box shadow test
+#+HTML_DOCTYPE: HTML5
+#+HTML_LINK_HOME: index.html
+#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="css/flexbox.css"/>
+#+HTML_EXTRA: <link rel="stylesheet" type="text/css" href="style1.css"/>
+#+HTML_EXTRA: <link rel="stylesheet" type="text/css" href="style2.css"/>
+
+Flex box is a cool way to design flexible layouts!  It requires a parent and a child div.
+
+The parent can look like
+
+#+BEGIN_EXAMPLE
+.container {
+display:flex;
+}
+#+END_EXAMPLE
+
+OR
+
+#+BEGIN_EXAMPLE
+.container {
+display:inline;
+}
+#+END_EXAMPLE
+
+
+
+If you choose:
+#+BEGIN_EXAMPLE
+.container {
+    display:flex;
+}
+
+.container div {
+    width:30%;
+    height:20%;
+    margin:10px;
+}
+#+END_EXAMPLE
+Then you'll get:
+
+#+BEGIN_HTML
+<div class="container"> .container
+  <div class="child1">div.child1</div>
+  <div class="child2">div.child2</div>
+  <div class="child3">div.child3</div>
+</div>
+#+END_HTML
+
+With flex you can choose the direction that the items appear: left to right, right to left, top to down, or down to up:
+
+
+#+CAPTION: flexbox-image
+#+NAME:    fig:flexbox-image
+           [[./images/flex_terms.png]]
+
+#+BEGIN_HTML
+<div class="container">
+  <div>
+    <div>
+    flex-direction:row;
+    <div class="container">
+    </div>
+    </div>
+
+  </div>
+</div>
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+div.basic {
+box-shadow:70px 20px 20px green;
+}
+#+END_EXAMPLE
+
+If you add one more number you can specify a blur.
+#+BEGIN_HTML
+<div class="blur"><p>div.blur</p></div>
+#+END_HTML
+
+Usually box shadows are cast outside of the element, but they can also be cast inside the element.
+
+#+BEGIN_EXAMPLE
+div.innerShadow {
+    box-shadow:inset 0 20px 20px green;
+}
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+<div class="innerShadow"><p>div.innerShadow</p></div>
+#+END_HTML
+
+You can also use more than 1 shadow!!!
+
+#+BEGIN_EXAMPLE
+div.rainbow {
+    box-shadow:0 20px 20px green;
+}
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+<div class="rainbow"><p>div.rainbow</p></div>
+#+END_HTML

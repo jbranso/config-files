@@ -1,0 +1,15 @@
+* 22833 TUF secure update framework
+
+https://theupdateframework.github.io/
+* 22627 easily return to a previous git search.  So save git searches in buffers  An initial implementation has been made
+* 23211 segfault when isearching in dired [[gnus:nntp+news.gwene.org:gmane.emacs.bugs#87h9ficd9e.fsf@gmail.com][Email from Ernesto Alfonso: bug#23211: 24.4; Fatal error 1]]
+* 22983 syntax-ppss returns wrong result
+* 23179 M-, continue searching in etags is awkward.  What is xref?  Where is it in the emacs manual?
+* 23164 xref-find-definitions w/ local tags-files-name fails
+* 23212 xref search commands should show the first match when it's found
+* 22924 yasnippet doesn't work in Emacs 25?
+* 23219 find command cannot be customized for grep-find
+* 20387 [[gnus:nntp+news.gwene.org:gmane.emacs.bugs#87d1q2r5db.fsf@mbork.pl][shell command bug,  possibly an easy bug to fix]]
+* 23236 document remapping in the emacs manual.  It is only in the elisp manual.
+* 23248 rectangle preview in rect.el C-x rt is not used [[gnus:nntp+news.gwene.org:gmane.emacs.bugs#87shyvmxyn.fsf@udel.edu][easy]]
+* 23266 GNUmakefile mode incorrect syntax highlighting [[gnus:nntp+news.gwene.org:gmane.emacs.bugs#CABr8ebZozEoVZ_auinpyqT+Qo7kxSMNia2KWVq0miFCo0Ss1KQ@mail.gmail.com][here]]
