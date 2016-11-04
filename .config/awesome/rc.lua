@@ -13,7 +13,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 -- local keydoc = require("keydoc")
-require("revelation")
+-- require("revelation")
 local keydoc = require("keydoc")
 
 --start xcompmgr to enable compositing...will allow terminal shading
@@ -445,7 +445,7 @@ globalkeys = awful.util.table.join(
    awful.key({ modkey, "Control" }, "q", function () awful.util.spawn("~/programming/bash/test_awesome.bash", false) end),
 
    -- revelation it makes all the windows small down so I can see all of them --
-   awful.key({ }, "XF86LaunchA", revelation),
+   --awful.key({ }, "XF86LaunchA", revelation),
 
    keydoc.group ("Layout Manipulation"),
    -- minimize all clients. It will stand for clear screen... Now I need to make it open all clients when I click it again.
@@ -763,7 +763,7 @@ client.connect_signal("focus", function(c)
                          if (c.maximized == false) then
                             c.border_color = beautiful.border_focus
                             -- why does this not work?			 -- else
-                            --    c.border_color = beautful.border_normal
+                            --c.border_color = beautful.border_normal
                          end
 
 end)
